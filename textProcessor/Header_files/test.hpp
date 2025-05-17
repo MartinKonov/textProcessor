@@ -1,4 +1,0 @@
-//aaaa
-class a {
-	int c = 1;
-};
