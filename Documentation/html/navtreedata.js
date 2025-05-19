@@ -24,12 +24,20 @@
 */
 var NAVTREE =
 [
-  [ "textProcessor", "index.html", ]
+  [ "textProcessor", "index.html", [
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ]
+      ] ]
+    ] ]
+  ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"index.html"
+"dir_45a8c79602cde104edc29754b588e52b.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
