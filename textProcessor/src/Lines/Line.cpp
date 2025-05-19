@@ -1,5 +1,4 @@
 #include "../../headers/Lines/Line.hpp"
-#include "Line.hpp"
 
 
 string Line::getLine() {

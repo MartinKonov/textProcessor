@@ -11,9 +11,12 @@
 
 
 #include <iostream>
+#include "Lines/Line.hpp"
 
 int main() {
 
-    
+    Line line("Hello, World!");
+    std::cout << "Line content: " << line.getLine() << std::endl;
 
+    return 0;
 }
