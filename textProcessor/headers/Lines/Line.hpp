@@ -36,6 +36,11 @@ class Line {
     virtual bool isMovableInSort() const;
     virtual bool operator< (const Line& other) const;
 
+ private:
+   char lower(int c);
+   char upper(int c);
+ 
  protected:
     string content;
+
 };

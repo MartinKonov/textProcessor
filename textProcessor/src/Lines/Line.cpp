@@ -1,19 +1,46 @@
 #include "../../headers/Lines/Line.hpp"
+#include "Line.hpp"
 
 
+/**
+ * @brief Returns the content of the line
+ *
+ * @return string The content of the line
+ */
 string Line::getLine() {
     return content;
 }
 
-size_t Line::getSymbolCount() {
+/**
+ * @brief Returns the number of symbols in the line
+ *
+ * @return size_t The number of symbols in the line
+ */
+size_t Line::getSymbolCount() 
+{
     return content.size();
 }
 
-bool Line::contains(const string searched) {
+/**
+ * @brief Checks if the line contains a substring
+ *
+ * @param searched The substring to search for
+ * @return true if the substring is found
+ * @return false otherwise
+ */
+bool Line::contains(const string searched) 
+{
     return content.find(searched) != string::npos;
 }
 
-void Line::replace(const string target, const string replacement)
+/**
+ * @brief Replaces a substring in the line with another string
+ *
+ * @param target The substring to be replaced
+ * @param replacement The string to replace with
+ * @throws std::invalid_argument if the target substring is not found
+ */
+void Line::replace(const string target, const string replacement) 
 {
     if (!contains(target)) {
         throw std::invalid_argument("Line::replace: substring '" + target 
@@ -23,3 +50,91 @@ void Line::replace(const string target, const string replacement)
     size_t pos = content.find(target, pos);
     content.replace(pos, target.length(), replacement);
 }
+
+/**
+ * @brief Converts the line to upper case
+ *
+ */
+void Line::toUpper() 
+{
+    for (char &c : content) {
+        c = upper(c);
+    }
+}
+
+/**
+ * @brief Converts the line to lower case
+ *
+ */
+void Line::toLower() 
+{
+    for (char &c : content) {
+        c = lower(c);
+    }
+}
+
+/**
+ * @brief Checks if the line is movable in sort
+ *
+ * @return true if the line is movable in sort
+ * @return false otherwise
+ */
+bool Line::isMovableInSort() const 
+{
+    return true;
+}
+
+
+/**
+ * @brief Compares two lines for sorting
+ *
+ * @param other The other line to compare with
+ * @return true if this line is less than the other line
+ * @return false otherwise
+ */
+bool Line::operator<(const Line &other) const 
+{
+    return content < other.content;
+}
+/**
+ * @brief Trims the line from both sides
+ *
+ */
+void Line::trim() 
+{ 
+    size_t start = content.find_first_not_of(" \t\r\n");
+    if (start == std::string::npos) {
+        content.clear();
+        return;
+    }
+
+    size_t end = content.find_last_not_of(" \t\r\n");
+    content = content.substr(start, end - start + 1);
+}
+ /**
+  * @brief Converts a character to lower case
+  *
+  * @param c The character to convert
+  * @return char The converted character
+  */
+ char Line::lower(int c)
+ {
+     if (c >= 'A' && c <= 'Z') {
+         return c + ('a' - 'A');
+     }
+     return c;
+ } 
+ 
+ /**
+  * @brief Converts a character to upper case
+  *
+  * @param c The character to convert
+  * @return char The converted character
+  */
+ char Line::upper(int c)
+ {
+     if (c >= 'a' && c <= 'z') {
+         return c - ('a' - 'A');
+     }
+     return c;
+ }
