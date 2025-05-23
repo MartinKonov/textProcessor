@@ -26,6 +26,54 @@ void QuotedLine::trim()
     }  
 }
 
+
+void QuotedLine::trimLeading()
+{
+    size_t firstNonWS = content.find_first_not_of(" \t\r\n");
+    if (firstNonWS == std::string::npos) {
+        content.clear();
+        return;
+    }
+
+    if (content[firstNonWS] == '"') {
+        size_t closingQuote = content.find_last_of('"');
+        if (closingQuote == firstNonWS) {
+            Line::trimLeading(); 
+        } else {
+            content = content.substr(firstNonWS);
+        }
+    } else {
+        Line::trimLeading();
+    }
+}
+
+void QuotedLine::trimTrailing()
+{
+    size_t firstNonWS = content.find_first_not_of(" \t\r\n");
+    if (firstNonWS == std::string::npos) 
+    {
+        content.clear();
+        return;
+    }
+
+    if (content[firstNonWS] == '"') 
+    {
+        size_t closingQuote = content.find_last_of('"');
+        if (closingQuote == firstNonWS) {
+            Line::trimTrailing();
+        } else {
+            content = content.substr(0, closingQuote + 1);
+        }
+    } else 
+    {
+        Line::trimTrailing();
+    }
+}
+
+/**
+ * @brief use toUpper only outside of the quotes
+ * 
+ */
 void QuotedLine::toUpper() 
 {
     size_t firstQuote = findFirstQuote();
@@ -45,6 +93,10 @@ void QuotedLine::toUpper()
     }
 }
 
+/**
+ * @brief use toLower only outside of the quotes
+ * 
+ */
 void QuotedLine::toLower()
 {
     size_t firstQuote = findFirstQuote();

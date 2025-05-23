@@ -12,6 +12,8 @@ class QuotedLine : public Line{
  public:
     QuotedLine(const std::string& text) : Line(text) {}
     void trim() override;
+    void trimLeading() override;
+    void trimTrailing() override;
     void toUpper() override;
     void toLower() override;
 

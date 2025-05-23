@@ -12,40 +12,23 @@
 
 #include <iostream>
 #include <vector>
-#include "headers/Lines/NumberedLine.hpp"
-#include "headers/Lines/NumericLine.hpp"
-#include "headers/Lines/QuotedLine.hpp"
-#include "headers/Lines/LineCreator.hpp"
+#include "headers/FileManager.hpp"
 
 int main() {
 
-    LineCreator* creator = LineCreator::getInstance();
-    
-    std::vector<std::string> testInputs = {
-        "1. This is a numbered line",
-        "  42  ",
-        "  \"  This is a quoted line   \"   ",
-        "Just some random line",
-        "003. Another numbered line",
-        "\"\"",
-        "Not really \"quoted\" properly",
-        "123abc"
-    };
+    FileManager manager;
 
-    for (const std::string& input : testInputs) {
-        std::cout << "\nInput: \"" << input << "\"" << std::endl;
+    manager.open("/home/mkonov/tp/textProcessor/textProcessor/textDocumentFiles/example.txt");
+    std::string content = manager.getContents("/home/mkonov/tp/textProcessor/textProcessor/textDocumentFiles/example.txt");
 
-        Line* line = creator->createLine(input);
+    std::cout << "Loaded Content:\n" << content << std::endl;
 
-        std::cout << "\nLine: " << line->getLine() << std::endl;
-        line->toUpper();
-        std::cout << "\ntoUpper: " << line->getLine() << std::endl; 
-        line->toLower();
-        std::cout << "\ntoLower: " << line->getLine() << std::endl;
-        line->trim();
-        std::cout << "\ntrim: " << line->getLine() << std::endl;
-        std::cout << "\nsymbolCOunt: " << line->getSymbolCount() << std::endl;
-    }
+    manager.setContent("/home/mkonov/tp/textProcessor/textProcessor/textDocumentFiles/example.txt", content + "\nNew line added.");
+    manager.save("/home/mkonov/tp/textProcessor/textProcessor/textDocumentFiles/example.txt");
+
+    manager.saveAs("/home/mkonov/tp/textProcessor/textProcessor/textDocumentFiles/example.txt", "/home/mkonov/tp/textProcessor/textProcessor/textDocumentFiles/example_copy.txt");
+
+    manager.close("/home/mkonov/tp/textProcessor/textProcessor/textDocumentFiles/example.txt");
 
     return 0;
 }

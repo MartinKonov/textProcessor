@@ -101,28 +101,50 @@ bool Line::operator<(const Line &other) const
  */
 void Line::trim() 
 { 
-    size_t start = content.find_first_not_of(" \t\r\n");
-    if (start == std::string::npos) {
-        content.clear();
-        return;
-    }
-
-    size_t end = content.find_last_not_of(" \t\r\n");
-    content = content.substr(start, end - start + 1);
+    trimLeading();
+    trimTrailing();
 }
- /**
-  * @brief Converts a character to lower case
-  *
-  * @param c The character to convert
-  * @return char The converted character
-  */
- char Line::lower(int c)
- {
-     if (c >= 'A' && c <= 'Z') {
-         return c + ('a' - 'A');
-     }
-     return c;
- } 
+
+void Line::trimLeading()
+{
+    size_t start = content.find_first_not_of(" \t\r\n");
+    if (start == std::string::npos) 
+    {
+        content.clear();
+    } 
+    else
+    {
+        content = content.substr(start);
+    }
+}
+
+
+void Line::trimTrailing()
+{    
+    size_t end = content.find_last_not_of(" \t\r\n");
+    if (end == std::string::npos) 
+    {
+        content.clear();
+    } else 
+    {
+        content = content.substr(0, end + 1);
+    }
+}
+
+/**
+ * @brief Converts a character to lower case
+ *
+ * @param c The character to convert
+ * @return char The converted character
+ */
+char Line::lower(int c)
+{
+    if (c >= 'A' && c <= 'Z')
+    {
+        return c + ('a' - 'A');
+    }
+    return c;
+} 
  
  /**
   * @brief Converts a character to upper case

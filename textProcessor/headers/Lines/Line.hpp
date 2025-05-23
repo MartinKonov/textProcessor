@@ -32,6 +32,8 @@ class Line {
     virtual bool contains(const string searched);
     virtual void replace(const string target, const string replacement);
     virtual void trim();
+    virtual void trimLeading();
+    virtual void trimTrailing();
     virtual void toUpper();
     virtual void toLower();
     virtual bool isMovableInSort() const;
