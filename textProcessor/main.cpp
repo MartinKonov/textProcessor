@@ -8,8 +8,6 @@
  * @copyright Copyright (c) 2025
  * 
  */
-
-
 #include <iostream>
 #include <vector>
 #include "headers/FileManager.hpp"

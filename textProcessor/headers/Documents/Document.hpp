@@ -23,6 +23,7 @@ class Document
     // TODO while the commands are being made
 
  private:
+    string docName;
     bool hasChanged;
     vector<Line*> lines;
 
