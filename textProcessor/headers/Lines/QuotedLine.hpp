@@ -1,3 +1,4 @@
+#pragma once
 #include "Line.hpp"
 
 
@@ -14,4 +15,7 @@ class QuotedLine : public Line{
     void toUpper() override;
     void toLower() override;
 
+ private:
+    size_t findFirstQuote();
+    size_t findLastQuote(size_t firstQuote);
 };

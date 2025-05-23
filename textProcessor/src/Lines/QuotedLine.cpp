@@ -1,4 +1,4 @@
-#include "../headers/Lines/QuotedLine.hpp"
+#include "../../headers/Lines/QuotedLine.hpp"
 
 
 /**
@@ -28,8 +28,8 @@ void QuotedLine::trim()
 
 void QuotedLine::toUpper() 
 {
-    size_t firstQuote = content.find('"');
-    size_t lastQuote = (firstQuote == std::string::npos) ? std::string::npos : content.find_last_of('"');
+    size_t firstQuote = findFirstQuote();
+    size_t lastQuote = findLastQuote(firstQuote);
 
     if (firstQuote == std::string::npos || lastQuote == firstQuote) {
         for (size_t i = 0; i < content.size(); ++i) {
@@ -43,4 +43,38 @@ void QuotedLine::toUpper()
             content[i] = std::toupper((unsigned char)content[i]); 
         }
     }
+}
+
+void QuotedLine::toLower()
+{
+    size_t firstQuote = findFirstQuote();
+    size_t lastQuote = findLastQuote(firstQuote);
+
+    if (firstQuote == std::string::npos || lastQuote == firstQuote) {
+        for (size_t i = 0; i < content.size(); ++i) {
+            content[i] = std::tolower((unsigned char)content[i]);
+        }
+        return;
+    }
+
+    for (size_t i = 0; i < content.size(); ++i) {
+        if (i < firstQuote || i > lastQuote) {
+            content[i] = std::tolower((unsigned char)content[i]); 
+        }
+    }
+}
+
+size_t QuotedLine::findFirstQuote() 
+{
+    return content.find('"');
+}
+
+size_t QuotedLine::findLastQuote(size_t firstQuote)
+{
+    if(firstQuote == string::npos)
+    {
+        return string::npos;
+    }
+
+    return content.find_last_not_of('"');
 }

@@ -1,5 +1,4 @@
-#include "../headers/Lines/NumericLine.hpp"
-#include "NumericLine.hpp"
+#include "../../headers/Lines/NumericLine.hpp"
 
 
 

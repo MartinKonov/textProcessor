@@ -10,6 +10,7 @@ file(GLOB_RECURSE SOURCES
     "main.cpp"
     "src/*.cpp"
     "src/*/*.cpp"
+    "src/Lines/LineCreator.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})

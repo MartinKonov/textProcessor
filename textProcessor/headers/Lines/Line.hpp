@@ -1,3 +1,4 @@
+#pragma once
 /**
  * @file Line.hpp
  * @author Martin Konov
