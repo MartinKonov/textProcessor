@@ -1,3 +1,12 @@
+/**
+ * @file Line.cpp
+ * @author MK
+ * @brief A singleton class to create Line objects based on the content of the line.
+ * @version 0.1
+ * @date 2025-05-18
+ */
+
+
 #include "../../headers/Lines/Line.hpp"
 
 
@@ -105,6 +114,10 @@ void Line::trim()
     trimTrailing();
 }
 
+/**
+ * @brief Trims the line from the left side
+ *
+ */
 void Line::trimLeading()
 {
     size_t start = content.find_first_not_of(" \t\r\n");
@@ -118,7 +131,10 @@ void Line::trimLeading()
     }
 }
 
-
+/**
+ * @brief Trims the line from the right side
+ *
+ */
 void Line::trimTrailing()
 {    
     size_t end = content.find_last_not_of(" \t\r\n");

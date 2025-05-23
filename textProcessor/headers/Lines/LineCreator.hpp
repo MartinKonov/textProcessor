@@ -1,3 +1,12 @@
+/**
+ * @file LineCreator.hpp
+ * @author MK
+ * @brief A singleton class to create Line objects based on the content of the line.
+ * @version 0.1
+ * @date 2025-05-18
+ */
+
+
 #pragma once
 #include "Line.hpp"
 #include "DefaultLine.hpp"

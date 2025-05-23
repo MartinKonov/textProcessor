@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['tolower_0',['toLower',['../classLine.html#ab14c9f6cd94df7aef3820ac57ebd43d1',1,'Line']]],
-  ['toupper_1',['toUpper',['../classLine.html#aab2306a6468991f76cfde23b9ef1fdec',1,'Line']]],
-  ['trim_2',['trim',['../classLine.html#a5456da61c3617e039da60b9468bed81a',1,'Line']]],
-  ['trimmedcontent_3',['trimmedContent',['../classNumericLine.html#a708a8731bbcd709489fb1744d9781b58',1,'NumericLine']]]
+  ['save_0',['save',['../classFileManager.html#a029576bcb5d77cd060c425b13a4fcfb2',1,'FileManager']]],
+  ['saveas_1',['saveAs',['../classFileManager.html#ae6a5f29e0bbd142fb514ae96c80ea480',1,'FileManager']]],
+  ['setcontent_2',['setContent',['../classFileManager.html#ac65ded7acc688e00071acfd572d98a2e',1,'FileManager']]],
+  ['sort_3',['sort',['../classDocument.html#a886e62e9d646c317e6cc9f1936d0b779',1,'Document']]],
+  ['stringify_4',['stringify',['../build_2CMakeFiles_23_828_83_2CompilerIdC_2CMakeCCompilerId_8c.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY:&#160;CMakeCCompilerId.c'],['../build_2CMakeFiles_23_828_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY:&#160;CMakeCXXCompilerId.cpp'],['../out_2build_2GCC_0113_83_80_01x86__64-linux-gnu_2CMakeFiles_23_828_83_2CompilerIdC_2CMakeCCompilerId_8c.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY:&#160;CMakeCCompilerId.c'],['../out_2build_2GCC_0113_83_80_01x86__64-linux-gnu_2CMakeFiles_23_828_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY:&#160;CMakeCXXCompilerId.cpp']]],
+  ['stringify_5fhelper_5',['stringify_helper',['../build_2CMakeFiles_23_828_83_2CompilerIdC_2CMakeCCompilerId_8c.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER:&#160;CMakeCCompilerId.c'],['../build_2CMakeFiles_23_828_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER:&#160;CMakeCXXCompilerId.cpp'],['../out_2build_2GCC_0113_83_80_01x86__64-linux-gnu_2CMakeFiles_23_828_83_2CompilerIdC_2CMakeCCompilerId_8c.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER:&#160;CMakeCCompilerId.c'],['../out_2build_2GCC_0113_83_80_01x86__64-linux-gnu_2CMakeFiles_23_828_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER:&#160;CMakeCXXCompilerId.cpp']]]
 ];

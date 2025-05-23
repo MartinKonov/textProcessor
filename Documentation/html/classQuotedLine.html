@@ -97,6 +97,7 @@ $(document).ready(function(){initNavTree('classQuotedLine.html',''); initResizab
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="classQuotedLine-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">QuotedLine Class Reference</div></div>
 </div><!--header-->
@@ -120,29 +121,53 @@ Inheritance diagram for QuotedLine:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a62835139857e583e7c9f47e9faa2a11b" id="r_a62835139857e583e7c9f47e9faa2a11b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuotedLine.html#a62835139857e583e7c9f47e9faa2a11b">QuotedLine</a> (const std::string &amp;text)</td></tr>
 <tr class="separator:a62835139857e583e7c9f47e9faa2a11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad198e02db951d288959f68477c6d83c2" id="r_ad198e02db951d288959f68477c6d83c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuotedLine.html#ad198e02db951d288959f68477c6d83c2">trim</a> () override</td></tr>
+<tr class="memdesc:ad198e02db951d288959f68477c6d83c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">If a line is enclosed in double quotes (possibly with leading/trailing spaces outside the quotes), then do NOT apply trim inside the quotes.  <br /></td></tr>
+<tr class="separator:ad198e02db951d288959f68477c6d83c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e6dd7b2d9d7ad4a4dee0faf6e5d2a76" id="r_a2e6dd7b2d9d7ad4a4dee0faf6e5d2a76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuotedLine.html#a2e6dd7b2d9d7ad4a4dee0faf6e5d2a76">trimLeading</a> () override</td></tr>
+<tr class="memdesc:a2e6dd7b2d9d7ad4a4dee0faf6e5d2a76"><td class="mdescLeft">&#160;</td><td class="mdescRight">If a line is enclosed in double quotes (possibly with leading/trailing spaces outside the quotes), then do NOT apply trim inside the quotes.  <br /></td></tr>
+<tr class="separator:a2e6dd7b2d9d7ad4a4dee0faf6e5d2a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeac712eb2ccba44a27c8a5e8c80c0ab5" id="r_aeac712eb2ccba44a27c8a5e8c80c0ab5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuotedLine.html#aeac712eb2ccba44a27c8a5e8c80c0ab5">trimTrailing</a> () override</td></tr>
+<tr class="memdesc:aeac712eb2ccba44a27c8a5e8c80c0ab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">If a line is enclosed in double quotes (possibly with leading/trailing spaces outside the quotes), then do NOT apply trim inside the quotes.  <br /></td></tr>
+<tr class="separator:aeac712eb2ccba44a27c8a5e8c80c0ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a878e5082641e9ab40fae836fa32c8459" id="r_a878e5082641e9ab40fae836fa32c8459"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuotedLine.html#a878e5082641e9ab40fae836fa32c8459">toUpper</a> () override</td></tr>
+<tr class="memdesc:a878e5082641e9ab40fae836fa32c8459"><td class="mdescLeft">&#160;</td><td class="mdescRight">use toUpper only outside of the quotes  <br /></td></tr>
+<tr class="separator:a878e5082641e9ab40fae836fa32c8459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fb19a6722ebd8be3944a8e325e60e35" id="r_a0fb19a6722ebd8be3944a8e325e60e35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuotedLine.html#a0fb19a6722ebd8be3944a8e325e60e35">toLower</a> () override</td></tr>
+<tr class="memdesc:a0fb19a6722ebd8be3944a8e325e60e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">use toLower only outside of the quotes  <br /></td></tr>
+<tr class="separator:a0fb19a6722ebd8be3944a8e325e60e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classLine"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classLine')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classLine.html">Line</a></td></tr>
 <tr class="memitem:a08aca14c4a061664ac4706e2c82c532d inherit pub_methods_classLine" id="r_a08aca14c4a061664ac4706e2c82c532d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a08aca14c4a061664ac4706e2c82c532d">Line</a> (const string text)</td></tr>
 <tr class="separator:a08aca14c4a061664ac4706e2c82c532d inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add0081f34be76d2136700c565bb9ea3d inherit pub_methods_classLine" id="r_add0081f34be76d2136700c565bb9ea3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#add0081f34be76d2136700c565bb9ea3d">~Line</a> ()=default</td></tr>
 <tr class="separator:add0081f34be76d2136700c565bb9ea3d inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade4d9216e8b4b3a8078c549b572affdf inherit pub_methods_classLine" id="r_ade4d9216e8b4b3a8078c549b572affdf"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#ade4d9216e8b4b3a8078c549b572affdf">getLine</a> ()</td></tr>
+<tr class="memdesc:ade4d9216e8b4b3a8078c549b572affdf inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the content of the line.  <br /></td></tr>
 <tr class="separator:ade4d9216e8b4b3a8078c549b572affdf inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0430c0f136e81d2b96560290b36b81b6 inherit pub_methods_classLine" id="r_a0430c0f136e81d2b96560290b36b81b6"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a0430c0f136e81d2b96560290b36b81b6">getSymbolCount</a> ()</td></tr>
+<tr class="memdesc:a0430c0f136e81d2b96560290b36b81b6 inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of symbols in the line.  <br /></td></tr>
 <tr class="separator:a0430c0f136e81d2b96560290b36b81b6 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a232419c1577a54de5340d97ccaec40d3 inherit pub_methods_classLine" id="r_a232419c1577a54de5340d97ccaec40d3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a232419c1577a54de5340d97ccaec40d3">contains</a> (const string searched)</td></tr>
+<tr class="memdesc:a232419c1577a54de5340d97ccaec40d3 inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the line contains a substring.  <br /></td></tr>
 <tr class="separator:a232419c1577a54de5340d97ccaec40d3 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7096627a18278b2eea36a78f0fb26f17 inherit pub_methods_classLine" id="r_a7096627a18278b2eea36a78f0fb26f17"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a7096627a18278b2eea36a78f0fb26f17">replace</a> (const string target, const string replacement)</td></tr>
+<tr class="memdesc:a7096627a18278b2eea36a78f0fb26f17 inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces a substring in the line with another string.  <br /></td></tr>
 <tr class="separator:a7096627a18278b2eea36a78f0fb26f17 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5456da61c3617e039da60b9468bed81a inherit pub_methods_classLine" id="r_a5456da61c3617e039da60b9468bed81a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a5456da61c3617e039da60b9468bed81a">trim</a> ()</td></tr>
-<tr class="separator:a5456da61c3617e039da60b9468bed81a inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab2306a6468991f76cfde23b9ef1fdec inherit pub_methods_classLine" id="r_aab2306a6468991f76cfde23b9ef1fdec"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#aab2306a6468991f76cfde23b9ef1fdec">toUpper</a> ()</td></tr>
-<tr class="separator:aab2306a6468991f76cfde23b9ef1fdec inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab14c9f6cd94df7aef3820ac57ebd43d1 inherit pub_methods_classLine" id="r_ab14c9f6cd94df7aef3820ac57ebd43d1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#ab14c9f6cd94df7aef3820ac57ebd43d1">toLower</a> ()</td></tr>
-<tr class="separator:ab14c9f6cd94df7aef3820ac57ebd43d1 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78f8d9e9a3848a3694009f559ba8b5b4 inherit pub_methods_classLine" id="r_a78f8d9e9a3848a3694009f559ba8b5b4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a78f8d9e9a3848a3694009f559ba8b5b4">isMovableInSort</a> () const</td></tr>
-<tr class="separator:a78f8d9e9a3848a3694009f559ba8b5b4 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b364ca729acd5daef37b4c36d329385 inherit pub_methods_classLine" id="r_a3b364ca729acd5daef37b4c36d329385"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a3b364ca729acd5daef37b4c36d329385">operator&lt;</a> (const <a class="el" href="classLine.html">Line</a> &amp;other) const</td></tr>
-<tr class="separator:a3b364ca729acd5daef37b4c36d329385 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fd9f5be5c3326fb6546ea0fb2af6de6 inherit pub_methods_classLine" id="r_a9fd9f5be5c3326fb6546ea0fb2af6de6"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a9fd9f5be5c3326fb6546ea0fb2af6de6">isMovableInSort</a> () const</td></tr>
+<tr class="memdesc:a9fd9f5be5c3326fb6546ea0fb2af6de6 inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the line is movable in sort.  <br /></td></tr>
+<tr class="separator:a9fd9f5be5c3326fb6546ea0fb2af6de6 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a308d6953dc75164e080b927f1203bdac inherit pub_methods_classLine" id="r_a308d6953dc75164e080b927f1203bdac"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a308d6953dc75164e080b927f1203bdac">operator&lt;</a> (const <a class="el" href="classLine.html">Line</a> &amp;other) const</td></tr>
+<tr class="memdesc:a308d6953dc75164e080b927f1203bdac inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two lines for sorting.  <br /></td></tr>
+<tr class="separator:a308d6953dc75164e080b927f1203bdac inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a88c07d7d695beba4cd6e211151dff90a" id="r_a88c07d7d695beba4cd6e211151dff90a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuotedLine.html#a88c07d7d695beba4cd6e211151dff90a">findFirstQuote</a> ()</td></tr>
+<tr class="memdesc:a88c07d7d695beba4cd6e211151dff90a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first quote in the line.  <br /></td></tr>
+<tr class="separator:a88c07d7d695beba4cd6e211151dff90a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab37dd9a5f1a09cf9bbf1a6281cee510" id="r_aab37dd9a5f1a09cf9bbf1a6281cee510"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuotedLine.html#aab37dd9a5f1a09cf9bbf1a6281cee510">findLastQuote</a> (size_t firstQuote)</td></tr>
+<tr class="memdesc:aab37dd9a5f1a09cf9bbf1a6281cee510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the last quote in the line.  <br /></td></tr>
+<tr class="separator:aab37dd9a5f1a09cf9bbf1a6281cee510"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -179,8 +204,218 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a88c07d7d695beba4cd6e211151dff90a" name="a88c07d7d695beba4cd6e211151dff90a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88c07d7d695beba4cd6e211151dff90a">&#9670;&#160;</a></span>findFirstQuote()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t QuotedLine::findFirstQuote </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finds the first quote in the line. </p>
+<dl class="section return"><dt>Returns</dt><dd>size_t The position of the first quote </dd></dl>
+
+</div>
+</div>
+<a id="aab37dd9a5f1a09cf9bbf1a6281cee510" name="aab37dd9a5f1a09cf9bbf1a6281cee510"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab37dd9a5f1a09cf9bbf1a6281cee510">&#9670;&#160;</a></span>findLastQuote()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t QuotedLine::findLastQuote </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>firstQuote</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finds the last quote in the line. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">firstQuote</td><td>The position of the first quote </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>size_t The position of the last quote </dd></dl>
+
+</div>
+</div>
+<a id="a0fb19a6722ebd8be3944a8e325e60e35" name="a0fb19a6722ebd8be3944a8e325e60e35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fb19a6722ebd8be3944a8e325e60e35">&#9670;&#160;</a></span>toLower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QuotedLine::toLower </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>use toLower only outside of the quotes </p>
+
+<p>Reimplemented from <a class="el" href="classLine.html#a4f069f94b24fdb12e7447fa97bf2a6ad">Line</a>.</p>
+
+</div>
+</div>
+<a id="a878e5082641e9ab40fae836fa32c8459" name="a878e5082641e9ab40fae836fa32c8459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a878e5082641e9ab40fae836fa32c8459">&#9670;&#160;</a></span>toUpper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QuotedLine::toUpper </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>use toUpper only outside of the quotes </p>
+
+<p>Reimplemented from <a class="el" href="classLine.html#ae4bccdb462d64c6f38753238c6a6dc90">Line</a>.</p>
+
+</div>
+</div>
+<a id="ad198e02db951d288959f68477c6d83c2" name="ad198e02db951d288959f68477c6d83c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad198e02db951d288959f68477c6d83c2">&#9670;&#160;</a></span>trim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QuotedLine::trim </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If a line is enclosed in double quotes (possibly with leading/trailing spaces outside the quotes), then do NOT apply trim inside the quotes. </p>
+
+<p>Reimplemented from <a class="el" href="classLine.html#ab9a1eb10a87b437d71c7e677fc92304f">Line</a>.</p>
+
+</div>
+</div>
+<a id="a2e6dd7b2d9d7ad4a4dee0faf6e5d2a76" name="a2e6dd7b2d9d7ad4a4dee0faf6e5d2a76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e6dd7b2d9d7ad4a4dee0faf6e5d2a76">&#9670;&#160;</a></span>trimLeading()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QuotedLine::trimLeading </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If a line is enclosed in double quotes (possibly with leading/trailing spaces outside the quotes), then do NOT apply trim inside the quotes. </p>
+
+<p>Reimplemented from <a class="el" href="classLine.html#a61099257e87ea126e9e4b16426003af7">Line</a>.</p>
+
+</div>
+</div>
+<a id="aeac712eb2ccba44a27c8a5e8c80c0ab5" name="aeac712eb2ccba44a27c8a5e8c80c0ab5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeac712eb2ccba44a27c8a5e8c80c0ab5">&#9670;&#160;</a></span>trimTrailing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QuotedLine::trimTrailing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If a line is enclosed in double quotes (possibly with leading/trailing spaces outside the quotes), then do NOT apply trim inside the quotes. </p>
+
+<p>Reimplemented from <a class="el" href="classLine.html#a29a01320bfdf391f1581ee598164f34c">Line</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>textProcessor/headers/Lines/<a class="el" href="QuotedLine_8hpp_source.html">QuotedLine.hpp</a></li>
+<li>textProcessor/src/Lines/<a class="el" href="QuotedLine_8cpp.html">QuotedLine.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,3 +1,10 @@
+/**
+ * @file QuotedLine.hpp
+ * @author MK
+ * @brief
+ * @version 0.1
+ * @date 2025-05-18
+ */
 #pragma once
 #include "Line.hpp"
 

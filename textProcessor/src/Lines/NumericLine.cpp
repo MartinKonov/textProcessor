@@ -1,3 +1,10 @@
+/**
+ * @file NumericLine.cpp
+ * @author MK
+ * @brief A class to represent a line that is purely a number.
+ * @version 0.1
+ * @date 2025-05-18
+ */
 #include "../../headers/Lines/NumericLine.hpp"
 
 

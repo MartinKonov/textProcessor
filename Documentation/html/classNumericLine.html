@@ -122,6 +122,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a42fd19e66e5a2b72a665522f0977a6b1" id="r_a42fd19e66e5a2b72a665522f0977a6b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNumericLine.html#a42fd19e66e5a2b72a665522f0977a6b1">NumericLine</a> (const string text)</td></tr>
 <tr class="separator:a42fd19e66e5a2b72a665522f0977a6b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37a18049e3f90163a55ff5586c1284d2" id="r_a37a18049e3f90163a55ff5586c1284d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNumericLine.html#a37a18049e3f90163a55ff5586c1284d2">operator&lt;</a> (const <a class="el" href="classLine.html">Line</a> &amp;other) const override</td></tr>
+<tr class="memdesc:a37a18049e3f90163a55ff5586c1284d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">If a line is purely a number (e.g. “ 42 ”), compare by numeric value.  <br /></td></tr>
 <tr class="separator:a37a18049e3f90163a55ff5586c1284d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classLine"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classLine')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classLine.html">Line</a></td></tr>
 <tr class="memitem:a08aca14c4a061664ac4706e2c82c532d inherit pub_methods_classLine" id="r_a08aca14c4a061664ac4706e2c82c532d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a08aca14c4a061664ac4706e2c82c532d">Line</a> (const string text)</td></tr>
@@ -129,25 +130,40 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:add0081f34be76d2136700c565bb9ea3d inherit pub_methods_classLine" id="r_add0081f34be76d2136700c565bb9ea3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#add0081f34be76d2136700c565bb9ea3d">~Line</a> ()=default</td></tr>
 <tr class="separator:add0081f34be76d2136700c565bb9ea3d inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade4d9216e8b4b3a8078c549b572affdf inherit pub_methods_classLine" id="r_ade4d9216e8b4b3a8078c549b572affdf"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#ade4d9216e8b4b3a8078c549b572affdf">getLine</a> ()</td></tr>
+<tr class="memdesc:ade4d9216e8b4b3a8078c549b572affdf inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the content of the line.  <br /></td></tr>
 <tr class="separator:ade4d9216e8b4b3a8078c549b572affdf inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0430c0f136e81d2b96560290b36b81b6 inherit pub_methods_classLine" id="r_a0430c0f136e81d2b96560290b36b81b6"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a0430c0f136e81d2b96560290b36b81b6">getSymbolCount</a> ()</td></tr>
+<tr class="memdesc:a0430c0f136e81d2b96560290b36b81b6 inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of symbols in the line.  <br /></td></tr>
 <tr class="separator:a0430c0f136e81d2b96560290b36b81b6 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a232419c1577a54de5340d97ccaec40d3 inherit pub_methods_classLine" id="r_a232419c1577a54de5340d97ccaec40d3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a232419c1577a54de5340d97ccaec40d3">contains</a> (const string searched)</td></tr>
+<tr class="memdesc:a232419c1577a54de5340d97ccaec40d3 inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the line contains a substring.  <br /></td></tr>
 <tr class="separator:a232419c1577a54de5340d97ccaec40d3 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7096627a18278b2eea36a78f0fb26f17 inherit pub_methods_classLine" id="r_a7096627a18278b2eea36a78f0fb26f17"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a7096627a18278b2eea36a78f0fb26f17">replace</a> (const string target, const string replacement)</td></tr>
+<tr class="memdesc:a7096627a18278b2eea36a78f0fb26f17 inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces a substring in the line with another string.  <br /></td></tr>
 <tr class="separator:a7096627a18278b2eea36a78f0fb26f17 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5456da61c3617e039da60b9468bed81a inherit pub_methods_classLine" id="r_a5456da61c3617e039da60b9468bed81a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a5456da61c3617e039da60b9468bed81a">trim</a> ()</td></tr>
-<tr class="separator:a5456da61c3617e039da60b9468bed81a inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab2306a6468991f76cfde23b9ef1fdec inherit pub_methods_classLine" id="r_aab2306a6468991f76cfde23b9ef1fdec"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#aab2306a6468991f76cfde23b9ef1fdec">toUpper</a> ()</td></tr>
-<tr class="separator:aab2306a6468991f76cfde23b9ef1fdec inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab14c9f6cd94df7aef3820ac57ebd43d1 inherit pub_methods_classLine" id="r_ab14c9f6cd94df7aef3820ac57ebd43d1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#ab14c9f6cd94df7aef3820ac57ebd43d1">toLower</a> ()</td></tr>
-<tr class="separator:ab14c9f6cd94df7aef3820ac57ebd43d1 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78f8d9e9a3848a3694009f559ba8b5b4 inherit pub_methods_classLine" id="r_a78f8d9e9a3848a3694009f559ba8b5b4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a78f8d9e9a3848a3694009f559ba8b5b4">isMovableInSort</a> () const</td></tr>
-<tr class="separator:a78f8d9e9a3848a3694009f559ba8b5b4 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9a1eb10a87b437d71c7e677fc92304f inherit pub_methods_classLine" id="r_ab9a1eb10a87b437d71c7e677fc92304f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#ab9a1eb10a87b437d71c7e677fc92304f">trim</a> ()</td></tr>
+<tr class="memdesc:ab9a1eb10a87b437d71c7e677fc92304f inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trims the line from both sides.  <br /></td></tr>
+<tr class="separator:ab9a1eb10a87b437d71c7e677fc92304f inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61099257e87ea126e9e4b16426003af7 inherit pub_methods_classLine" id="r_a61099257e87ea126e9e4b16426003af7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a61099257e87ea126e9e4b16426003af7">trimLeading</a> ()</td></tr>
+<tr class="memdesc:a61099257e87ea126e9e4b16426003af7 inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trims the line from the left side.  <br /></td></tr>
+<tr class="separator:a61099257e87ea126e9e4b16426003af7 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29a01320bfdf391f1581ee598164f34c inherit pub_methods_classLine" id="r_a29a01320bfdf391f1581ee598164f34c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a29a01320bfdf391f1581ee598164f34c">trimTrailing</a> ()</td></tr>
+<tr class="memdesc:a29a01320bfdf391f1581ee598164f34c inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trims the line from the right side.  <br /></td></tr>
+<tr class="separator:a29a01320bfdf391f1581ee598164f34c inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4bccdb462d64c6f38753238c6a6dc90 inherit pub_methods_classLine" id="r_ae4bccdb462d64c6f38753238c6a6dc90"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#ae4bccdb462d64c6f38753238c6a6dc90">toUpper</a> ()</td></tr>
+<tr class="memdesc:ae4bccdb462d64c6f38753238c6a6dc90 inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the line to upper case.  <br /></td></tr>
+<tr class="separator:ae4bccdb462d64c6f38753238c6a6dc90 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f069f94b24fdb12e7447fa97bf2a6ad inherit pub_methods_classLine" id="r_a4f069f94b24fdb12e7447fa97bf2a6ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a4f069f94b24fdb12e7447fa97bf2a6ad">toLower</a> ()</td></tr>
+<tr class="memdesc:a4f069f94b24fdb12e7447fa97bf2a6ad inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the line to lower case.  <br /></td></tr>
+<tr class="separator:a4f069f94b24fdb12e7447fa97bf2a6ad inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fd9f5be5c3326fb6546ea0fb2af6de6 inherit pub_methods_classLine" id="r_a9fd9f5be5c3326fb6546ea0fb2af6de6"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLine.html#a9fd9f5be5c3326fb6546ea0fb2af6de6">isMovableInSort</a> () const</td></tr>
+<tr class="memdesc:a9fd9f5be5c3326fb6546ea0fb2af6de6 inherit pub_methods_classLine"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the line is movable in sort.  <br /></td></tr>
+<tr class="separator:a9fd9f5be5c3326fb6546ea0fb2af6de6 inherit pub_methods_classLine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a708a8731bbcd709489fb1744d9781b58" id="r_a708a8731bbcd709489fb1744d9781b58"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNumericLine.html#a708a8731bbcd709489fb1744d9781b58">trimmedContent</a> () const</td></tr>
+<tr class="memdesc:a708a8731bbcd709489fb1744d9781b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trims the line from both sides.  <br /></td></tr>
 <tr class="separator:a708a8731bbcd709489fb1744d9781b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -210,7 +226,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classLine.html#a3b364ca729acd5daef37b4c36d329385">Line</a>.</p>
+<p>If a line is purely a number (e.g. “ 42 ”), compare by numeric value. </p>
+
+<p>Reimplemented from <a class="el" href="classLine.html#a308d6953dc75164e080b927f1203bdac">Line</a>.</p>
 
 </div>
 </div>
@@ -237,10 +255,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Trims the line from both sides. </p>
+<dl class="section return"><dt>Returns</dt><dd>string The trimmed content of the line </dd></dl>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>textProcessor/headers/Lines/<a class="el" href="NumericLine_8hpp_source.html">NumericLine.hpp</a></li>
+<li>textProcessor/src/Lines/<a class="el" href="NumericLine_8cpp.html">NumericLine.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

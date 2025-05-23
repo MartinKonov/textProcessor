@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['ismovableinsort_0',['ismovableinsort',['../classLine.html#a78f8d9e9a3848a3694009f559ba8b5b4',1,'Line::isMovableInSort()'],['../classNumberedLine.html#a9686544d5b14f54e33eb35ea4cde081e',1,'NumberedLine::isMovableInSort()']]]
+  ['findfirstquote_0',['findFirstQuote',['../classQuotedLine.html#a88c07d7d695beba4cd6e211151dff90a',1,'QuotedLine']]],
+  ['findindex_1',['findIndex',['../classFileManager.html#a59134b93c3e53348ae9b35e3135b7d2c',1,'FileManager']]],
+  ['findlastquote_2',['findLastQuote',['../classQuotedLine.html#aab37dd9a5f1a09cf9bbf1a6281cee510',1,'QuotedLine']]]
 ];

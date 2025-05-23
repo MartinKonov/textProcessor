@@ -1,3 +1,11 @@
+/**
+ * @file FileManager.hpp
+ * @author MK
+ * @brief A class to manage file operations such as opening, reading, writing, and closing files.
+ * @version 0.1
+ * @date 2025-05-18
+ */
+
 #pragma once
 #include <fstream>
 #include <string>
@@ -10,6 +18,10 @@ using std::runtime_error;
 using std::ofstream;
 using std::ifstream;
 
+/**
+ * @brief A class to manage file operations such as opening, reading, writing, and closing files.
+ * 
+ */
 class FileManager {
 public:
     void open(const string& filename);

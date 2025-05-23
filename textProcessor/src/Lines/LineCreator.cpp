@@ -1,7 +1,21 @@
+/**
+ * @file LineCreator.cpp
+ * @author MK
+ * @brief A singleton class to create Line objects based on the content of the line.
+ * @version 0.1
+ * @date 2025-05-18
+ */
+
 #include "../../headers/Lines/LineCreator.hpp"
+
 
 LineCreator* LineCreator::lineCreator_ = nullptr;
 
+/**
+ * @brief Returns the singleton instance of LineCreator
+ *
+ * @return LineCreator* The singleton instance of LineCreator
+ */
 LineCreator* LineCreator::getInstance()
 {
     if(lineCreator_ == nullptr)
@@ -11,6 +25,12 @@ LineCreator* LineCreator::getInstance()
     return lineCreator_;
 }
 
+/**
+ * @brief Creates a Line object based on the content of the line
+ *
+ * @param content The content of the line
+ * @return Line* A pointer to the created Line object
+ */
 Line* LineCreator::createLine(string content)
 {
     if(isNumberedLine(content))
@@ -31,6 +51,13 @@ Line* LineCreator::createLine(string content)
     }
 }
 
+/**
+ * @brief Checks if the line is a numbered line
+ *
+ * @param content The content of the line
+ * @return true if the line is a numbered line
+ * @return false otherwise
+ */
 bool LineCreator::isNumberedLine(const string& content)
 {
     size_t p = content.find_first_not_of(" \t\r\n");
@@ -46,6 +73,13 @@ bool LineCreator::isNumberedLine(const string& content)
     return false;
 }
 
+/**
+ * @brief Checks if the line is a numeric line
+ *
+ * @param content The content of the line
+ * @return true if the line is a numeric line
+ * @return false otherwise
+ */
 bool LineCreator::isNumericLine(const string &content)
 {
     size_t start = content.find_first_not_of(" \t\r\n");
@@ -63,6 +97,14 @@ bool LineCreator::isNumericLine(const string &content)
     }
     return true;
 }
+
+/**
+ * @brief Checks if the line is a quoted line
+ *
+ * @param content The content of the line
+ * @return true if the line is a quoted line
+ * @return false otherwise
+ */
 bool LineCreator::isQuotedLine(const string &content)
 {
     size_t start = content.find_first_not_of(" \t\r\n");

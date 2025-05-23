@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['numberedline_0',['NumberedLine',['../classNumberedLine.html#a97c7e44938ae50f6fae768d97445f73e',1,'NumberedLine']]],
-  ['numericline_1',['NumericLine',['../classNumericLine.html#a42fd19e66e5a2b72a665522f0977a6b1',1,'NumericLine']]]
+  ['line_0',['Line',['../classLine.html#a08aca14c4a061664ac4706e2c82c532d',1,'Line']]],
+  ['linecreator_1',['linecreator',['../classLineCreator.html#a6bdb05df5092f7a451738799fd828605',1,'LineCreator::LineCreator(const LineCreator &amp;)=delete'],['../classLineCreator.html#a415fc3b7eb1c8292c6731075db7b9130',1,'LineCreator::LineCreator()=default']]],
+  ['lower_2',['lower',['../classLine.html#a30600ceda745edf6bd30066ea335ecf5',1,'Line']]]
 ];

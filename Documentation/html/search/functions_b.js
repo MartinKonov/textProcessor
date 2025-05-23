@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7eline_0',['~Line',['../classLine.html#add0081f34be76d2136700c565bb9ea3d',1,'Line']]]
+  ['removeline_0',['removeLine',['../classDocument.html#a5c44ba26db4a8facca33919aa43483ea',1,'Document']]],
+  ['replace_1',['replace',['../classLine.html#a7096627a18278b2eea36a78f0fb26f17',1,'Line']]]
 ];

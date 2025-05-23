@@ -1,3 +1,10 @@
+/**
+ * @file QuotedLine.hpp
+ * @author MK
+ * @brief A class to represent a line that is enclosed in double quotes.
+ * @version 0.1
+ * @date 2025-05-18
+ */
 #include "../../headers/Lines/QuotedLine.hpp"
 
 
@@ -26,7 +33,11 @@ void QuotedLine::trim()
     }  
 }
 
-
+/**
+ * @brief If a line is enclosed in double quotes (possibly with leading/trailing spaces
+ *        outside the quotes), then do NOT apply trim inside the quotes
+ * 
+ */
 void QuotedLine::trimLeading()
 {
     size_t firstNonWS = content.find_first_not_of(" \t\r\n");
@@ -47,6 +58,11 @@ void QuotedLine::trimLeading()
     }
 }
 
+/**
+ * @brief If a line is enclosed in double quotes (possibly with leading/trailing spaces
+ *        outside the quotes), then do NOT apply trim inside the quotes
+ * 
+ */
 void QuotedLine::trimTrailing()
 {
     size_t firstNonWS = content.find_first_not_of(" \t\r\n");
@@ -116,11 +132,22 @@ void QuotedLine::toLower()
     }
 }
 
+/**
+ * @brief Finds the first quote in the line
+ * 
+ * @return size_t The position of the first quote
+ */
 size_t QuotedLine::findFirstQuote() 
 {
     return content.find('"');
 }
 
+/**
+ * @brief Finds the last quote in the line
+ * 
+ * @param firstQuote The position of the first quote
+ * @return size_t The position of the last quote
+ */
 size_t QuotedLine::findLastQuote(size_t firstQuote)
 {
     if(firstQuote == string::npos)
