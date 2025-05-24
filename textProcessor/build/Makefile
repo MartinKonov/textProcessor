@@ -153,29 +153,77 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/Documents/Document.o: src/Documents/Document.cpp.o
-.PHONY : src/Documents/Document.o
+src/Document/Document.o: src/Document/Document.cpp.o
+.PHONY : src/Document/Document.o
 
 # target to build an object file
-src/Documents/Document.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Documents/Document.cpp.o
-.PHONY : src/Documents/Document.cpp.o
+src/Document/Document.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Document/Document.cpp.o
+.PHONY : src/Document/Document.cpp.o
 
-src/Documents/Document.i: src/Documents/Document.cpp.i
-.PHONY : src/Documents/Document.i
+src/Document/Document.i: src/Document/Document.cpp.i
+.PHONY : src/Document/Document.i
 
 # target to preprocess a source file
-src/Documents/Document.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Documents/Document.cpp.i
-.PHONY : src/Documents/Document.cpp.i
+src/Document/Document.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Document/Document.cpp.i
+.PHONY : src/Document/Document.cpp.i
 
-src/Documents/Document.s: src/Documents/Document.cpp.s
-.PHONY : src/Documents/Document.s
+src/Document/Document.s: src/Document/Document.cpp.s
+.PHONY : src/Document/Document.s
 
 # target to generate assembly for a file
-src/Documents/Document.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Documents/Document.cpp.s
-.PHONY : src/Documents/Document.cpp.s
+src/Document/Document.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Document/Document.cpp.s
+.PHONY : src/Document/Document.cpp.s
+
+src/Document/DocumentParser.o: src/Document/DocumentParser.cpp.o
+.PHONY : src/Document/DocumentParser.o
+
+# target to build an object file
+src/Document/DocumentParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Document/DocumentParser.cpp.o
+.PHONY : src/Document/DocumentParser.cpp.o
+
+src/Document/DocumentParser.i: src/Document/DocumentParser.cpp.i
+.PHONY : src/Document/DocumentParser.i
+
+# target to preprocess a source file
+src/Document/DocumentParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Document/DocumentParser.cpp.i
+.PHONY : src/Document/DocumentParser.cpp.i
+
+src/Document/DocumentParser.s: src/Document/DocumentParser.cpp.s
+.PHONY : src/Document/DocumentParser.s
+
+# target to generate assembly for a file
+src/Document/DocumentParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Document/DocumentParser.cpp.s
+.PHONY : src/Document/DocumentParser.cpp.s
+
+src/Document/DocumentRegister.o: src/Document/DocumentRegister.cpp.o
+.PHONY : src/Document/DocumentRegister.o
+
+# target to build an object file
+src/Document/DocumentRegister.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Document/DocumentRegister.cpp.o
+.PHONY : src/Document/DocumentRegister.cpp.o
+
+src/Document/DocumentRegister.i: src/Document/DocumentRegister.cpp.i
+.PHONY : src/Document/DocumentRegister.i
+
+# target to preprocess a source file
+src/Document/DocumentRegister.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Document/DocumentRegister.cpp.i
+.PHONY : src/Document/DocumentRegister.cpp.i
+
+src/Document/DocumentRegister.s: src/Document/DocumentRegister.cpp.s
+.PHONY : src/Document/DocumentRegister.s
+
+# target to generate assembly for a file
+src/Document/DocumentRegister.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Document/DocumentRegister.cpp.s
+.PHONY : src/Document/DocumentRegister.cpp.s
 
 src/FileManager.o: src/FileManager.cpp.o
 .PHONY : src/FileManager.o
@@ -333,9 +381,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/Documents/Document.o"
-	@echo "... src/Documents/Document.i"
-	@echo "... src/Documents/Document.s"
+	@echo "... src/Document/Document.o"
+	@echo "... src/Document/Document.i"
+	@echo "... src/Document/Document.s"
+	@echo "... src/Document/DocumentParser.o"
+	@echo "... src/Document/DocumentParser.i"
+	@echo "... src/Document/DocumentParser.s"
+	@echo "... src/Document/DocumentRegister.o"
+	@echo "... src/Document/DocumentRegister.i"
+	@echo "... src/Document/DocumentRegister.s"
 	@echo "... src/FileManager.o"
 	@echo "... src/FileManager.i"
 	@echo "... src/FileManager.s"
