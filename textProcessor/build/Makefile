@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/Document/ActiveDocument.o: src/Document/ActiveDocument.cpp.o
+.PHONY : src/Document/ActiveDocument.o
+
+# target to build an object file
+src/Document/ActiveDocument.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Document/ActiveDocument.cpp.o
+.PHONY : src/Document/ActiveDocument.cpp.o
+
+src/Document/ActiveDocument.i: src/Document/ActiveDocument.cpp.i
+.PHONY : src/Document/ActiveDocument.i
+
+# target to preprocess a source file
+src/Document/ActiveDocument.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Document/ActiveDocument.cpp.i
+.PHONY : src/Document/ActiveDocument.cpp.i
+
+src/Document/ActiveDocument.s: src/Document/ActiveDocument.cpp.s
+.PHONY : src/Document/ActiveDocument.s
+
+# target to generate assembly for a file
+src/Document/ActiveDocument.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Document/ActiveDocument.cpp.s
+.PHONY : src/Document/ActiveDocument.cpp.s
+
 src/Document/Document.o: src/Document/Document.cpp.o
 .PHONY : src/Document/Document.o
 
@@ -381,6 +405,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/Document/ActiveDocument.o"
+	@echo "... src/Document/ActiveDocument.i"
+	@echo "... src/Document/ActiveDocument.s"
 	@echo "... src/Document/Document.o"
 	@echo "... src/Document/Document.i"
 	@echo "... src/Document/Document.s"

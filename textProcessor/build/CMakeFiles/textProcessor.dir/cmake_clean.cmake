@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/textProcessor.dir/main.cpp.o"
   "CMakeFiles/textProcessor.dir/main.cpp.o.d"
+  "CMakeFiles/textProcessor.dir/src/Document/ActiveDocument.cpp.o"
+  "CMakeFiles/textProcessor.dir/src/Document/ActiveDocument.cpp.o.d"
   "CMakeFiles/textProcessor.dir/src/Document/Document.cpp.o"
   "CMakeFiles/textProcessor.dir/src/Document/Document.cpp.o.d"
   "CMakeFiles/textProcessor.dir/src/Document/DocumentParser.cpp.o"
