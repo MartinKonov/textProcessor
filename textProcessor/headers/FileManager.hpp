@@ -24,7 +24,7 @@ using std::ifstream;
  */
 class FileManager {
 public:
-    void open(const string& filename);
+    void loadFile(const string& filename);
     string getContents(const string& filename);
     void close(const string& filename);
     void save(const string& filename);
@@ -36,4 +36,6 @@ private:
     vector<string> contents;
 
     int findIndex(const std::string& filename);
+    ifstream openFile(const string& filename);
+
 };

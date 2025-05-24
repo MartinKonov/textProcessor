@@ -10,12 +10,17 @@ using namespace std;
 class Document 
 {
  public:
-    Document(vector<Line*> lines);
-    
+    Document(string name, vector<Line*> lines);
+    ~Document();
+
     bool getHasChanged();
+    void setHasChanged(bool changed);
     size_t getNumSymbols();
     void removeLine();
     void addLine(string line);
+    string getDocName();
+    void setDocName(string name);
+    string getContents();
 
 
     void sort();

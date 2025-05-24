@@ -21,13 +21,15 @@ int FileManager::findIndex(const string& filename) {
 
 /**
  * @brief Opens a file and reads its contents.
- * 
+ *
  * @param filename The name of the file to open.
  * @throws runtime_error if the file cannot be opened.
- */
-void FileManager::open(const string& filename) {
-    ifstream file(filename);
-    if (!file.is_open()) {
+*/
+void FileManager::loadFile(const string& filename) {
+    ifstream file;
+    try {
+        ifstream file = openFile(filename);
+    } catch (const runtime_error& e) {
         throw runtime_error("Cannot open file: " + filename);
     }
 
@@ -38,15 +40,25 @@ void FileManager::open(const string& filename) {
     }
 
     int index = findIndex(filename);
-    if (index == -1) {
-        filenames.push_back(filename);
-        contents.push_back(content);
-    } else {
-        contents[index] = content;
-    }
-
+    setContent(filename, content);
     file.close();
 }
+
+/**
+ * @brief Opens a file and returns the ifstream object.
+ * 
+ * @param filename The name of the file to open.
+ * @return ifstream The opened file stream.
+ * @throws runtime_error if the file cannot be opened.
+ */
+ifstream FileManager::openFile(const string &filename)
+{
+    ifstream file(filename);
+    if (!file.is_open()) {
+        throw runtime_error("Cannot open file: " + filename);
+    }
+    return file;
+} 
 
 /**
  * @brief Gets the contents of a file.
@@ -85,12 +97,12 @@ void FileManager::close(const string& filename) {
 void FileManager::save(const string& filename) {
     int index = findIndex(filename);
     if (index == -1) {
-        throw runtime_error("File not loaded: " + filename);
+        throw runtime_error("FileManager::File not loaded: " + filename);
     }
 
     std::ofstream file(filename);
     if (!file.is_open()) {
-        throw runtime_error("Cannot open file to save: " + filename);
+        throw runtime_error("FileManager::Cannot open file to save: " + filename);
     }
 
     file << contents[index];
@@ -107,12 +119,12 @@ void FileManager::save(const string& filename) {
 void FileManager::saveAs(const string& oldFilename, const string& newFilename) {
     int index = findIndex(oldFilename);
     if (index == -1) {
-        throw runtime_error("File not loaded: " + oldFilename);
+        throw runtime_error("FileManager::File not loaded: " + oldFilename);
     }
 
     ofstream file(newFilename);
     if (!file.is_open()) {
-        throw runtime_error("Cannot open file to save as: " + newFilename);
+        throw runtime_error("FileManager::Cannot open file to save as: " + newFilename);
     }
 
     file << contents[index];
