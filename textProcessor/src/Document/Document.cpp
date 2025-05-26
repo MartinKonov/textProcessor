@@ -165,12 +165,22 @@ string Document::toString()
 }
 
 /**
- * @brief Overloads the << operator to print the document's contents.
+ * @brief Returns the number of lines in the document.
  * 
- * @param os The output stream.
- * @param document The document to print.
- * @return ostream& The output stream after printing the document.
+ * @return size_t The number of lines in the document.
  */
+size_t Document::getNumLines()
+{
+    return lines.size();
+}
+
+/**
+   * @brief Overloads the << operator to print the document's contents.
+   *
+   * @param os The output stream.
+   * @param document The document to print.
+   * @return ostream& The output stream after printing the document.
+   */
 ostream& operator<<(ostream& os, Document& document)
 {
     os << document.toString();

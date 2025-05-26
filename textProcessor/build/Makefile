@@ -153,6 +153,78 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/Block/Block.o: src/Block/Block.cpp.o
+.PHONY : src/Block/Block.o
+
+# target to build an object file
+src/Block/Block.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Block/Block.cpp.o
+.PHONY : src/Block/Block.cpp.o
+
+src/Block/Block.i: src/Block/Block.cpp.i
+.PHONY : src/Block/Block.i
+
+# target to preprocess a source file
+src/Block/Block.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Block/Block.cpp.i
+.PHONY : src/Block/Block.cpp.i
+
+src/Block/Block.s: src/Block/Block.cpp.s
+.PHONY : src/Block/Block.s
+
+# target to generate assembly for a file
+src/Block/Block.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Block/Block.cpp.s
+.PHONY : src/Block/Block.cpp.s
+
+src/Block/BlockParser.o: src/Block/BlockParser.cpp.o
+.PHONY : src/Block/BlockParser.o
+
+# target to build an object file
+src/Block/BlockParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Block/BlockParser.cpp.o
+.PHONY : src/Block/BlockParser.cpp.o
+
+src/Block/BlockParser.i: src/Block/BlockParser.cpp.i
+.PHONY : src/Block/BlockParser.i
+
+# target to preprocess a source file
+src/Block/BlockParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Block/BlockParser.cpp.i
+.PHONY : src/Block/BlockParser.cpp.i
+
+src/Block/BlockParser.s: src/Block/BlockParser.cpp.s
+.PHONY : src/Block/BlockParser.s
+
+# target to generate assembly for a file
+src/Block/BlockParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Block/BlockParser.cpp.s
+.PHONY : src/Block/BlockParser.cpp.s
+
+src/Block/BlockRegister.o: src/Block/BlockRegister.cpp.o
+.PHONY : src/Block/BlockRegister.o
+
+# target to build an object file
+src/Block/BlockRegister.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Block/BlockRegister.cpp.o
+.PHONY : src/Block/BlockRegister.cpp.o
+
+src/Block/BlockRegister.i: src/Block/BlockRegister.cpp.i
+.PHONY : src/Block/BlockRegister.i
+
+# target to preprocess a source file
+src/Block/BlockRegister.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Block/BlockRegister.cpp.i
+.PHONY : src/Block/BlockRegister.cpp.i
+
+src/Block/BlockRegister.s: src/Block/BlockRegister.cpp.s
+.PHONY : src/Block/BlockRegister.s
+
+# target to generate assembly for a file
+src/Block/BlockRegister.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Block/BlockRegister.cpp.s
+.PHONY : src/Block/BlockRegister.cpp.s
+
 src/Document/ActiveDocument.o: src/Document/ActiveDocument.cpp.o
 .PHONY : src/Document/ActiveDocument.o
 
@@ -405,6 +477,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/Block/Block.o"
+	@echo "... src/Block/Block.i"
+	@echo "... src/Block/Block.s"
+	@echo "... src/Block/BlockParser.o"
+	@echo "... src/Block/BlockParser.i"
+	@echo "... src/Block/BlockParser.s"
+	@echo "... src/Block/BlockRegister.o"
+	@echo "... src/Block/BlockRegister.i"
+	@echo "... src/Block/BlockRegister.s"
 	@echo "... src/Document/ActiveDocument.o"
 	@echo "... src/Document/ActiveDocument.i"
 	@echo "... src/Document/ActiveDocument.s"

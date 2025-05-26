@@ -9,6 +9,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/main.cpp" "CMakeFiles/textProcessor.dir/main.cpp.o" "gcc" "CMakeFiles/textProcessor.dir/main.cpp.o.d"
+  "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Block/Block.cpp" "CMakeFiles/textProcessor.dir/src/Block/Block.cpp.o" "gcc" "CMakeFiles/textProcessor.dir/src/Block/Block.cpp.o.d"
+  "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Block/BlockParser.cpp" "CMakeFiles/textProcessor.dir/src/Block/BlockParser.cpp.o" "gcc" "CMakeFiles/textProcessor.dir/src/Block/BlockParser.cpp.o.d"
+  "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Block/BlockRegister.cpp" "CMakeFiles/textProcessor.dir/src/Block/BlockRegister.cpp.o" "gcc" "CMakeFiles/textProcessor.dir/src/Block/BlockRegister.cpp.o.d"
   "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Document/ActiveDocument.cpp" "CMakeFiles/textProcessor.dir/src/Document/ActiveDocument.cpp.o" "gcc" "CMakeFiles/textProcessor.dir/src/Document/ActiveDocument.cpp.o.d"
   "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Document/Document.cpp" "CMakeFiles/textProcessor.dir/src/Document/Document.cpp.o" "gcc" "CMakeFiles/textProcessor.dir/src/Document/Document.cpp.o.d"
   "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Document/DocumentParser.cpp" "CMakeFiles/textProcessor.dir/src/Document/DocumentParser.cpp.o" "gcc" "CMakeFiles/textProcessor.dir/src/Document/DocumentParser.cpp.o.d"

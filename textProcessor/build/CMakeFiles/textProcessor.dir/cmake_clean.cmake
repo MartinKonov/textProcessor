@@ -1,6 +1,12 @@
 file(REMOVE_RECURSE
   "CMakeFiles/textProcessor.dir/main.cpp.o"
   "CMakeFiles/textProcessor.dir/main.cpp.o.d"
+  "CMakeFiles/textProcessor.dir/src/Block/Block.cpp.o"
+  "CMakeFiles/textProcessor.dir/src/Block/Block.cpp.o.d"
+  "CMakeFiles/textProcessor.dir/src/Block/BlockParser.cpp.o"
+  "CMakeFiles/textProcessor.dir/src/Block/BlockParser.cpp.o.d"
+  "CMakeFiles/textProcessor.dir/src/Block/BlockRegister.cpp.o"
+  "CMakeFiles/textProcessor.dir/src/Block/BlockRegister.cpp.o.d"
   "CMakeFiles/textProcessor.dir/src/Document/ActiveDocument.cpp.o"
   "CMakeFiles/textProcessor.dir/src/Document/ActiveDocument.cpp.o.d"
   "CMakeFiles/textProcessor.dir/src/Document/Document.cpp.o"

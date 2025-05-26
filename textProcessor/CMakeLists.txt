@@ -16,6 +16,9 @@ file(GLOB_RECURSE SOURCES
     "src/Document/DocumentParser.cpp"
     "src/Document/DocumentRegister.cpp"
     "src/Document/ActiveDocument.cpp"
+    "src/Block/Block.cpp"
+    "src/Block/BlockParser.cpp"
+    "src/Block/BlockRegister.cpp"
     "src/FileManager.cpp"
 )
 

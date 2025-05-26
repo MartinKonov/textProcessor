@@ -32,7 +32,7 @@ class DocumentRegister {
     DocumentRegister& operator=(const DocumentRegister&) = delete;
     ~DocumentRegister();
 
-    bool docAlreadyLoaded(string name);
+    bool isDocumentLoaded(string name);
 
     static DocumentRegister* instance;
     vector<Document*> documents;

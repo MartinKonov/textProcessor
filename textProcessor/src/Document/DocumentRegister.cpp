@@ -1,6 +1,4 @@
 #include "../../headers/Document/DocumentRegister.hpp"
-#include "DocumentRegister.hpp"
-
 
 /**
  * @file DocumentRegister.cpp

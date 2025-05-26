@@ -28,6 +28,7 @@ class Document {
     void setDocName(string name);
     string getContents();
     string toString();
+    size_t getNumLines();
     
     void sort();
     //void sort(Block)

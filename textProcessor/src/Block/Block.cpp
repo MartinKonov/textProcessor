@@ -1,0 +1,52 @@
+#include "../../headers/Block/Block.hpp"
+
+
+Block::Block(string blockName, string documentName, size_t startLineIndex, size_t endLineIndex)
+{
+    this->blockName = blockName;
+    this->documentName = documentName;
+    this->startLineIndex = startLineIndex;
+    this->endLineIndex = endLineIndex;
+}
+
+Block::~Block()
+{
+    // No dynamic memory to free, as Document is managed by DocumentRegister
+}
+
+/**
+ * @brief Returns the name of the block.
+ * @return string The name of the block.
+ */
+string Block::getBlockName() const
+{
+    return blockName;
+}
+
+/**
+ * @brief Returns the index of the first line in the block.
+ * @return size_t The index of the first line in the block.
+ */
+size_t Block::getStartLineIndex() const
+{
+    return startLineIndex;
+}
+
+/**
+ * @brief Returns the index of the last line in the block.
+ * @return size_t The index of the last line in the block.
+ */
+size_t Block::getEndLineIndex() const
+{
+    return endLineIndex;
+}
+
+
+/**
+ * @brief Returns the name of the document associated with this block.
+ * @return string The name of the document.
+ */
+string Block::getDocumentName() const
+{
+    return documentName;
+}
