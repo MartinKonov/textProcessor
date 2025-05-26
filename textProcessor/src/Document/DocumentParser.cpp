@@ -16,13 +16,40 @@ DocumentParser::DocumentParser()
     this->lineCreator = LineCreator::getInstance();
 }
 
+/**
+ * @brief Destructor for DocumentParser.
+ * 
+ * This destructor does not free any dynamic memory, as FileManager and LineCreator are singletons
+ * and are managed separately.
+ */
+DocumentParser::~DocumentParser()
+{
+    // No dynamic memory to free, as FileManager and LineCreator are singletons
+}
 
+
+/**
+ * @brief Returns the singleton instance of DocumentParser.
+ * 
+ * @return DocumentParser* The singleton instance of DocumentParser.
+ */
 DocumentParser *DocumentParser::getInstance()
 {
     if (instance == nullptr) {
         instance = new DocumentParser();
     }
     return instance;
+}
+
+/**
+ * @brief Destroys the singleton instance of DocumentParser.
+ * 
+ * This method deletes the instance of DocumentParser and sets it to nullptr.
+ */
+void DocumentParser::destroyInstance()
+{
+    delete instance;
+    instance = nullptr;
 }
 
 /**

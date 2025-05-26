@@ -16,9 +16,10 @@ class DocumentRegister {
 
  public:
     static DocumentRegister* getInstance();
+    static void destroyInstance();
 
     void addDocument(string name);
-    void removeDocument(size_t index);
+    void removeDocument(string name);
     Document* getDocument(string name);
     void saveDocument(Document* document);
     void saveAsDocument(Document* document, const string newFilename);
@@ -29,6 +30,9 @@ class DocumentRegister {
     DocumentRegister();
     DocumentRegister(const DocumentRegister&) = delete;
     DocumentRegister& operator=(const DocumentRegister&) = delete;
+    ~DocumentRegister();
+
+    bool docAlreadyLoaded(string name);
 
     static DocumentRegister* instance;
     vector<Document*> documents;

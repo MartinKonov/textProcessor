@@ -45,5 +45,4 @@ private:
 
     int findIndex(const std::string& filename);
     ifstream openFile(const string& filename);
-
 };

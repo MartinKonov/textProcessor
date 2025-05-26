@@ -29,6 +29,29 @@ ActiveDocument* ActiveDocument::getInstance()
     }
     return instance;
 }
+
+/**
+ * @brief Destroys the singleton instance of ActiveDocument.
+ * 
+ * This method deletes the instance of ActiveDocument and sets it to nullptr.
+ */
+void ActiveDocument::destroyInstance()
+{
+    delete instance;
+    instance = nullptr;
+}
+
+/**
+ * @brief Destructor for ActiveDocument.
+ * 
+ * This destructor does not free any dynamic memory, as DocumentRegister is a singleton
+ * and is managed separately.
+ */
+ActiveDocument::~ActiveDocument()
+{
+    // No dynamic memory to free, as DocumentRegister is a singleton
+}
+
 /**
  * @brief Sets the active document.
  * 

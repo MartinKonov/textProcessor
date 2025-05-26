@@ -14,6 +14,7 @@
 class ActiveDocument {
  public:
     static ActiveDocument* getInstance(); 
+    static void destroyInstance();
     
     void setActiveDocument(string documentName);
     Document* getActiveDocument() const;    
@@ -22,6 +23,7 @@ class ActiveDocument {
     ActiveDocument();
     ActiveDocument(const ActiveDocument&) = delete;
     ActiveDocument& operator=(const ActiveDocument&) = delete;
+    ~ActiveDocument();
     
     static ActiveDocument* instance;
 

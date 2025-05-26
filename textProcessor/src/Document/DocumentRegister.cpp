@@ -1,4 +1,5 @@
 #include "../../headers/Document/DocumentRegister.hpp"
+#include "DocumentRegister.hpp"
 
 
 /**
@@ -15,6 +16,20 @@ DocumentRegister::DocumentRegister() {
     this->documentParser = DocumentParser::getInstance();
 }
 
+
+/**
+ * @brief Destructor for DocumentRegister.
+ * 
+ * This destructor cleans up all dynamically allocated Document objects and unloads them using the DocumentParser.
+ */
+DocumentRegister::~DocumentRegister() {
+    for(auto & document : documents) {
+        documentParser->unloadDocument(document);
+        delete document;
+    }
+    documents.clear();
+}
+
 /**
  * @brief Returns the singleton instance of DocumentRegister.
  * @param documentParser The DocumentParser instance to use for loading documents.
@@ -29,36 +44,70 @@ DocumentRegister *DocumentRegister::getInstance()
 }
 
 /**
- * @brief Adds a document to the register by loading it using the DocumentParser.
- * @param name The name of the document to add.
- * @throws std::runtime_error if the document cannot be loaded.
- * @note The document is loaded using the DocumentParser's load method, which may throw an exception if the file cannot be read or parsed.
+ * @brief Destroys the singleton instance of DocumentRegister.
+ * 
+ * This method deletes the instance of DocumentRegister and sets it to nullptr.
  */
+void DocumentRegister::destroyInstance()
+{
+    delete instance;
+    instance = nullptr;
+} 
+
+/**
+   * @brief Adds a document to the register by loading it using the DocumentParser.
+   * @param name The name of the document to add.
+   * @throws std::runtime_error if the document cannot be loaded.
+   * @note The document is loaded using the DocumentParser's load method, which may throw an exception if the file cannot be read or parsed.
+   */
 void DocumentRegister::addDocument(string name) {
+    if(isDocumentLoaded(name)) {
+        return;
+    }
     Document* newDocument;
     try {
         newDocument = documentParser->load(name);
     } catch (const std::runtime_error& e) {
         throw std::runtime_error("DocumentRegister::addDocument: " + string(e.what())); 
     }
-
     documents.push_back(newDocument);
 }
+
 
 /**
  * @brief Removes a document from the register by its index.
  * @param index The index of the document to remove.
  * @throws std::out_of_range if the index is out of range.
  */
-void DocumentRegister::removeDocument(size_t index)
+void DocumentRegister::removeDocument(string name)
 {
-    if (index >= documents.size()) {
-        throw std::out_of_range("DocumentRegister::removeDocument: index out of range");
+    if(isDocumentLoaded(name) == false) {
+        return;
     }
-    Document* document = documents[index];
-    documentParser->unloadDocument(document);
-    delete document;
-    documents.erase(documents.begin() + index);
+    
+    for(int i = 0; i < documents.size(); i++) {
+        if (documents[i]->getDocName() == name) {
+            documentParser->unloadDocument(documents[i]);
+            delete documents[i];
+            documents.erase(documents.begin() + i);
+            return;
+        }
+    }
+}
+
+/**
+ * @brief Returns true if a document with the given name is loaded in the register.
+ * @param name The name of the document to check.
+ * @return bool True if the document is loaded, false otherwise.
+ */
+bool DocumentRegister::isDocumentLoaded(string name)
+{
+    for (const auto& document : documents) {
+        if (document->getDocName() == name) {
+            return true;
+        }
+    }
+    return false;
 }
 
 /**

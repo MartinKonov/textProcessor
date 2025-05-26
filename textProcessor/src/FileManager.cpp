@@ -42,6 +42,12 @@ int FileManager::findIndex(const string& filename) {
  * @throws runtime_error if the file cannot be opened.
 */
 void FileManager::loadFile(const string& filename) {
+    
+    int index = findIndex(filename);
+    if (index != -1) {
+        return; // File is already loaded
+    }
+
     ifstream file;
     try {
         file = openFile(filename);
@@ -49,13 +55,12 @@ void FileManager::loadFile(const string& filename) {
         throw runtime_error("Cannot open file: " + filename);
     }
 
-    string line;
-    string content;
+    string line = "";
+    string content = "";
     while (getline(file, line)) {
         content += line + '\n';
     }
 
-    int index = findIndex(filename);
     setContent(filename, content);
     file.close();
 }

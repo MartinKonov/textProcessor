@@ -15,6 +15,7 @@ class DocumentParser
 {
  public:
     static DocumentParser* getInstance();
+    static void destroyInstance();
 
     void save(Document* document);
     Document* load(const string filename); // gets the string from the file manager and makes a document with parseDocument
@@ -25,7 +26,8 @@ class DocumentParser
     DocumentParser();
     DocumentParser(const DocumentParser&) = delete;
     DocumentParser& operator=(const DocumentParser&) = delete;
-    
+    ~DocumentParser();
+
     static DocumentParser* instance;
     
     FileManager* fileManager;
