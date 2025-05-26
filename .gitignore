@@ -38,8 +38,6 @@ compile_commands.json
 *.bak
 *.tmp
 
-# === MacOS ===
-.DS_Store
-
-# === Windows ===
-Thumbs.db
+# === Documentation ===
+Documentation/html/*
+!Documentation/html/index.html

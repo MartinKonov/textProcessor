@@ -11,6 +11,11 @@ file(GLOB_RECURSE SOURCES
     "src/*.cpp"
     "src/*/*.cpp"
     "src/Lines/LineCreator.cpp"
+    "src/Document/Document.cpp"
+    "src/Document/DocumentManager.cpp"
+    "src/Document/DocumentParser.cpp"
+    "src/Document/DocumentRegister.cpp"
+    "src/Document/ActiveDocument.cpp"
     "src/FileManager.cpp"
 )
 

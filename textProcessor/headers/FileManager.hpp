@@ -24,6 +24,8 @@ using std::ifstream;
  */
 class FileManager {
 public:
+    static FileManager* getInstance();
+
     void loadFile(const string& filename);
     string getContents(const string& filename);
     void close(const string& filename);
@@ -32,6 +34,12 @@ public:
     void setContent(const string& filename, const string& content);
 
 private:
+    FileManager() = default;
+    FileManager(const FileManager&) = delete;
+    FileManager& operator=(const FileManager&) = delete;
+
+    static FileManager* instance;
+
     vector<string> filenames;
     vector<string> contents;
 

@@ -1,11 +1,27 @@
 /**
  * @file FileManager.cpp
  * @author MK
- * @brief A class to manage file operations such as opening, reading, writing, and closing files.
+ * @brief A singleton class to manage file operations such as opening, reading, writing, and closing files.
  * @version 0.1
  * @date 2025-05-18
  */
 #include "../headers/FileManager.hpp"
+#include <iostream>
+
+
+FileManager* FileManager::instance = nullptr;
+
+/**
+ * @brief Returns the singleton instance of FileManager.
+ * 
+ * @return FileManager* The singleton instance of FileManager.
+ */
+FileManager* FileManager::getInstance() {
+    if (instance == nullptr) {
+        instance = new FileManager();
+    }
+    return instance;
+}
 
 /**
  * @brief Finds the index of a file in the filenames vector.
@@ -28,7 +44,7 @@ int FileManager::findIndex(const string& filename) {
 void FileManager::loadFile(const string& filename) {
     ifstream file;
     try {
-        ifstream file = openFile(filename);
+        file = openFile(filename);
     } catch (const runtime_error& e) {
         throw runtime_error("Cannot open file: " + filename);
     }
