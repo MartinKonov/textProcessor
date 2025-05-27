@@ -81,12 +81,12 @@ clean: CMakeFiles/textProcessor.dir/clean
 CMakeFiles/textProcessor.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 "Built target textProcessor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target textProcessor"
 .PHONY : CMakeFiles/textProcessor.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/textProcessor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/textProcessor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles 0
 .PHONY : CMakeFiles/textProcessor.dir/rule

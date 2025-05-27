@@ -20,7 +20,7 @@ class Block {
         Block() = delete; // Default constructor is deleted to prevent instantiation without parameters.
         Block(string blockName, string documentName, size_t startLineIndex, size_t endLineIndex);
         ~Block();
-        string getBlockName() const;
+        string getName() const;
         size_t getStartLineIndex() const;
         size_t getEndLineIndex() const;
         string getDocumentName() const;

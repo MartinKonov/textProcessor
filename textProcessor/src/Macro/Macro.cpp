@@ -1,11 +1,5 @@
 #include "../headers/Macro/Macro.hpp"
 
-
-
-Macro::Macro(string macroName, vector<string> commandNames) 
-    : macroName(macroName), commandNames(commandNames) {}
-
-
 /**
  * @brief Returns the names of the commands in the macro.
  * @return vector<string> A vector containing the names of the commands in the macro.
@@ -20,6 +14,6 @@ vector<string> Macro::getCommandNames() {
  * 
  * @return string The name of the macro.
  */
-string Macro::getMacroName() {
+string Macro::getName() {
     return macroName;
 }

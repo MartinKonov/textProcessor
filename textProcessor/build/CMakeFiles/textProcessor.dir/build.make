@@ -265,6 +265,48 @@ CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Lines/QuotedLine.cpp -o CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.s
 
+CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o: CMakeFiles/textProcessor.dir/flags.make
+CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/Macro.cpp
+CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o -MF CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/Macro.cpp
+
+CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/Macro.cpp > CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.i
+
+CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/Macro.cpp -o CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.s
+
+CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o: CMakeFiles/textProcessor.dir/flags.make
+CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/MacroParser.cpp
+CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o -MF CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/MacroParser.cpp
+
+CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/MacroParser.cpp > CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.i
+
+CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/MacroParser.cpp -o CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.s
+
+CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o: CMakeFiles/textProcessor.dir/flags.make
+CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/MacroRegister.cpp
+CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o -MF CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/MacroRegister.cpp
+
+CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/MacroRegister.cpp > CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.i
+
+CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/MacroRegister.cpp -o CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.s
+
 # Object files for target textProcessor
 textProcessor_OBJECTS = \
 "CMakeFiles/textProcessor.dir/main.cpp.o" \
@@ -280,7 +322,10 @@ textProcessor_OBJECTS = \
 "CMakeFiles/textProcessor.dir/src/Lines/LineCreator.cpp.o" \
 "CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.o" \
 "CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.o" \
-"CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o"
+"CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o" \
+"CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o" \
+"CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o" \
+"CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o"
 
 # External object files for target textProcessor
 textProcessor_EXTERNAL_OBJECTS =
@@ -299,9 +344,12 @@ textProcessor: CMakeFiles/textProcessor.dir/src/Lines/LineCreator.cpp.o
 textProcessor: CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.o
 textProcessor: CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.o
 textProcessor: CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o
+textProcessor: CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o
+textProcessor: CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o
+textProcessor: CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o
 textProcessor: CMakeFiles/textProcessor.dir/build.make
 textProcessor: CMakeFiles/textProcessor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable textProcessor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable textProcessor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/textProcessor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -465,6 +465,78 @@ src/Lines/QuotedLine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.s
 .PHONY : src/Lines/QuotedLine.cpp.s
 
+src/Macro/Macro.o: src/Macro/Macro.cpp.o
+.PHONY : src/Macro/Macro.o
+
+# target to build an object file
+src/Macro/Macro.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o
+.PHONY : src/Macro/Macro.cpp.o
+
+src/Macro/Macro.i: src/Macro/Macro.cpp.i
+.PHONY : src/Macro/Macro.i
+
+# target to preprocess a source file
+src/Macro/Macro.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.i
+.PHONY : src/Macro/Macro.cpp.i
+
+src/Macro/Macro.s: src/Macro/Macro.cpp.s
+.PHONY : src/Macro/Macro.s
+
+# target to generate assembly for a file
+src/Macro/Macro.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.s
+.PHONY : src/Macro/Macro.cpp.s
+
+src/Macro/MacroParser.o: src/Macro/MacroParser.cpp.o
+.PHONY : src/Macro/MacroParser.o
+
+# target to build an object file
+src/Macro/MacroParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o
+.PHONY : src/Macro/MacroParser.cpp.o
+
+src/Macro/MacroParser.i: src/Macro/MacroParser.cpp.i
+.PHONY : src/Macro/MacroParser.i
+
+# target to preprocess a source file
+src/Macro/MacroParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.i
+.PHONY : src/Macro/MacroParser.cpp.i
+
+src/Macro/MacroParser.s: src/Macro/MacroParser.cpp.s
+.PHONY : src/Macro/MacroParser.s
+
+# target to generate assembly for a file
+src/Macro/MacroParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.s
+.PHONY : src/Macro/MacroParser.cpp.s
+
+src/Macro/MacroRegister.o: src/Macro/MacroRegister.cpp.o
+.PHONY : src/Macro/MacroRegister.o
+
+# target to build an object file
+src/Macro/MacroRegister.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o
+.PHONY : src/Macro/MacroRegister.cpp.o
+
+src/Macro/MacroRegister.i: src/Macro/MacroRegister.cpp.i
+.PHONY : src/Macro/MacroRegister.i
+
+# target to preprocess a source file
+src/Macro/MacroRegister.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.i
+.PHONY : src/Macro/MacroRegister.cpp.i
+
+src/Macro/MacroRegister.s: src/Macro/MacroRegister.cpp.s
+.PHONY : src/Macro/MacroRegister.s
+
+# target to generate assembly for a file
+src/Macro/MacroRegister.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.s
+.PHONY : src/Macro/MacroRegister.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -516,6 +588,15 @@ help:
 	@echo "... src/Lines/QuotedLine.o"
 	@echo "... src/Lines/QuotedLine.i"
 	@echo "... src/Lines/QuotedLine.s"
+	@echo "... src/Macro/Macro.o"
+	@echo "... src/Macro/Macro.i"
+	@echo "... src/Macro/Macro.s"
+	@echo "... src/Macro/MacroParser.o"
+	@echo "... src/Macro/MacroParser.i"
+	@echo "... src/Macro/MacroParser.s"
+	@echo "... src/Macro/MacroRegister.o"
+	@echo "... src/Macro/MacroRegister.i"
+	@echo "... src/Macro/MacroRegister.s"
 .PHONY : help
 
 

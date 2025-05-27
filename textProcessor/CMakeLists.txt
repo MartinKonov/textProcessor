@@ -20,6 +20,10 @@ file(GLOB_RECURSE SOURCES
     "src/Block/BlockParser.cpp"
     "src/Block/BlockRegister.cpp"
     "src/FileManager.cpp"
+    "src/Macro/Macro.cpp"
+    "src/Macro/MacroManager.cpp"
+    "src/Macro/MacroParser.cpp"
+    "src/Macro/MacroRegister.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})

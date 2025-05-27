@@ -6,36 +6,29 @@
  * @date 2025-05-26
  */
 #pragma once
-#include "../FileManager.hpp"
 #include "Block.hpp"
-#include "../Document/Document.hpp"
-#include "../Document/DocumentRegister.hpp"
 #include "../DataFiles.hpp"
+#include "../GenericDataClasses/DataParser.hpp"
 #include <vector>
 
 using std::vector;
 using std::stoul;
 
-class BlockParser {
+class BlockParser : public DataParser<BlockParser, Block> {
  public:
     static BlockParser* getInstance();
     static void destroyInstance();
 
-    void save(Block* block);
-    void save(const vector<Block*> blocks);
-    string serializeBlock(Block* block);
-    vector<Block*> loadBlocks();
+    string serialize(Block* block);
+    Block* parse(const std::string content);
+
+   static constexpr const char* DATA_FILE = BLOCK_DATA_FILE;
 
  private:
-    BlockParser();
+    BlockParser() = default;
     BlockParser(const BlockParser&) = delete;
     BlockParser& operator=(const BlockParser&) = delete;
-    ~BlockParser();
+    ~BlockParser() = default;
 
     static BlockParser* instance;
-
-    DocumentRegister* documentRegister;
-    FileManager* fileManager;
-    Block* parseBlock(const std::string content);
-    vector<string> split(const std::string& str, char delimiter);
 };

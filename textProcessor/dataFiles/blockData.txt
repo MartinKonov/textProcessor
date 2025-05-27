@@ -1,2 +1,4 @@
 TestBlock2|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt|1|10
-TestBlock|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt|1|10
+TestBlock3|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt|1|10
+blockA|myDoc|0|2
+blockB|myDoc|1|2

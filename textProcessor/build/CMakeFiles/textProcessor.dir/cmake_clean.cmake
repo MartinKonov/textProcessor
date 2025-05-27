@@ -27,6 +27,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.o.d"
   "CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o"
   "CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o.d"
+  "CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o"
+  "CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o.d"
+  "CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o"
+  "CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o.d"
+  "CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o"
+  "CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o.d"
   "textProcessor"
   "textProcessor.pdb"
 )

@@ -21,7 +21,7 @@ class Macro {
             : macroName(macroName), commandNames(commandNames) {}
 
         vector<string> getCommandNames();
-        string getMacroName();
+        string getName();
 
     private:
         vector<string> commandNames;

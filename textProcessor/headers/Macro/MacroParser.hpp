@@ -1,27 +1,25 @@
 #pragma once
 
 #include "Macro.hpp"
-#include "../FileManager.hpp"
 #include "../DataFiles.hpp"
+#include "../GenericDataClasses/DataParser.hpp"
 
-class MacroParser {
+class MacroParser : public DataParser<MacroParser, Macro> {
     public:
         static MacroParser* getInstance();
         static void destroyInstance();
     
-        void save(Macro* macro);
-        vector<Macro*> loadMacros();
-        void save(vector<Macro*> macros);
-        string serializeMacro(Macro* macro);
-        Macro* parseMacro(const string& content);
+        string serialize(Macro* macro);
+        Macro* parse(const string& content);
+        
+        static constexpr const char* DATA_FILE = MACRO_DATA_FILE;
 
-    private:
-        MacroParser();
-        ~MacroParser();
-    
+        private:
+        MacroParser() = default;
+        ~MacroParser() = default;
+        MacroParser(const MacroParser&) = delete;
+        MacroParser& operator=(const MacroParser&) = delete;
+        
+
         static MacroParser* instance;
-        FileManager* fileManager;
-        vector<string> split(const string& str, char delimiter);
-        vector<Macro*> parseMacros(const string& content);
-        void setNewContent(string content);
 };

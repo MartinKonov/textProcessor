@@ -22,6 +22,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Lines/NumberedLine.cpp" "CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.o" "gcc" "CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.o.d"
   "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Lines/NumericLine.cpp" "CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.o" "gcc" "CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.o.d"
   "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Lines/QuotedLine.cpp" "CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o" "gcc" "CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o.d"
+  "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/Macro.cpp" "CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o" "gcc" "CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o.d"
+  "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/MacroParser.cpp" "CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o" "gcc" "CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o.d"
+  "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/MacroRegister.cpp" "CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o" "gcc" "CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

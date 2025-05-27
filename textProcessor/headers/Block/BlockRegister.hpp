@@ -9,30 +9,26 @@
 #pragma once
 #include "Block.hpp"
 #include "BlockParser.hpp"
+#include "../GenericDataClasses/DataRegister.hpp"
 
 
 
-class BlockRegister {
+class BlockRegister : public DataRegister<BlockRegister, Block, BlockParser> {
  public:
     static BlockRegister* getInstance();
     static void destroyInstance();
 
     void addBlock(string blockName, Document* document, size_t startLineIndex, size_t endLineIndex);
-    void removeBlock(string blockName);
-    Block* getBlock(string blockName);
-    
-    friend ostream& operator<< (ostream& os, BlockRegister& blockRegister);
+
+   static string getType();
+
+   static string getItemName(Block* macro);
  private:
     BlockRegister();
+    ~BlockRegister();
     BlockRegister(const BlockRegister&) = delete;
     BlockRegister& operator=(const BlockRegister&) = delete;
-    ~BlockRegister();
 
     static BlockRegister* instance;
-
-    BlockParser* blockParser;
-    vector<Block*> blocks;
-
-    bool isValidStartAndEndIndex(size_t startLineIndex, size_t endLineIndex, Document* document) const;
-    int findIndex(string blockName);
+    
 };

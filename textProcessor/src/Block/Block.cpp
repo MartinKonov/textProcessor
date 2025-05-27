@@ -18,7 +18,7 @@ Block::~Block()
  * @brief Returns the name of the block.
  * @return string The name of the block.
  */
-string Block::getBlockName() const
+string Block::getName() const
 {
     return blockName;
 }

@@ -2,28 +2,26 @@
 
 #include "MacroParser.hpp"
 #include "Macro.hpp"
+#include "../GenericDataClasses/DataRegister.hpp"
 
 // add macro will ask for list of commands from commandManager and only add macro through the regiset and with strings
 // execute macro will ask for macro name which will come from getMacro. Then for each command name, it will call commandManager->executeCommand(commandName)
 
-class MacroRegister {
+class MacroRegister : public DataRegister<MacroRegister, Macro, MacroParser> {
  public:
     static MacroRegister* getInstance();
     static void destroyInstance();
 
     void addMacro(string macroName, const vector<string> commandNames);
-    void removeMacro(string macroName);
-    Macro* getMacro(string& macroName);
-    vector<Macro*> getAllMacros();
-    string showMacros();
 
+   static string getType();
+
+   static string getItemName(Macro* macro);
  private:
     MacroRegister();
     ~MacroRegister();
+    MacroRegister(const MacroRegister&) = delete;
+    MacroRegister& operator=(const MacroRegister&) = delete;
 
     static MacroRegister* instance;
-    MacroParser* macroParser;
-    vector<Macro*> macros;
-
-    int findIndex(string macroName);
 };
