@@ -11,11 +11,11 @@ class MacroRegister {
     static MacroRegister* getInstance();
     static void destroyInstance();
 
-    void addMacro(const string& macroName, const vector<string>& commandNames);
-    void removeMacro(const string& macroName);
-    Macro* getMacro(const string& macroName);
+    void addMacro(string macroName, const vector<string> commandNames);
+    void removeMacro(string macroName);
+    Macro* getMacro(string& macroName);
     vector<Macro*> getAllMacros();
-    // string showMacros()
+    string showMacros();
 
  private:
     MacroRegister();
@@ -25,5 +25,5 @@ class MacroRegister {
     MacroParser* macroParser;
     vector<Macro*> macros;
 
-    int findIndex(const string& macroName) const;
+    int findIndex(string macroName);
 };

@@ -1,3 +1,10 @@
+/**
+ * @file Macro.hpp
+ * @author MK
+ * @brief A class to represent a macro, which is a sequence of commands.
+ * @version 0.1
+ * @date 2025-05-26
+ */
 #pragma once
 
 #include <vector>

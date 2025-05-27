@@ -1,5 +1,4 @@
 #include "../../headers/Block/BlockRegister.hpp"
-#include <iostream>
 
 BlockRegister* BlockRegister::instance = nullptr;
 
@@ -7,11 +6,6 @@ BlockRegister::BlockRegister() {
     this->blockParser = BlockParser::getInstance();
     try{
         this->blocks = blockParser->loadBlocks();
-        for(auto& block: blocks){
-            cout<< "BlockRegister::BlockRegister: Loaded block: " 
-                << block->getBlockName() << " from document: " 
-                << block->getDocumentName() << endl;
-        }
     } catch (const std::runtime_error& e) {
         throw std::runtime_error("BlockRegister::BlockRegister: " + string(e.what()));
     }

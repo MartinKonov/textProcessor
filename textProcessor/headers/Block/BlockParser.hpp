@@ -22,8 +22,9 @@ class BlockParser {
     static void destroyInstance();
 
     void save(Block* block);
-    vector<Block*> loadBlocks();
+    void save(const vector<Block*> blocks);
     string serializeBlock(Block* block);
+    vector<Block*> loadBlocks();
 
  private:
     BlockParser();
