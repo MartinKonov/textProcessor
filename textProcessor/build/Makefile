@@ -345,6 +345,126 @@ src/FileManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/FileManager.cpp.s
 .PHONY : src/FileManager.cpp.s
 
+src/Formatter/ActiveFormatter.o: src/Formatter/ActiveFormatter.cpp.o
+.PHONY : src/Formatter/ActiveFormatter.o
+
+# target to build an object file
+src/Formatter/ActiveFormatter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.o
+.PHONY : src/Formatter/ActiveFormatter.cpp.o
+
+src/Formatter/ActiveFormatter.i: src/Formatter/ActiveFormatter.cpp.i
+.PHONY : src/Formatter/ActiveFormatter.i
+
+# target to preprocess a source file
+src/Formatter/ActiveFormatter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.i
+.PHONY : src/Formatter/ActiveFormatter.cpp.i
+
+src/Formatter/ActiveFormatter.s: src/Formatter/ActiveFormatter.cpp.s
+.PHONY : src/Formatter/ActiveFormatter.s
+
+# target to generate assembly for a file
+src/Formatter/ActiveFormatter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.s
+.PHONY : src/Formatter/ActiveFormatter.cpp.s
+
+src/Formatter/CenterFormatter.o: src/Formatter/CenterFormatter.cpp.o
+.PHONY : src/Formatter/CenterFormatter.o
+
+# target to build an object file
+src/Formatter/CenterFormatter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.o
+.PHONY : src/Formatter/CenterFormatter.cpp.o
+
+src/Formatter/CenterFormatter.i: src/Formatter/CenterFormatter.cpp.i
+.PHONY : src/Formatter/CenterFormatter.i
+
+# target to preprocess a source file
+src/Formatter/CenterFormatter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.i
+.PHONY : src/Formatter/CenterFormatter.cpp.i
+
+src/Formatter/CenterFormatter.s: src/Formatter/CenterFormatter.cpp.s
+.PHONY : src/Formatter/CenterFormatter.s
+
+# target to generate assembly for a file
+src/Formatter/CenterFormatter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.s
+.PHONY : src/Formatter/CenterFormatter.cpp.s
+
+src/Formatter/DirectFormatter.o: src/Formatter/DirectFormatter.cpp.o
+.PHONY : src/Formatter/DirectFormatter.o
+
+# target to build an object file
+src/Formatter/DirectFormatter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.o
+.PHONY : src/Formatter/DirectFormatter.cpp.o
+
+src/Formatter/DirectFormatter.i: src/Formatter/DirectFormatter.cpp.i
+.PHONY : src/Formatter/DirectFormatter.i
+
+# target to preprocess a source file
+src/Formatter/DirectFormatter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.i
+.PHONY : src/Formatter/DirectFormatter.cpp.i
+
+src/Formatter/DirectFormatter.s: src/Formatter/DirectFormatter.cpp.s
+.PHONY : src/Formatter/DirectFormatter.s
+
+# target to generate assembly for a file
+src/Formatter/DirectFormatter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.s
+.PHONY : src/Formatter/DirectFormatter.cpp.s
+
+src/Formatter/Formatter.o: src/Formatter/Formatter.cpp.o
+.PHONY : src/Formatter/Formatter.o
+
+# target to build an object file
+src/Formatter/Formatter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.o
+.PHONY : src/Formatter/Formatter.cpp.o
+
+src/Formatter/Formatter.i: src/Formatter/Formatter.cpp.i
+.PHONY : src/Formatter/Formatter.i
+
+# target to preprocess a source file
+src/Formatter/Formatter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.i
+.PHONY : src/Formatter/Formatter.cpp.i
+
+src/Formatter/Formatter.s: src/Formatter/Formatter.cpp.s
+.PHONY : src/Formatter/Formatter.s
+
+# target to generate assembly for a file
+src/Formatter/Formatter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.s
+.PHONY : src/Formatter/Formatter.cpp.s
+
+src/Formatter/WrapFormatter.o: src/Formatter/WrapFormatter.cpp.o
+.PHONY : src/Formatter/WrapFormatter.o
+
+# target to build an object file
+src/Formatter/WrapFormatter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.o
+.PHONY : src/Formatter/WrapFormatter.cpp.o
+
+src/Formatter/WrapFormatter.i: src/Formatter/WrapFormatter.cpp.i
+.PHONY : src/Formatter/WrapFormatter.i
+
+# target to preprocess a source file
+src/Formatter/WrapFormatter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.i
+.PHONY : src/Formatter/WrapFormatter.cpp.i
+
+src/Formatter/WrapFormatter.s: src/Formatter/WrapFormatter.cpp.s
+.PHONY : src/Formatter/WrapFormatter.s
+
+# target to generate assembly for a file
+src/Formatter/WrapFormatter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/textProcessor.dir/build.make CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.s
+.PHONY : src/Formatter/WrapFormatter.cpp.s
+
 src/Lines/Line.o: src/Lines/Line.cpp.o
 .PHONY : src/Lines/Line.o
 
@@ -573,6 +693,21 @@ help:
 	@echo "... src/FileManager.o"
 	@echo "... src/FileManager.i"
 	@echo "... src/FileManager.s"
+	@echo "... src/Formatter/ActiveFormatter.o"
+	@echo "... src/Formatter/ActiveFormatter.i"
+	@echo "... src/Formatter/ActiveFormatter.s"
+	@echo "... src/Formatter/CenterFormatter.o"
+	@echo "... src/Formatter/CenterFormatter.i"
+	@echo "... src/Formatter/CenterFormatter.s"
+	@echo "... src/Formatter/DirectFormatter.o"
+	@echo "... src/Formatter/DirectFormatter.i"
+	@echo "... src/Formatter/DirectFormatter.s"
+	@echo "... src/Formatter/Formatter.o"
+	@echo "... src/Formatter/Formatter.i"
+	@echo "... src/Formatter/Formatter.s"
+	@echo "... src/Formatter/WrapFormatter.o"
+	@echo "... src/Formatter/WrapFormatter.i"
+	@echo "... src/Formatter/WrapFormatter.s"
 	@echo "... src/Lines/Line.o"
 	@echo "... src/Lines/Line.i"
 	@echo "... src/Lines/Line.s"

@@ -195,10 +195,80 @@ CMakeFiles/textProcessor.dir/src/FileManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/textProcessor.dir/src/FileManager.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/FileManager.cpp -o CMakeFiles/textProcessor.dir/src/FileManager.cpp.s
 
+CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.o: CMakeFiles/textProcessor.dir/flags.make
+CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/ActiveFormatter.cpp
+CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.o -MF CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/ActiveFormatter.cpp
+
+CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/ActiveFormatter.cpp > CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.i
+
+CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/ActiveFormatter.cpp -o CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.s
+
+CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.o: CMakeFiles/textProcessor.dir/flags.make
+CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/CenterFormatter.cpp
+CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.o -MF CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/CenterFormatter.cpp
+
+CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/CenterFormatter.cpp > CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.i
+
+CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/CenterFormatter.cpp -o CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.s
+
+CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.o: CMakeFiles/textProcessor.dir/flags.make
+CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/DirectFormatter.cpp
+CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.o -MF CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/DirectFormatter.cpp
+
+CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/DirectFormatter.cpp > CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.i
+
+CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/DirectFormatter.cpp -o CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.s
+
+CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.o: CMakeFiles/textProcessor.dir/flags.make
+CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/Formatter.cpp
+CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.o -MF CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/Formatter.cpp
+
+CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/Formatter.cpp > CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.i
+
+CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/Formatter.cpp -o CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.s
+
+CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.o: CMakeFiles/textProcessor.dir/flags.make
+CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/WrapFormatter.cpp
+CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.o -MF CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/WrapFormatter.cpp
+
+CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/WrapFormatter.cpp > CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.i
+
+CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Formatter/WrapFormatter.cpp -o CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.s
+
 CMakeFiles/textProcessor.dir/src/Lines/Line.cpp.o: CMakeFiles/textProcessor.dir/flags.make
 CMakeFiles/textProcessor.dir/src/Lines/Line.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Lines/Line.cpp
 CMakeFiles/textProcessor.dir/src/Lines/Line.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/textProcessor.dir/src/Lines/Line.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/textProcessor.dir/src/Lines/Line.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Lines/Line.cpp.o -MF CMakeFiles/textProcessor.dir/src/Lines/Line.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Lines/Line.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Lines/Line.cpp
 
 CMakeFiles/textProcessor.dir/src/Lines/Line.cpp.i: cmake_force
@@ -212,7 +282,7 @@ CMakeFiles/textProcessor.dir/src/Lines/Line.cpp.s: cmake_force
 CMakeFiles/textProcessor.dir/src/Lines/LineCreator.cpp.o: CMakeFiles/textProcessor.dir/flags.make
 CMakeFiles/textProcessor.dir/src/Lines/LineCreator.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Lines/LineCreator.cpp
 CMakeFiles/textProcessor.dir/src/Lines/LineCreator.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/textProcessor.dir/src/Lines/LineCreator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/textProcessor.dir/src/Lines/LineCreator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Lines/LineCreator.cpp.o -MF CMakeFiles/textProcessor.dir/src/Lines/LineCreator.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Lines/LineCreator.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Lines/LineCreator.cpp
 
 CMakeFiles/textProcessor.dir/src/Lines/LineCreator.cpp.i: cmake_force
@@ -226,7 +296,7 @@ CMakeFiles/textProcessor.dir/src/Lines/LineCreator.cpp.s: cmake_force
 CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.o: CMakeFiles/textProcessor.dir/flags.make
 CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Lines/NumberedLine.cpp
 CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.o -MF CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Lines/NumberedLine.cpp
 
 CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.i: cmake_force
@@ -240,7 +310,7 @@ CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.s: cmake_force
 CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.o: CMakeFiles/textProcessor.dir/flags.make
 CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Lines/NumericLine.cpp
 CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.o -MF CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Lines/NumericLine.cpp
 
 CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.i: cmake_force
@@ -254,7 +324,7 @@ CMakeFiles/textProcessor.dir/src/Lines/NumericLine.cpp.s: cmake_force
 CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o: CMakeFiles/textProcessor.dir/flags.make
 CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Lines/QuotedLine.cpp
 CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o -MF CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Lines/QuotedLine.cpp
 
 CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.i: cmake_force
@@ -268,7 +338,7 @@ CMakeFiles/textProcessor.dir/src/Lines/QuotedLine.cpp.s: cmake_force
 CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o: CMakeFiles/textProcessor.dir/flags.make
 CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/Macro.cpp
 CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o -MF CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/Macro.cpp
 
 CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.i: cmake_force
@@ -282,7 +352,7 @@ CMakeFiles/textProcessor.dir/src/Macro/Macro.cpp.s: cmake_force
 CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o: CMakeFiles/textProcessor.dir/flags.make
 CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/MacroParser.cpp
 CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o -MF CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/MacroParser.cpp
 
 CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.i: cmake_force
@@ -296,7 +366,7 @@ CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.s: cmake_force
 CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o: CMakeFiles/textProcessor.dir/flags.make
 CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o: /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/MacroRegister.cpp
 CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o: CMakeFiles/textProcessor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o -MF CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o.d -o CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o -c /home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/src/Macro/MacroRegister.cpp
 
 CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.i: cmake_force
@@ -318,6 +388,11 @@ textProcessor_OBJECTS = \
 "CMakeFiles/textProcessor.dir/src/Document/DocumentParser.cpp.o" \
 "CMakeFiles/textProcessor.dir/src/Document/DocumentRegister.cpp.o" \
 "CMakeFiles/textProcessor.dir/src/FileManager.cpp.o" \
+"CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.o" \
+"CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.o" \
+"CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.o" \
+"CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.o" \
+"CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.o" \
 "CMakeFiles/textProcessor.dir/src/Lines/Line.cpp.o" \
 "CMakeFiles/textProcessor.dir/src/Lines/LineCreator.cpp.o" \
 "CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.o" \
@@ -339,6 +414,11 @@ textProcessor: CMakeFiles/textProcessor.dir/src/Document/Document.cpp.o
 textProcessor: CMakeFiles/textProcessor.dir/src/Document/DocumentParser.cpp.o
 textProcessor: CMakeFiles/textProcessor.dir/src/Document/DocumentRegister.cpp.o
 textProcessor: CMakeFiles/textProcessor.dir/src/FileManager.cpp.o
+textProcessor: CMakeFiles/textProcessor.dir/src/Formatter/ActiveFormatter.cpp.o
+textProcessor: CMakeFiles/textProcessor.dir/src/Formatter/CenterFormatter.cpp.o
+textProcessor: CMakeFiles/textProcessor.dir/src/Formatter/DirectFormatter.cpp.o
+textProcessor: CMakeFiles/textProcessor.dir/src/Formatter/Formatter.cpp.o
+textProcessor: CMakeFiles/textProcessor.dir/src/Formatter/WrapFormatter.cpp.o
 textProcessor: CMakeFiles/textProcessor.dir/src/Lines/Line.cpp.o
 textProcessor: CMakeFiles/textProcessor.dir/src/Lines/LineCreator.cpp.o
 textProcessor: CMakeFiles/textProcessor.dir/src/Lines/NumberedLine.cpp.o
@@ -349,7 +429,7 @@ textProcessor: CMakeFiles/textProcessor.dir/src/Macro/MacroParser.cpp.o
 textProcessor: CMakeFiles/textProcessor.dir/src/Macro/MacroRegister.cpp.o
 textProcessor: CMakeFiles/textProcessor.dir/build.make
 textProcessor: CMakeFiles/textProcessor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable textProcessor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable textProcessor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/textProcessor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

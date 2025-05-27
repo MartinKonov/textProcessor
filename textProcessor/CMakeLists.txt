@@ -24,6 +24,11 @@ file(GLOB_RECURSE SOURCES
     "src/Macro/MacroManager.cpp"
     "src/Macro/MacroParser.cpp"
     "src/Macro/MacroRegister.cpp"
+    "src/Formatter/Formatter.cpp"
+    "src/Formatter/ActiveFormatter.cpp"
+    "src/Formatter/CenterFormatter.cpp"
+    "src/Formatter/DirectFormatter.cpp"
+    "src/Formatter/WrapFormatter.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})

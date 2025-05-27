@@ -1,111 +1,64 @@
-/**
- * @file main.cpp
- * @author MK
- * @brief 
- * @version 0.1
- * @date 2025-05-18
- * 
- * @copyright Copyright (c) 2025
- * 
- */
 #include <iostream>
-#include <vector>
-#include "headers/FileManager.hpp"
-#include "headers/Document/DocumentParser.hpp"
-#include "headers/Document/Document.hpp"
-#include "headers/Document/DocumentRegister.hpp"
-#include "headers/Block/BlockRegister.hpp"
-#include "headers/Block/BlockParser.hpp"
-#include "headers/Macro/MacroRegister.hpp"
+#include <fstream>
+#include <string>
+#include "../headers/Formatter/ActiveFormatter.hpp"
 
-using namespace std;
+using std::cout;
+using std::endl;
+using std::ifstream;
+using std::string;
 
-void testMacroRegister() {
-    cout << "\n=== MacroRegister Tests ===\n";
-    MacroRegister* macroReg = MacroRegister::getInstance();
 
-    try {
-        macroReg->addMacro("macro1", {"cmd1", "cmd2", "cmd3"});
-        macroReg->addMacro("macro2", {"cmdX", "cmdY"});
-    } catch (const std::exception& e) {
-        cerr << "Error adding macro: " << e.what() << endl;
+string loadFileContent(const string& filePath) {
+    ifstream file(filePath);
+    if (!file.is_open()) {
+        throw std::runtime_error("Cannot open file: " + filePath);
     }
 
-    try {
-        string result = macroReg->showAll();
-        cout << "All Macros:\n" << result;
-    } catch (const std::exception& e) {
-        cerr << "Error showing macros: " << e.what() << endl;
+    string content, line;
+    while (getline(file, line)) {
+        content += line + '\n';
     }
 
-    try {
-        Macro* macro = macroReg->getItem("macro1");
-        cout << "Retrieved macro1 with commands: ";
-        for (const auto& cmd : macro->getCommandNames()) {
-            cout << cmd << " ";
-        }
-        cout << endl;
-    } catch (const std::exception& e) {
-        cerr << "Error retrieving macro: " << e.what() << endl;
-    }
-
-    // Test duplicate
-    try {
-        macroReg->addMacro("macro1", {"cmdZ"});
-    } catch (const std::exception& e) {
-        cout << "Expected duplicate error: " << e.what() << endl;
-    }
-
-    MacroRegister::destroyInstance();
+    return content;
 }
 
-void testBlockRegister() {
-    cout << "\n=== BlockRegister Tests ===\n";
-    BlockRegister* blockReg = BlockRegister::getInstance();
-
-    // Create a fake Document
-    vector<Line*> lines;
-    Document doc("myDoc", lines);
-    doc.addLine("Line 1");
-    doc.addLine("Line 2");
-    doc.addLine("Line 3");
-
+/**
+ * @brief Test the formatter with the given type and format point.
+ */
+void testFormatter(const string& formatterType, const string& text, int formatPoint) {
+    auto* activeFormatter = ActiveFormatter::getInstance();
     try {
-        blockReg->addBlock("blockA", &doc, 0, 2);
-        blockReg->addBlock("blockB", &doc, 1, 2);
-    } catch (const std::exception& e) {
-        cerr << "Error adding block: " << e.what() << endl;
-    }
+        activeFormatter->setFormatter(formatterType);
+        string formatted = activeFormatter->getFormattedString(text, formatPoint);
 
-    try {
-        string result = blockReg->showAll();
-        cout << "All Blocks:\n" << result;
+        cout << "Formatter: " << formatterType << endl;
+        cout << "Formatted Output:\n" << formatted << endl;
+        cout << "---------------------------------------------" << endl;
     } catch (const std::exception& e) {
-        cerr << "Error showing blocks: " << e.what() << endl;
+        cout << "Error using formatter [" << formatterType << "]: " << e.what() << endl;
     }
-
-    try {
-        Block* block = blockReg->getItem("blockA");
-        cout << "Retrieved blockA: " << block->getName()
-             << ", document: " << block->getDocumentName()
-             << ", lines: " << block->getStartLineIndex() << "-" << block->getEndLineIndex() << endl;
-    } catch (const std::exception& e) {
-        cerr << "Error retrieving block: " << e.what() << endl;
-    }
-
-    // Test invalid block
-    try {
-        blockReg->addBlock("", &doc, 0, 1);
-    } catch (const std::exception& e) {
-        cout << "Expected invalid name error: " << e.what() << endl;
-    }
-
-    BlockRegister::destroyInstance();
 }
 
 int main() {
-    testMacroRegister();
-    testBlockRegister();
+    const string filePath = "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt";
 
+    try {
+        string content = loadFileContent(filePath);
+
+        // Test DirectFormatter (formatPoint is ignored)
+        //testFormatter("DirectFormatter", content, 50);
+
+        // Test WrapFormatter
+        //testFormatter("WrapFormatter", content, 20);
+
+        // Test CenterFormatter
+        testFormatter("CenterFormatter", content, 60);
+
+    } catch (const std::exception& e) {
+        cout << "Fatal error: " << e.what() << endl;
+    }
+
+    ActiveFormatter::destroyInstance();
     return 0;
 }
