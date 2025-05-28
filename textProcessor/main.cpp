@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "../headers/Formatter/ActiveFormatter.hpp"
+#include "headers/Formatter/ActiveFormatter.hpp"
 
 using std::cout;
 using std::endl;
@@ -41,7 +41,7 @@ void testFormatter(const string& formatterType, const string& text, int formatPo
 }
 
 int main() {
-    const string filePath = "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt";
+    const string filePath = "/home/mkonov/tp/textProcessor/textProcessor/testFiles/example.txt";
 
     try {
         string content = loadFileContent(filePath);

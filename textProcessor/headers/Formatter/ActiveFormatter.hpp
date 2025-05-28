@@ -22,5 +22,5 @@ class ActiveFormatter {
     static ActiveFormatter* instance;
     Formatter* formatter;
 
-    ActiveFormatter() : formatter(nullptr) {}
+    ActiveFormatter();
 };

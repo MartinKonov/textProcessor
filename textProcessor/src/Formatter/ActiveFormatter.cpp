@@ -15,7 +15,15 @@ void ActiveFormatter::destroyInstance() {
     instance = nullptr;
 }
 
+ActiveFormatter::ActiveFormatter() {
+    this->formatter = new DirectFormatter();
+}
+
 void ActiveFormatter::setFormatter(string formatterType) {
+    if (formatter->getType() == formatterType) {
+        return;
+    }
+    
     if (formatter) {
         delete formatter;
     }

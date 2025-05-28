@@ -18,6 +18,11 @@ size_t Stack<T>::size() {
 
 template<typename T>
 void Stack<T>::push(T item) {
+    if(size() + 1 > 20)
+    {
+        itemList.erase(itemList.begin());
+    }
+    
     itemList.push_back(item);
 }
 

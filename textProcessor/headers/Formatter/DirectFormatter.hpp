@@ -15,5 +15,4 @@ class DirectFormatter : public Formatter {
 
     string format(string input, int formatPoint) override;
     string getType() override;
-
 };
