@@ -41,3 +41,5 @@ compile_commands.json
 # === Documentation ===
 Documentation/html/*
 !Documentation/html/index.html
+
+textProcessor/build/*
