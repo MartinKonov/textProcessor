@@ -1,3 +1,0 @@
-/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles/textProcessor.dir
-/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles/edit_cache.dir
-/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/build/CMakeFiles/rebuild_cache.dir
