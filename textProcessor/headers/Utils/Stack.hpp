@@ -9,7 +9,7 @@ class Stack {
  public:
     Stack() = default;
 
-    T* top();
+    T top();
     bool empty();
     size_t size();
     void push(T item);

@@ -1,7 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "headers/Formatter/ActiveFormatter.hpp"
+#include "../headers/Commands/CommandRegister.hpp"
+#include "../headers/Commands/AddLineCommand.hpp"
 
 using std::cout;
 using std::endl;
@@ -23,42 +24,27 @@ string loadFileContent(const string& filePath) {
     return content;
 }
 
-/**
- * @brief Test the formatter with the given type and format point.
- */
-void testFormatter(const string& formatterType, const string& text, int formatPoint) {
-    auto* activeFormatter = ActiveFormatter::getInstance();
-    try {
-        activeFormatter->setFormatter(formatterType);
-        string formatted = activeFormatter->getFormattedString(text, formatPoint);
-
-        cout << "Formatter: " << formatterType << endl;
-        cout << "Formatted Output:\n" << formatted << endl;
-        cout << "---------------------------------------------" << endl;
-    } catch (const std::exception& e) {
-        cout << "Error using formatter [" << formatterType << "]: " << e.what() << endl;
-    }
-}
-
 int main() {
-    const string filePath = "/home/mkonov/tp/textProcessor/textProcessor/testFiles/example.txt";
+    const string filePath = "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt";
 
     try {
-        string content = loadFileContent(filePath);
+        string fileContent = loadFileContent(filePath);
+        cout << "File content loaded successfully:\n" << fileContent << endl;
 
-        // Test DirectFormatter (formatPoint is ignored)
-        //testFormatter("DirectFormatter", content, 50);
+        // Initialize CommandRegister and AddLineCommand
+        CommandRegister* commandRegister = CommandRegister::getInstance();
+        AddLineCommandCLI* addLineCommandCLI = new AddLineCommandCLI();
+        AddLineCommand* addLineCommand = new AddLineCommand(addLineCommandCLI);
 
-        // Test WrapFormatter
-        //testFormatter("WrapFormatter", content, 20);
+        // Register the command
+        commandRegister->registerCommand(addLineCommand);
 
-        // Test CenterFormatter
-        testFormatter("CenterFormatter", content, 60);
+        commandRegister->showAllCommands();
+        // Execute the command
+        //commandRegister->executeCommand(); // Assuming this is the index of the AddLineCommand
 
     } catch (const std::exception& e) {
-        cout << "Fatal error: " << e.what() << endl;
+        cout << "Error: " << e.what() << endl;
     }
-
-    ActiveFormatter::destroyInstance();
     return 0;
 }

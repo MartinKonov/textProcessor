@@ -2,7 +2,7 @@
 
 
 template<typename T>
-T* Stack<T>::top() {
+T Stack<T>::top() {
     return itemList.back();
 }
 

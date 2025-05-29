@@ -29,6 +29,10 @@ file(GLOB_RECURSE SOURCES
     "src/Formatter/CenterFormatter.cpp"
     "src/Formatter/DirectFormatter.cpp"
     "src/Formatter/WrapFormatter.cpp"
+    "src/Commands/Command.cpp"
+    "src/Commands/CommandRegister.cpp"
+    "src/Commands/AddLineCommand.cpp"
+    "src/CommandsCLI/AddLineCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})
