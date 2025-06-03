@@ -9,12 +9,32 @@ class Stack {
  public:
     Stack() = default;
 
-    T top();
-    bool empty();
-    size_t size();
-    void push(T item);
-    void pop();
+    T top() {
+      return itemList.back();
+    }
+    bool empty() {
+      return itemList.size() == 0;
+    }
+    
+    size_t size() {
+      return itemList.size();
+    }
+    
+    void push(const T item) {
+      if(size() + 1 > 20)
+      {
+         itemList.erase(itemList.begin());
+      }
+      
+      itemList.push_back(item);
+    }
+    void pop() {
+       if(empty()) {
+        return;
+      }
+      itemList.pop_back();
+    }
 
  private:
-    vector<T*> itemList;
+    vector<T> itemList;
 };

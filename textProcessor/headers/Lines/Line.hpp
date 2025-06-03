@@ -25,8 +25,12 @@ class Line {
     
  public:
     
+    Line() = default;
     Line(const string text) : content(text) {};
     ~Line() = default;
+    Line(Line& other);
+    Line& operator=(Line& other);
+
     virtual string getLine();
     virtual size_t getSymbolCount();
     virtual bool contains(const string searched);

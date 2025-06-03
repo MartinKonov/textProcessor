@@ -10,6 +10,19 @@
 #include "../../headers/Lines/Line.hpp"
 
 
+Line::Line(Line& other) {
+    this->content = other.content;
+}
+
+Line& Line::operator=(Line& other) {
+    if(this != &other)
+    {
+        this->content = other.content;
+    }
+
+    return *this;
+}
+
 /**
  * @brief Returns the content of the line
  *

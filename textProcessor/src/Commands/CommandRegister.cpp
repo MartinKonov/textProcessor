@@ -1,6 +1,7 @@
 #include "../../headers/Commands/CommandRegister.hpp"
 
 
+
 CommandRegister* CommandRegister::instance = nullptr;
 
 CommandRegister* CommandRegister::getInstance() {
@@ -68,11 +69,13 @@ void CommandRegister::executeCommand(int index) {
         throw std::out_of_range("CommandRegister::executeCommand: Index out of range");
     }
     Command* command = allCommands[index];
+
     try{
         command->execute();
     } catch (const std::exception& e) {
         throw std::runtime_error("CommandRegister::executeCommand: " + string(e.what()));
     }
+
     executedCommandNames.push(command->getName());
 }
 

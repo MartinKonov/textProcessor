@@ -24,10 +24,44 @@ Document::Document(string name, vector<Line *> lines)
  */
 Document::~Document()
 {
-    for (Line *line : lines)
+    freeDocument();
+}
+
+Document::Document(Document& other)
+{
+    copyFrom(other);
+}
+
+Document& Document::operator=(Document& other)
+{
+    if(this != &other)
     {
-        delete line;
+        freeDocument();
+        copyFrom(other);
     }
+    return *this;
+}
+
+Document::Document(Document&& other) : docName(std::move(other.docName)), hasChanged(other.hasChanged),
+    lines(std::move(other.lines))
+{
+
+    this->lineCreator = LineCreator::getInstance();
+    other.hasChanged = false;
+    other.lineCreator = nullptr;
+}
+
+Document& Document::operator=(Document&& other) {
+    if (this != &other) {
+        freeDocument();
+
+        docName = std::move(other.docName);
+        hasChanged = other.hasChanged;
+        lines = std::move(other.lines);
+        lineCreator = LineCreator::getInstance();
+        other.hasChanged = false;
+    }
+    return *this;
 }
 
 /**
@@ -38,6 +72,26 @@ Document::~Document()
 bool Document::getHasChanged()
 {
     return hasChanged;
+}
+
+Document* Document::copyFrom(Document& other)
+{
+    this->docName = other.docName;
+    this->hasChanged = other.hasChanged;
+    
+    for(Line* line : other.lines) {
+        this->lines.push_back(new Line(*line));
+    }
+}
+
+
+void Document::freeDocument()
+{    
+    for (Line *line : lines)
+    {
+        delete line;
+    }
+    lines.clear();
 }
 
 /**

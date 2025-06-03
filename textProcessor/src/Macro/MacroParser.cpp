@@ -1,9 +1,9 @@
-#include "../headers/Macro/MacroParser.hpp"
+#include "../../headers/Macro/MacroParser.hpp"
 
 MacroParser* MacroParser::instance = nullptr;
 
 /**
- * @brief Returns the singleton instance of MacroParser.
+ * @brief Returns the singleton instance of MacroParser.E
  * 
  * @return MacroParser* The singleton instance of MacroParser.
  */

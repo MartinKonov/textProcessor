@@ -1,7 +1,7 @@
 #include "../../headers/Commands/AddLineCommand.hpp"
 
 AddLineCommand::AddLineCommand(AddLineCommandCLI* addLineCommandCLI) {
-    addLineCommandCLI = addLineCommandCLI;
+    this->addLineCommandCLI = addLineCommandCLI;
     activeDocument = ActiveDocument::getInstance();
 }
 
@@ -15,9 +15,8 @@ void AddLineCommand::execute() {
     }
     
     string line = addLineCommandCLI->getLineInput();
-
     Document* currentActiveDocument = activeDocument->getActiveDocument();
-
+    
     currentActiveDocument->addLine(line);
 
     addLineCommandCLI->success();

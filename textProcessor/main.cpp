@@ -25,23 +25,27 @@ string loadFileContent(const string& filePath) {
 }
 
 int main() {
-    const string filePath = "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt";
+    const string filePath = "/home/mkonov/tp/textProcessor/textProcessor/testFiles/example.txt";
 
     try {
-        string fileContent = loadFileContent(filePath);
-        cout << "File content loaded successfully:\n" << fileContent << endl;
-
         // Initialize CommandRegister and AddLineCommand
         CommandRegister* commandRegister = CommandRegister::getInstance();
         AddLineCommandCLI* addLineCommandCLI = new AddLineCommandCLI();
         AddLineCommand* addLineCommand = new AddLineCommand(addLineCommandCLI);
+        DocumentRegister* dr = DocumentRegister::getInstance();
+        dr->addDocument(filePath);
+        ActiveDocument* ad = ActiveDocument::getInstance();
+
+       ad->setActiveDocument("/home/mkonov/tp/textProcessor/textProcessor/testFiles/example.txt");
 
         // Register the command
         commandRegister->registerCommand(addLineCommand);
 
-        commandRegister->showAllCommands();
+        cout << "Command: " << commandRegister->showAllCommands() << endl;
         // Execute the command
-        //commandRegister->executeCommand(); // Assuming this is the index of the AddLineCommand
+        commandRegister->executeCommand(1); // Assuming this is the index of the AddLineCommand
+
+        cout << ad->getActiveDocument()->getContents() << endl;
 
     } catch (const std::exception& e) {
         cout << "Error: " << e.what() << endl;

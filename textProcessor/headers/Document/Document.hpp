@@ -17,6 +17,10 @@ class Document {
     Document();
     Document(string name, vector<Line*> lines);
     ~Document();
+    Document(Document& other);
+    Document& operator=(Document& other);
+    Document(Document&& other);
+    Document& operator=(Document&& other);
 
     bool getHasChanged();
     void setHasChanged(bool changed);
@@ -36,6 +40,8 @@ class Document {
     
     friend ostream& operator<<(ostream& os, Document& document);
  private:
+    Document* copyFrom(Document& other);
+    void freeDocument();
     string docName;
     bool hasChanged;
     LineCreator* lineCreator;
