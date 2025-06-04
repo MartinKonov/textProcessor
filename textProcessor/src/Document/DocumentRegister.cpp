@@ -8,12 +8,10 @@
  * @date 2025-05-18
  */
 
-DocumentRegister* DocumentRegister::instance = nullptr;
 
-DocumentRegister::DocumentRegister() {
-    this->documentParser = DocumentParser::getInstance();
+DocumentRegister::DocumentRegister(DocumentParser* documentParser) {
+    this->documentParser = documentParser;
 }
-
 
 /**
  * @brief Destructor for DocumentRegister.
@@ -27,30 +25,6 @@ DocumentRegister::~DocumentRegister() {
     }
     documents.clear();
 }
-
-/**
- * @brief Returns the singleton instance of DocumentRegister.
- * @param documentParser The DocumentParser instance to use for loading documents.
- * @return DocumentRegister* The singleton instance of DocumentRegister.
- */
-DocumentRegister *DocumentRegister::getInstance()
-{
-    if (instance == nullptr) {
-        instance = new DocumentRegister();
-    }
-    return instance;
-}
-
-/**
- * @brief Destroys the singleton instance of DocumentRegister.
- * 
- * This method deletes the instance of DocumentRegister and sets it to nullptr.
- */
-void DocumentRegister::destroyInstance()
-{
-    delete instance;
-    instance = nullptr;
-} 
 
 /**
    * @brief Adds a document to the register by loading it using the DocumentParser.

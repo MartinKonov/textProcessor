@@ -13,20 +13,14 @@
 
 class ActiveDocument {
  public:
-    static ActiveDocument* getInstance(); 
-    static void destroyInstance();
-    
+    ActiveDocument() = delete; // need documentRegister injected
+    ActiveDocument(DocumentRegister* documentRegister,Document* document = nullptr);
+    ~ActiveDocument() = default;   
+
     void setActiveDocument(string documentName);
     Document* getActiveDocument() const;    
     
  private:
-    ActiveDocument();
-    ActiveDocument(const ActiveDocument&) = delete;
-    ActiveDocument& operator=(const ActiveDocument&) = delete;
-    ~ActiveDocument();
-    
-    static ActiveDocument* instance;
-
     Document* activeDocument;
     DocumentRegister* documentRegister;
 };

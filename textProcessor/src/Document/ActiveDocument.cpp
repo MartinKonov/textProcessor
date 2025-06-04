@@ -8,48 +8,10 @@
 
 #include "../../headers/Document/ActiveDocument.hpp"
 
-
-ActiveDocument* ActiveDocument::instance = nullptr;
-
-ActiveDocument::ActiveDocument()
+ActiveDocument::ActiveDocument(DocumentRegister* documentRegister, Document* document)
 {
-    this->documentRegister = DocumentRegister::getInstance();
-    this->activeDocument = nullptr;
-}
-
-/**
- * @brief Returns the singleton instance of ActiveDocument.
- * 
- * @return ActiveDocument* The singleton instance of ActiveDocument.
- */
-ActiveDocument* ActiveDocument::getInstance()
-{
-    if (instance == nullptr) {
-        instance = new ActiveDocument();
-    }
-    return instance;
-}
-
-/**
- * @brief Destroys the singleton instance of ActiveDocument.
- * 
- * This method deletes the instance of ActiveDocument and sets it to nullptr.
- */
-void ActiveDocument::destroyInstance()
-{
-    delete instance;
-    instance = nullptr;
-}
-
-/**
- * @brief Destructor for ActiveDocument.
- * 
- * This destructor does not free any dynamic memory, as DocumentRegister is a singleton
- * and is managed separately.
- */
-ActiveDocument::~ActiveDocument()
-{
-    // No dynamic memory to free, as DocumentRegister is a singleton
+    this->documentRegister = documentRegister;
+    this->activeDocument = document;
 }
 
 /**
@@ -64,7 +26,7 @@ void ActiveDocument::setActiveDocument(string documentName) {
     
     try{
         doc = documentRegister->getDocument(documentName);
-    } catch (const std::runtime_error& e) {
+    } catch (const runtime_error& e) {
         throw std::runtime_error("ActiveDocument::setActiveDocument: " + string(e.what()));
     }
     activeDocument = doc;
@@ -74,8 +36,12 @@ void ActiveDocument::setActiveDocument(string documentName) {
  * @brief Returns the currently active document.
  * 
  * @return Document* A pointer to the active document.
+ * @throws runtime_error if the active document hasn't been set yet
  */
 Document *ActiveDocument::getActiveDocument() const
 {
+    if(!activeDocument) {
+        throw runtime_error("ActiveDocument::getActiveDocument: active document not set");
+    }
     return activeDocument;
 }

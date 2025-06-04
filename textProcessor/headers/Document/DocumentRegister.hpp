@@ -15,8 +15,10 @@
 class DocumentRegister {
 
  public:
-    static DocumentRegister* getInstance();
-    static void destroyInstance();
+    DocumentRegister();
+    DocumentRegister(DocumentParser* documentParser);
+    ~DocumentRegister();
+
 
     void addDocument(string name);
     void removeDocument(string name);
@@ -27,14 +29,8 @@ class DocumentRegister {
 
 
  private:
-    DocumentRegister();
-    DocumentRegister(const DocumentRegister&) = delete;
-    DocumentRegister& operator=(const DocumentRegister&) = delete;
-    ~DocumentRegister();
-
     bool isDocumentLoaded(string name);
-
-    static DocumentRegister* instance;
+    
     vector<Document*> documents;
     DocumentParser* documentParser;
 

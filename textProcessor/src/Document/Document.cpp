@@ -27,6 +27,9 @@ Document::~Document()
     freeDocument();
 }
 
+/**
+ * @brief Copy constructor for Document class
+ */
 Document::Document(Document& other)
 {
     copyFrom(other);
@@ -50,6 +53,7 @@ Document::Document(Document&& other) : docName(std::move(other.docName)), hasCha
     other.hasChanged = false;
     other.lineCreator = nullptr;
 }
+
 
 Document& Document::operator=(Document&& other) {
     if (this != &other) {
@@ -85,6 +89,9 @@ Document* Document::copyFrom(Document& other)
 }
 
 
+/**
+ * @brief Deletes the allocated memory in Document class
+ */
 void Document::freeDocument()
 {    
     for (Line *line : lines)

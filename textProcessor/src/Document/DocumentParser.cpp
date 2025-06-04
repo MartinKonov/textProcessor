@@ -8,48 +8,9 @@
  * @date 2025-05-18
  */
 
-DocumentParser* DocumentParser::instance = nullptr;
-
-DocumentParser::DocumentParser()
-{
-    this->fileManager = FileManager::getInstance();
-    this->lineCreator = LineCreator::getInstance();
-}
-
-/**
- * @brief Destructor for DocumentParser.
- * 
- * This destructor does not free any dynamic memory, as FileManager and LineCreator are singletons
- * and are managed separately.
- */
-DocumentParser::~DocumentParser()
-{
-    // No dynamic memory to free, as FileManager and LineCreator are singletons
-}
-
-
-/**
- * @brief Returns the singleton instance of DocumentParser.
- * 
- * @return DocumentParser* The singleton instance of DocumentParser.
- */
-DocumentParser *DocumentParser::getInstance()
-{
-    if (instance == nullptr) {
-        instance = new DocumentParser();
-    }
-    return instance;
-}
-
-/**
- * @brief Destroys the singleton instance of DocumentParser.
- * 
- * This method deletes the instance of DocumentParser and sets it to nullptr.
- */
-void DocumentParser::destroyInstance()
-{
-    delete instance;
-    instance = nullptr;
+DocumentParser::DocumentParser(FileManager* filemanager, LineCreator* lineCreator) {
+    this->fileManager = filemanager;
+    this->lineCreator = lineCreator;
 }
 
 /**
@@ -60,6 +21,9 @@ void DocumentParser::destroyInstance()
  */
 void DocumentParser::save(Document *document)
 {
+    if(!document) {
+        throw runtime_error("DocumentParser::save: Invalid document passed");
+    }
     if (!document->getHasChanged()) {
         return;
     }
@@ -101,6 +65,9 @@ Document* DocumentParser::load(const string filename)
  */
 void DocumentParser::saveAsDocument(Document* document, const string newFilename)
 {
+    if(!document) {
+        throw runtime_error("DocumentParser::saveAsDocument: Invalid document passed");
+    }
     try{
         fileManager->saveAs(document->getDocName(), newFilename);
     } catch (const runtime_error& e) {
@@ -115,6 +82,9 @@ void DocumentParser::saveAsDocument(Document* document, const string newFilename
  */
 void DocumentParser::unloadDocument(Document* document)
 {
+    if(!document) {
+        throw runtime_error("DocumentParser::unloadDocument: Invalid document passed");
+    }
     string filename = document->getDocName();
     fileManager->close(filename);
 }

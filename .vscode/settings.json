@@ -108,5 +108,5 @@
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
-  "cmake.sourceDirectory": "/home/mkonov/tp/textProcessor/textProcessor"
+  "cmake.sourceDirectory": "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor"
 }
