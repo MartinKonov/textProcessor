@@ -14,7 +14,7 @@
 class AddLineCommand : public Command {
 
  public:
-    AddLineCommand(AddLineCommandCLI* addLineCommandCLI);
+    AddLineCommand(AddLineCommandCLI* addLineCommandCLI, ActiveDocument* activeDocument);
     ~AddLineCommand() override;
 
     void execute() override;

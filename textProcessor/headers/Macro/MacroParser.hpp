@@ -20,6 +20,5 @@ class MacroParser : public DataParser<MacroParser, Macro> {
         MacroParser(const MacroParser&) = delete;
         MacroParser& operator=(const MacroParser&) = delete;
         
-
         static MacroParser* instance;
 };

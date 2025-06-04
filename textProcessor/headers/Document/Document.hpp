@@ -40,7 +40,7 @@ class Document {
     
     friend ostream& operator<<(ostream& os, Document& document);
  private:
-    Document* copyFrom(Document& other);
+    void copyFrom(Document& other);
     void freeDocument();
     string docName;
     bool hasChanged;

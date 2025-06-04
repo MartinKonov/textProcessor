@@ -25,18 +25,20 @@ string loadFileContent(const string& filePath) {
 }
 
 int main() {
-    const string filePath = "/home/mkonov/tp/textProcessor/textProcessor/testFiles/example.txt";
+    const string filePath = "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt";
 
     try {
-        // Initialize CommandRegister and AddLineCommand
-        CommandRegister* commandRegister = CommandRegister::getInstance();
+        CommandRegister* commandRegister = new CommandRegister();
         AddLineCommandCLI* addLineCommandCLI = new AddLineCommandCLI();
-        AddLineCommand* addLineCommand = new AddLineCommand(addLineCommandCLI);
-        DocumentRegister* dr = DocumentRegister::getInstance();
+        FileManager* fm = FileManager::getInstance();
+        LineCreator* lc = LineCreator::getInstance();
+        DocumentParser* dp = new DocumentParser(fm, lc);
+        DocumentRegister* dr = new DocumentRegister(dp);
+        ActiveDocument* ad = new ActiveDocument(dr);
+        AddLineCommand* addLineCommand = new AddLineCommand(addLineCommandCLI, ad);
         dr->addDocument(filePath);
-        ActiveDocument* ad = ActiveDocument::getInstance();
 
-       ad->setActiveDocument("/home/mkonov/tp/textProcessor/textProcessor/testFiles/example.txt");
+       ad->setActiveDocument(filePath);
 
         // Register the command
         commandRegister->registerCommand(addLineCommand);

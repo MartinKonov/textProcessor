@@ -13,8 +13,9 @@
 class CommandRegister {
 
  public:
-    static CommandRegister* getInstance();
-    static void destroyInstance();
+   CommandRegister();
+   ~CommandRegister();
+
 
     void registerCommand(Command* newCommand);
     void executeCommand(int index);
@@ -22,12 +23,6 @@ class CommandRegister {
     void undo();
 
  private:
-    CommandRegister() = default;
-    CommandRegister(const CommandRegister&) = delete;
-    CommandRegister& operator=(const CommandRegister&) = delete;
-    ~CommandRegister() = default;   
- 
-    static CommandRegister* instance;
 
     vector<Command*> allCommands;
     Stack<string> executedCommandNames;

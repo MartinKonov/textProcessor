@@ -2,21 +2,12 @@
 
 
 
-ActiveFormatter* ActiveFormatter::instance = nullptr;
-ActiveFormatter* ActiveFormatter::getInstance() {
-    if (instance == nullptr) {
-        instance = new ActiveFormatter();
-    }
-    return instance;
-}
-
-void ActiveFormatter::destroyInstance() {
-    delete instance;
-    instance = nullptr;
-}
-
 ActiveFormatter::ActiveFormatter() {
     this->formatter = new DirectFormatter();
+}
+
+ActiveFormatter::~ActiveFormatter() {
+    delete formatter;
 }
 
 void ActiveFormatter::setFormatter(string formatterType) {
@@ -40,8 +31,5 @@ void ActiveFormatter::setFormatter(string formatterType) {
 }
 
 string ActiveFormatter::getFormattedString(string input, int formatPoint) {
-    if (!formatter) {
-        throw std::runtime_error("ActiveFormatter::getFormattedString: No formatter set");
-    }
     return formatter->format(input, formatPoint);
 }

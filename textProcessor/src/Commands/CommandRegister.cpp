@@ -1,19 +1,17 @@
 #include "../../headers/Commands/CommandRegister.hpp"
 
 
+CommandRegister::CommandRegister() {
 
-CommandRegister* CommandRegister::instance = nullptr;
-
-CommandRegister* CommandRegister::getInstance() {
-    if (instance == nullptr) {
-        instance = new CommandRegister();
-    }
-    return instance;
 }
 
-void CommandRegister::destroyInstance() {
-    delete instance;
-    instance = nullptr;
+CommandRegister::~CommandRegister()
+{
+    for(Command* command: allCommands)
+    {
+        delete command;
+    }
+    allCommands.clear();
 }
 
 /**

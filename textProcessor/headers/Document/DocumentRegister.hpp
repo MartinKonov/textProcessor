@@ -15,7 +15,7 @@
 class DocumentRegister {
 
  public:
-    DocumentRegister();
+    DocumentRegister() = delete; //need to inject documentParser
     DocumentRegister(DocumentParser* documentParser);
     ~DocumentRegister();
 

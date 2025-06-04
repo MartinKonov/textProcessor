@@ -13,14 +13,13 @@
 class ActiveFormatter {
 
  public:
-    static ActiveFormatter* getInstance();
-    static void destroyInstance();
+
+    ActiveFormatter(); // Need to inject formatter
+    ~ActiveFormatter();
+
     void setFormatter(string formatterType);
     string getFormattedString(string input, int formatPoint);
 
  private:
-    static ActiveFormatter* instance;
     Formatter* formatter;
-
-    ActiveFormatter();
 };

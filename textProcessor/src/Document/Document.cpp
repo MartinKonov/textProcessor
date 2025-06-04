@@ -78,7 +78,7 @@ bool Document::getHasChanged()
     return hasChanged;
 }
 
-Document* Document::copyFrom(Document& other)
+void Document::copyFrom(Document& other)
 {
     this->docName = other.docName;
     this->hasChanged = other.hasChanged;
@@ -86,6 +86,7 @@ Document* Document::copyFrom(Document& other)
     for(Line* line : other.lines) {
         this->lines.push_back(new Line(*line));
     }
+
 }
 
 

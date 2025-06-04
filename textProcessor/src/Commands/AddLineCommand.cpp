@@ -1,8 +1,8 @@
 #include "../../headers/Commands/AddLineCommand.hpp"
 
-AddLineCommand::AddLineCommand(AddLineCommandCLI* addLineCommandCLI) {
+AddLineCommand::AddLineCommand(AddLineCommandCLI* addLineCommandCLI, ActiveDocument* activeDocument) {
     this->addLineCommandCLI = addLineCommandCLI;
-    activeDocument = ActiveDocument::getInstance();
+    this->activeDocument = activeDocument;
 }
 
 AddLineCommand::~AddLineCommand() {

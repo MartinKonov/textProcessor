@@ -16,12 +16,12 @@ using std::string;
 class Macro {
 
  public:
-        Macro() = delete;
-        Macro(string macroName, vector<string> commandNames) 
-            : macroName(macroName), commandNames(commandNames) {}
+    Macro() = delete;
+    Macro(string macroName, vector<string> commandNames) 
+        : macroName(macroName), commandNames(commandNames) {}
 
-        vector<string> getCommandNames();
-        string getName();
+    vector<string> getCommandNames();
+    string getName();
 
     private:
         vector<string> commandNames;
