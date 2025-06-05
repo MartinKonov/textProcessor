@@ -23,6 +23,16 @@ Line& Line::operator=(Line& other) {
     return *this;
 }
 
+bool Line::operator==(Line& other)
+{
+    return this->content == other.content;
+}
+
+bool Line::operator!=(Line& other)
+{
+    return this->content != other.content;
+}
+
 /**
  * @brief Returns the content of the line
  *

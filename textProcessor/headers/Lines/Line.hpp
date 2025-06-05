@@ -31,6 +31,9 @@ class Line {
     Line(Line& other);
     Line& operator=(Line& other);
 
+    bool operator==(Line& other);
+    bool operator!=(Line& other);
+
     virtual string getLine();
     virtual size_t getSymbolCount();
     virtual bool contains(const string searched);

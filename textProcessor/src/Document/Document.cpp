@@ -45,6 +45,16 @@ Document& Document::operator=(Document& other)
     return *this;
 }
 
+bool Document::operator==(Document& other)
+{
+    return compareLinesTo(other);
+}
+
+bool Document::operator!=(Document& other)
+{
+    return !compareLinesTo(other);
+}
+
 Document::Document(Document&& other) : docName(std::move(other.docName)), hasChanged(other.hasChanged),
     lines(std::move(other.lines))
 {
@@ -234,6 +244,24 @@ string Document::toString()
 size_t Document::getNumLines()
 {
     return lines.size();
+}
+
+
+bool Document::compareLinesTo(Document& other)
+{
+    if(this->lines.size() != other.lines.size())
+    {
+        return false;
+    }
+
+    for(int i = 0; i < lines.size(); i++)
+    {
+        if(this->lines[i] != other.lines[i])
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
 /**

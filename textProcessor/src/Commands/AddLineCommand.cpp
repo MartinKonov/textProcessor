@@ -3,6 +3,7 @@
 AddLineCommand::AddLineCommand(AddLineCommandCLI* addLineCommandCLI, ActiveDocument* activeDocument) {
     this->addLineCommandCLI = addLineCommandCLI;
     this->activeDocument = activeDocument;
+    this->docBeforeExecution = nullptr;
 }
 
 AddLineCommand::~AddLineCommand() {
@@ -17,6 +18,8 @@ void AddLineCommand::execute() {
     string line = addLineCommandCLI->getLineInput();
     Document* currentActiveDocument = activeDocument->getActiveDocument();
     
+    this->docBeforeExecution = new Document(*currentActiveDocument);
+
     currentActiveDocument->addLine(line);
 
     addLineCommandCLI->success();
@@ -28,7 +31,26 @@ string AddLineCommand::getName() const {
 
 void AddLineCommand::undo() 
 {
-    //make a copy constructor of the document and keep it
-    //to restore the document to its previous state
+    string activeDocName = activeDocument->getActiveDocument()->getDocName();
+    if(activeDocName != docBeforeExecution->getDocName())
+    {
+        addLineCommandCLI->changedDocError();
+    }
+
+    if(activeDocument->getActiveDocument() == docBeforeExecution)
+    {
+        addLineCommandCLI->nothingChanged();
+    }
+
+    *activeDocument->getActiveDocument() = *docBeforeExecution;
 }
 
+void AddLineCommand::setDocBeforeExecution(Document* currentActiveDocument)
+{
+    if(this->docBeforeExecution)
+    {
+        delete docBeforeExecution;
+    }
+
+    this->docBeforeExecution = new Document(*currentActiveDocument);
+}

@@ -22,6 +22,9 @@ class AddLineCommand : public Command {
     string getName() const override;
 
  private:
+   void setDocBeforeExecution(Document* currentActiveDocument);
+
     AddLineCommandCLI* addLineCommandCLI;
     ActiveDocument* activeDocument;
+    Document* docBeforeExecution;
 };

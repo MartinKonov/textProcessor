@@ -21,7 +21,10 @@ class AddLineCommandCLI : public CommandsCLI {
  public:
     AddLineCommandCLI() = default;
     ~AddLineCommandCLI() override = default;
+    
     string getLineInput();
+    void changedDocError();
+    void nothingChanged();
     void success() override;
     void error(const string* message) override;
 };

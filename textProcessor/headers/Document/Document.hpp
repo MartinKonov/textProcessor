@@ -22,6 +22,9 @@ class Document {
     Document(Document&& other);
     Document& operator=(Document&& other);
 
+    bool operator==(Document& other);
+    bool operator!=(Document& other);
+
     bool getHasChanged();
     void setHasChanged(bool changed);
     size_t getNumSymbols();
@@ -42,6 +45,7 @@ class Document {
  private:
     void copyFrom(Document& other);
     void freeDocument();
+    bool compareLinesTo(Document& other);
     string docName;
     bool hasChanged;
     LineCreator* lineCreator;

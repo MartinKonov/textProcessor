@@ -14,6 +14,14 @@ string AddLineCommandCLI::getLineInput() {
     return line;
 }
 
+void AddLineCommandCLI::changedDocError() {
+    cout << "The active document has changed since last call of this command. Undo is impossible" << endl;
+}
+
+void AddLineCommandCLI::nothingChanged() {
+    cout << "Nothing to undo" << endl;
+}
+
 /**
  * @brief Displays a success message after adding a line.
  * 
