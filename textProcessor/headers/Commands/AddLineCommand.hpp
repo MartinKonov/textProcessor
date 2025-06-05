@@ -14,8 +14,11 @@
 class AddLineCommand : public Command {
 
  public:
+    AddLineCommand() = delete;
     AddLineCommand(AddLineCommandCLI* addLineCommandCLI, ActiveDocument* activeDocument);
     ~AddLineCommand() override;
+    AddLineCommand(const AddLineCommand& other) = delete;
+    AddLineCommand& operator=(const AddLineCommand& other) = delete;
 
     void execute() override;
     void undo() override;

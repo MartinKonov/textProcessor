@@ -7,7 +7,7 @@ AddLineCommand::AddLineCommand(AddLineCommandCLI* addLineCommandCLI, ActiveDocum
 }
 
 AddLineCommand::~AddLineCommand() {
-    //Releasing the memory allocated for addLineCommandIO and activeDocument is not necessary here since it is managed by another component.
+    delete docBeforeExecution;
 }
 
 void AddLineCommand::execute() {
@@ -31,18 +31,27 @@ string AddLineCommand::getName() const {
 
 void AddLineCommand::undo() 
 {
+    if(!docBeforeExecution){
+        return;
+    }
+
     string activeDocName = activeDocument->getActiveDocument()->getDocName();
     if(activeDocName != docBeforeExecution->getDocName())
     {
         addLineCommandCLI->changedDocError();
+        delete docBeforeExecution;
+        docBeforeExecution = nullptr;
+        return;
     }
 
-    if(activeDocument->getActiveDocument() == docBeforeExecution)
+    if(*activeDocument->getActiveDocument() == *docBeforeExecution)
     {
         addLineCommandCLI->nothingChanged();
     }
 
     *activeDocument->getActiveDocument() = *docBeforeExecution;
+    delete docBeforeExecution;
+    docBeforeExecution = nullptr;
 }
 
 void AddLineCommand::setDocBeforeExecution(Document* currentActiveDocument)

@@ -30,12 +30,12 @@ Document::~Document()
 /**
  * @brief Copy constructor for Document class
  */
-Document::Document(Document& other)
+Document::Document(const Document& other)
 {
     copyFrom(other);
 }
 
-Document& Document::operator=(Document& other)
+Document& Document::operator=(const Document& other)
 {
     if(this != &other)
     {
@@ -88,7 +88,7 @@ bool Document::getHasChanged()
     return hasChanged;
 }
 
-void Document::copyFrom(Document& other)
+void Document::copyFrom(const Document& other)
 {
     this->docName = other.docName;
     this->hasChanged = other.hasChanged;

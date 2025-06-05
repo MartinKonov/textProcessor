@@ -33,6 +33,8 @@ file(GLOB_RECURSE SOURCES
     "src/Commands/CommandRegister.cpp"
     "src/Commands/AddLineCommand.cpp"
     "src/CommandsCLI/AddLineCommandCLI.cpp"
+    "src/Commands/SaveCommand.cpp"
+    "src/CommandsCLi/SaveCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})

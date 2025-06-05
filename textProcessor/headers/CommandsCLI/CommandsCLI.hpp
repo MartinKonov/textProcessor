@@ -6,12 +6,15 @@
  * @date 2025-05-29
  */
 #pragma once
+#include <iostream>
 #include <string>
+
 using std::string;
+using std::cout;
+using std::endl;
 
 class CommandsCLI {
     public:
     virtual ~CommandsCLI() = default;
     virtual void success() = 0;
-    virtual void error(const string* message) = 0;
 };

@@ -8,12 +8,7 @@
 
 #pragma once
 #include "CommandsCLI.hpp"
-#include <iostream>
-#include <string>
 
-using std::string;
-using std::cout;
-using std::endl;
 
 
 class AddLineCommandCLI : public CommandsCLI {
@@ -26,5 +21,4 @@ class AddLineCommandCLI : public CommandsCLI {
     void changedDocError();
     void nothingChanged();
     void success() override;
-    void error(const string* message) override;
 };

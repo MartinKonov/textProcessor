@@ -17,8 +17,8 @@ class Document {
     Document();
     Document(string name, vector<Line*> lines);
     ~Document();
-    Document(Document& other);
-    Document& operator=(Document& other);
+    Document(const Document& other);
+    Document& operator=(const Document& other);
     Document(Document&& other);
     Document& operator=(Document&& other);
 
@@ -43,7 +43,7 @@ class Document {
     
     friend ostream& operator<<(ostream& os, Document& document);
  private:
-    void copyFrom(Document& other);
+    void copyFrom(const Document& other);
     void freeDocument();
     bool compareLinesTo(Document& other);
     string docName;

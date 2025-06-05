@@ -30,18 +30,3 @@ void AddLineCommandCLI::nothingChanged() {
 void AddLineCommandCLI::success() {
     cout << "Line added successfully." << endl;
 }
-
-/**
- * @brief Displays an error message if there is an issue with adding a line.
- * 
- * This method prints an error message to the console. If a specific message is provided, it displays that; otherwise, it shows a generic error message.
- * 
- * @param message A pointer to a string containing the error message. If null, a generic error message is displayed.
- */
-void AddLineCommandCLI::error(const string* message) {
-    if (message) {
-        cout << "Error: " << *message << endl;
-    } else {
-        cout << "An unknown error occurred." << endl;
-    }
-}
