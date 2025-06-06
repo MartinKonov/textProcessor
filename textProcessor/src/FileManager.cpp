@@ -152,6 +152,24 @@ void FileManager::saveAs(const string& oldFilename, const string& newFilename) {
     file.close();
 }
 
+void FileManager::saveAs(const string& oldFilename, const string& newFilename, string newContent)
+{
+    int index = findIndex(oldFilename);
+    if (index == -1) {
+        throw runtime_error("FileManager::File not loaded: " + oldFilename);
+    }
+
+    ofstream file(newFilename);
+    if (!file.is_open()) {
+        throw runtime_error("FileManager::Cannot open file to save as: " + newFilename);
+    }
+    setContent(newFilename, newContent);
+
+    file << newContent;
+    
+    file.close();
+}
+
 /**
  * @brief Sets the content of a file.
  * 

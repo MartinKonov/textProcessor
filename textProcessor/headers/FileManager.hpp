@@ -31,6 +31,7 @@ public:
     void close(const string& filename);
     void save(const string& filename);
     void saveAs(const string& oldFilename, const string& newFilename);
+    void saveAs(const string& oldFilename, const string& newFilename, string newContent);
     void setContent(const string& filename, const string& content);
 
 private:

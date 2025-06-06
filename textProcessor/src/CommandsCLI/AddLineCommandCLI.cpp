@@ -10,7 +10,7 @@
 string AddLineCommandCLI::getLineInput() {
     string line;
     cout << "Enter the line to add: ";
-    getline(std::cin, line);
+    getline(cin, line);
     return line;
 }
 

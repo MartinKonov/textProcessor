@@ -5,6 +5,8 @@
 #include "../headers/Commands/AddLineCommand.hpp"
 #include "../headers/Commands/SaveCommand.hpp"
 #include "../headers/CommandsCLI/SaveCommandCLI.hpp"
+#include "../headers/Commands/SaveAsCommand.hpp"
+#include "../headers/CommandsCLI/SaveAsCommandCLI.hpp"
 
 using std::cout;
 using std::endl;
@@ -38,8 +40,11 @@ int main() {
         ActiveDocument* ad = new ActiveDocument(dr);
         AddLineCommandCLI* addLineCommandCLI = new AddLineCommandCLI();
         SaveCommandCLI* saveCommandCLI = new SaveCommandCLI();
+        SaveAsCommandCLI* saveAsCommandCLI = new SaveAsCommandCLI();
+
         AddLineCommand* addLineCommand = new AddLineCommand(addLineCommandCLI, ad);
-        SaveCommand* saveCommand = new SaveCommand(ad, saveCommandCLI, dr);        
+        SaveCommand* saveCommand = new SaveCommand(ad, saveCommandCLI, dr);
+        SaveAsCommand* saveAsCommand = new SaveAsCommand(ad, saveAsCommandCLI, dr);              
 
         dr->addDocument(filePath);
 
@@ -48,6 +53,7 @@ int main() {
         // Register the command
         commandRegister->registerCommand(addLineCommand);
         commandRegister->registerCommand(saveCommand);
+        commandRegister->registerCommand(saveAsCommand);
 
         cout << "Command: " << commandRegister->showAllCommands() << endl;
         // Execute the command
@@ -55,7 +61,7 @@ int main() {
 
         cout << ad->getActiveDocument()->getContents() << endl;
 
-        commandRegister->executeCommand(2);
+        commandRegister->executeCommand(3);
 
         cout << ad->getActiveDocument()->getContents() << endl;
 

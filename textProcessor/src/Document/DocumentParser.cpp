@@ -69,7 +69,13 @@ void DocumentParser::saveAsDocument(Document* document, const string newFilename
         throw runtime_error("DocumentParser::saveAsDocument: Invalid document passed");
     }
     try{
-        fileManager->saveAs(document->getDocName(), newFilename);
+        if(document->getHasChanged())
+        {
+            fileManager->saveAs(document->getDocName(), newFilename, document->getContents());
+        }
+        else{
+            fileManager->saveAs(document->getDocName(), newFilename);
+        }
     } catch (const runtime_error& e) {
         throw runtime_error("DocumentParser::saveAsDocument: " + string(e.what()));
     }
