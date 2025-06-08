@@ -59,7 +59,11 @@ void DocumentRegister::removeDocument(string name)
     
     for(int i = 0; i < documents.size(); i++) {
         if (documents[i]->getDocName() == name) {
-            documentParser->unloadDocument(documents[i]);
+            try{
+                documentParser->unloadDocument(documents[i]);
+            } catch (runtime_error& e) {
+                throw runtime_error("DocumentRegister:: removeDocument: " + string(e.what()));
+            }
             delete documents[i];
             documents.erase(documents.begin() + i);
             return;

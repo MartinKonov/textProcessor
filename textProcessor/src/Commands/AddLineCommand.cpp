@@ -12,7 +12,7 @@ AddLineCommand::~AddLineCommand() {
 
 void AddLineCommand::execute() {
     if (!activeDocument->getActiveDocument()) {
-        throw std::runtime_error("AddLineCommand::execute: No active document set");
+        addLineCommandCLI->activeDocumentError();
     }
     
     string line = addLineCommandCLI->getLineInput();
@@ -38,7 +38,7 @@ void AddLineCommand::undo()
     string activeDocName = activeDocument->getActiveDocument()->getDocName();
     if(activeDocName != docBeforeExecution->getDocName())
     {
-        addLineCommandCLI->changedDocError();
+        addLineCommandCLI->error();
         delete docBeforeExecution;
         docBeforeExecution = nullptr;
         return;

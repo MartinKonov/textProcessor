@@ -18,4 +18,5 @@ class CommandsCLI {
     public:
     virtual ~CommandsCLI() = default;
     virtual void success() = 0;
+    virtual void error(string message = "") = 0;
 };

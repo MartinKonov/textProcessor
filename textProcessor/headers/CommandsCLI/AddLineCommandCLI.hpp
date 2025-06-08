@@ -18,7 +18,8 @@ class AddLineCommandCLI : public CommandsCLI {
     ~AddLineCommandCLI() override = default;
     
     string getLineInput();
-    void changedDocError();
+    void activeDocumentError();
+    void error(string message="") override;
     void nothingChanged();
     void success() override;
 };

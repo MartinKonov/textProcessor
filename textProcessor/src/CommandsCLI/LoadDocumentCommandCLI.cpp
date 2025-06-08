@@ -14,8 +14,8 @@ string LoadDocumentCommandCLI::getDocFilePath() {
     return docFilePath;
 }
 
-void LoadDocumentCommandCLI::error(string errorMessage) {
-    cout << "Error loading file: " << errorMessage << endl;
+void LoadDocumentCommandCLI::error(string message) {
+    cout << "Error loading file: " << message << endl;
 }
 
 void LoadDocumentCommandCLI::undo() {

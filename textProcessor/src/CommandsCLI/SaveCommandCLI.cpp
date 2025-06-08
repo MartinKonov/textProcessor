@@ -9,7 +9,7 @@ void SaveCommandCLI::documentHasntChanged(){
     cout << "Nothing to save." << endl;
 }
 
-void SaveCommandCLI::errorSaving(string err) {
-    cout << "SaveCommand::execute() " + err << endl;
+void SaveCommandCLI::error(string message) {
+    cout << "SaveCommand::execute() " + message << endl;
 }
 

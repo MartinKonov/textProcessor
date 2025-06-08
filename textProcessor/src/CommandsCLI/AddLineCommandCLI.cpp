@@ -14,8 +14,12 @@ string AddLineCommandCLI::getLineInput() {
     return line;
 }
 
-void AddLineCommandCLI::changedDocError() {
+void AddLineCommandCLI::error(string message) {
     cout << "The active document has changed since last call of this command. Undo is impossible" << endl;
+}
+
+void AddLineCommandCLI::activeDocumentError(){
+    cout << "No active document set" << endl;
 }
 
 void AddLineCommandCLI::nothingChanged() {

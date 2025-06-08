@@ -9,26 +9,14 @@
 #include "../headers/CommandsCLI/SaveAsCommandCLI.hpp"
 #include "../headers/Commands/LoadDocumentCommand.hpp"
 #include "../headers/CommandsCLI/LoadDocumentCommandCLI.hpp"
+#include "../headers/Commands/UnloadDocumentCommand.hpp"
+#include "../headers/CommandsCLI/UnloadDocumentCommandCLI.hpp"
 
 using std::cout;
 using std::endl;
 using std::ifstream;
 using std::string;
 
-
-string loadFileContent(const string& filePath) {
-    ifstream file(filePath);
-    if (!file.is_open()) {
-        throw std::runtime_error("Cannot open file: " + filePath);
-    }
-
-    string content, line;
-    while (getline(file, line)) {
-        content += line + '\n';
-    }
-
-    return content;
-}
 
 int main() {
     try {
@@ -42,21 +30,30 @@ int main() {
         SaveCommandCLI* saveCommandCLI = new SaveCommandCLI();
         SaveAsCommandCLI* saveAsCommandCLI = new SaveAsCommandCLI();
         LoadDocumentCommandCLI* loadDocumentCommandCLI = new LoadDocumentCommandCLI();
+        UnloadDocumentCommandCLI* unloadDocumentCommandCLI = new UnloadDocumentCommandCLI();
+        
 
         AddLineCommand* addLineCommand = new AddLineCommand(addLineCommandCLI, ad);
         SaveCommand* saveCommand = new SaveCommand(ad, saveCommandCLI, dr);
         SaveAsCommand* saveAsCommand = new SaveAsCommand(ad, saveAsCommandCLI, dr);   
-        LoadDocumentCommand* loadDocumentCommand = new LoadDocumentCommand(loadDocumentCommandCLI, dr);           
+        LoadDocumentCommand* loadDocumentCommand = new LoadDocumentCommand(loadDocumentCommandCLI, dr);
+        UnloadDocumentCommand* unloadDocumentCommand = new UnloadDocumentCommand(unloadDocumentCommandCLI, dr);      
 
         // Register the command
         commandRegister->registerCommand(addLineCommand);
         commandRegister->registerCommand(saveCommand);
         commandRegister->registerCommand(saveAsCommand);
         commandRegister->registerCommand(loadDocumentCommand);
+        commandRegister->registerCommand(unloadDocumentCommand);
 
         cout << "Commands:\n" << commandRegister->showAllCommands() << endl;
 
         commandRegister->executeCommand(4);
+
+        ad->setActiveDocument("/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt");
+        commandRegister->executeCommand(1);
+
+        commandRegister->executeCommand(5);
 
         // Execute the command
         // commandRegister->executeCommand(1); // Assuming this is the index of the AddLineCommand

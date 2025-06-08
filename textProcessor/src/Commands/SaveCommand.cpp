@@ -28,7 +28,7 @@ void SaveCommand::execute()
         documentRegister->saveDocument(docToSave);
     }
     catch(const runtime_error& e) {
-        saveCommandCLI->errorSaving(string(e.what()));
+        saveCommandCLI->error(string(e.what()));
     }
 }
 

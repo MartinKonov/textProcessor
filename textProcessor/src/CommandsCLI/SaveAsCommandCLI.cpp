@@ -9,8 +9,8 @@ void SaveAsCommandCLI::documentHasntChanged(){
     cout << "Nothing to save." << endl;
 }
 
-void SaveAsCommandCLI::errorSaving(string err) {
-    cout << "SaveCommand::execute() " + err << endl;
+void SaveAsCommandCLI::error(string message) {
+    cout << "SaveCommand::execute() " + message << endl;
 }
 
 string SaveAsCommandCLI::getNewDocName() {

@@ -1,0 +1,58 @@
+#include "../../headers/Commands/UnloadDocumentCommand.hpp"
+
+UnloadDocumentCommand::UnloadDocumentCommand(UnloadDocumentCommandCLI* unloadDocumentCommandCLI, DocumentRegister* documentRegister) {
+    this->unloadDocumentCommandCLI = unloadDocumentCommandCLI;
+    this->documentRegister = documentRegister;
+}
+
+
+string UnloadDocumentCommand::getName() const {
+    return "Unload document";
+}
+
+void UnloadDocumentCommand::execute() {
+
+    string docPathToUnload = unloadDocumentCommandCLI->getDocPathToUnload();
+
+    Document* docToUnload;
+
+    try {
+        docToUnload = documentRegister->getDocument(docPathToUnload);
+    } catch(runtime_error& e) {
+        unloadDocumentCommandCLI->error(e.what());
+        return;
+    }
+
+    handleDocHasChanged(docToUnload);
+
+    try {
+        documentRegister->removeDocument(docPathToUnload);
+    }
+    catch(runtime_error& e){
+        unloadDocumentCommandCLI->error(e.what());
+        return;
+    }
+
+    unloadDocumentCommandCLI->success();
+}
+
+void UnloadDocumentCommand::handleDocHasChanged(Document* document) {
+    if(!document->getHasChanged()) {
+        return;
+    }
+
+    unloadDocumentCommandCLI->docHasChanged();
+    if(!unloadDocumentCommandCLI->saveQuery()) {
+        return;
+    }
+
+    try {
+        documentRegister->saveDocument(document);
+    } catch (runtime_error& e) {
+        unloadDocumentCommandCLI->error(e.what());
+    }
+}
+
+void UnloadDocumentCommand::undo() {
+    unloadDocumentCommandCLI->undo();
+}

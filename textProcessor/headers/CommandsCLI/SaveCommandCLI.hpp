@@ -11,5 +11,5 @@ class SaveCommandCLI : public CommandsCLI {
 
         void success() override;
         void documentHasntChanged();
-        void errorSaving(string err);
+        void error(string message = "") override;
 };

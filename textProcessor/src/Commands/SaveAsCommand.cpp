@@ -20,7 +20,7 @@ void SaveAsCommand::execute() {
         documentRegister->saveAsDocument(docToSave, newDocName);
     }
     catch(const runtime_error& e) {
-        saveAsCommandCLI->errorSaving(string(e.what()));
+        saveAsCommandCLI->error(string(e.what()));
     }
 }
 
