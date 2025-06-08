@@ -27,7 +27,7 @@ void ActiveDocument::setActiveDocument(string documentName) {
     try{
         doc = documentRegister->getDocument(documentName);
     } catch (const runtime_error& e) {
-        throw std::runtime_error("ActiveDocument::setActiveDocument: " + string(e.what()));
+        throw runtime_error("ActiveDocument::setActiveDocument: " + string(e.what()));
     }
     activeDocument = doc;
 }
@@ -41,7 +41,7 @@ void ActiveDocument::setActiveDocument(string documentName) {
 Document *ActiveDocument::getActiveDocument() const
 {
     if(!activeDocument) {
-        throw runtime_error("ActiveDocument::getActiveDocument: active document not set");
+        return nullptr;
     }
     return activeDocument;
 }

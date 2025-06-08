@@ -11,6 +11,8 @@
 #include "../headers/CommandsCLI/LoadDocumentCommandCLI.hpp"
 #include "../headers/Commands/UnloadDocumentCommand.hpp"
 #include "../headers/CommandsCLI/UnloadDocumentCommandCLI.hpp"
+#include "../headers/Commands/SetActiveDocumentCommand.hpp"
+#include "../headers/CommandsCLI/SetActiveDocumentCommandCLI.hpp"
 
 using std::cout;
 using std::endl;
@@ -31,6 +33,7 @@ int main() {
         SaveAsCommandCLI* saveAsCommandCLI = new SaveAsCommandCLI();
         LoadDocumentCommandCLI* loadDocumentCommandCLI = new LoadDocumentCommandCLI();
         UnloadDocumentCommandCLI* unloadDocumentCommandCLI = new UnloadDocumentCommandCLI();
+        SetActiveDocumentCommandCLI* setActiveDocumentCommandCLI = new SetActiveDocumentCommandCLI();
         
 
         AddLineCommand* addLineCommand = new AddLineCommand(addLineCommandCLI, ad);
@@ -38,6 +41,7 @@ int main() {
         SaveAsCommand* saveAsCommand = new SaveAsCommand(ad, saveAsCommandCLI, dr);   
         LoadDocumentCommand* loadDocumentCommand = new LoadDocumentCommand(loadDocumentCommandCLI, dr);
         UnloadDocumentCommand* unloadDocumentCommand = new UnloadDocumentCommand(unloadDocumentCommandCLI, dr);      
+        SetActiveDocumentCommand* setActiveDocumentCommnd = new SetActiveDocumentCommand(setActiveDocumentCommandCLI, ad);
 
         // Register the command
         commandRegister->registerCommand(addLineCommand);
@@ -45,12 +49,13 @@ int main() {
         commandRegister->registerCommand(saveAsCommand);
         commandRegister->registerCommand(loadDocumentCommand);
         commandRegister->registerCommand(unloadDocumentCommand);
+        commandRegister->registerCommand(setActiveDocumentCommnd);
 
         cout << "Commands:\n" << commandRegister->showAllCommands() << endl;
 
         commandRegister->executeCommand(4);
 
-        ad->setActiveDocument("/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt");
+        commandRegister->executeCommand(6);
         commandRegister->executeCommand(1);
 
         commandRegister->executeCommand(5);

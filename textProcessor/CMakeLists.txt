@@ -41,6 +41,8 @@ file(GLOB_RECURSE SOURCES
     "src/CommandsCLI/LoadDocumentCommandCLI.cpp"
     "src/Commands/UnloadDocumentCommand.cpp"
     "src/CommandsCLI/UnloadDocumentCommandCLI.cpp"
+    "src/Commands/SetActiveDocumentCommand.cpp"
+    "src/CommandsCLI/SetActiveDocumentCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})
