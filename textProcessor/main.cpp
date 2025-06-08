@@ -7,6 +7,8 @@
 #include "../headers/CommandsCLI/SaveCommandCLI.hpp"
 #include "../headers/Commands/SaveAsCommand.hpp"
 #include "../headers/CommandsCLI/SaveAsCommandCLI.hpp"
+#include "../headers/Commands/LoadDocumentCommand.hpp"
+#include "../headers/CommandsCLI/LoadDocumentCommandCLI.hpp"
 
 using std::cout;
 using std::endl;
@@ -29,8 +31,6 @@ string loadFileContent(const string& filePath) {
 }
 
 int main() {
-    const string filePath = "/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt";
-
     try {
         CommandRegister* commandRegister = new CommandRegister();
         FileManager* fm = FileManager::getInstance();
@@ -41,29 +41,31 @@ int main() {
         AddLineCommandCLI* addLineCommandCLI = new AddLineCommandCLI();
         SaveCommandCLI* saveCommandCLI = new SaveCommandCLI();
         SaveAsCommandCLI* saveAsCommandCLI = new SaveAsCommandCLI();
+        LoadDocumentCommandCLI* loadDocumentCommandCLI = new LoadDocumentCommandCLI();
 
         AddLineCommand* addLineCommand = new AddLineCommand(addLineCommandCLI, ad);
         SaveCommand* saveCommand = new SaveCommand(ad, saveCommandCLI, dr);
-        SaveAsCommand* saveAsCommand = new SaveAsCommand(ad, saveAsCommandCLI, dr);              
-
-        dr->addDocument(filePath);
-
-        ad->setActiveDocument(filePath);
+        SaveAsCommand* saveAsCommand = new SaveAsCommand(ad, saveAsCommandCLI, dr);   
+        LoadDocumentCommand* loadDocumentCommand = new LoadDocumentCommand(loadDocumentCommandCLI, dr);           
 
         // Register the command
         commandRegister->registerCommand(addLineCommand);
         commandRegister->registerCommand(saveCommand);
         commandRegister->registerCommand(saveAsCommand);
+        commandRegister->registerCommand(loadDocumentCommand);
 
-        cout << "Command: " << commandRegister->showAllCommands() << endl;
+        cout << "Commands:\n" << commandRegister->showAllCommands() << endl;
+
+        commandRegister->executeCommand(4);
+
         // Execute the command
-        commandRegister->executeCommand(1); // Assuming this is the index of the AddLineCommand
+        // commandRegister->executeCommand(1); // Assuming this is the index of the AddLineCommand
 
-        cout << ad->getActiveDocument()->getContents() << endl;
+        // cout << ad->getActiveDocument()->getContents() << endl;
 
-        commandRegister->executeCommand(3);
+        // commandRegister->executeCommand(3);
 
-        cout << ad->getActiveDocument()->getContents() << endl;
+        // cout << ad->getActiveDocument()->getContents() << endl;
 
     } catch (const std::exception& e) {
         cout << "Error: " << e.what() << endl;
