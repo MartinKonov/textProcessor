@@ -21,6 +21,9 @@ void ActiveBlock::setActiveBlock(string blockName, Document* activeDocument) {
     throw runtime_error("ActiveBlock:: setActiveBlock: A block with that name doesn't exist for current active document");
 }
 
+void ActiveBlock::removeActiveBlock() {
+    activeBlock = nullptr;
+}
 
 Block* ActiveBlock::getActiveBlock() {
     if (activeBlock != nullptr) {

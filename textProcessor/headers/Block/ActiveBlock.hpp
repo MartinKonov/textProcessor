@@ -12,6 +12,7 @@ public:
 
     void setActiveBlock(string blockName, Document* activeDocument);
     Block* getActiveBlock();
+    void removeActiveBlock();
 
 private:
     Block* activeBlock;
