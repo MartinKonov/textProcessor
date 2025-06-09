@@ -19,6 +19,8 @@ class Block {
     public:
         Block() = delete; // Default constructor is deleted to prevent instantiation without parameters.
         Block(string blockName, string documentName, size_t startLineIndex, size_t endLineIndex);
+        Block(Block& other);
+        Block& operator=(Block& other);
         ~Block();
 
         bool operator==(Block& other);

@@ -14,6 +14,24 @@ Block::~Block()
     // No dynamic memory to free, as Document is managed by DocumentRegister
 }
 
+Block::Block(Block& other) {
+    this->blockName = other.blockName;
+    this->documentName = other.documentName;
+    this->startLineIndex = other.startLineIndex;
+    this->endLineIndex = other.endLineIndex;
+}
+
+Block& Block::operator=(Block& other) {
+    if(this != &other){
+        this->blockName = other.blockName;
+        this->documentName = other.documentName;
+        this->startLineIndex = other.startLineIndex;
+        this->endLineIndex = other.endLineIndex;
+    }
+
+    return *this;
+}
+
 bool Block::operator==(Block& other) {
     return (this->blockName == other.blockName)
             && (this->documentName == other.documentName)

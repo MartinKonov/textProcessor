@@ -13,6 +13,7 @@ class SaveCommand : public Command {
         SaveCommand(ActiveDocument* activeDocument, SaveCommandCLI* saveCommandCLI,DocumentRegister* documentRegister);
         SaveCommand(const SaveCommand& other) = delete;
         SaveCommand& operator=(const SaveCommand &other) = delete;
+        ~SaveCommand() override = default;
 
         string getName() const override;
         void execute() override;

@@ -13,6 +13,7 @@ public:
     LoadDocumentCommand(LoadDocumentCommandCLI* loadDocumentCommandCLI, DocumentRegister* documentParser);
     LoadDocumentCommand(LoadDocumentCommand& other) = delete;
     LoadDocumentCommand& operator=(LoadDocumentCommand& other) = delete;
+    ~LoadDocumentCommand() override = default;
 
     void execute() override;
     string getName() const override;

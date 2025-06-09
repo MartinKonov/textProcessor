@@ -15,6 +15,8 @@
 #include "../headers/CommandsCLI/SetActiveDocumentCommandCLI.hpp"
 #include "../headers/Commands/CreateBlockCommand.hpp"
 #include "../headers/CommandsCLI/CreateBlockCommandCLI.hpp"
+#include "../headers/Commands/RemoveBlockCommand.hpp"
+#include "../headers/CommandsCLI/RemoveBlockCommandCLI.hpp"
 
 using std::cout;
 using std::endl;
@@ -39,6 +41,7 @@ int main() {
         UnloadDocumentCommandCLI* unloadDocumentCommandCLI = new UnloadDocumentCommandCLI();
         SetActiveDocumentCommandCLI* setActiveDocumentCommandCLI = new SetActiveDocumentCommandCLI();
         CreateBlockCommandCLI* createBlockCommandCLI = new CreateBlockCommandCLI();
+        RemoveBlockCommandCLI* removeBlockCommandCLI = new RemoveBlockCommandCLI();
 
         AddLineCommand* addLineCommand = new AddLineCommand(addLineCommandCLI, ad);
         SaveCommand* saveCommand = new SaveCommand(ad, saveCommandCLI, dr);
@@ -47,6 +50,7 @@ int main() {
         UnloadDocumentCommand* unloadDocumentCommand = new UnloadDocumentCommand(unloadDocumentCommandCLI, dr);      
         SetActiveDocumentCommand* setActiveDocumentCommnd = new SetActiveDocumentCommand(setActiveDocumentCommandCLI, ad);
         CreateBlockCommand* createBlockCommand = new CreateBlockCommand(createBlockCommandCLI, br, ad);
+        RemoveBlockCommand* removeBlockCommand = new RemoveBlockCommand(removeBlockCommandCLI, br, dr);
 
         // Register the command
         commandRegister->registerCommand(addLineCommand);
@@ -56,15 +60,18 @@ int main() {
         commandRegister->registerCommand(unloadDocumentCommand);
         commandRegister->registerCommand(setActiveDocumentCommnd);
         commandRegister->registerCommand(createBlockCommand);
+        commandRegister->registerCommand(removeBlockCommand);
 
         cout << "Commands:\n" << commandRegister->showAllCommands() << endl;
 
-        commandRegister->executeCommand(4);
         commandRegister->executeCommand(4);
 
         commandRegister->executeCommand(6);
         
         commandRegister->executeCommand(7);
+
+        commandRegister->executeCommand(8);
+        commandRegister->undo();
 
         commandRegister->executeCommand(5);
 

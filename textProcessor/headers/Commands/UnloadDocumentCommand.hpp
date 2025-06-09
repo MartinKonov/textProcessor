@@ -12,6 +12,7 @@ public:
     UnloadDocumentCommand(UnloadDocumentCommandCLI* unloadDocumentCommandCLI, DocumentRegister* documentRegister);
     UnloadDocumentCommand(UnloadDocumentCommand& other) = delete;
     UnloadDocumentCommand& operator=(UnloadDocumentCommand& other) = delete;
+    ~UnloadDocumentCommand() override = default;
 
     string getName() const override;
     void execute() override;

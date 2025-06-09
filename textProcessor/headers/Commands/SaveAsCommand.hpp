@@ -10,6 +10,7 @@ public:
     SaveAsCommand(ActiveDocument* activeDocument, SaveAsCommandCLI* saveAsCommandCLI,DocumentRegister* documentRegister): activeDocument(activeDocument),saveAsCommandCLI(saveAsCommandCLI), documentRegister(documentRegister) {}
     SaveAsCommand(const SaveAsCommand& other) = delete;
     SaveAsCommand& operator=(const SaveAsCommand &other) = delete;
+    ~SaveAsCommand() override = default;
 
     string getName() const override;
     void execute() override;

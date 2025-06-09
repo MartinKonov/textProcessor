@@ -13,6 +13,7 @@ class CreateBlockCommand : public Command {
     CreateBlockCommand(CreateBlockCommandCLI* createBlockCommandCLI, BlockRegister* blockRegister, ActiveDocument* activeDocument);
     CreateBlockCommand(CreateBlockCommand& other) = delete;
     CreateBlockCommand& operator=(CreateBlockCommand& other) = delete;
+    ~CreateBlockCommand() override = default;
 
     string getName() const override;
     void execute() override;
