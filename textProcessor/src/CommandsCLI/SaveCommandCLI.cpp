@@ -10,6 +10,6 @@ void SaveCommandCLI::documentHasntChanged(){
 }
 
 void SaveCommandCLI::error(string message) {
-    cout << "SaveCommand::execute() " + message << endl;
+    cerr << "SaveCommand::execute() " + message << endl;
 }
 

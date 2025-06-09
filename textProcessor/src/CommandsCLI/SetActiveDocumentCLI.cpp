@@ -6,7 +6,7 @@ void SetActiveDocumentCommandCLI::success() {
 }
 
 void SetActiveDocumentCommandCLI::error(string message) {
-    cout << message << endl;
+    cerr << message << endl;
 }
 
 
@@ -20,9 +20,9 @@ string SetActiveDocumentCommandCLI::getDocPath() {
 }
 
 void SetActiveDocumentCommandCLI::errorUndoPrevDocName() {
-    cout << "Nothing to undo. No previous active document found" << endl;
+    cerr << "Nothing to undo. No previous active document found" << endl;
 }
 
 void SetActiveDocumentCommandCLI::errorUndo(string message) {
-    cout << "Set active document command: " << message << endl;
+    cerr << "Set active document command: " << message << endl;
 }

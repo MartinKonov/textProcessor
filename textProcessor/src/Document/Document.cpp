@@ -278,11 +278,40 @@ ostream& operator<<(ostream& os, Document& document)
 }
 
 void Document::sort() {
-    size_t n = getNumLines();
     std::vector<size_t> movableIndices;
     std::vector<Line*> movableLines;
 
-    collectMovableLines(movableLines, movableIndices);
+    collectMovableLines(movableLines, movableIndices, 0, lines.size());
+    bool lineHasMoved = sortMovableLines(movableLines, movableIndices);
+
+    if(lineHasMoved){
+        hasChanged = true;
+    }
+}
+
+void Document::collectMovableLines(vector<Line*>& movableLines, vector<size_t>& movableIndices, size_t startIndex, size_t endIndex) {
+
+    for (size_t i = startIndex; i < endIndex; ++i) {
+        if (lines[i]->isMovableInSort()) {
+            movableIndices.push_back(i);
+            movableLines.push_back(lines[i]);
+        }
+    }
+}
+
+void Document::sort(size_t startIndex, size_t endIndex) {
+    std::vector<size_t> movableIndices;
+    std::vector<Line*> movableLines;
+
+    collectMovableLines(movableLines, movableIndices, startIndex, endIndex);
+    bool lineHasMoved = sortMovableLines(movableLines, movableIndices);
+
+    if(lineHasMoved){
+        hasChanged = true;
+    }
+}
+
+bool Document::sortMovableLines(vector<Line*>& movableLines, vector<size_t>& movableIndices) {
     bool lineHasMoved = false;
     for (size_t i = 0; i < movableLines.size(); ++i) {
         for (size_t j = 0; j < movableLines.size() - 1 - i; ++j) {
@@ -299,17 +328,5 @@ void Document::sort() {
         lines[movableIndices[i]] = movableLines[i];
     }
 
-    if(lineHasMoved){
-        hasChanged = true;
-    }
-}
-
-void Document::collectMovableLines(vector<Line*>& movableLines, vector<size_t>& movableIndices) {
-
-    for (size_t i = 0; i < lines.size(); ++i) {
-        if (lines[i]->isMovableInSort()) {
-            movableIndices.push_back(i);
-            movableLines.push_back(lines[i]);
-        }
-    }
+    return lineHasMoved;
 }

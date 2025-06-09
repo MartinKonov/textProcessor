@@ -13,6 +13,8 @@
 #include "../headers/CommandsCLI/UnloadDocumentCommandCLI.hpp"
 #include "../headers/Commands/SetActiveDocumentCommand.hpp"
 #include "../headers/CommandsCLI/SetActiveDocumentCommandCLI.hpp"
+#include "../headers/Commands/CreateBlockCommand.hpp"
+#include "../headers/CommandsCLI/CreateBlockCommandCLI.hpp"
 
 using std::cout;
 using std::endl;
@@ -27,14 +29,16 @@ int main() {
         LineCreator* lc = LineCreator::getInstance();
         DocumentParser* dp = new DocumentParser(fm, lc);
         DocumentRegister* dr = new DocumentRegister(dp);
+        BlockRegister* br = BlockRegister::getInstance();
         ActiveDocument* ad = new ActiveDocument(dr);
+
         AddLineCommandCLI* addLineCommandCLI = new AddLineCommandCLI();
         SaveCommandCLI* saveCommandCLI = new SaveCommandCLI();
         SaveAsCommandCLI* saveAsCommandCLI = new SaveAsCommandCLI();
         LoadDocumentCommandCLI* loadDocumentCommandCLI = new LoadDocumentCommandCLI();
         UnloadDocumentCommandCLI* unloadDocumentCommandCLI = new UnloadDocumentCommandCLI();
         SetActiveDocumentCommandCLI* setActiveDocumentCommandCLI = new SetActiveDocumentCommandCLI();
-        
+        CreateBlockCommandCLI* createBlockCommandCLI = new CreateBlockCommandCLI();
 
         AddLineCommand* addLineCommand = new AddLineCommand(addLineCommandCLI, ad);
         SaveCommand* saveCommand = new SaveCommand(ad, saveCommandCLI, dr);
@@ -42,6 +46,7 @@ int main() {
         LoadDocumentCommand* loadDocumentCommand = new LoadDocumentCommand(loadDocumentCommandCLI, dr);
         UnloadDocumentCommand* unloadDocumentCommand = new UnloadDocumentCommand(unloadDocumentCommandCLI, dr);      
         SetActiveDocumentCommand* setActiveDocumentCommnd = new SetActiveDocumentCommand(setActiveDocumentCommandCLI, ad);
+        CreateBlockCommand* createBlockCommand = new CreateBlockCommand(createBlockCommandCLI, br, ad);
 
         // Register the command
         commandRegister->registerCommand(addLineCommand);
@@ -50,17 +55,17 @@ int main() {
         commandRegister->registerCommand(loadDocumentCommand);
         commandRegister->registerCommand(unloadDocumentCommand);
         commandRegister->registerCommand(setActiveDocumentCommnd);
+        commandRegister->registerCommand(createBlockCommand);
 
         cout << "Commands:\n" << commandRegister->showAllCommands() << endl;
 
         commandRegister->executeCommand(4);
+        commandRegister->executeCommand(4);
 
         commandRegister->executeCommand(6);
-        cout << ad->getActiveDocument()->getNumLines() << endl;
-        ad->getActiveDocument()->sort();
-        cout << ad->getActiveDocument()->getContents() << endl;
+        
+        commandRegister->executeCommand(7);
 
-        cout << ad->getActiveDocument()->getHasChanged() << endl;
         commandRegister->executeCommand(5);
 
         // Execute the command

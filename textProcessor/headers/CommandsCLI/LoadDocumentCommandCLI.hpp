@@ -7,7 +7,7 @@ class LoadDocumentCommandCLI : public CommandsCLI {
 
     public:
         LoadDocumentCommandCLI() = default;
-        ~LoadDocumentCommandCLI() = default;
+        ~LoadDocumentCommandCLI() override = default;
         
         void success() override;
         string getDocFilePath();

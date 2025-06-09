@@ -36,6 +36,10 @@ class DataRegister {
         return items[index];
     }
 
+    bool itemExists(const string& name) const {
+        return findIndex(name) != -1;
+    }
+
     /**
      * @brief Removes an item by its name from the register.
      * @param name The name of the item to remove.

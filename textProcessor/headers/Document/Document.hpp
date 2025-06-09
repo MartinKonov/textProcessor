@@ -38,12 +38,13 @@ class Document {
     size_t getNumLines();
     
     void sort();
-    //void sort(Block)
+    void sort(size_t startIndex, size_t endIndex);
     // TODO while the commands are being made
     
     friend ostream& operator<<(ostream& os, Document& document);
  private:
-    void collectMovableLines(vector<Line*>& movableLines, vector<size_t>& movableIndices);
+    void collectMovableLines(vector<Line*>& movableLines, vector<size_t>& movableIndices, size_t startIndex, size_t endIndex);
+    bool sortMovableLines(vector<Line*>& movableLines, vector<size_t>& movableIndices);
     void copyFrom(const Document& other);
     void freeDocument();
     bool compareLinesTo(Document& other);

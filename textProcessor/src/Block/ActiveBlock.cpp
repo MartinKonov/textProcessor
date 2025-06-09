@@ -3,7 +3,7 @@
 
 
 
-ActiveBlock::ActiveBlock(BlockRegister* blockRegister, Block* activeBlock = nullptr) {
+ActiveBlock::ActiveBlock(BlockRegister* blockRegister, Block* activeBlock) {
     this->blockRegister = blockRegister;
     this->activeBlock = activeBlock;
 }

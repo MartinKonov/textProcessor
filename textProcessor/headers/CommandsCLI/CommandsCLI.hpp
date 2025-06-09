@@ -13,6 +13,8 @@ using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
+using std::cerr;
+using std::exception;
 
 class CommandsCLI {
     public:

@@ -33,7 +33,7 @@ public:
         }
 
         string existingContent = fileManager->getContents(Derived::DATA_FILE);
-        string newContent = existingContent + content;
+        string newContent = existingContent + '\n' + content;
 
         fileManager->setContent(Derived::DATA_FILE, newContent);
 

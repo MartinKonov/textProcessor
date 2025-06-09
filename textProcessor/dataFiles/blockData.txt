@@ -2,3 +2,7 @@ TestBlock2|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/tes
 TestBlock3|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt|1|10
 blockA|myDoc|0|2
 blockB|myDoc|1|2
+NOVBLOK|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt|4|8
+NOVBLOK2|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt|2|5
+BLOCKAA|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt|2|6
+BLOKCHENCE|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example33.txt|1|3

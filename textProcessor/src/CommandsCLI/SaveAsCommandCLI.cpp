@@ -10,7 +10,7 @@ void SaveAsCommandCLI::documentHasntChanged(){
 }
 
 void SaveAsCommandCLI::error(string message) {
-    cout << "SaveCommand::execute() " + message << endl;
+    cerr << "SaveCommand::execute() " + message << endl;
 }
 
 string SaveAsCommandCLI::getNewDocName() {

@@ -14,6 +14,20 @@ Block::~Block()
     // No dynamic memory to free, as Document is managed by DocumentRegister
 }
 
+bool Block::operator==(Block& other) {
+    return (this->blockName == other.blockName)
+            && (this->documentName == other.documentName)
+            && (this->startLineIndex == other.startLineIndex)
+            && (this->endLineIndex == other.endLineIndex);
+}
+
+bool Block::operator!=(Block& other) {
+    return (this->blockName != other.blockName)
+            || (this->documentName != other.documentName)
+            || (this->startLineIndex != other.startLineIndex)
+            || (this->endLineIndex != other.endLineIndex);
+}
+
 /**
  * @brief Returns the name of the block.
  * @return string The name of the block.

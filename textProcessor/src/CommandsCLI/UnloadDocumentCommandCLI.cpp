@@ -6,7 +6,7 @@ void UnloadDocumentCommandCLI::success() {
 }
 
 void UnloadDocumentCommandCLI::error(string message) {
-    cout << message << endl;
+    cerr << message << endl;
 }
 
 string UnloadDocumentCommandCLI::getDocPathToUnload() {
