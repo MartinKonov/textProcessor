@@ -44,7 +44,10 @@ class Line {
     virtual void toUpper();
     virtual void toLower();
     virtual bool isMovableInSort() const;
+    virtual bool isNumericLine() const;
+    virtual long long getNumericValue() const;
     virtual bool operator< (const Line& other) const;
+
 
  private:
    char lower(int c);

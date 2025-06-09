@@ -18,10 +18,7 @@
 //  * @return false otherwise
 bool NumericLine::operator< (const Line& other) const 
 {
-   long long myValue = atol(trimmedContent().c_str());
-    long long otherValue = atol(((NumericLine&)other).trimmedContent().c_str()); 
-
-    return myValue < otherValue;
+    return Line::operator<(other);
 }
 
 /**
@@ -35,4 +32,12 @@ string NumericLine::trimmedContent() const
     if (start == std::string::npos) return "";
     size_t end = content.find_last_not_of(" \t\r\n");
     return content.substr(start, end - start + 1);
+}
+
+bool NumericLine::isNumericLine() const {
+    return true;
+}
+
+long long NumericLine::getNumericValue() const {
+    return atol(trimmedContent().c_str());
 }

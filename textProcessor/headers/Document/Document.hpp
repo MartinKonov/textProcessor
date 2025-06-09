@@ -43,6 +43,7 @@ class Document {
     
     friend ostream& operator<<(ostream& os, Document& document);
  private:
+    void collectMovableLines(vector<Line*>& movableLines, vector<size_t>& movableIndices);
     void copyFrom(const Document& other);
     void freeDocument();
     bool compareLinesTo(Document& other);

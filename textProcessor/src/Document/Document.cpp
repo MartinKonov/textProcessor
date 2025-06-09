@@ -277,7 +277,39 @@ ostream& operator<<(ostream& os, Document& document)
     return os;
 }
 
-void Document::sort()
-{
-    //TODO
+void Document::sort() {
+    size_t n = getNumLines();
+    std::vector<size_t> movableIndices;
+    std::vector<Line*> movableLines;
+
+    collectMovableLines(movableLines, movableIndices);
+    bool lineHasMoved = false;
+    for (size_t i = 0; i < movableLines.size(); ++i) {
+        for (size_t j = 0; j < movableLines.size() - 1 - i; ++j) {
+            if (*movableLines[j + 1] < *movableLines[j]) {
+                Line* temp = movableLines[j];
+                movableLines[j] = movableLines[j + 1];
+                movableLines[j + 1] = temp;
+                lineHasMoved = true;
+            }
+        }
+    }
+
+    for (size_t i = 0; i < movableIndices.size(); ++i) {
+        lines[movableIndices[i]] = movableLines[i];
+    }
+
+    if(lineHasMoved){
+        hasChanged = true;
+    }
+}
+
+void Document::collectMovableLines(vector<Line*>& movableLines, vector<size_t>& movableIndices) {
+
+    for (size_t i = 0; i < lines.size(); ++i) {
+        if (lines[i]->isMovableInSort()) {
+            movableIndices.push_back(i);
+            movableLines.push_back(lines[i]);
+        }
+    }
 }

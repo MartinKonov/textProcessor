@@ -56,8 +56,11 @@ int main() {
         commandRegister->executeCommand(4);
 
         commandRegister->executeCommand(6);
-        commandRegister->executeCommand(1);
+        cout << ad->getActiveDocument()->getNumLines() << endl;
+        ad->getActiveDocument()->sort();
+        cout << ad->getActiveDocument()->getContents() << endl;
 
+        cout << ad->getActiveDocument()->getHasChanged() << endl;
         commandRegister->executeCommand(5);
 
         // Execute the command

@@ -110,8 +110,7 @@ void Line::toLower()
  * @return true if the line is movable in sort
  * @return false otherwise
  */
-bool Line::isMovableInSort() const 
-{
+bool Line::isMovableInSort() const {
     return true;
 }
 
@@ -125,8 +124,29 @@ bool Line::isMovableInSort() const
  */
 bool Line::operator<(const Line &other) const 
 {
-    return content < other.content;
+    if (this->isNumericLine() && other.isNumericLine()) {
+        return this->getNumericValue() < other.getNumericValue();
+    }
+
+    if (this->isNumericLine() && !other.isNumericLine()) {
+        return true;
+    }
+
+    if (!this->isNumericLine() && other.isNumericLine()) {
+        return false;
+    }
+
+    return this->content < other.content;
 }
+
+bool Line::isNumericLine() const {
+    return false;
+}
+
+long long Line::getNumericValue() const {
+    return 0;
+}
+
 /**
  * @brief Trims the line from both sides
  *

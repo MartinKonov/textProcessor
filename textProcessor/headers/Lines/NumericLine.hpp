@@ -18,6 +18,8 @@ class NumericLine : public Line {
  public:
     NumericLine(const string text) : Line(text){};
     bool operator< (const Line& other) const override;
+    bool isNumericLine() const override;
+    long long getNumericValue() const override;
 
  private:
     string trimmedContent() const;

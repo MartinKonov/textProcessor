@@ -13,7 +13,6 @@
  * @brief If a line starts with <didgits>. it must never move during sorting
  * 
  */
-bool NumberedLine::isMovableInSort() const
-{
-    return true;
+bool NumberedLine::isMovableInSort() const {
+    return false;
 }

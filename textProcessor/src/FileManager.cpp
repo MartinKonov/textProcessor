@@ -60,6 +60,11 @@ void FileManager::loadFile(const string& filename) {
     while (getline(file, line)) {
         content += line + '\n';
     }
+    
+    if (!content.empty() && content.back() == '\n') {
+        content.pop_back();
+    }
+
 
     setContent(filename, content);
     file.close();
