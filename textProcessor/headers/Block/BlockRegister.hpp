@@ -20,9 +20,14 @@ class BlockRegister : public DataRegister<BlockRegister, Block, BlockParser> {
 
     void addBlock(string blockName, Document* document, size_t startLineIndex, size_t endLineIndex);
 
-   static string getType();
+    string getType();
 
-   static string getItemName(Block* macro);
+    string getItemName(Block* block);
+
+    vector<Block*> getBlocksForDocument(string documentName);
+
+    string showAllForDocument(string documentName);
+
  private:
     BlockRegister();
     ~BlockRegister();

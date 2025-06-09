@@ -55,8 +55,6 @@ void BlockRegister::addBlock(string blockName, Document* document, size_t startL
     }
 }
 
-
-
 string BlockRegister::getType() {
     return "BlockRegister";
 }
@@ -66,4 +64,29 @@ string BlockRegister::getItemName(Block* block) {
         throw std::runtime_error("BlockRegister::getItemName: Block is null");
     }
     return block->getName();
+}
+
+vector<Block*> BlockRegister::getBlocksForDocument(string documentName) {
+    vector<Block*> allBlocks = getAll();
+    vector<Block*> blocksForDocument;
+
+    for(int i = 0; allBlocks.size(); i++) {
+        if(allBlocks[i]->getDocumentName() == documentName){
+            blocksForDocument.push_back(allBlocks[i]);
+        }
+    }
+
+    return blocksForDocument;
+}
+
+string BlockRegister::showAllForDocument(string documentName) {
+    
+    vector<Block*> allBlocks = getAll();
+    string out;
+    for (Block* block : items) {
+        if(block->getDocumentName() == documentName) {
+            out += parser->serialize(block);
+        }
+    }
+    return out;
 }
