@@ -69,8 +69,8 @@ string BlockRegister::getItemName(Block* block) {
 vector<Block*> BlockRegister::getBlocksForDocument(string documentName) {
     vector<Block*> allBlocks = getAll();
     vector<Block*> blocksForDocument;
-
-    for(int i = 0; allBlocks.size(); i++) {
+    
+    for(int i = 0; i < allBlocks.size(); i++) {
         if(allBlocks[i]->getDocumentName() == documentName){
             blocksForDocument.push_back(allBlocks[i]);
         }
@@ -83,6 +83,7 @@ string BlockRegister::showAllForDocument(string documentName) {
     
     vector<Block*> allBlocks = getAll();
     string out;
+    out += "Name | DocumentName | start Line Index | end Line index\n";
     for (Block* block : items) {
         if(block->getDocumentName() == documentName) {
             out += parser->serialize(block);

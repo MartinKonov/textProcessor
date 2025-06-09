@@ -1,8 +1,6 @@
 #include "../../headers/Block/ActiveBlock.hpp"
 
 
-
-
 ActiveBlock::ActiveBlock(BlockRegister* blockRegister, Block* activeBlock) {
     this->blockRegister = blockRegister;
     this->activeBlock = activeBlock;
@@ -26,8 +24,5 @@ void ActiveBlock::removeActiveBlock() {
 }
 
 Block* ActiveBlock::getActiveBlock() {
-    if (activeBlock != nullptr) {
-        return activeBlock; 
-    }
-    throw runtime_error("ActiveBlock:: getActiveBlock: Active block hasn't been set yet.");
+    return activeBlock;
 }
