@@ -20,6 +20,8 @@
 #include "../headers/Commands/SetActiveBlockCommand.hpp"
 #include "../headers/CommandsCLI/SetActiveBlockCommandCLI.hpp"
 #include "../headers/Block/ActiveBlock.hpp"
+#include "../headers/Commands/SortCommand.hpp"
+#include "../headers/CommandsCLI/SortCommandCLI.hpp"
 
 using std::cout;
 using std::endl;
@@ -47,6 +49,7 @@ int main() {
         CreateBlockCommandCLI* createBlockCommandCLI = new CreateBlockCommandCLI();
         RemoveBlockCommandCLI* removeBlockCommandCLI = new RemoveBlockCommandCLI();
         SetActiveBlockCommandCLI* setActiveBlockCommandCLI = new SetActiveBlockCommandCLI();
+        SortCommandCLI* sortCommandCLI = new SortCommandCLI();
 
         AddLineCommand* addLineCommand = new AddLineCommand(addLineCommandCLI, ad);
         SaveCommand* saveCommand = new SaveCommand(ad, saveCommandCLI, dr);
@@ -57,6 +60,7 @@ int main() {
         CreateBlockCommand* createBlockCommand = new CreateBlockCommand(createBlockCommandCLI, br, ad);
         RemoveBlockCommand* removeBlockCommand = new RemoveBlockCommand(removeBlockCommandCLI, br, dr);
         SetActiveBlockCommand* setActiveBlockCommand = new SetActiveBlockCommand(setActiveBlockCommandCLI, ab, ad, br);
+        SortCommand* sortCommand = new SortCommand(sortCommandCLI, ad, ab);
 
         // Register the command
         commandRegister->registerCommand(addLineCommand);
@@ -68,6 +72,7 @@ int main() {
         commandRegister->registerCommand(createBlockCommand);
         commandRegister->registerCommand(removeBlockCommand);
         commandRegister->registerCommand(setActiveBlockCommand);
+        commandRegister->registerCommand(sortCommand);
 
         cout << "Commands:\n" << commandRegister->showAllCommands() << endl;
 
@@ -75,9 +80,9 @@ int main() {
 
         commandRegister->executeCommand(6);
         
-        //commandRegister->executeCommand(7);
-
         commandRegister->executeCommand(9);
+
+        commandRegister->executeCommand(10);
 
         commandRegister->executeCommand(5);
 
