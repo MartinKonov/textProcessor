@@ -17,8 +17,8 @@ class SaveCommand : public Command {
 
         string getName() const override;
         void execute() override;
-        void undo() override;
-
+        void undo() override {};
+        bool isUndoable() const override;
     private:
         ActiveDocument* activeDocument;
         DocumentRegister* documentRegister;

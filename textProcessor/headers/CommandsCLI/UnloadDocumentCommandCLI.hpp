@@ -14,6 +14,5 @@ public:
     string getDocPathToUnload();
     void docHasChanged();
     bool saveQuery();
-    void undo();
 
 };

@@ -32,6 +32,6 @@ void SaveCommand::execute()
     }
 }
 
-void SaveCommand::undo() {
-    return;
+bool SaveCommand::isUndoable() const {
+    return false;
 }

@@ -14,8 +14,9 @@ public:
     ~ViewAllBlocksCommand() override = default;
 
     void execute() override;
-    void undo() override;
+    void undo() override {};
     string getName() const override;
+    bool isUndoable() const override;
 
     private:
     ViewAllBlocksCommandCLI* cli;

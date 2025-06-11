@@ -2,7 +2,7 @@
 
 
 LoadDocumentCommand::LoadDocumentCommand(LoadDocumentCommandCLI* loadDocumentCommandCLI, DocumentRegister* documentRegister) {
-    this->loadDoucmentCommandCLI = loadDocumentCommandCLI;
+    this->loadDocumentCommandCLI = loadDocumentCommandCLI;
     this->documentRegister = documentRegister;
 }
 
@@ -12,17 +12,17 @@ string LoadDocumentCommand::getName() const {
 
 void LoadDocumentCommand::execute() {
 
-    string docFilePath = loadDoucmentCommandCLI->getDocFilePath();
+    string docFilePath = loadDocumentCommandCLI->getDocFilePath();
 
     try {
         documentRegister->addDocument(docFilePath);
     } catch(runtime_error& e) {
-        loadDoucmentCommandCLI->error(e.what());
+        loadDocumentCommandCLI->error(e.what());
         return;
     }
-    loadDoucmentCommandCLI->success();
+    loadDocumentCommandCLI->success();
 }
 
-void LoadDocumentCommand::undo() {
-    loadDoucmentCommandCLI->undo();
+bool LoadDocumentCommand::isUndoable() const {
+    return false;
 }

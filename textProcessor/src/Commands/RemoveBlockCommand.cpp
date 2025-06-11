@@ -43,7 +43,6 @@ void RemoveBlockCommand::undo() {
     }
 
     try{
-
         Document* documentOfRemovedBlock = documentRegister->getDocument(removedBlock->getDocumentName());
         blockRegister->addBlock(removedBlock->getName(), documentOfRemovedBlock, removedBlock->getStartLineIndex(), removedBlock->getEndLineIndex());
 

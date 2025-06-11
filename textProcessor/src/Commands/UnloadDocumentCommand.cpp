@@ -53,6 +53,6 @@ void UnloadDocumentCommand::handleDocHasChanged(Document* document) {
     }
 }
 
-void UnloadDocumentCommand::undo() {
-    unloadDocumentCommandCLI->undo();
+bool UnloadDocumentCommand::isUndoable() const {
+    return false;
 }

@@ -41,7 +41,3 @@ bool UnloadDocumentCommandCLI::saveQuery() {
         }
     }
 }
-
-void UnloadDocumentCommandCLI::undo() {
-    cout << "To undo unload document command, call load document command" << endl;
-}

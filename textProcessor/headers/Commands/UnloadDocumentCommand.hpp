@@ -16,7 +16,8 @@ public:
 
     string getName() const override;
     void execute() override;
-    void undo() override;
+    void undo() override {};
+    bool isUndoable() const override;
 
 private:
     void handleDocHasChanged(Document* document);

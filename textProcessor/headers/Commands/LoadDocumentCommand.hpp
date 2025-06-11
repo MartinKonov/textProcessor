@@ -17,10 +17,11 @@ public:
 
     void execute() override;
     string getName() const override;
-    void undo() override;
+    void undo() override {};
+    bool isUndoable() const override;
 
 private:
     DocumentRegister* documentRegister;
-    LoadDocumentCommandCLI* loadDoucmentCommandCLI;
+    LoadDocumentCommandCLI* loadDocumentCommandCLI;
 
 };

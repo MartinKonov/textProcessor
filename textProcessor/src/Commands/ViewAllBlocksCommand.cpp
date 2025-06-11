@@ -28,5 +28,6 @@ void ViewAllBlocksCommand::execute() {
     cli->showBlocksForActiveDoc(blocksForDocSerialized);
 }
 
-void ViewAllBlocksCommand::undo() {
+bool ViewAllBlocksCommand::isUndoable() const {
+    return false;
 }

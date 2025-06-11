@@ -20,4 +20,7 @@ class Command
         virtual void execute() = 0;
         virtual void undo() = 0;
         virtual string getName() const = 0;
+        virtual bool isUndoable() const {
+            return true;
+        }
 };
