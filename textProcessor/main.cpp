@@ -24,6 +24,9 @@
 #include "../headers/CommandsCLI/SortCommandCLI.hpp"
 #include "../headers/Commands/ViewAllBlocksCommand.hpp"
 #include "../headers/CommandsCLI/ViewAllBlocksCommandCLI.hpp"
+#include "../headers/Commands/RemoveActiveBlockCommand.hpp"
+#include "../headers/CommandsCLI/RemoveActiveBlockCommandCLI.hpp"
+
 
 using std::cout;
 using std::endl;
@@ -53,6 +56,7 @@ int main() {
         SetActiveBlockCommandCLI* setActiveBlockCommandCLI = new SetActiveBlockCommandCLI();
         SortCommandCLI* sortCommandCLI = new SortCommandCLI();
         ViewAllBlocksCommandCLI* viewAllBlocksCommandCLI = new ViewAllBlocksCommandCLI();
+        RemoveActiveBlockCommandCLI* removeActiveBlockCommandCLI = new RemoveActiveBlockCommandCLI();
 
         AddLineCommand* addLineCommand = new AddLineCommand(addLineCommandCLI, ad);
         SaveCommand* saveCommand = new SaveCommand(ad, saveCommandCLI, dr);
@@ -65,6 +69,7 @@ int main() {
         SetActiveBlockCommand* setActiveBlockCommand = new SetActiveBlockCommand(setActiveBlockCommandCLI, ab, ad, br);
         SortCommand* sortCommand = new SortCommand(sortCommandCLI, ad, ab);
         ViewAllBlocksCommand* viewAllBlocksCommand = new ViewAllBlocksCommand(viewAllBlocksCommandCLI, ad, br);
+        RemoveActiveBlockCommand* removeActiveBlockCommand = new RemoveActiveBlockCommand(removeActiveBlockCommandCLI, ab, ad);
 
         // Register the command
         commandRegister->registerCommand(addLineCommand);
@@ -78,13 +83,19 @@ int main() {
         commandRegister->registerCommand(setActiveBlockCommand);
         commandRegister->registerCommand(sortCommand);
         commandRegister->registerCommand(viewAllBlocksCommand);
+        commandRegister->registerCommand(removeActiveBlockCommand);
 
         cout << "Commands:\n" << commandRegister->showAllCommands() << endl;
 
         commandRegister->executeCommand(4);
 
         commandRegister->executeCommand(6);
-        commandRegister->executeCommand(11);
+        commandRegister->executeCommand(9);
+        commandRegister->executeCommand(10);
+        cout << ad->getActiveDocument()->getContents() << endl;
+        commandRegister->executeCommand(12);
+        commandRegister->executeCommand(10);
+        cout << ad->getActiveDocument()->getContents() << endl;
 
         commandRegister->executeCommand(5);
 
