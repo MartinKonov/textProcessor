@@ -51,6 +51,8 @@ file(GLOB_RECURSE SOURCES
     "src/CommandsCLI/SetActiveBlockCommandCLI.cpp"
     "src/Commands/SortCommand.cpp"
     "src/CommandsCLI/SortCommandCLI.cpp"
+    "src/Commands/ViewAllBlocksCommand.cpp"
+    "src/CommandsCLI/ViewAllBlocksCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})

@@ -22,6 +22,8 @@
 #include "../headers/Block/ActiveBlock.hpp"
 #include "../headers/Commands/SortCommand.hpp"
 #include "../headers/CommandsCLI/SortCommandCLI.hpp"
+#include "../headers/Commands/ViewAllBlocksCommand.hpp"
+#include "../headers/CommandsCLI/ViewAllBlocksCommandCLI.hpp"
 
 using std::cout;
 using std::endl;
@@ -50,6 +52,7 @@ int main() {
         RemoveBlockCommandCLI* removeBlockCommandCLI = new RemoveBlockCommandCLI();
         SetActiveBlockCommandCLI* setActiveBlockCommandCLI = new SetActiveBlockCommandCLI();
         SortCommandCLI* sortCommandCLI = new SortCommandCLI();
+        ViewAllBlocksCommandCLI* viewAllBlocksCommandCLI = new ViewAllBlocksCommandCLI();
 
         AddLineCommand* addLineCommand = new AddLineCommand(addLineCommandCLI, ad);
         SaveCommand* saveCommand = new SaveCommand(ad, saveCommandCLI, dr);
@@ -61,6 +64,7 @@ int main() {
         RemoveBlockCommand* removeBlockCommand = new RemoveBlockCommand(removeBlockCommandCLI, br, dr);
         SetActiveBlockCommand* setActiveBlockCommand = new SetActiveBlockCommand(setActiveBlockCommandCLI, ab, ad, br);
         SortCommand* sortCommand = new SortCommand(sortCommandCLI, ad, ab);
+        ViewAllBlocksCommand* viewAllBlocksCommand = new ViewAllBlocksCommand(viewAllBlocksCommandCLI, ad, br);
 
         // Register the command
         commandRegister->registerCommand(addLineCommand);
@@ -73,16 +77,14 @@ int main() {
         commandRegister->registerCommand(removeBlockCommand);
         commandRegister->registerCommand(setActiveBlockCommand);
         commandRegister->registerCommand(sortCommand);
+        commandRegister->registerCommand(viewAllBlocksCommand);
 
         cout << "Commands:\n" << commandRegister->showAllCommands() << endl;
 
         commandRegister->executeCommand(4);
 
         commandRegister->executeCommand(6);
-        
-        commandRegister->executeCommand(9);
-
-        commandRegister->executeCommand(10);
+        commandRegister->executeCommand(11);
 
         commandRegister->executeCommand(5);
 
