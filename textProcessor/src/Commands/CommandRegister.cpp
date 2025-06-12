@@ -1,5 +1,5 @@
 #include "../../headers/Commands/CommandRegister.hpp"
-
+#include <iostream>
 
 CommandRegister::CommandRegister() {
 
@@ -7,10 +7,10 @@ CommandRegister::CommandRegister() {
 
 CommandRegister::~CommandRegister()
 {
-    for(Command* command: allCommands)
-    {
-        delete command;
-    }
+    // for(Command* command: allCommands)
+    // {
+    //     delete command;
+    // }
     allCommands.clear();
 }
 
@@ -62,7 +62,6 @@ int CommandRegister::findIndex(Command* command) {
  * @throws std::runtime_error if the command execution fails.
  */
 void CommandRegister::executeCommand(int index) {
-    index -= 1;
     if (index < 0 || index >= allCommands.size()) {
         throw std::out_of_range("CommandRegister::executeCommand: Index out of range");
     }

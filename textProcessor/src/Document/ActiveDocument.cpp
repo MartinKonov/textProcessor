@@ -32,6 +32,11 @@ void ActiveDocument::setActiveDocument(string documentName) {
     activeDocument = doc;
 }
 
+void ActiveDocument::removeActiveDocument() {
+    if(activeDocument){
+        activeDocument = nullptr;
+    }
+}
 /**
  * @brief Returns the currently active document.
  * 

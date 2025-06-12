@@ -13,7 +13,7 @@ string LoadDocumentCommand::getName() const {
 void LoadDocumentCommand::execute() {
 
     string docFilePath = loadDocumentCommandCLI->getDocFilePath();
-
+    
     try {
         documentRegister->addDocument(docFilePath);
     } catch(runtime_error& e) {

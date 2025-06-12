@@ -1,8 +1,9 @@
 #include "../../headers/Commands/UnloadDocumentCommand.hpp"
 
-UnloadDocumentCommand::UnloadDocumentCommand(UnloadDocumentCommandCLI* unloadDocumentCommandCLI, DocumentRegister* documentRegister) {
+UnloadDocumentCommand::UnloadDocumentCommand(UnloadDocumentCommandCLI* unloadDocumentCommandCLI, DocumentRegister* documentRegister, ActiveDocument* activeDocument) {
     this->unloadDocumentCommandCLI = unloadDocumentCommandCLI;
     this->documentRegister = documentRegister;
+    this->activeDocument = activeDocument;
 }
 
 
@@ -32,6 +33,8 @@ void UnloadDocumentCommand::execute() {
         unloadDocumentCommandCLI->error(e.what());
         return;
     }
+
+    activeDocument->removeActiveDocument();
 
     unloadDocumentCommandCLI->success();
 }

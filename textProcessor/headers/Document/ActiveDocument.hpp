@@ -18,6 +18,7 @@ class ActiveDocument {
     ~ActiveDocument() = default;   
 
     void setActiveDocument(string documentName);
+    void removeActiveDocument();
     Document* getActiveDocument() const;    
     
  private:

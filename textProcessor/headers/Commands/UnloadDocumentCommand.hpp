@@ -2,6 +2,7 @@
 #include "Command.hpp"
 #include "../CommandsCLI/UnloadDocumentCommandCLI.hpp"
 #include "../Document/DocumentRegister.hpp"
+#include "../Document/ActiveDocument.hpp"
 
 
 
@@ -9,7 +10,7 @@ class UnloadDocumentCommand : public Command {
 
 public:
     UnloadDocumentCommand() = delete;
-    UnloadDocumentCommand(UnloadDocumentCommandCLI* unloadDocumentCommandCLI, DocumentRegister* documentRegister);
+    UnloadDocumentCommand(UnloadDocumentCommandCLI* unloadDocumentCommandCLI, DocumentRegister* documentRegister, ActiveDocument* activeDocument);
     UnloadDocumentCommand(UnloadDocumentCommand& other) = delete;
     UnloadDocumentCommand& operator=(UnloadDocumentCommand& other) = delete;
     ~UnloadDocumentCommand() override = default;
@@ -24,4 +25,5 @@ private:
 
     UnloadDocumentCommandCLI* unloadDocumentCommandCLI;
     DocumentRegister* documentRegister;
+    ActiveDocument* activeDocument;
 };

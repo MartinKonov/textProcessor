@@ -1,0 +1,87 @@
+#pragma once
+#include "Commands/CommandRegister.hpp"
+#include "Commands/AddLineCommand.hpp"
+#include "Commands/SaveCommand.hpp"
+#include "CommandsCLI/SaveCommandCLI.hpp"
+#include "Commands/SaveAsCommand.hpp"
+#include "CommandsCLI/SaveAsCommandCLI.hpp"
+#include "Commands/LoadDocumentCommand.hpp"
+#include "CommandsCLI/LoadDocumentCommandCLI.hpp"
+#include "Commands/UnloadDocumentCommand.hpp"
+#include "CommandsCLI/UnloadDocumentCommandCLI.hpp"
+#include "Commands/SetActiveDocumentCommand.hpp"
+#include "CommandsCLI/SetActiveDocumentCommandCLI.hpp"
+#include "Commands/CreateBlockCommand.hpp"
+#include "CommandsCLI/CreateBlockCommandCLI.hpp"
+#include "Commands/RemoveBlockCommand.hpp"
+#include "CommandsCLI/RemoveBlockCommandCLI.hpp"
+#include "Commands/SetActiveBlockCommand.hpp"
+#include "CommandsCLI/SetActiveBlockCommandCLI.hpp"
+#include "Block/ActiveBlock.hpp"
+#include "Commands/SortCommand.hpp"
+#include "CommandsCLI/SortCommandCLI.hpp"
+#include "Commands/ViewAllBlocksCommand.hpp"
+#include "CommandsCLI/ViewAllBlocksCommandCLI.hpp"
+#include "Commands/RemoveActiveBlockCommand.hpp"
+#include "CommandsCLI/RemoveActiveBlockCommandCLI.hpp"
+
+
+
+class TextProcessor {
+    public:
+        static TextProcessor* getInstance();
+        static void destroyInstance();
+
+        void run();
+
+    private:
+
+        TextProcessor();
+        ~TextProcessor();
+        TextProcessor(const TextProcessor&) = delete;
+        TextProcessor& operator=(const TextProcessor&) = delete;
+
+        static TextProcessor* instance;
+
+        void initializeCommands();
+        void initializeCommandCLIs();
+        void initializeDataClasses();
+        void registerCommands();
+        bool isUnsignedInt(const string& str);
+
+        CommandRegister* commandRegister;
+        FileManager* fileManager;
+        LineCreator* lineCreator;
+        DocumentParser* documentParser;
+        DocumentRegister* documentRegister;
+        BlockRegister* blockRegister;
+        ActiveDocument* activeDocument;
+        ActiveBlock* activeBlock;
+
+        AddLineCommandCLI* addLineCommandCLI ;
+        SaveCommandCLI* saveCommandCLI;
+        SaveAsCommandCLI* saveAsCommandCLI;
+        LoadDocumentCommandCLI* loadDocumentCommandCLI;
+        UnloadDocumentCommandCLI* unloadDocumentCommandCLI;
+        SetActiveDocumentCommandCLI* setActiveDocumentCommandCLI;
+        CreateBlockCommandCLI* createBlockCommandCLI;
+        RemoveBlockCommandCLI* removeBlockCommandCLI;
+        SetActiveBlockCommandCLI* setActiveBlockCommandCLI;
+        SortCommandCLI* sortCommandCLI;
+        ViewAllBlocksCommandCLI* viewAllBlocksCommandCLI;
+        RemoveActiveBlockCommandCLI* removeActiveBlockCommandCLI;
+
+        AddLineCommand* addLineCommand;
+        SaveCommand* saveCommand;
+        SaveAsCommand* saveAsCommand;
+        LoadDocumentCommand* loadDocumentCommand;
+        UnloadDocumentCommand* unloadDocumentCommand;
+        SetActiveDocumentCommand* setActiveDocumentCommand;
+        CreateBlockCommand* createBlockCommand;
+        RemoveBlockCommand* removeBlockCommand;
+        SetActiveBlockCommand* setActiveBlockCommand;
+        SortCommand* sortCommand;
+        ViewAllBlocksCommand* viewAllBlocksCommand;
+        RemoveActiveBlockCommand* removeActiveBlockCommand;
+
+};

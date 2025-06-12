@@ -22,11 +22,11 @@ class CommandRegister {
     string showAllCommands();
     void undo();
 
+    int findIndex(string commandName);
  private:
 
     vector<Command*> allCommands;
     Stack<string> executedCommandNames;
 
     int findIndex(Command* command);
-    int findIndex(string commandName);
 };

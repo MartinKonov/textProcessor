@@ -13,6 +13,7 @@ AddLineCommand::~AddLineCommand() {
 void AddLineCommand::execute() {
     if (!activeDocument->getActiveDocument()) {
         addLineCommandCLI->activeDocumentError();
+        return;
     }
     
     string line = addLineCommandCLI->getLineInput();

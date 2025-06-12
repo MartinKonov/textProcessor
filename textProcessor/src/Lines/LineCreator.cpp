@@ -25,6 +25,12 @@ LineCreator* LineCreator::getInstance()
     return lineCreator_;
 }
 
+void LineCreator::destroyInstance()
+{
+    delete lineCreator_;
+    lineCreator_ = nullptr;
+}
+
 /**
  * @brief Creates a Line object based on the content of the line
  *

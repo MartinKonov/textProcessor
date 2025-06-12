@@ -18,15 +18,16 @@
 class LineCreator 
 {
  public:
-    LineCreator(const LineCreator&) = delete;
-    LineCreator& operator=(const LineCreator&) = delete;
-    static LineCreator* getInstance();
-    Line* createLine(const string content);
-
+ static LineCreator* getInstance();
+ static void destroyInstance();
+ Line* createLine(const string content);
+   
  private:
-    static LineCreator* lineCreator_;
-
-    LineCreator() = default;
+      LineCreator(const LineCreator&) = delete;
+      LineCreator& operator=(const LineCreator&) = delete;
+      static LineCreator* lineCreator_;
+      ~LineCreator() = default;
+      LineCreator() = default;
 
     bool isNumberedLine(const string& content);
     bool isNumericLine(const string& content);
