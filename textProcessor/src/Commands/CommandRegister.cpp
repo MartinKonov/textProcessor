@@ -73,7 +73,9 @@ void CommandRegister::executeCommand(int index) {
         throw std::runtime_error("CommandRegister::executeCommand: " + string(e.what()));
     }
 
-    executedCommandNames.push(command->getName());
+    if(command->isUndoable()){
+        executedCommandNames.push(command->getName());
+    }
 }
 
 /**

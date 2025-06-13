@@ -30,6 +30,8 @@ void SaveCommand::execute()
     catch(const runtime_error& e) {
         saveCommandCLI->error(string(e.what()));
     }
+
+    saveCommandCLI->success();
 }
 
 bool SaveCommand::isUndoable() const {

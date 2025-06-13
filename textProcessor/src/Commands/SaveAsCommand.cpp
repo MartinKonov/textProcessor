@@ -10,12 +10,6 @@ void SaveAsCommand::execute() {
 
     string newDocName = saveAsCommandCLI->getNewDocName();
 
-    if(!docToSave->getHasChanged())
-    {
-        saveAsCommandCLI->documentHasntChanged();
-        return;
-    }
-
     try{
         documentRegister->saveAsDocument(docToSave, newDocName);
     }
