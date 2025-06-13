@@ -17,10 +17,11 @@ class ActiveFormatter {
 
  public:
 
-    ActiveFormatter(); // Need to inject formatter
+    ActiveFormatter();
     ~ActiveFormatter();
 
     void setFormatter(string formatterType);
+    string getActiveFormatterType();
     string getFormattedString(string input, int formatPoint);
 
  private:

@@ -56,6 +56,8 @@ file(GLOB_RECURSE SOURCES
     "src/TextProcessor.cpp"
     "src/Commands/ListLoadedDocumentsCommand.cpp"
     "src/CommandsCLI/ListLoadedDocumentsCommandCLI.cpp"
+    "src/Commands/SetFormatCommand.cpp"
+    "src/CommandsCLI/SetFormatCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})

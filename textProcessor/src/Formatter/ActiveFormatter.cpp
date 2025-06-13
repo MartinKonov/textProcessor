@@ -28,23 +28,30 @@ ActiveFormatter::~ActiveFormatter() {
  * @throws runtime_error if the formatter type is unknown.
  */
 void ActiveFormatter::setFormatter(string formatterType) {
-    if (formatter->getType() == formatterType) {
+
+    if(formatterType != "CenterFormatter" && formatterType != "WrapFormatter" && formatterType != "DirectFormatter"){
+        throw std::runtime_error("ActiveFormatter::setFormatter: Unknown formatter type");
+    }
+
+    if (formatter && (formatter->getType() == formatterType)) {
         return;
     }
     
     if (formatter) {
         delete formatter;
     }
-
+    
     if (formatterType == "CenterFormatter") {
         formatter = new CenterFormatter();
     } else if (formatterType == "WrapFormatter") {
         formatter = new WrapFormatter();
     } else if (formatterType == "DirectFormatter") {
         formatter = new DirectFormatter();
-    } else {
-        throw std::runtime_error("ActiveFormatter::setFormatter: Unknown formatter type");
     }
+}
+
+string ActiveFormatter::getActiveFormatterType() {
+    return formatter->getType();
 }
 
 /**

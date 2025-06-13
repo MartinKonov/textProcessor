@@ -8,7 +8,9 @@
 #include "CommandsCLI.hpp"
 
 
-
+/**
+ * @brief A class to handle input and output operations for the SortCommand.
+ */
 class SortCommandCLI : public CommandsCLI {
 
     public:

@@ -12,6 +12,7 @@
 
 using std::string;
 using std::vector;
+using std::runtime_error;
 
 /**
  * @brief An abstract base class for commands in the text processor application.

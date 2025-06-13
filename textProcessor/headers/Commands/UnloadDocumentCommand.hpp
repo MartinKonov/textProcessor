@@ -10,7 +10,9 @@
 #include "../Document/ActiveDocument.hpp"
 
 
-
+/**
+ * @brief A command to unload a document in the text processor application.
+ */
 class UnloadDocumentCommand : public Command {
 
 public:
