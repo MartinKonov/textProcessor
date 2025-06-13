@@ -29,4 +29,5 @@ class SetFormatCommand : public Command {
         SetFormatCommandCLI* cli;
         ActiveFormatter* activeFormatter;
         string previousFormatterType;
+        int previousFormatPoint;
 };

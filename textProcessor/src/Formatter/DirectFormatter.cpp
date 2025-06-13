@@ -5,13 +5,20 @@
  */
 #include "../../headers/Formatter/DirectFormatter.hpp"
 
+DirectFormatter::DirectFormatter(int formatPoint) : Formatter(formatPoint) {}
+
+
 /**
  * @brief Formats the input string by returning it as is.
  * @param input The input string to format.
  * @return The input string unchanged.
  */
-string DirectFormatter::format(string input, int formatPoint) {
+string DirectFormatter::format(string input) {
     return input;
+}
+
+int DirectFormatter::getFormatPoint() {
+    return 0;
 }
 
 /**

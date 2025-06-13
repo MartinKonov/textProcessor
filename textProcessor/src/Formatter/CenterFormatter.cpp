@@ -5,6 +5,8 @@
  */
 #include "../../headers/Formatter/CenterFormatter.hpp"
 
+CenterFormatter::CenterFormatter(int formatPoint) : Formatter(formatPoint) {}
+
 /**
  * @brief Returns the type of this formatter.
  * @return A string indicating the type of formatter.
@@ -13,17 +15,17 @@ string CenterFormatter::getType() {
     return "CenterFormatter";
 }
 
+int CenterFormatter::getFormatPoint() {
+    return formatPoint;
+}
+
 /**
  * @brief Formats the input string by centering it within a specified width.
  * @param input The input string to format.
  * @param formatPoint The width at which to center the text.
  * @return The formatted string with centered text.
  */
-string CenterFormatter::format(string input, int formatPoint) {
-    if (formatPoint <= 0) {
-        throw std::runtime_error("CenterFormatter::format: formatPoint must be greater than 0");
-    }
-
+string CenterFormatter::format(string input) {
     string baseString = removeNewLines(input);
     return centerText(baseString, formatPoint);
 }

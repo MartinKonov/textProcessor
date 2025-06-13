@@ -13,10 +13,11 @@
  */
 class WrapFormatter : public Formatter {
  public:
-    WrapFormatter() = default;
+    explicit WrapFormatter(int formatPoint);
     ~WrapFormatter() = default;
 
-    string format(string input, int formatPoint) override;
+    int getFormatPoint() override;
+    string format(string input) override;
     string getType() override;
 
 };

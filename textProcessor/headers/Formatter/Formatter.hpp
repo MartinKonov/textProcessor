@@ -18,11 +18,14 @@ using std::vector;
  */
 class Formatter {
  public:
-    virtual string format(string input, int formatPoint) = 0;
+    explicit Formatter(int formatPoint) : formatPoint(formatPoint) {}
+    virtual string format(string input) = 0;
     virtual string getType() = 0;
+    virtual int getFormatPoint() = 0;
     virtual ~Formatter() = default;
 
  protected:
     string removeNewLines(const string& input);
     vector<string> split(const string& str, char delimiter);
+    int formatPoint;
 };

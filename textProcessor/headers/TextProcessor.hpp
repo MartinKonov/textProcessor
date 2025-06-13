@@ -33,7 +33,8 @@
 #include "CommandsCLI/ListLoadedDocumentsCommandCLI.hpp"
 #include "Commands/SetFormatCommand.hpp"
 #include "CommandsCLI/SetFormatCommandCLI.hpp"
-#include "Formatter/ActiveFormatter.hpp"
+#include "Commands/ViewDocumentCommand.hpp"
+#include "CommandsCLI/ViewAllBlocksCommandCLI.hpp"
 
 
 /**
@@ -85,6 +86,7 @@ class TextProcessor {
         RemoveActiveBlockCommandCLI* removeActiveBlockCommandCLI;
         ListLoadedDocumentsCommandCLI* listLoadedDocumentsCommandCLI;
         SetFormatCommandCLI* setFormatCommandCLI;
+        ViewDocumentCommandCLI* viewDocumentCommandCLI;
 
         AddLineCommand* addLineCommand;
         SaveCommand* saveCommand;
@@ -100,4 +102,5 @@ class TextProcessor {
         RemoveActiveBlockCommand* removeActiveBlockCommand;
         ListLoadedDocumentsCommand* listLoadedDocumentsCommand;
         SetFormatCommand* setFormatCommand;
+        ViewDocumentCommand* viewDocumentCommand;
 };

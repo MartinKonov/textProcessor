@@ -10,7 +10,8 @@
  * @brief Constructor for the ActiveFormatter class.
  */
 ActiveFormatter::ActiveFormatter() {
-    this->formatter = new DirectFormatter();
+    formatPoint = 0;
+    this->formatter = new DirectFormatter(0);
 }
 
 /**
@@ -27,31 +28,35 @@ ActiveFormatter::~ActiveFormatter() {
  * @param formatterType The type of formatter to set (e.g., "CenterFormatter", "WrapFormatter", "DirectFormatter").
  * @throws runtime_error if the formatter type is unknown.
  */
-void ActiveFormatter::setFormatter(string formatterType) {
-
-    if(formatterType != "CenterFormatter" && formatterType != "WrapFormatter" && formatterType != "DirectFormatter"){
+void ActiveFormatter::setFormatter(string formatterType, int formatPoint) {
+    if (formatterType != "CenterFormatter" && formatterType != "WrapFormatter" && formatterType != "DirectFormatter") {
         throw std::runtime_error("ActiveFormatter::setFormatter: Unknown formatter type");
     }
 
-    if (formatter && (formatter->getType() == formatterType)) {
+    if (formatter && formatter->getType() == formatterType) {
         return;
     }
-    
-    if (formatter) {
-        delete formatter;
-    }
-    
+
+    delete formatter;
+
     if (formatterType == "CenterFormatter") {
-        formatter = new CenterFormatter();
+        formatter = new CenterFormatter(formatPoint);
+        this->formatPoint = formatPoint;
     } else if (formatterType == "WrapFormatter") {
-        formatter = new WrapFormatter();
+        formatter = new WrapFormatter(formatPoint);
+        this->formatPoint = formatPoint;
     } else if (formatterType == "DirectFormatter") {
-        formatter = new DirectFormatter();
+        formatter = new DirectFormatter(formatPoint);
+        this->formatPoint = 0;
     }
 }
 
 string ActiveFormatter::getActiveFormatterType() {
     return formatter->getType();
+}
+
+int ActiveFormatter::getActiveFormatterFormatPoint() {
+    return  formatter->getFormatPoint();
 }
 
 /**
@@ -61,6 +66,6 @@ string ActiveFormatter::getActiveFormatterType() {
  * @param formatPoint The point at which to format the string (e.g., width for centering).
  * @return The formatted string.
  */
-string ActiveFormatter::getFormattedString(string input, int formatPoint) {
-    return formatter->format(input, formatPoint);
+string ActiveFormatter::getFormattedString(string input) {
+    return formatter->format(input);
 }

@@ -20,10 +20,12 @@ class ActiveFormatter {
     ActiveFormatter();
     ~ActiveFormatter();
 
-    void setFormatter(string formatterType);
+    void setFormatter(string formatterType, int formatPoint);
     string getActiveFormatterType();
-    string getFormattedString(string input, int formatPoint);
+    string getFormattedString(string input);
+    int getActiveFormatterFormatPoint();
 
  private:
     Formatter* formatter;
+    int formatPoint;
 };

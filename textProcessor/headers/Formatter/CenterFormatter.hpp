@@ -14,10 +14,11 @@
  */
 class CenterFormatter : public Formatter {
  public:
-    CenterFormatter() = default;
+    explicit CenterFormatter(int formatPoint);
     ~CenterFormatter() = default;
 
-    string format(string input, int formatPoint) override;
+    string format(string input) override;
+    int getFormatPoint() override;
     string getType() override;
 
  private:

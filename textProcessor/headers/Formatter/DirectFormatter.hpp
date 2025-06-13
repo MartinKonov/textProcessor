@@ -13,9 +13,10 @@
  */
 class DirectFormatter : public Formatter {
  public:
-    DirectFormatter() = default;
+    explicit DirectFormatter(int formatPoint);
     ~DirectFormatter() = default;
 
-    string format(string input, int formatPoint) override;
+    int getFormatPoint() override;
+    string format(string input) override;
     string getType() override;
 };

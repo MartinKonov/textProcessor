@@ -20,6 +20,19 @@
         cerr << "Error: " << message << endl;
  }
 
+int SetFormatCommandCLI::getFormatPoint() {
+    cout << "Enter format point (positive integer): ";
+    string input;
+    getline(cin, input);
+    try {
+        int fp = std::stoi(input);
+        if (fp <= 0) throw std::invalid_argument("Negative format point is not allowed.");
+        return fp;
+    } catch (...) {
+        throw std::runtime_error("Invalid format point");
+    }
+}
+
  /**
   * @brief Gets the formatter type from the user.
   */

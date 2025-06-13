@@ -30,11 +30,22 @@
  * and sets the new formatter type in the ActiveFormatter instance.
   */
  void SetFormatCommand::execute() {
-     string formatterType = cli->getFormatterType(activeFormatter->getActiveFormatterType());
-     previousFormatterType = activeFormatter->getActiveFormatterType();
+    string formatterType = cli->getFormatterType(activeFormatter->getActiveFormatterType());
+    previousFormatterType = activeFormatter->getActiveFormatterType();
+    previousFormatPoint = activeFormatter->getActiveFormatterFormatPoint();
+
+    int formatPoint = 0;
+    if (formatterType != "DirectFormatter") {
+        try {
+            formatPoint = cli->getFormatPoint();
+        } catch (const std::runtime_error& e) {
+            cli->error(e.what());
+            return;
+        }
+    }
 
     try {
-        activeFormatter->setFormatter(formatterType);
+        activeFormatter->setFormatter(formatterType, formatPoint);
     } catch (const runtime_error& e) {
         cli->error("Failed to set formatter: " + string(e.what()));
         return;
@@ -53,7 +64,7 @@
     }
 
     try {
-        activeFormatter->setFormatter(previousFormatterType);
+        activeFormatter->setFormatter(previousFormatterType, previousFormatPoint);
     } catch (const runtime_error& e){
         cli->error("Failed to undo formatter change: " + string(e.what()));
         return;

@@ -5,12 +5,18 @@
  */
 #include "../../headers/Formatter/WrapFormatter.hpp"
 
+WrapFormatter::WrapFormatter(int formatPoint) : Formatter(formatPoint) {}
+
 /**
  * @brief Returns the type of this formatter.
  * @return A string indicating the type of formatter.
  */
 string WrapFormatter::getType() {
     return "WrapFormatter";
+}
+
+int WrapFormatter::getFormatPoint() {
+    return formatPoint;
 }
 
 /**
@@ -20,11 +26,7 @@ string WrapFormatter::getType() {
  * @return The formatted string with wrapped text.
  * @throws std::runtime_error if formatPoint is less than or equal to 0.
  */
-string WrapFormatter::format(string input, int formatPoint) {
-    if (formatPoint <= 0) {
-        throw std::runtime_error("WrapFormatter::format: formatPoint must be greater than 0");
-    }
-
+string WrapFormatter::format(string input) {
     string baseString = removeNewLines(input);
     string result;
 
