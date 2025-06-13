@@ -134,3 +134,12 @@ void DocumentRegister::saveAsDocument(Document* document, const string newFilena
     }
 }
 
+size_t DocumentRegister::getDocumentCount() const
+{
+    return documents.size();
+}
+
+
+vector<Document*> DocumentRegister::getDocuments() const {
+    return documents;
+}

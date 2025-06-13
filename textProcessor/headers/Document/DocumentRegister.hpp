@@ -26,7 +26,7 @@ class DocumentRegister {
     void saveDocument(Document* document);
     void saveAsDocument(Document* document, const string newFilename);
     size_t getDocumentCount() const;
-
+    vector<Document*> getDocuments() const;
 
  private:
     bool isDocumentLoaded(string name);

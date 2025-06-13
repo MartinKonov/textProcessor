@@ -24,6 +24,8 @@
 #include "CommandsCLI/ViewAllBlocksCommandCLI.hpp"
 #include "Commands/RemoveActiveBlockCommand.hpp"
 #include "CommandsCLI/RemoveActiveBlockCommandCLI.hpp"
+#include "Commands/ListLoadedDocumentsCommand.hpp"
+#include "CommandsCLI/ListLoadedDocumentsCommandCLI.hpp"
 
 
 
@@ -70,6 +72,7 @@ class TextProcessor {
         SortCommandCLI* sortCommandCLI;
         ViewAllBlocksCommandCLI* viewAllBlocksCommandCLI;
         RemoveActiveBlockCommandCLI* removeActiveBlockCommandCLI;
+        ListLoadedDocumentsCommandCLI* listLoadedDocumentsCommandCLI;
 
         AddLineCommand* addLineCommand;
         SaveCommand* saveCommand;
@@ -83,5 +86,5 @@ class TextProcessor {
         SortCommand* sortCommand;
         ViewAllBlocksCommand* viewAllBlocksCommand;
         RemoveActiveBlockCommand* removeActiveBlockCommand;
-
+        ListLoadedDocumentsCommand* listLoadedDocumentsCommand;
 };

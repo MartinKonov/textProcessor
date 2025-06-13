@@ -84,6 +84,7 @@ void TextProcessor::initializeCommandCLIs() {
     sortCommandCLI = new SortCommandCLI();
     viewAllBlocksCommandCLI = new ViewAllBlocksCommandCLI();
     removeActiveBlockCommandCLI = new RemoveActiveBlockCommandCLI();
+    listLoadedDocumentsCommandCLI = new ListLoadedDocumentsCommandCLI();
 }
 
 void TextProcessor::initializeCommands() {
@@ -99,6 +100,7 @@ void TextProcessor::initializeCommands() {
     sortCommand = new SortCommand(sortCommandCLI, activeDocument, activeBlock);
     viewAllBlocksCommand = new ViewAllBlocksCommand(viewAllBlocksCommandCLI, activeDocument, blockRegister);
     removeActiveBlockCommand = new RemoveActiveBlockCommand(removeActiveBlockCommandCLI, activeBlock, activeDocument);
+    listLoadedDocumentsCommand = new ListLoadedDocumentsCommand(listLoadedDocumentsCommandCLI, documentRegister);
 }
 
 void TextProcessor::registerCommands() {
@@ -114,6 +116,7 @@ void TextProcessor::registerCommands() {
     commandRegister->registerCommand(sortCommand);
     commandRegister->registerCommand(viewAllBlocksCommand);
     commandRegister->registerCommand(removeActiveBlockCommand);
+    commandRegister->registerCommand(listLoadedDocumentsCommand); 
 }
 
 

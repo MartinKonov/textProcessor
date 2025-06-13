@@ -54,6 +54,8 @@ file(GLOB_RECURSE SOURCES
     "src/Commands/ViewAllBlocksCommand.cpp"
     "src/CommandsCLI/ViewAllBlocksCommandCLI.cpp"
     "src/TextProcessor.cpp"
+    "src/Commands/ListLoadedDocumentsCommand.cpp"
+    "src/CommandsCLI/ListLoadedDocumentsCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})
