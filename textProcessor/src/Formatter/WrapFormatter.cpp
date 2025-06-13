@@ -1,3 +1,8 @@
+/**
+ * @file WrapFormatter.cpp
+ * @author MK
+ * @brief A formatter that wraps text at a specified point.
+ */
 #include "../../headers/Formatter/WrapFormatter.hpp"
 
 /**

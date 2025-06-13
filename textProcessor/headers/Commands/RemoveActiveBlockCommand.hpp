@@ -1,3 +1,8 @@
+/**
+ * @file RemoveActiveBlockCommand.hpp
+ * @author MK
+ * @brief A command to remove the active block in the text processor application.
+ */
 #pragma once
 #include "Command.hpp"
 #include "../Block/ActiveBlock.hpp"
@@ -6,6 +11,9 @@
 #include "../Document/ActiveDocument.hpp"
 
 
+/**
+ * @brief A command to remove the active block in the text processor application.
+ */
 class RemoveActiveBlockCommand : public Command {
     public:
     RemoveActiveBlockCommand() = delete;

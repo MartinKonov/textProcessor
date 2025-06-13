@@ -12,6 +12,12 @@
 
 using namespace std;
 
+/**
+ * @brief A class to represent a document containing multiple lines.
+ * 
+ * The Document class manages a collection of Line objects, allowing for operations such as adding, removing,
+ * and sorting lines, as well as tracking changes to the document.
+ */
 class Document {
  public:
     Document();

@@ -32,6 +32,11 @@ void ActiveDocument::setActiveDocument(string documentName) {
     activeDocument = doc;
 }
 
+/**
+ * @brief Removes the currently active document.
+ * 
+ * This method sets the active document pointer to nullptr, effectively removing the reference to the active document.
+ */
 void ActiveDocument::removeActiveDocument() {
     if(activeDocument){
         activeDocument = nullptr;

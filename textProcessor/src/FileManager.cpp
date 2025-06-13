@@ -157,6 +157,9 @@ void FileManager::saveAs(const string& oldFilename, const string& newFilename) {
     file.close();
 }
 
+/**
+ * @brief Saves the contents of a file with a new name and new content.
+ */
 void FileManager::saveAs(const string& oldFilename, const string& newFilename, string newContent)
 {
     int index = findIndex(oldFilename);

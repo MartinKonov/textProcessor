@@ -10,7 +10,9 @@
 #include "../Document/ActiveDocument.hpp"
 #include "../CommandsCLI/AddLineCommandCLI.hpp"
 
-
+/**
+ * @brief A command to add a line to the active document in the text processor application.
+ */
 class AddLineCommand : public Command {
 
  public:

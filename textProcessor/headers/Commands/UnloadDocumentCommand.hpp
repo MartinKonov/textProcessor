@@ -1,3 +1,8 @@
+/**
+ * @file UnloadDocumentCommand.hpp
+ * @author MK
+ * @brief A command to unload a document in the text processor application.
+ */
 #pragma once
 #include "Command.hpp"
 #include "../CommandsCLI/UnloadDocumentCommandCLI.hpp"

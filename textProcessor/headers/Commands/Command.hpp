@@ -13,6 +13,11 @@
 using std::string;
 using std::vector;
 
+/**
+ * @brief An abstract base class for commands in the text processor application.
+ * 
+ * This class defines the interface for all commands, including methods for execution, undoing, and retrieving the command name.
+ */
 class Command 
 {
     public:

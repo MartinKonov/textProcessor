@@ -1,8 +1,15 @@
+/**
+ * @file ActiveBlock.hpp
+ * @author MK
+ * @brief A class to manage the active block in the text processor application.
+ */
 #pragma once
 #include "BlockRegister.hpp"
 
 
-
+/**
+ * @brief A class to manage the active block in the text processor application.
+ */
 class ActiveBlock {
 
 public:

@@ -1,3 +1,8 @@
+/**
+ * @file SortCommand.hpp
+ * @author MK
+ * @brief A command to sort the lines in the active document or block in the text processor application.
+ */
 #pragma once
 #include "Command.hpp"
 #include "../CommandsCLI/SortCommandCLI.hpp"
@@ -5,7 +10,9 @@
 #include "../Block/ActiveBlock.hpp"
 
 
-
+/**
+ * @brief A command to sort the lines in the active document or block in the text processor application.
+ */
 class SortCommand : public Command {
 
 public:

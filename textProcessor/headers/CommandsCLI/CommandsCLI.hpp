@@ -16,6 +16,10 @@ using std::endl;
 using std::cerr;
 using std::exception;
 
+
+/**
+ * @brief An abstract base class for commands in the text processor application that interact with the command line interface.
+ */
 class CommandsCLI {
     public:
     virtual ~CommandsCLI() = default;

@@ -134,12 +134,20 @@ void DocumentRegister::saveAsDocument(Document* document, const string newFilena
     }
 }
 
+/**
+ * @brief Returns the number of documents in the register.
+ * @return size_t The number of documents.
+ */
 size_t DocumentRegister::getDocumentCount() const
 {
     return documents.size();
 }
 
 
+/**
+ * @brief Returns a vector of all documents in the register.
+ * @return vector<Document*> A vector containing pointers to all documents.
+ */
 vector<Document*> DocumentRegister::getDocuments() const {
     return documents;
 }

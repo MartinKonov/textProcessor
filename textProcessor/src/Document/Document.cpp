@@ -246,7 +246,12 @@ size_t Document::getNumLines()
     return lines.size();
 }
 
-
+/**
+ * @brief Compares the lines of this document with another document.
+ * 
+ * @param other The other document to compare with.
+ * @return true if the lines are equal, false otherwise.
+ */
 bool Document::compareLinesTo(Document& other)
 {
     if(this->lines.size() != other.lines.size())
@@ -289,6 +294,14 @@ void Document::sort() {
     }
 }
 
+/**
+ * @brief Collects movable lines and their indices from the document.
+ * 
+ * @param movableLines The vector to store movable lines.
+ * @param movableIndices The vector to store indices of movable lines.
+ * @param startIndex The starting index for collection.
+ * @param endIndex The ending index for collection.
+ */
 void Document::collectMovableLines(vector<Line*>& movableLines, vector<size_t>& movableIndices, size_t startIndex, size_t endIndex) {
 
     for (size_t i = startIndex; i < endIndex; ++i) {
@@ -299,6 +312,12 @@ void Document::collectMovableLines(vector<Line*>& movableLines, vector<size_t>& 
     }
 }
 
+/**
+ * @brief Sorts the lines in the document within a specified range.
+ * 
+ * @param startIndex The starting index for sorting (inclusive).
+ * @param endIndex The ending index for sorting (exclusive).
+ */
 void Document::sort(size_t startIndex, size_t endIndex) {
     std::vector<size_t> movableIndices;
     std::vector<Line*> movableLines;
@@ -311,6 +330,13 @@ void Document::sort(size_t startIndex, size_t endIndex) {
     }
 }
 
+/**
+ * @brief Sorts the movable lines and updates the document with the sorted lines.
+ * 
+ * @param movableLines The vector of movable lines to be sorted.
+ * @param movableIndices The vector of indices corresponding to the movable lines.
+ * @return true if any line has moved, false otherwise.
+ */
 bool Document::sortMovableLines(vector<Line*>& movableLines, vector<size_t>& movableIndices) {
     bool lineHasMoved = false;
     for (size_t i = 0; i < movableLines.size(); ++i) {

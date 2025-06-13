@@ -1,9 +1,19 @@
+/**
+ * @file Stack.hpp
+ * @author MK
+ * @brief A simple stack implementation using a vector to store items.
+ */
 #pragma once
 #include <vector>
 
 using std::vector;
 
-
+/**
+ * @brief A simple stack implementation using a vector to store items.
+ * 
+ * This class provides basic stack operations such as push, pop, top, empty, and size.
+ * It maintains a maximum size of 20 items, removing the oldest item when the limit is exceeded.
+ */
 template<typename T>
 class Stack {
  public:

@@ -14,6 +14,10 @@
 using std::string;
 using std::vector;
 
+/**
+ * @class DataParser
+ * @brief A template class for parsing data items.
+ */
 template <typename Derived, typename T>
 class DataParser {
 public:

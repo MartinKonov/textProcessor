@@ -1,3 +1,8 @@
+/**
+ * @file MacroParser.cpp
+ * @author MK
+ * @brief A class to parse and serialize macros in the text processor application.
+ */
 #include "../../headers/Macro/MacroParser.hpp"
 
 MacroParser* MacroParser::instance = nullptr;

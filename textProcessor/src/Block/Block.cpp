@@ -11,9 +11,13 @@ Block::Block(string blockName, string documentName, size_t startLineIndex, size_
 
 Block::~Block()
 {
-    // No dynamic memory to free, as Document is managed by DocumentRegister
+    // No dynamic memory to free, as Block is managed by Blockregsiter
 }
 
+/**
+ * @brief Copy constructor for Block.
+ * @param other The Block object to copy from.
+ */
 Block::Block(Block& other) {
     this->blockName = other.blockName;
     this->documentName = other.documentName;
@@ -21,6 +25,11 @@ Block::Block(Block& other) {
     this->endLineIndex = other.endLineIndex;
 }
 
+/**
+ * @brief Assignment operator for Block.
+ * @param other The Block object to assign from.
+ * @return Block& Reference to the current object.
+ */
 Block& Block::operator=(Block& other) {
     if(this != &other){
         this->blockName = other.blockName;
@@ -32,6 +41,11 @@ Block& Block::operator=(Block& other) {
     return *this;
 }
 
+/**
+ * @brief Equality operator for Block.
+ * @param other The Block object to compare with.
+ * @return bool True if the blocks are equal, false otherwise.
+ */
 bool Block::operator==(Block& other) {
     return (this->blockName == other.blockName)
             && (this->documentName == other.documentName)
@@ -39,6 +53,11 @@ bool Block::operator==(Block& other) {
             && (this->endLineIndex == other.endLineIndex);
 }
 
+/**
+ * @brief Inequality operator for Block.
+ * @param other The Block object to compare with.
+ * @return bool True if the blocks are not equal, false otherwise.
+ */
 bool Block::operator!=(Block& other) {
     return (this->blockName != other.blockName)
             || (this->documentName != other.documentName)

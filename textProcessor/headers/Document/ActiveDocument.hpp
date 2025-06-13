@@ -10,7 +10,9 @@
 #include "Document.hpp"
 #include "DocumentRegister.hpp"
 
-
+/**
+ * @brief A class to manage the current active document in the text processor.
+ */
 class ActiveDocument {
  public:
     ActiveDocument() = delete; // need documentRegister injected

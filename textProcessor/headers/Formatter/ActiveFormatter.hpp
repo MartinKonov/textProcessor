@@ -9,7 +9,10 @@
 #include "DirectFormatter.hpp"
 #include "WrapFormatter.hpp"
 
-
+/**
+ * @class ActiveFormatter
+ * @brief A class to manage the active formatter for string formatting.
+ */
 class ActiveFormatter {
 
  public:

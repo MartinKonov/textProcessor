@@ -1,9 +1,17 @@
+/**
+ * @file SaveAsCommand.hpp
+ * @author MK
+ * @brief A command to save the active document under a new name in the text processor application.
+ */
 #pragma once
 #include "Command.hpp"
 #include "../CommandsCLI/SaveAsCommandCLI.hpp"
 #include "../Document/ActiveDocument.hpp"
 #include "../Document/DocumentRegister.hpp"
 
+/**
+ * @brief A command to save the active document under a new name in the text processor application.
+ */
 class SaveAsCommand: public Command {
 public:
     SaveAsCommand() = delete;

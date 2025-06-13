@@ -1,3 +1,8 @@
+/**
+ * @file Formatter.cpp
+ * @author MK
+ * @brief A class that provides methods for formatting strings, including removing new lines and splitting strings.
+ */
 #include "../../headers/Formatter/Formatter.hpp"
 
 

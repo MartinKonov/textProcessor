@@ -1,10 +1,17 @@
+/**
+ * @file RemoveBlockCommand.hpp
+ * @author MK
+ * @brief A command to remove a block in the text processor application.
+ */
 #pragma once
 #include "Command.hpp"
 #include "../Block/BlockRegister.hpp"
 #include "../CommandsCLI/RemoveBlockCommandCLI.hpp"
 #include "../Document/DocumentRegister.hpp"
 
-
+/**
+ * @brief A command to remove a block in the text processor application.
+ */
 class RemoveBlockCommand : public Command {
 
  public:

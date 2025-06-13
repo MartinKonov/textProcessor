@@ -7,7 +7,10 @@
 #pragma once
 #include "Formatter.hpp"
 
-
+/**
+ * @class DirectFormatter
+ * @brief A class to format strings directly without modification.
+ */
 class DirectFormatter : public Formatter {
  public:
     DirectFormatter() = default;

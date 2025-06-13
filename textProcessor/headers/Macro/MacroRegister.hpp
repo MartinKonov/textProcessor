@@ -1,3 +1,8 @@
+/**
+ * @file MacroRegister.hpp
+ * @author MK
+ * @brief A class to register and manage macros in the text processor application.
+ */
 #pragma once
 
 #include "MacroParser.hpp"
@@ -7,6 +12,9 @@
 // add macro will ask for list of commands from commandManager and only add macro through the regiset and with strings
 // execute macro will ask for macro name which will come from getMacro. Then for each command name, it will call commandManager->executeCommand(commandName)
 
+/**
+ * @brief A class to register and manage macros in the text processor application.
+ */
 class MacroRegister : public DataRegister<MacroRegister, Macro, MacroParser> {
  public:
     static MacroRegister* getInstance();

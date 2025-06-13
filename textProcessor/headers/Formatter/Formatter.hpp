@@ -11,6 +11,11 @@
 using std::string;
 using std::vector;
 
+/**
+ * @class Formatter
+ * @brief An abstract base class for string formatting.
+ * @details This class defines the interface for formatting strings, including methods for formatting and retrieving the type of formatter.
+ */
 class Formatter {
  public:
     virtual string format(string input, int formatPoint) = 0;

@@ -10,7 +10,9 @@
 #include "CommandsCLI.hpp"
 
 
-
+/**
+ * @brief A class to handle input and output operations for the AddLineCommand.
+ */
 class AddLineCommandCLI : public CommandsCLI {
 
  public:

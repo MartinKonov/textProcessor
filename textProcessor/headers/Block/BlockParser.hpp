@@ -14,6 +14,9 @@
 using std::vector;
 using std::stoul;
 
+/**
+ * @brief A class to parse blocks of lines in a document.
+ */
 class BlockParser : public DataParser<BlockParser, Block> {
  public:
     static BlockParser* getInstance();

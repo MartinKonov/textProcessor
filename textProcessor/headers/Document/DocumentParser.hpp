@@ -1,7 +1,7 @@
 /**
  * @file DocumentParser.hpp
  * @author MK
- * @brief A singleton class to parse documents.
+ * @brief A class to parse documents.
  * @version 0.1
  * @date 2025-05-18
  */
@@ -11,6 +11,9 @@
 #include "../Lines/Line.hpp"
 #include "../Lines/LineCreator.hpp"
 
+/**
+ * @brief A class to parse documents.
+ */
 class DocumentParser
 {
  public:

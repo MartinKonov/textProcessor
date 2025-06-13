@@ -38,6 +38,11 @@ bool NumericLine::isNumericLine() const {
     return true;
 }
 
+/**
+ * @brief Returns the numeric value of the line
+ *
+ * @return long long The numeric value of the line
+ */
 long long NumericLine::getNumericValue() const {
     return atol(trimmedContent().c_str());
 }

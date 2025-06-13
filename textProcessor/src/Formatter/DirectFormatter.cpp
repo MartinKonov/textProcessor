@@ -1,3 +1,8 @@
+/**
+ * @file DirectFormatter.cpp
+ * @author MK
+ * @brief A class that formats input strings directly without any modifications.
+ */
 #include "../../headers/Formatter/DirectFormatter.hpp"
 
 /**

@@ -7,6 +7,10 @@
 #include "../FileManager.hpp"
 #include <stdexcept>
 
+/**
+ * @class DataRegister
+ * @brief A template class for managing a collection of items with a specific data type.
+ */
 template <typename Derived, typename T, typename ParserType>
 class DataRegister {
  public:

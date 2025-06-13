@@ -1,3 +1,8 @@
+/**
+ * @file LoadDocumentCommand.hpp
+ * @author MK
+ * @brief A command to load a document in the text processor application.
+ */
 #pragma once
 #include "Command.hpp"
 #include "../CommandsCLI/LoadDocumentCommandCLI.hpp"
@@ -5,7 +10,9 @@
 
 
 
-
+/**
+ * @brief A command to load a document in the text processor application.
+ */
 class LoadDocumentCommand : public Command {
 
 public:

@@ -1,3 +1,8 @@
+/**
+ * @file CenterFormatter.cpp
+ * @author MK
+ * @brief A class that formats input strings by centering them within a specified width.
+ */
 #include "../../headers/Formatter/CenterFormatter.hpp"
 
 /**

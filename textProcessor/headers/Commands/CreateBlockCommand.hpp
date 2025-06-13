@@ -1,3 +1,8 @@
+/**
+ * @file CreateBlockCommand.hpp
+ * @author MK
+ * @brief A command to create a block in the text processor application.
+ */
 #pragma once
 #include "Command.hpp"
 #include "../Block/BlockRegister.hpp"
@@ -5,7 +10,9 @@
 #include "../Document/ActiveDocument.hpp"
 
 
-
+/**
+ * @brief A command to create a block in the text processor application.
+ */
 class CreateBlockCommand : public Command {
 
  public:

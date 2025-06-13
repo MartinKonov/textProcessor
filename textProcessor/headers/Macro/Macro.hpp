@@ -13,6 +13,9 @@
 using std::vector;
 using std::string;
 
+/**
+ * @brief A class to represent a macro, which is a sequence of commands.
+ */
 class Macro {
 
  public:

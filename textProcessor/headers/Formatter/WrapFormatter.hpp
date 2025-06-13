@@ -7,7 +7,10 @@
 #pragma once
 #include "Formatter.hpp"
 
-
+/**
+ * @class WrapFormatter
+ * @brief A class that formats strings by wrapping them at a specified point.
+ */
 class WrapFormatter : public Formatter {
  public:
     WrapFormatter() = default;

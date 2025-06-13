@@ -1,3 +1,8 @@
+/**
+ * @file SaveCommand.hpp
+ * @author MK
+ * @brief A command to save the active document in the text processor application.
+ */
 #pragma once
 #include "Command.hpp"
 #include "../CommandsCLI/SaveCommandCLI.hpp"
@@ -5,7 +10,9 @@
 #include "../Document/DocumentRegister.hpp"
 
 
-
+/**
+ * @brief A command to save the active document in the text processor application.
+ */
 class SaveCommand : public Command {
 
     public:

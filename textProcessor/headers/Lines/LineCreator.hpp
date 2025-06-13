@@ -15,6 +15,9 @@
 #include "NumericLine.hpp"
 
 
+/**
+ * @brief A singleton class to create Line objects based on the content of the line.
+ */
 class LineCreator 
 {
  public:

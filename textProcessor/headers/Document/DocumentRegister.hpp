@@ -2,7 +2,7 @@
  * DocumentRegister.hpp
  * @file DocumentRegister.hpp
  * @author MK
- *   @brief A singleton class to manage a collection of documents.
+ * @brief A class to manage a collection of documents.
  * @version 0.1
  * @date 2025-05-18
  */
@@ -11,7 +11,9 @@
 #include "Document.hpp"
 #include "DocumentParser.hpp"
 
-
+/**
+ * @brief A class to manage a collection of documents.
+ */
 class DocumentRegister {
 
  public:

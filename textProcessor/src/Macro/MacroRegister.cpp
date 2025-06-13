@@ -1,3 +1,9 @@
+/**
+ * @file MacroRegister.cpp
+ * @author MK
+ * @brief A class to register and manage macros in the text processor application.
+ */
+
 #include "../headers/Macro/MacroRegister.hpp"
 
 
@@ -53,11 +59,23 @@ void MacroRegister::addMacro(string macroName, const vector<string> commandNames
     }
 }
 
+/**
+ * @brief Returns the type of the register.
+ * 
+ * @return string The type of the register.
+ */
 string MacroRegister::getType()
 {
     return "MacroRegister";
 }
 
+/**
+ * @brief Returns the name of the macro.
+ * 
+ * @param macro The macro to get the name from.
+ * @return string The name of the macro.
+ * @throws runtime_error if the macro is null.
+ */
 string MacroRegister::getItemName(Macro* macro)
 {
     if (macro == nullptr) {

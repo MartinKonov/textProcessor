@@ -1,6 +1,10 @@
 #include "../../headers/Commands/SaveCommand.hpp"
 
-
+/**
+ * @file SaveCommand.cpp
+ * @author MK
+ * @brief A command to save the active document in the text processor application.
+ */
 SaveCommand::SaveCommand(ActiveDocument* activeDocument, SaveCommandCLI* saveCommandCLI,DocumentRegister* documentRegister)
 {
     this->activeDocument = activeDocument;
@@ -8,12 +12,23 @@ SaveCommand::SaveCommand(ActiveDocument* activeDocument, SaveCommandCLI* saveCom
     this->documentRegister = documentRegister;
 }
 
-
+/**
+ * @brief gets the name of the command.
+ * @return string The name of the command.
+ * 
+ */
 string SaveCommand::getName() const 
 {
     return "Save";
 }
 
+/**
+ * @brief Executes the command to save the active document.
+ * 
+ * This method checks if the active document has changed. If it has not changed, it informs the user.
+ * If it has changed, it attempts to save the document using the document register.
+ * If an error occurs during saving, it catches the exception and displays an error message.
+ */
 void SaveCommand::execute() 
 {
     Document* docToSave = activeDocument->getActiveDocument();

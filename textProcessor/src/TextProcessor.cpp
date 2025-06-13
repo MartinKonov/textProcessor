@@ -1,8 +1,17 @@
+/**
+ * @file TextProcessor.cpp
+ * @author MK
+ * @brief The main class for the text processor application, responsible for managing commands, documents, and blocks.
+ */
 #include "../headers/TextProcessor.hpp"
 
 
 TextProcessor* TextProcessor::instance = nullptr;
 
+/**
+ * @brief Constructor for the TextProcessor class.
+ * Initializes data classes, command CLIs, commands, and registers them.
+ */
 TextProcessor::TextProcessor() {
     initializeDataClasses();
     initializeCommandCLIs();
@@ -22,6 +31,9 @@ void TextProcessor::destroyInstance() {
     instance = nullptr;
 }
 
+/**
+ * @brief Destructor for the TextProcessor class.
+ */
 TextProcessor::~TextProcessor() {
 
     delete addLineCommandCLI;
@@ -60,6 +72,10 @@ TextProcessor::~TextProcessor() {
     LineCreator::destroyInstance();
 }
 
+/**
+ * @brief Initializes the data classes used in the text processor.
+ * Creates instances of CommandRegister, FileManager, LineCreator, DocumentParser, DocumentRegister, ActiveDocument, and ActiveBlock.
+ */
 void TextProcessor::initializeDataClasses() {
     commandRegister = new CommandRegister();
     fileManager = FileManager::getInstance();
@@ -71,6 +87,10 @@ void TextProcessor::initializeDataClasses() {
     activeBlock = new ActiveBlock(blockRegister);
 }
 
+/**
+ * @brief Initializes the command CLIs used in the text processor.
+ * Creates instances of various command CLI classes.
+ */
 void TextProcessor::initializeCommandCLIs() {
     addLineCommandCLI = new AddLineCommandCLI();
     saveCommandCLI = new SaveCommandCLI();
@@ -87,6 +107,10 @@ void TextProcessor::initializeCommandCLIs() {
     listLoadedDocumentsCommandCLI = new ListLoadedDocumentsCommandCLI();
 }
 
+/**
+ * @brief Initializes the commands used in the text processor.
+ * Creates instances of various command classes and associates them with their respective CLIs and data classes.
+ */
 void TextProcessor::initializeCommands() {
     addLineCommand = new AddLineCommand(addLineCommandCLI, activeDocument);
     saveCommand = new SaveCommand(activeDocument, saveCommandCLI, documentRegister);
@@ -103,6 +127,10 @@ void TextProcessor::initializeCommands() {
     listLoadedDocumentsCommand = new ListLoadedDocumentsCommand(listLoadedDocumentsCommandCLI, documentRegister);
 }
 
+/**
+ * @brief Registers all commands with the command register.
+ * This method adds all the created command instances to the command register for execution.
+ */
 void TextProcessor::registerCommands() {
     commandRegister->registerCommand(addLineCommand);
     commandRegister->registerCommand(saveAsCommand);
@@ -119,7 +147,11 @@ void TextProcessor::registerCommands() {
     commandRegister->registerCommand(listLoadedDocumentsCommand); 
 }
 
-
+/**
+ * @brief Runs the text processor application.
+ * This method starts the command loop, allowing users to enter commands and execute them.
+ * It also handles special commands like 'exit', 'help', and 'undo'.
+ */
 void TextProcessor::run() {
 
     cout << "Welcome to the Text Processor!" << endl;
@@ -165,7 +197,12 @@ void TextProcessor::run() {
     }
 }
 
-
+/**
+ * @brief Checks if a string represents an unsigned integer.
+ * 
+ * @param str The string to check.
+ * @return true if the string is an unsigned integer, false otherwise.
+ */
 bool TextProcessor::isUnsignedInt(const std::string& str) {
     if (str.empty()) {
         return false;

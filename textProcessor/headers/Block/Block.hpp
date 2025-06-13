@@ -13,7 +13,9 @@ using std::string;
 
 
 
-
+/**
+ * @brief A class to represent a block of lines in a document.
+ */
 class Block {
 
     public:

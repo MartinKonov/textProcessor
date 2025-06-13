@@ -1,10 +1,17 @@
+/**
+ * @file ListLoadedDocumentsCommand.hpp
+ * @author MK
+ * @brief A command to list all loaded documents in the text processor application.
+ */
 #pragma once
 #include "Command.hpp"
 #include "../CommandsCLI/ListLoadedDocumentsCommandCLI.hpp"
 #include "../Document/DocumentRegister.hpp"
 
 
-
+/**
+ * @brief A command to list all loaded documents in the text processor application.
+ */
 class ListLoadedDocumentsCommand : public Command {
 
     public:

@@ -8,6 +8,10 @@
 #include "Formatter.hpp"
 
 
+/**
+ * @class CenterFormatter
+ * @brief A class to format strings by centering them within a specified width.
+ */
 class CenterFormatter : public Formatter {
  public:
     CenterFormatter() = default;

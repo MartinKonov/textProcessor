@@ -55,10 +55,22 @@ void BlockRegister::addBlock(string blockName, Document* document, size_t startL
     }
 }
 
+/**
+ * @brief Returns the type of the register.
+ * 
+ * @return string The type of the register.
+ */
 string BlockRegister::getType() {
     return "BlockRegister";
 }
 
+/**
+ * @brief Returns the name of the block.
+ * 
+ * @param block The block for which to get the name.
+ * @return string The name of the block.
+ * @throws runtime_error if the block is null.
+ */
 string BlockRegister::getItemName(Block* block) {
     if (block == nullptr) {
         throw std::runtime_error("BlockRegister::getItemName: Block is null");
@@ -66,6 +78,12 @@ string BlockRegister::getItemName(Block* block) {
     return block->getName();
 }
 
+/**
+ * @brief Retrieves all blocks associated with a specific document.
+ * 
+ * @param documentName The name of the document for which to retrieve blocks.
+ * @return vector<Block*> A vector containing pointers to the blocks associated with the specified document.
+ */
 vector<Block*> BlockRegister::getBlocksForDocument(string documentName) {
     vector<Block*> allBlocks = getAll();
     vector<Block*> blocksForDocument;
@@ -79,6 +97,12 @@ vector<Block*> BlockRegister::getBlocksForDocument(string documentName) {
     return blocksForDocument;
 }
 
+/**
+ * @brief Shows all blocks associated with a specific document in a formatted string.
+ * 
+ * @param documentName The name of the document for which to show blocks.
+ * @return string A formatted string containing the details of all blocks associated with the specified document.
+ */
 string BlockRegister::showAllForDocument(string documentName) {
     
     vector<Block*> allBlocks = getAll();

@@ -1,6 +1,15 @@
+/**
+ * @file SetActiveBlockCommandCLI.hpp
+ * @author MK
+ * @brief A class to handle input and output operations for the SetActiveBlockCommand.
+ */
 #pragma once
 #include "CommandsCLI.hpp"
 
+
+/**
+ * @brief A class to handle input and output operations for the SetActiveBlockCommand.
+ */
 class SetActiveBlockCommandCLI : public CommandsCLI {
 
     public:

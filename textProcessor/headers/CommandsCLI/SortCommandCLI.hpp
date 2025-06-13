@@ -1,3 +1,8 @@
+/**
+ * @file SortCommandCLI.hpp
+ * @author MK
+ * @brief A class to handle input and output operations for the SortCommand.
+ */
 
 #pragma once
 #include "CommandsCLI.hpp"

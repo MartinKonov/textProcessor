@@ -1,3 +1,8 @@
+/**
+ * @file SetActiveBlockCommand.hpp
+ * @author MK
+ * @brief A command to set the active block in the text processor application.
+ */
 #pragma once
 #include "Command.hpp"
 #include "../Document/ActiveDocument.hpp"
@@ -6,7 +11,9 @@
 #include "../Block/BlockRegister.hpp"
 
 
-
+/**
+ * @brief A command to set the active block in the text processor application.
+ */
 class SetActiveBlockCommand : public Command {
 
  public:

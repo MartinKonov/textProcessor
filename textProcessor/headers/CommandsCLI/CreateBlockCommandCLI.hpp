@@ -1,10 +1,17 @@
+/**
+ * @file CreateBlockCommandCLI.hpp
+ * @author MK
+ * @brief A class to handle input and output operations for the CreateBlockCommand.
+ */
 #pragma once
 
 #include "CommandsCLI.hpp"
 
 
 
-
+/**
+ * @brief A class to handle input and output operations for the CreateBlockCommand.
+ */
 class CreateBlockCommandCLI : public CommandsCLI {
  
  public:

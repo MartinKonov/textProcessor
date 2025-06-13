@@ -1,7 +1,7 @@
 /**
  * @file CommandRegister.hpp
  * @author MK
- * @brief A singleton class to manage a collection of commands in the text processor application.
+ * @brief A class to register and manage commands in the text processor application.
  * @version 0.1
  * @date 2025-05-26
  */
@@ -10,6 +10,9 @@
 #include "Command.hpp"
 #include "../Utils/Stack.hpp"
 
+/**
+ * @brief A class to register and manage commands in the text processor application.
+ */
 class CommandRegister {
 
  public:

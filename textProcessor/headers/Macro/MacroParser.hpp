@@ -1,9 +1,17 @@
+/**
+ * @file MacroParser.hpp
+ * @author MK
+ * @brief A class to parse and serialize macros in the text processor application.
+ */
 #pragma once
 
 #include "Macro.hpp"
 #include "../DataFiles.hpp"
 #include "../GenericDataClasses/DataParser.hpp"
 
+/**
+ * @brief A class to parse and serialize macros in the text processor application.
+ */
 class MacroParser : public DataParser<MacroParser, Macro> {
     public:
         static MacroParser* getInstance();

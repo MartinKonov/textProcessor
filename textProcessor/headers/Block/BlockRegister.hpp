@@ -12,7 +12,9 @@
 #include "../GenericDataClasses/DataRegister.hpp"
 
 
-
+/**
+ * @brief A singleton class to manage a collection of blocks within documents.
+ */
 class BlockRegister : public DataRegister<BlockRegister, Block, BlockParser> {
  public:
     static BlockRegister* getInstance();
