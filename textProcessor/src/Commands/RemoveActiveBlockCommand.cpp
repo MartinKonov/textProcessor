@@ -63,6 +63,13 @@ void RemoveActiveBlockCommand::undo() {
         return;
     }
 
+    if(*activeBlock->getActiveBlock() == *previousActiveBlock) {
+        cli->nothingToUndo();
+        delete previousActiveBlock;
+        previousActiveBlock = nullptr;
+        return;
+    }
+
     if(activeDocument->getActiveDocument()->getDocName() != previousActiveBlock->getDocumentName()) {
         cli->documentHasChanged();
         delete previousActiveBlock;

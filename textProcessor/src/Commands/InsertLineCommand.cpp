@@ -80,6 +80,13 @@ void InsertLineCommand::undo() {
         return;
     }
 
+    if(*doc == *previousDocument) {
+        cli->error("No changes to undo.");
+        delete previousDocument;
+        previousDocument = nullptr;
+        return;
+    }
+
     if(doc->getDocName() != previousDocument->getDocName()) {
         cli->error("Active document has changed since the last command was executed.");
         return;

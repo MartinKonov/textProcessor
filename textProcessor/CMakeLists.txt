@@ -70,6 +70,8 @@ file(GLOB_RECURSE SOURCES
     "src/CommandsCLI/ToUpperCommandCLI.cpp"
     "src/Commands/ToLowerCommand.cpp"
     "src/CommandsCLI/ToLowerCommandCLI.cpp"
+    "src/Commands/TrimTrailingCommand.cpp"
+    "src/CommandsCLI/TrimTrailingCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})

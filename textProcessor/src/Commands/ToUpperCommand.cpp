@@ -48,7 +48,7 @@ void ToUpperCommand::execute() {
         delete previousDocument;
         previousDocument = nullptr;
     }
-    
+
     previousDocument = new Document(*activeDocument->getActiveDocument());
 
     if(activeBlock->getActiveBlock()) {
@@ -75,6 +75,13 @@ void ToUpperCommand::undo() {
     Document* currentDocument = activeDocument->getActiveDocument();
     if(!currentDocument) {
         cli->error("No active document set.");
+        delete previousDocument;
+        previousDocument = nullptr;
+        return;
+    }
+
+    if(*currentDocument == *previousDocument) {
+        cli->nothingToUndo();
         delete previousDocument;
         previousDocument = nullptr;
         return;

@@ -470,3 +470,30 @@ void Document::toLower(size_t startIndex, size_t endIndex) {
     }
     hasChanged = true;
 }
+
+/**
+ * @brief Trims trailing spaces from all lines in the document.
+ * 
+ * This method removes any trailing spaces from each line in the document.
+ */
+void Document::trimTrailing() {
+    for (Line* line : lines) {
+        line->trimTrailing();
+    }
+    hasChanged = true;
+}
+
+/**
+ * @brief Trims trailing spaces from lines in the document in a specified range.
+ * @param startIndex The starting index of the range (inclusive).
+ * @param endIndex The ending index of the range (exclusive).
+ */
+void Document::trimTrailing(size_t startIndex, size_t endIndex) {
+    if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
+        throw std::out_of_range("Document::trimTrailing: index out of range");
+    }
+    for (size_t i = startIndex; i < endIndex; ++i) {
+        lines[i]->trimTrailing();
+    }
+    hasChanged = true;
+}

@@ -45,6 +45,8 @@
 #include "CommandsCLI/ToUpperCommandCLI.hpp"
 #include "Commands/ToLowerCommand.hpp"
 #include "CommandsCLI/ToLowerCommandCLI.hpp"
+#include "Commands/TrimTrailingCommand.hpp"
+#include "CommandsCLI/TrimTrailingCommandCLI.hpp"
 
 /**
  * @brief The main class for the text processor application, responsible for managing commands, documents, and blocks.
@@ -101,6 +103,7 @@ class TextProcessor {
         ChangeLineCommandCLI* changeLineCommandCLI;
         ToUpperCommandCLI* toUpperCommandCLI;
         ToLowerCommandCLI* toLowerCommandCLI;
+        TrimTrailingCommandCLI* trimTrailingCommandCLI;
 
         AddLineCommand* addLineCommand;
         SaveCommand* saveCommand;
@@ -122,4 +125,5 @@ class TextProcessor {
         ChangeLineCommand* changeLineCommand;
         ToUpperCommand* toUpperCommand;
         ToLowerCommand* toLowerCommand;
+        TrimTrailingCommand* trimTrailingCommand;
 };

@@ -48,6 +48,18 @@ void SortCommand::execute() {
     }
     previousDocument = new Document(*activeDocument->getActiveDocument());
 
+    if(*activeDocument->getActiveDocument() == *previousDocument) {
+        cli->nothingToUndo();
+        delete previousDocument;
+        previousDocument = nullptr;
+        return;
+    }
+
+    if(previousDocument->getDocName() != activeDocument->getActiveDocument()->getDocName()) {
+        cli->error("The active document has changed since the last sort command. Cannot proceed with sorting.");
+        return;
+    }
+
     if(activeBlock->getActiveBlock()) {
         activeDocument->getActiveDocument()->sort(activeBlock->getActiveBlock()->getStartLineIndex(), 
                                                         activeBlock->getActiveBlock()->getEndLineIndex());

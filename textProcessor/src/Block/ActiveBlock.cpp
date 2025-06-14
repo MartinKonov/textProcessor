@@ -41,5 +41,8 @@ void ActiveBlock::removeActiveBlock() {
  * @return A pointer to the currently active block, or nullptr if no block is active.
  */
 Block* ActiveBlock::getActiveBlock() {
+    if(!activeBlock) {
+        return nullptr;
+    }
     return activeBlock;
 }

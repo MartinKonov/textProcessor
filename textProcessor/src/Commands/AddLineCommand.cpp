@@ -65,6 +65,15 @@ void AddLineCommand::undo()
     }
 
     string activeDocName = activeDocument->getActiveDocument()->getDocName();
+
+    if(*activeDocument->getActiveDocument() == *docBeforeExecution)
+    {
+        addLineCommandCLI->nothingChanged();
+        delete docBeforeExecution;
+        docBeforeExecution = nullptr;
+        return;
+    }
+
     if(activeDocName != docBeforeExecution->getDocName())
     {
         addLineCommandCLI->error();

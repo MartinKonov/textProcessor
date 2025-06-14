@@ -74,6 +74,13 @@ void ToLowerCommand::undo() {
         return;
     }
 
+    if(*activeDoc == *previousDocumentState) {
+        cli->nothingToUndo();
+        delete previousDocumentState;
+        previousDocumentState = nullptr;
+        return;
+    }
+
     if (activeDoc->getDocName() != previousDocumentState->getDocName()) {
         delete previousDocumentState;
         previousDocumentState = nullptr;

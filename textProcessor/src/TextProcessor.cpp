@@ -56,6 +56,7 @@ TextProcessor::~TextProcessor() {
     delete changeLineCommandCLI;
     delete toUpperCommandCLI;
     delete toLowerCommandCLI;
+    delete trimTrailingCommandCLI;
 
     delete addLineCommand;
     delete saveCommand;
@@ -77,6 +78,7 @@ TextProcessor::~TextProcessor() {
     delete changeLineCommand;
     delete toUpperCommand;
     delete toLowerCommand;
+    delete trimTrailingCommand;
 
     delete commandRegister;
     delete documentRegister;
@@ -130,6 +132,7 @@ void TextProcessor::initializeCommandCLIs() {
     changeLineCommandCLI = new ChangeLineCommandCLI();
     toUpperCommandCLI = new ToUpperCommandCLI();
     toLowerCommandCLI = new ToLowerCommandCLI();
+    trimTrailingCommandCLI = new TrimTrailingCommandCLI();
 }
 
 /**
@@ -157,6 +160,7 @@ void TextProcessor::initializeCommands() {
     changeLineCommand = new ChangeLineCommand(changeLineCommandCLI, activeDocument);
     toUpperCommand = new ToUpperCommand(toUpperCommandCLI, activeDocument, activeBlock);
     toLowerCommand = new ToLowerCommand(toLowerCommandCLI, activeDocument, activeBlock);
+    trimTrailingCommand = new TrimTrailingCommand(trimTrailingCommandCLI, activeDocument, activeBlock);
 }
 
 /**
@@ -184,6 +188,7 @@ void TextProcessor::registerCommands() {
     commandRegister->registerCommand(changeLineCommand);
     commandRegister->registerCommand(toUpperCommand);
     commandRegister->registerCommand(toLowerCommand);
+    commandRegister->registerCommand(trimTrailingCommand);
 }
 
 /**
