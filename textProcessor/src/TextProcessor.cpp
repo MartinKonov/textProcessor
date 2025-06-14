@@ -60,6 +60,7 @@ TextProcessor::~TextProcessor() {
     delete trimLeadingCommandCLI;
     delete scrambleCommandCLI;
     delete removeRepeatsCommandCLI;
+    delete showDocumentNameCommandCLI;
 
     delete addLineCommand;
     delete saveCommand;
@@ -85,6 +86,7 @@ TextProcessor::~TextProcessor() {
     delete trimLeadingCommand;
     delete scrambleCommand;
     delete removeRepeatsCommand;
+    delete showDocumentNameCommand;
 
     delete commandRegister;
     delete documentRegister;
@@ -142,6 +144,7 @@ void TextProcessor::initializeCommandCLIs() {
     trimLeadingCommandCLI = new TrimLeadingCommandCLI();
     scrambleCommandCLI = new ScrambleCommandCLI();
     removeRepeatsCommandCLI = new RemoveRepeatsCommandCLI();
+    showDocumentNameCommandCLI = new ShowDocumentNameCommandCLI();
 }
 
 /**
@@ -173,6 +176,7 @@ void TextProcessor::initializeCommands() {
     trimLeadingCommand = new TrimLeadingCommand(trimLeadingCommandCLI, activeDocument, activeBlock);
     scrambleCommand = new ScrambleCommand(scrambleCommandCLI, activeDocument, activeBlock);
     removeRepeatsCommand = new RemoveRepeatsCommand(removeRepeatsCommandCLI, activeDocument, activeBlock);
+    showDocumentNameCommand = new ShowDocumentNameCommand(showDocumentNameCommandCLI, activeDocument);
 }
 
 /**
@@ -204,6 +208,7 @@ void TextProcessor::registerCommands() {
     commandRegister->registerCommand(trimLeadingCommand);
     commandRegister->registerCommand(scrambleCommand);
     commandRegister->registerCommand(removeRepeatsCommand);
+    commandRegister->registerCommand(showDocumentNameCommand);
 }
 
 /**
