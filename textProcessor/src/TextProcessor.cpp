@@ -53,6 +53,7 @@ TextProcessor::~TextProcessor() {
     delete removeLineCommandCLI;
     delete listLoadedDocumentsCommandCLI;
     delete insertLineCommandCLI;
+    delete changeLineCommandCLI;
 
     delete addLineCommand;
     delete saveCommand;
@@ -71,6 +72,7 @@ TextProcessor::~TextProcessor() {
     delete listLoadedDocumentsCommand;
     delete removeLineCommand;
     delete insertLineCommand;
+    delete changeLineCommand;
 
     delete commandRegister;
     delete documentRegister;
@@ -120,6 +122,7 @@ void TextProcessor::initializeCommandCLIs() {
     viewDocumentCommandCLI = new ViewDocumentCommandCLI();
     removeLineCommandCLI = new RemoveLineCommandCLI();
     insertLineCommandCLI = new InsertLineCommandCLI();
+    changeLineCommandCLI = new ChangeLineCommandCLI();
 }
 
 /**
@@ -144,6 +147,7 @@ void TextProcessor::initializeCommands() {
     viewDocumentCommand = new ViewDocumentCommand(viewDocumentCommandCLI, activeFormatter, activeDocument, documentRegister);
     removeLineCommand = new RemoveLineCommand(removeLineCommandCLI, activeDocument);
     insertLineCommand = new InsertLineCommand(insertLineCommandCLI, activeDocument);
+    changeLineCommand = new ChangeLineCommand(changeLineCommandCLI, activeDocument);
 }
 
 /**
@@ -168,6 +172,7 @@ void TextProcessor::registerCommands() {
     commandRegister->registerCommand(viewDocumentCommand);
     commandRegister->registerCommand(removeLineCommand);
     commandRegister->registerCommand(insertLineCommand);
+    commandRegister->registerCommand(changeLineCommand);
 }
 
 /**

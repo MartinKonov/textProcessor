@@ -35,6 +35,15 @@ Document::Document(const Document& other)
     copyFrom(other);
 }
 
+/**
+ * @brief Assignment operator for Document class
+ * 
+ * This operator copies the contents of another Document into this one.
+ * It first frees the existing resources and then copies the new data.
+ * 
+ * @param other The Document to copy from.
+ * @return Document& Reference to the current Document object.
+ */
 Document& Document::operator=(const Document& other)
 {
     if(this != &other)
@@ -45,16 +54,36 @@ Document& Document::operator=(const Document& other)
     return *this;
 }
 
+/**
+ * @brief Compares the lines of this document with another document.
+ * 
+ * @param other The other document to compare with.
+ * @return true if the lines are equal, false otherwise.
+ */
 bool Document::operator==(Document& other)
 {
     return compareLinesTo(other);
 }
 
+/**
+ * @brief Compares the lines of this document with another document.
+ * 
+ * @param other The other document to compare with.
+ * @return true if the lines are not equal, false otherwise.
+ */
 bool Document::operator!=(Document& other)
 {
     return !compareLinesTo(other);
 }
 
+/**
+ * @brief Move constructor for Document class
+ * 
+ * This constructor transfers ownership of resources from the other Document to this one.
+ * It also sets the lineCreator to the singleton instance.
+ * 
+ * @param other The Document to move from.
+ */
 Document::Document(Document&& other) : docName(std::move(other.docName)), hasChanged(other.hasChanged),
     lines(std::move(other.lines))
 {
@@ -64,7 +93,12 @@ Document::Document(Document&& other) : docName(std::move(other.docName)), hasCha
     other.lineCreator = nullptr;
 }
 
-
+/**
+ * @brief Move assignment operator for Document class
+ * 
+ * @param other The Document to move from.
+ * @return Document& Reference to the current Document object.
+ */
 Document& Document::operator=(Document&& other) {
     if (this != &other) {
         freeDocument();
@@ -88,6 +122,11 @@ bool Document::getHasChanged()
     return hasChanged;
 }
 
+/**
+ * @brief Copies the contents of another Document into this one.
+ * 
+ * @param other The Document to copy from.
+ */
 void Document::copyFrom(const Document& other)
 {
     this->docName = other.docName;
@@ -181,6 +220,25 @@ void Document::insertLine(size_t index, string line)
     }
     Line* newLine = LineCreator::getInstance()->createLine(line);
     lines.insert(lines.begin() + index, newLine);
+    hasChanged = true;
+}
+
+/**
+ * @brief Changes the content of a line at the specified index.
+ * 
+ * @param index The index of the line to change (1-based).
+ * @param newContent The new content for the line.
+ * @throws std::out_of_range if the index is out of range.
+ */
+void Document::changeLine(size_t index, string newContent)
+{
+    if (index >= lines.size())
+    {
+        throw std::out_of_range("Document::changeLine: index out of range");
+    }
+    Line* newLine = LineCreator::getInstance()->createLine(newContent);
+    delete lines[index];
+    lines[index] = newLine;
     hasChanged = true;
 }
 

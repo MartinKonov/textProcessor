@@ -37,6 +37,7 @@ class Document {
     void removeLine(size_t index);
     void addLine(string line);
     void insertLine(size_t index, string line);
+    void changeLine(size_t index, string newContent);
     string getDocName();
     void setDocName(string name);
     string getContents();

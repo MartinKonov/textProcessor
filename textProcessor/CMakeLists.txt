@@ -64,6 +64,8 @@ file(GLOB_RECURSE SOURCES
     "src/CommandsCLI/RemoveLineCommandCLI.cpp"
     "src/Commands/InsertLineCommand.cpp"
     "src/CommandsCLI/InsertLineCommandCLI.cpp"
+    "src/Commands/ChageLineCommand.cpp"
+    "src/CommandsCLI/ChageLineCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})
