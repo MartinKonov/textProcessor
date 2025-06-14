@@ -80,6 +80,8 @@ file(GLOB_RECURSE SOURCES
     "src/CommandsCLI/RemoveRepeatsCommandCLI.cpp"
     "src/Commands/ShowDocumentNameCommand.cpp"
     "src/CommandsCLI/ShowDocumentNameCommandCLI.cpp"
+    "src/Commands/ShowDocumentNunmLinesCommand.cpp"
+    "src/CommandsCLI/ShowDocumentNunmLinesCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})

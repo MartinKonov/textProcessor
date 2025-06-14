@@ -55,6 +55,8 @@
 #include "CommandsCLI/RemoveRepeatsCommandCLI.hpp"
 #include "Commands/ShowDocumentNameCommand.hpp"
 #include "CommandsCLI/ShowDocumentNameCommandCLI.hpp"
+#include "Commands/ShowDocumentNumLinesCommand.hpp"
+#include "CommandsCLI/ShowDocumentNumLinesCommandCLI.hpp"
 
 /**
  * @brief The main class for the text processor application, responsible for managing commands, documents, and blocks.
@@ -81,6 +83,7 @@ class TextProcessor {
         void registerCommands();
         bool isUnsignedInt(const string& str);
 
+        // Data classes
         CommandRegister* commandRegister;
         FileManager* fileManager;
         LineCreator* lineCreator;
@@ -91,6 +94,7 @@ class TextProcessor {
         ActiveBlock* activeBlock;
         ActiveFormatter* activeFormatter;
 
+        // Command CLIs
         AddLineCommandCLI* addLineCommandCLI ;
         SaveCommandCLI* saveCommandCLI;
         SaveAsCommandCLI* saveAsCommandCLI;
@@ -116,7 +120,9 @@ class TextProcessor {
         ScrambleCommandCLI* scrambleCommandCLI;
         RemoveRepeatsCommandCLI* removeRepeatsCommandCLI;
         ShowDocumentNameCommandCLI* showDocumentNameCommandCLI;
+        ShowDocumentNumLinesCommandCLI* showDocumentNumLinesCommandCLI;
 
+        // Commands
         AddLineCommand* addLineCommand;
         SaveCommand* saveCommand;
         SaveAsCommand* saveAsCommand;
@@ -142,4 +148,5 @@ class TextProcessor {
         ScrambleCommand* scrambleCommand;
         RemoveRepeatsCommand* removeRepeatsCommand;
         ShowDocumentNameCommand* showDocumentNameCommand;
+        ShowDocumentNumLinesCommand* showDocumentNumLinesCommand;
 };

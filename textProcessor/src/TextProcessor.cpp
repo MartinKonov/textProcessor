@@ -61,6 +61,7 @@ TextProcessor::~TextProcessor() {
     delete scrambleCommandCLI;
     delete removeRepeatsCommandCLI;
     delete showDocumentNameCommandCLI;
+    delete showDocumentNumLinesCommandCLI;
 
     delete addLineCommand;
     delete saveCommand;
@@ -87,6 +88,7 @@ TextProcessor::~TextProcessor() {
     delete scrambleCommand;
     delete removeRepeatsCommand;
     delete showDocumentNameCommand;
+    delete showDocumentNumLinesCommand;
 
     delete commandRegister;
     delete documentRegister;
@@ -145,6 +147,7 @@ void TextProcessor::initializeCommandCLIs() {
     scrambleCommandCLI = new ScrambleCommandCLI();
     removeRepeatsCommandCLI = new RemoveRepeatsCommandCLI();
     showDocumentNameCommandCLI = new ShowDocumentNameCommandCLI();
+    showDocumentNumLinesCommandCLI = new ShowDocumentNumLinesCommandCLI();
 }
 
 /**
@@ -177,6 +180,7 @@ void TextProcessor::initializeCommands() {
     scrambleCommand = new ScrambleCommand(scrambleCommandCLI, activeDocument, activeBlock);
     removeRepeatsCommand = new RemoveRepeatsCommand(removeRepeatsCommandCLI, activeDocument, activeBlock);
     showDocumentNameCommand = new ShowDocumentNameCommand(showDocumentNameCommandCLI, activeDocument);
+    showDocumentNumLinesCommand = new ShowDocumentNumLinesCommand(showDocumentNumLinesCommandCLI, activeDocument);
 }
 
 /**
@@ -209,6 +213,7 @@ void TextProcessor::registerCommands() {
     commandRegister->registerCommand(scrambleCommand);
     commandRegister->registerCommand(removeRepeatsCommand);
     commandRegister->registerCommand(showDocumentNameCommand);
+    commandRegister->registerCommand(showDocumentNumLinesCommand);
 }
 
 /**
