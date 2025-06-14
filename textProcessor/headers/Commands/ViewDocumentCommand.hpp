@@ -1,3 +1,8 @@
+/**
+ * @file ViewDocumentCommand.hpp
+ * @author MK
+ * @brief A command to view the content of a document in the text processor application.
+ */
 #pragma once
 #include "Command.hpp"
 #include "../Document/ActiveDocument.hpp"
@@ -5,6 +10,11 @@
 #include "../CommandsCLI/ViewDocumentCommandCLI.hpp"
 #include "../Formatter/ActiveFormatter.hpp"
 
+
+/**
+ * @class ViewDocumentCommand
+ * @brief A command to view the content of a document in the text processor application.
+ */
 class ViewDocumentCommand : public Command {
 
     public:

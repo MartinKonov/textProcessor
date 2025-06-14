@@ -35,7 +35,8 @@
 #include "CommandsCLI/SetFormatCommandCLI.hpp"
 #include "Commands/ViewDocumentCommand.hpp"
 #include "CommandsCLI/ViewAllBlocksCommandCLI.hpp"
-
+#include "Commands/RemoveLineCommand.hpp"
+#include "CommandsCLI/RemoveLineCommandCLI.hpp"
 
 /**
  * @brief The main class for the text processor application, responsible for managing commands, documents, and blocks.
@@ -87,6 +88,7 @@ class TextProcessor {
         ListLoadedDocumentsCommandCLI* listLoadedDocumentsCommandCLI;
         SetFormatCommandCLI* setFormatCommandCLI;
         ViewDocumentCommandCLI* viewDocumentCommandCLI;
+        RemoveLineCommandCLI* removeLineCommandCLI;
 
         AddLineCommand* addLineCommand;
         SaveCommand* saveCommand;
@@ -103,4 +105,5 @@ class TextProcessor {
         ListLoadedDocumentsCommand* listLoadedDocumentsCommand;
         SetFormatCommand* setFormatCommand;
         ViewDocumentCommand* viewDocumentCommand;
+        RemoveLineCommand* removeLineCommand;
 };
