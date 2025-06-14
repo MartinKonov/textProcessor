@@ -13,6 +13,7 @@
 
 using std::vector;
 using std::stoul;
+using std::to_string;
 
 /**
  * @brief A class to parse blocks of lines in a document.

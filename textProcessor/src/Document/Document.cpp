@@ -1,5 +1,6 @@
 #include "../../headers/Document/Document.hpp"
 
+
 Document::Document()
 {
     this->hasChanged = false;
@@ -186,7 +187,7 @@ void Document::removeLine(size_t index)
 {
     if (index >= lines.size())
     {
-        throw std::out_of_range("Document::removeLine: index out of range");
+        throw out_of_range("Document::removeLine: index out of range");
     }
     delete lines[index];
     lines.erase(lines.begin() + index);
@@ -216,7 +217,7 @@ void Document::insertLine(size_t index, string line)
 {
     if (index > lines.size())
     {
-        throw std::out_of_range("Document::insertLine: index out of range");
+        throw out_of_range("Document::insertLine: index out of range");
     }
     Line* newLine = LineCreator::getInstance()->createLine(line);
     lines.insert(lines.begin() + index, newLine);
@@ -234,7 +235,7 @@ void Document::changeLine(size_t index, string newContent)
 {
     if (index >= lines.size())
     {
-        throw std::out_of_range("Document::changeLine: index out of range");
+        throw out_of_range("Document::changeLine: index out of range");
     }
     Line* newLine = LineCreator::getInstance()->createLine(newContent);
     delete lines[index];
@@ -435,7 +436,7 @@ void Document::toUpper() {
  */
 void Document::toUpper(size_t startIndex, size_t endIndex) {
     if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
-        throw std::out_of_range("Document::toUpper: index out of range");
+        throw out_of_range("Document::toUpper: index out of range");
     }
     for (size_t i = startIndex; i < endIndex; ++i) {
         lines[i]->toUpper();
@@ -463,7 +464,7 @@ void Document::toLower() {
  */
 void Document::toLower(size_t startIndex, size_t endIndex) {
     if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
-        throw std::out_of_range("Document::toLower: index out of range");
+        throw out_of_range("Document::toLower: index out of range");
     }
     for (size_t i = startIndex; i < endIndex; ++i) {
         lines[i]->toLower();
@@ -490,7 +491,7 @@ void Document::trimTrailing() {
  */
 void Document::trimTrailing(size_t startIndex, size_t endIndex) {
     if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
-        throw std::out_of_range("Document::trimTrailing: index out of range");
+        throw out_of_range("Document::trimTrailing: index out of range");
     }
     for (size_t i = startIndex; i < endIndex; ++i) {
         lines[i]->trimTrailing();
@@ -517,10 +518,39 @@ void Document::trimLeading() {
  */
 void Document::trimLeading(size_t startIndex, size_t endIndex) {
     if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
-        throw std::out_of_range("Document::trimLeading: index out of range");
+        throw out_of_range("Document::trimLeading: index out of range");
     }
     for (size_t i = startIndex; i < endIndex; ++i) {
         lines[i]->trimLeading();
     }
+    hasChanged = true;
+}
+
+/**
+ * @brief Scrambles the content of the document.
+ *
+ * This method randomly shuffles lines of the document.
+ */
+void Document::scramble() {
+    random_device rd;
+    mt19937 g(rd());
+    shuffle(lines.begin(), lines.end(), g);
+    hasChanged = true;
+}
+
+/**
+ * @brief Scrambles the content of a specified range of lines in the document.
+ * 
+ * @param startIndex The starting index of the range (inclusive).
+ * @param endIndex The ending index of the range (exclusive).
+ */
+void Document::scramble(size_t startIndex, size_t endIndex) {
+    if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
+        throw out_of_range("Document::scramble: index out of range");
+    }
+
+    random_device rd;
+    mt19937 g(rd());
+    shuffle(lines.begin() + startIndex, lines.begin() + endIndex, g);
     hasChanged = true;
 }

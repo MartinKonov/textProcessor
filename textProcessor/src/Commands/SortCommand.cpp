@@ -57,6 +57,8 @@ void SortCommand::execute() {
 
     if(previousDocument->getDocName() != activeDocument->getActiveDocument()->getDocName()) {
         cli->error("The active document has changed since the last sort command. Cannot proceed with sorting.");
+        delete previousDocument;
+        previousDocument = nullptr;
         return;
     }
 
@@ -87,6 +89,13 @@ void SortCommand::undo() {
 
     if(*activeDocument->getActiveDocument() == *previousDocument) {
         cli->nothingToUndo();
+        return;
+    }
+
+    if(activeDocument->getActiveDocument()->getDocName() != previousDocument->getDocName()) {
+        cli->error("Cannot undo: active document has changed.");
+        delete previousDocument;
+        previousDocument = nullptr;
         return;
     }
 

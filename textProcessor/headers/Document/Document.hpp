@@ -9,8 +9,18 @@
 #include "../Lines/Line.hpp"
 #include "../Lines/LineCreator.hpp"
 #include <vector>
+#include <random>
+#include <algorithm>
 
-using namespace std;
+using std::vector;
+using std::string;
+using std::ostream;
+using std::runtime_error;
+using std::out_of_range;
+using std::random_device;
+using std::mt19937;
+using std::shuffle;
+
 
 /**
  * @brief A class to represent a document containing multiple lines.
@@ -54,6 +64,8 @@ class Document {
     void trimTrailing(size_t startIndex, size_t endIndex);
     void trimLeading();
     void trimLeading(size_t startIndex, size_t endIndex);
+    void scramble();
+    void scramble(size_t startIndex, size_t endIndex);
     // TODO while the commands are being made
     
     friend ostream& operator<<(ostream& os, Document& document);
