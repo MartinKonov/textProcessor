@@ -22,6 +22,11 @@ string SaveAsCommand::getName() const {
 void SaveAsCommand::execute() {
     Document* docToSave = activeDocument->getActiveDocument();
 
+    if(!docToSave) {
+        saveAsCommandCLI->noActiveDocumentSet();
+        return;
+    }
+
     string newDocName = saveAsCommandCLI->getNewDocName();
 
     try{

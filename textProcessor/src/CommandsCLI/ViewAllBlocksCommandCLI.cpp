@@ -17,7 +17,7 @@ void ViewAllBlocksCommandCLI::success() {
  * @param message The error message to display (optional).
  */
 void ViewAllBlocksCommandCLI::error(string message) {
-    cerr << "Error viewing blocks: " << message << endl;
+    cerr << "Error: " << message << endl;
 }
 
 /**

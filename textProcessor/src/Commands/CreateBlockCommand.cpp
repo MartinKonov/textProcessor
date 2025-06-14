@@ -32,6 +32,7 @@ void CreateBlockCommand::execute() {
 
     if(!activeDocument->getActiveDocument()) {
         createBlockCommandCLI->errorNoActiveDocument();
+        return;
     }
 
     string blockName = createBlockCommandCLI->getBlockName();
@@ -48,6 +49,7 @@ void CreateBlockCommand::execute() {
         blockRegister->addBlock(blockName, activeDocument->getActiveDocument(), startLineIndex, endLineIndex);
     } catch(runtime_error& e) {
         createBlockCommandCLI->error(e.what());
+        return;
     }
     nameOfLastBlockCreated = blockName;
 

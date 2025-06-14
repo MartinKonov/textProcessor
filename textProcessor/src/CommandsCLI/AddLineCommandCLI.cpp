@@ -23,7 +23,7 @@ string AddLineCommandCLI::getLineInput() {
  * @param message The error message to display (optional).
  */
 void AddLineCommandCLI::error(string message) {
-    cerr << "The active document has changed since last call of this command. Undo is impossible" << endl;
+    cerr << "Error: The active document has changed since last call of this command. Undo is impossible" << endl;
 }
 
 /**
@@ -33,7 +33,7 @@ void AddLineCommandCLI::error(string message) {
  * which is required for the command to execute successfully.
  */
 void AddLineCommandCLI::activeDocumentError(){
-    cout << "No active document set" << endl;
+    cout << "Error: No active document set" << endl;
 }
 
 /**

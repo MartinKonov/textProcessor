@@ -19,14 +19,14 @@ void SetActiveBlockCommandCLI::success() {
  * @param message The error message to display (optional).
  */
 void SetActiveBlockCommandCLI::error(string message) {
-    cerr << "Error setting new active block: " << message << endl;
+    cerr << "Error: " << message << endl;
 }
 
 /**
  * @brief Displays an error message if there is no active document set before trying to set an active block.
  */
 void SetActiveBlockCommandCLI::errorActiveDocument(){
-    cerr << "Please set active document before trying to set active block" << endl;
+    cerr << "Error: Please set active document before trying to set active block" << endl;
 }
 
 /**
@@ -74,5 +74,5 @@ void SetActiveBlockCommandCLI::documentHasChanged() {
  * @param message The error message to display.
  */
 void SetActiveBlockCommandCLI::errorUndo(string message) {
-    cout << "Error undo of set active block command: " << message << endl;
+    cout << "Error undo: " << message << endl;
 }

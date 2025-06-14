@@ -29,5 +29,5 @@ string LoadDocumentCommandCLI::getDocFilePath() {
  * @param message The error message to display (optional).
  */
 void LoadDocumentCommandCLI::error(string message) {
-    cerr << "Error loading file: " << message << endl;
+    cerr << "Error: " << message << endl;
 }

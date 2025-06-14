@@ -32,6 +32,10 @@ string SaveCommand::getName() const
 void SaveCommand::execute() 
 {
     Document* docToSave = activeDocument->getActiveDocument();
+    if(!docToSave) {
+        saveCommandCLI->noActiveDocumentSet();
+        return;
+    }
 
     if(!docToSave->getHasChanged())
     {

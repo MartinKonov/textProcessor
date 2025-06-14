@@ -15,7 +15,7 @@ void CreateBlockCommandCLI::success(){
  * @param message The error message to display (optional).
  */
 void CreateBlockCommandCLI::errorNoActiveDocument() {
-    cerr << "No active document set, cannot create block with no active document" << endl;
+    cerr << "Error: No active document set, cannot create block with no active document" << endl;
 }
 
 /**
@@ -83,7 +83,7 @@ size_t CreateBlockCommandCLI::getEndLineIndex() {
  * @param message The error message to display.
  */
 void CreateBlockCommandCLI::error(string message) {
-    cerr << "CreateBlockCommand error while undo: " << message << endl;
+    cerr << "Error undo: " << message << endl;
 }
 
 /**

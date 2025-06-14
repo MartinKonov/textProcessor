@@ -19,7 +19,7 @@ void UnloadDocumentCommandCLI::success() {
  * @param message The error message to display (optional).
  */
 void UnloadDocumentCommandCLI::error(string message) {
-    cerr << message << endl;
+    cerr << "Error: " << message << endl;
 }
 
 /**
@@ -39,7 +39,7 @@ string UnloadDocumentCommandCLI::getDocPathToUnload() {
  * @brief Displays a message indicating that the document has changed since the last save.
  */
 void UnloadDocumentCommandCLI::docHasChanged() {
-    cout << "The document has changed since last save." << endl;
+    cout << "Error: The document has changed since last save." << endl;
 }
 
 /**

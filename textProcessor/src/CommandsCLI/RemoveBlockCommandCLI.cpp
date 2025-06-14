@@ -18,7 +18,7 @@ void RemoveBlockCommandCLI::success() {
  * @param message The error message to display (optional).
  */
 void RemoveBlockCommandCLI::error(string message) {
-    cerr << "Error removing block: " << message << endl;
+    cerr << "Error: " << message << endl;
 }
 
 /**
@@ -53,5 +53,5 @@ void RemoveBlockCommandCLI::removedBlockError() {
  * @param message The error message to display.
  */
 void RemoveBlockCommandCLI::errorUndo(string message) {
-    cerr << "Error durring undo remove block: " << message << endl;
+    cerr << "Error undo: " << message << endl;
 }

@@ -18,7 +18,7 @@ void SortCommandCLI::success() {
  * @param message The error message to display (optional).
  */
 void SortCommandCLI::error(string message) {
-    cerr << message << endl;
+    cerr << "Error: " << message << endl;
 }
 
 /**

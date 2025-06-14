@@ -4,6 +4,7 @@
  * @brief A class that formats input strings by centering them within a specified width.
  */
 #include "../../headers/Formatter/CenterFormatter.hpp"
+#include <iostream>
 
 CenterFormatter::CenterFormatter(int formatPoint) : Formatter(formatPoint) {}
 
@@ -41,23 +42,25 @@ string CenterFormatter::format(string input) {
 string CenterFormatter::centerText(const string& text, int width) {
     string result;
     vector<string> words = split(text, ' ');
-
     string currentLine;
-    for (const string& word : words) {
-        if (currentLine.length() + word.length() + 1 > width) {
-            int padding = (width - currentLine.length()) / 2;
+
+    for (size_t i = 0; i < words.size(); ++i) {
+        string word = words[i];
+
+        if ((int)(currentLine.length() + word.length() + (currentLine.empty() ? 0 : 1)) > width) {
+            int padding = (int)((width - currentLine.length()) / 2);
+            if (padding < 0) padding = 0;
             result += string(padding, ' ') + currentLine + '\n';
             currentLine = word;
         } else {
-            if (!currentLine.empty()) {
-                currentLine += ' ';
-            }
+            if (!currentLine.empty()) currentLine += ' ';
             currentLine += word;
         }
     }
 
     if (!currentLine.empty()) {
-        int padding = (width - currentLine.length()) / 2;
+        int padding = (int)((width - currentLine.length()) / 2);
+        if (padding < 0) padding = 0;
         result += string(padding, ' ') + currentLine + '\n';
     }
 

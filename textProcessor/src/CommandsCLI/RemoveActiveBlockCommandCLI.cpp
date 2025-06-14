@@ -39,5 +39,5 @@ void RemoveActiveBlockCommandCLI::documentHasChanged() {
  * @param message The error message to display.
  */
 void RemoveActiveBlockCommandCLI::errorUndo(string message) {
-    cerr << "Error while undo: " << message << endl;
+    cerr << "Error undo: " << message << endl;
 }

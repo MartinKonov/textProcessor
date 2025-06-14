@@ -21,7 +21,7 @@ void SetActiveDocumentCommandCLI::success() {
  * @param message The error message to display (optional).
  */
 void SetActiveDocumentCommandCLI::error(string message) {
-    cerr << message << endl;
+    cerr << "Error: " << message << endl;
 }
 
 /**
@@ -55,5 +55,5 @@ void SetActiveDocumentCommandCLI::errorUndoPrevDocName() {
  * @param message The error message to display.
  */
 void SetActiveDocumentCommandCLI::errorUndo(string message) {
-    cerr << "Set active document command: " << message << endl;
+    cerr << "Error: " << message << endl;
 }

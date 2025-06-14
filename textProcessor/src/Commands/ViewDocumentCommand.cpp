@@ -21,20 +21,22 @@ void ViewDocumentCommand::execute() {
         choice = cli->getChoiceActiveDocOrOtherDoc();
     }
 
-    string contentsToPrint;
+    string docContents;
     if (choice == ACTIVE_DOC_CHOICE) {
-        contentsToPrint = activeFormatter->getFormattedString(activeDocument->getActiveDocument()->getContents());
+        docContents = activeDocument->getActiveDocument()->getContents();
     } else if(choice == OTHER_DOC_CHOICE) {
         string documentToPrint = cli->getDocumentToPrint();
         try {
-            contentsToPrint = documentRegister->getDocument(documentToPrint)->getContents();
+            docContents = documentRegister->getDocument(documentToPrint)->getContents(); 
         } catch (runtime_error &e) {
             cli->error(e.what());
+            return;
         }
     } else {
         cli->error("Invalid choice");
+        return;
     }
-
+    string contentsToPrint = activeFormatter->getFormattedString(docContents);
     cli->printContents(contentsToPrint);
 }
 
