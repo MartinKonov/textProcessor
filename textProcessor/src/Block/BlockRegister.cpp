@@ -107,7 +107,9 @@ string BlockRegister::showAllForDocument(string documentName) {
     
     vector<Block*> allBlocks = getAll();
     string out;
-    out += "Name | DocumentName | start Line Index | end Line index\n";
+    out += "Blocks for document: " + documentName + "\n";
+    out += "-----------------------------------\n";
+    out += "Name | start Line Index | end Line index\n";
     for (Block* block : items) {
         if(block->getDocumentName() == documentName) {
             out += parser->serialize(block);

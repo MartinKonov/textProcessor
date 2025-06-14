@@ -52,6 +52,8 @@ class Document {
     void toLower(size_t startIndex, size_t endIndex);
     void trimTrailing();
     void trimTrailing(size_t startIndex, size_t endIndex);
+    void trimLeading();
+    void trimLeading(size_t startIndex, size_t endIndex);
     // TODO while the commands are being made
     
     friend ostream& operator<<(ostream& os, Document& document);

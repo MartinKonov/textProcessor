@@ -35,7 +35,6 @@ void SetActiveBlockCommandCLI::errorActiveDocument(){
  * @param blocksForDocSerialized The serialized string of blocks available for the current active document.
  */
 void SetActiveBlockCommandCLI::showBlocksForActiveDoc(string blocksForDocSerialized) {
-    cout << "Available blocks for current document:" << endl;
     cout << blocksForDocSerialized << endl;
 }
 

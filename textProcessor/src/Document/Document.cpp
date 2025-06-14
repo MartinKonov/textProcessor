@@ -497,3 +497,30 @@ void Document::trimTrailing(size_t startIndex, size_t endIndex) {
     }
     hasChanged = true;
 }
+
+/**
+ * @brief Trims leading spaces from all lines in the document.
+ * 
+ * This method removes any leading spaces from each line in the document.
+ */
+void Document::trimLeading() {
+    for (Line* line : lines) {
+        line->trimLeading();
+    }
+    hasChanged = true;
+}
+
+/**
+ * @brief Trims leading spaces from lines in the document in a specified range. 
+ * @param startIndex The starting index of the range (inclusive).
+ * @param endIndex The ending index of the range (exclusive).
+ */
+void Document::trimLeading(size_t startIndex, size_t endIndex) {
+    if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
+        throw std::out_of_range("Document::trimLeading: index out of range");
+    }
+    for (size_t i = startIndex; i < endIndex; ++i) {
+        lines[i]->trimLeading();
+    }
+    hasChanged = true;
+}

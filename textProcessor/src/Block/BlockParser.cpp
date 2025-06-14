@@ -53,7 +53,7 @@ Block* BlockParser::parse(const std::string content)
  */
 string BlockParser::serialize(Block* block) 
 {
-    return block->getName() + "|" + block->getDocumentName() + "|" +
-           to_string(block->getStartLineIndex()) + "|" +
-           to_string(block->getEndLineIndex()) + "\n";
+    return block->getName() + "|"
+           + to_string(block->getStartLineIndex()) + "|"
+           + to_string(block->getEndLineIndex()) + "\n";
 }
