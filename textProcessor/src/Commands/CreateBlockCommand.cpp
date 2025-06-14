@@ -46,7 +46,7 @@ void CreateBlockCommand::execute() {
     size_t endLineIndex = createBlockCommandCLI->getEndLineIndex();
 
     try{
-        blockRegister->addBlock(blockName, activeDocument->getActiveDocument(), startLineIndex, endLineIndex);
+        blockRegister->addBlock(blockName, activeDocument->getActiveDocument(), startLineIndex-1, endLineIndex-1);
     } catch(runtime_error& e) {
         createBlockCommandCLI->error(e.what());
         return;

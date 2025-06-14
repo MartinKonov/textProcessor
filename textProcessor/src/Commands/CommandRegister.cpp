@@ -34,7 +34,7 @@ void CommandRegister::registerCommand (Command* command) {
 int CommandRegister::findIndex(string commandName) {
     for (size_t i = 0; i < allCommands.size(); ++i) {
         if (allCommands[i]->getName() == commandName) {
-            return static_cast<int>(i);
+            return i;
         }
     }
     return -1;
@@ -48,7 +48,7 @@ int CommandRegister::findIndex(string commandName) {
 int CommandRegister::findIndex(Command* command) {
     for (size_t i = 0; i < allCommands.size(); ++i) {
         if (allCommands[i] == command) {
-            return static_cast<int>(i);
+            return i;
         }
     }
     return -1;

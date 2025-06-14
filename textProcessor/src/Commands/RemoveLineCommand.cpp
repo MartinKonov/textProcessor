@@ -78,12 +78,14 @@ void RemoveLineCommand::undo() {
     if (!doc) {
         cli->error("No active document set.");
         delete previousDocument;
+        previousDocument = nullptr;
         return;
     }
 
     if( doc->getDocName() != previousDocument->getDocName()) {
         cli->error("Cannot undo: active document has changed.");
         delete previousDocument;
+        previousDocument = nullptr;
         return;
     }
 

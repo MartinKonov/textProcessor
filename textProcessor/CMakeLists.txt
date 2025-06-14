@@ -66,6 +66,8 @@ file(GLOB_RECURSE SOURCES
     "src/CommandsCLI/InsertLineCommandCLI.cpp"
     "src/Commands/ChageLineCommand.cpp"
     "src/CommandsCLI/ChageLineCommandCLI.cpp"
+    "src/Commands/ToUpperCommand.cpp"
+    "src/CommandsCLI/ToUpperCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})

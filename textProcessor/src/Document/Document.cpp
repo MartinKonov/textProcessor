@@ -414,3 +414,31 @@ bool Document::sortMovableLines(vector<Line*>& movableLines, vector<size_t>& mov
 
     return lineHasMoved;
 }
+
+/**
+ * @brief Converts the content of the document to uppercase.
+ * 
+ * This method converts all lines in the document to uppercase.
+ */
+void Document::toUpper() {
+    for (Line* line : lines) {
+        line->toUpper();
+    }
+    hasChanged = true;
+}
+
+/**
+ * @brief Converts a range of lines in the document to uppercase.
+ * 
+ * @param startIndex The starting index of the range (inclusive).
+ * @param endIndex The ending index of the range (exclusive).
+ */
+void Document::toUpper(size_t startIndex, size_t endIndex) {
+    if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
+        throw std::out_of_range("Document::toUpper: index out of range");
+    }
+    for (size_t i = startIndex; i < endIndex; ++i) {
+        lines[i]->toUpper();
+    }
+    hasChanged = true;
+}
