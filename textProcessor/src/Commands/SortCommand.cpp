@@ -27,6 +27,7 @@ string SortCommand::getName() const {
  */
 SortCommand::~SortCommand() {
     delete previousDocument;
+    previousDocument = nullptr;
 }
 
 /**

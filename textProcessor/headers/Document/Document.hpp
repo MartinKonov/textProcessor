@@ -66,6 +66,8 @@ class Document {
     void trimLeading(size_t startIndex, size_t endIndex);
     void scramble();
     void scramble(size_t startIndex, size_t endIndex);
+    void removeRepeats();
+    void removeRepeats(size_t startIndex, size_t endIndex);
     // TODO while the commands are being made
     
     friend ostream& operator<<(ostream& os, Document& document);

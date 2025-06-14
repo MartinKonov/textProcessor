@@ -12,6 +12,17 @@ TrimTrailingCommand::TrimTrailingCommand(TrimTrailingCommandCLI* cli, ActiveDocu
     this->activeBlock = activeBlock;
     this->previousDocument = nullptr;
 }
+
+
+/**
+ * @brief Destructor for TrimTrailingCommand.
+ * It deletes the previous document to free up memory.
+ */
+TrimTrailingCommand::~TrimTrailingCommand() {
+    delete previousDocument;
+    previousDocument = nullptr;
+}
+
 /**
  * @brief Returns the name of the command.
  * 

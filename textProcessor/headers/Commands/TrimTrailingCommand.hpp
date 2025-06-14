@@ -13,7 +13,7 @@ class TrimTrailingCommand : public Command {
 public:
     TrimTrailingCommand() = delete;
     TrimTrailingCommand(TrimTrailingCommandCLI* cli, ActiveDocument* activeDocument, ActiveBlock* activeBlock);
-    ~TrimTrailingCommand() override = default;
+    ~TrimTrailingCommand() override;
     TrimTrailingCommand(const TrimTrailingCommand& other) = delete;
     TrimTrailingCommand& operator=(const TrimTrailingCommand &other) = delete;
 

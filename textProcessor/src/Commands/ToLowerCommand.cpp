@@ -12,6 +12,12 @@ ToLowerCommand::ToLowerCommand(ToLowerCommandCLI* cli, ActiveDocument* activeDoc
     this->previousDocumentState = nullptr;
     this->activeBlock = activeBlock;
 }
+
+ToLowerCommand::~ToLowerCommand() {
+    delete previousDocumentState;
+    previousDocumentState = nullptr;
+}
+
 /**
  * @brief Returns the name of the command.
  * 

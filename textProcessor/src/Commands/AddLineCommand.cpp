@@ -17,6 +17,7 @@ AddLineCommand::AddLineCommand(AddLineCommandCLI* addLineCommandCLI, ActiveDocum
  */
 AddLineCommand::~AddLineCommand() {
     delete docBeforeExecution;
+    docBeforeExecution = nullptr;
 }
 
 /**

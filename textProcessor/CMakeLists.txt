@@ -76,6 +76,8 @@ file(GLOB_RECURSE SOURCES
     "src/CommandsCLI/TrimLeadingCommandCLI.cpp"
     "src/Commands/ScrambleCommand.cpp"
     "src/CommandsCLI/ScrambleCommandCLI.cpp"
+    "src/Commands/RemoveRepeatsCommand.cpp"
+    "src/CommandsCLI/RemoveRepeatsCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})

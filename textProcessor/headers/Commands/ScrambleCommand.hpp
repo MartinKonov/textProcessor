@@ -18,7 +18,7 @@ class ScrambleCommand : public Command {
 public:
     ScrambleCommand() = delete;
     ScrambleCommand(ScrambleCommandCLI* cli, ActiveDocument* activeDocument, ActiveBlock* activeBlock);
-    ~ScrambleCommand() override = default;
+    ~ScrambleCommand() override;
     ScrambleCommand(const ScrambleCommand& other) = delete;
     ScrambleCommand& operator=(const ScrambleCommand& other) = delete;
 

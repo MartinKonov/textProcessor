@@ -11,6 +11,16 @@ ChangeLineCommand::ChangeLineCommand(ChangeLineCommandCLI* cli, ActiveDocument* 
     this->activeDocument = activeDocument;
     this->previousDocument = nullptr;
 }
+
+/**
+ * @brief Destructor for ChangeLineCommand.
+ * It deletes the previous document to free up memory.
+ */
+ChangeLineCommand::~ChangeLineCommand() {
+    delete previousDocument;
+    previousDocument = nullptr;
+}
+
 /**
  * @brief Returns the name of the command.
  * 

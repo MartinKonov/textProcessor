@@ -16,7 +16,7 @@ class ChangeLineCommand : public Command {
  public:
     ChangeLineCommand() = delete;
     ChangeLineCommand(ChangeLineCommandCLI* cli, ActiveDocument* activeDocument);
-    ~ChangeLineCommand() override = default;
+    ~ChangeLineCommand() override;
     ChangeLineCommand(const ChangeLineCommand& other) = delete;
     ChangeLineCommand& operator=(const ChangeLineCommand& other) = delete;
 

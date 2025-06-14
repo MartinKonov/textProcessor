@@ -18,7 +18,7 @@ class ToLowerCommand : public Command {
 public:
     ToLowerCommand() = delete;
     ToLowerCommand(ToLowerCommandCLI* cli, ActiveDocument* activeDocument, ActiveBlock* activeBlock);
-    ~ToLowerCommand() override = default;
+    ~ToLowerCommand() override;
     ToLowerCommand(const ToLowerCommand& other) = delete;
     ToLowerCommand& operator=(const ToLowerCommand& other) = delete;
 

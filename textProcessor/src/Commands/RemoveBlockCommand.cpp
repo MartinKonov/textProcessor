@@ -19,6 +19,7 @@ RemoveBlockCommand::RemoveBlockCommand(RemoveBlockCommandCLI* removeBlockCommand
  */
 RemoveBlockCommand::~RemoveBlockCommand() {
     delete removedBlock;
+    removedBlock = nullptr;
 }
 
 /**

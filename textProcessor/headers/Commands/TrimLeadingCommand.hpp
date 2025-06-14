@@ -19,7 +19,7 @@ class TrimLeadingCommand : public Command {
 public:
     TrimLeadingCommand() = delete;
     TrimLeadingCommand(TrimLeadingCommandCLI* cli, ActiveDocument* activeDocument, ActiveBlock* activeBlock);
-    ~TrimLeadingCommand() override = default;
+    ~TrimLeadingCommand() override;
     TrimLeadingCommand(const TrimLeadingCommand& other) = delete;
     TrimLeadingCommand& operator=(const TrimLeadingCommand& other) = delete;
 

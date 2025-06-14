@@ -12,6 +12,12 @@ ScrambleCommand::ScrambleCommand(ScrambleCommandCLI* cli, ActiveDocument* active
     this->activeBlock = activeBlock;
     this->previousDocument = nullptr;
 }
+
+ScrambleCommand::~ScrambleCommand() {
+    delete previousDocument;
+    previousDocument = nullptr;
+}
+
 /**
  * @brief Returns the name of the command.
  * 
@@ -42,13 +48,6 @@ void ScrambleCommand::execute() {
         previousDocument = nullptr;
     }
     previousDocument = new Document(*activeDocument->getActiveDocument());
-
-    if(previousDocument->getDocName() != activeDocument->getActiveDocument()->getDocName()) {
-        cli->error("The active document has changed since the last scramble command. Cannot proceed with scrambling.");
-        delete previousDocument;
-        previousDocument = nullptr;
-        return;
-    }
 
     if(activeBlock->getActiveBlock()) {
         activeDocument->getActiveDocument()->scramble(activeBlock->getActiveBlock()->getStartLineIndex(),

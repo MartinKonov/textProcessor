@@ -13,6 +13,15 @@ TrimLeadingCommand::TrimLeadingCommand(TrimLeadingCommandCLI* cli, ActiveDocumen
 }
 
 /**
+ * @brief Destructor for TrimLeadingCommand.
+ * It deletes the previous document to free up memory.
+ */
+TrimLeadingCommand::~TrimLeadingCommand() {
+    delete previousDocument;
+    previousDocument = nullptr;
+}
+
+/**
  * @brief Returns the name of the command.
  * 
  * This method provides the name of the command, which is used for display purposes in the CLI.

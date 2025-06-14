@@ -554,3 +554,44 @@ void Document::scramble(size_t startIndex, size_t endIndex) {
     shuffle(lines.begin() + startIndex, lines.begin() + endIndex, g);
     hasChanged = true;
 }
+
+
+/**
+ * @brief Removes duplicate lines from the document.
+ * 
+ * This method removes duplicate lines from the document.
+ */
+void Document::removeRepeats() {
+
+    for(int i = 0; i < lines.size(); ++i) {
+        for(int j = i + 1; j < lines.size(); ++j) {
+            if(*lines[i] == *lines[j]) {
+                removeLine(j);
+                --j;
+            }
+        }
+    }
+    hasChanged = true;
+}
+
+/**
+ * @brief Removes duplicate lines from a specified range in the document.
+ * 
+ * @param startIndex The starting index of the range (inclusive).
+ * @param endIndex The ending index of the range (inclusive).
+ */
+void Document::removeRepeats(size_t startIndex, size_t endIndex) {
+    if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
+        throw out_of_range("Document::removeRepeats: index out of range");
+    }
+
+    for (size_t i = startIndex; i < endIndex; ++i) {
+        for (size_t j = i + 1; j < endIndex; ++j) {
+            if (*lines[i] == *lines[j]) {
+                removeLine(j);
+                --j;
+            }
+        }
+    }
+    hasChanged = true;
+}
