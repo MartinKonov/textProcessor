@@ -68,6 +68,8 @@ file(GLOB_RECURSE SOURCES
     "src/CommandsCLI/ChageLineCommandCLI.cpp"
     "src/Commands/ToUpperCommand.cpp"
     "src/CommandsCLI/ToUpperCommandCLI.cpp"
+    "src/Commands/ToLowerCommand.cpp"
+    "src/CommandsCLI/ToLowerCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})

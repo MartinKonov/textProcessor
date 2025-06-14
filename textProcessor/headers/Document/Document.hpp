@@ -48,8 +48,8 @@ class Document {
     void sort(size_t startIndex, size_t endIndex);
     void toUpper();
     void toUpper(size_t startIndex, size_t endIndex);
-   //  void toLower();
-   //  void toLower(size_t startIndex, size_t endIndex);
+    void toLower();
+    void toLower(size_t startIndex, size_t endIndex);
     // TODO while the commands are being made
     
     friend ostream& operator<<(ostream& os, Document& document);

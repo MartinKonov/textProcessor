@@ -133,7 +133,7 @@ void Document::copyFrom(const Document& other)
     this->hasChanged = other.hasChanged;
     
     for(Line* line : other.lines) {
-        this->lines.push_back(new Line(*line));
+        this->lines.push_back(lineCreator->createLine(line->getLine()));
     }
 
 }
@@ -439,6 +439,34 @@ void Document::toUpper(size_t startIndex, size_t endIndex) {
     }
     for (size_t i = startIndex; i < endIndex; ++i) {
         lines[i]->toUpper();
+    }
+    hasChanged = true;
+}
+
+/**
+ * @brief Converts the content of the document to lowercase.
+ * 
+ * This method converts all lines in the document to lowercase.
+ */
+void Document::toLower() {
+    for (Line* line : lines) {
+        line->toLower();
+    }
+    hasChanged = true;
+}
+
+/**
+ * @brief Converts a range of lines in the document to lowercase.
+ * 
+ * @param startIndex The starting index of the range (inclusive).
+ * @param endIndex The ending index of the range (exclusive).
+ */
+void Document::toLower(size_t startIndex, size_t endIndex) {
+    if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
+        throw std::out_of_range("Document::toLower: index out of range");
+    }
+    for (size_t i = startIndex; i < endIndex; ++i) {
+        lines[i]->toLower();
     }
     hasChanged = true;
 }

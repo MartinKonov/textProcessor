@@ -43,6 +43,8 @@
 #include "CommandsCLI/ChangeLineCommandCLI.hpp"
 #include "Commands/ToUpperCommand.hpp"
 #include "CommandsCLI/ToUpperCommandCLI.hpp"
+#include "Commands/ToLowerCommand.hpp"
+#include "CommandsCLI/ToLowerCommandCLI.hpp"
 
 /**
  * @brief The main class for the text processor application, responsible for managing commands, documents, and blocks.
@@ -98,6 +100,7 @@ class TextProcessor {
         InsertLineCommandCLI* insertLineCommandCLI;
         ChangeLineCommandCLI* changeLineCommandCLI;
         ToUpperCommandCLI* toUpperCommandCLI;
+        ToLowerCommandCLI* toLowerCommandCLI;
 
         AddLineCommand* addLineCommand;
         SaveCommand* saveCommand;
@@ -118,4 +121,5 @@ class TextProcessor {
         InsertLineCommand* insertLineCommand;
         ChangeLineCommand* changeLineCommand;
         ToUpperCommand* toUpperCommand;
+        ToLowerCommand* toLowerCommand;
 };

@@ -42,6 +42,10 @@ void SortCommand::execute() {
         return;
     }
 
+    if(previousDocument) {
+        delete previousDocument;
+        previousDocument = nullptr;
+    }
     previousDocument = new Document(*activeDocument->getActiveDocument());
 
     if(activeBlock->getActiveBlock()) {

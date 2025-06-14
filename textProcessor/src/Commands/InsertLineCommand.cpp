@@ -38,6 +38,11 @@ void InsertLineCommand::execute() {
         return;
     }
 
+    if(previousDocument) {
+        delete previousDocument;
+        previousDocument = nullptr;
+    }
+
     previousDocument = new Document(*doc);
 
     cli->showDocumentWithIndices(doc->toString());

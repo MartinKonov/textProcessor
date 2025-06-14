@@ -25,6 +25,8 @@ using std::ifstream;
 class FileManager {
 public:
     static FileManager* getInstance();
+    static void destroyInstance();
+    
 
     void loadFile(const string& filename);
     string getContents(const string& filename);
@@ -38,6 +40,7 @@ private:
     FileManager() = default;
     FileManager(const FileManager&) = delete;
     FileManager& operator=(const FileManager&) = delete;
+    ~FileManager();
 
     static FileManager* instance;
 

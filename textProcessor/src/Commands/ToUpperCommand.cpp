@@ -40,10 +40,15 @@ ToUpperCommand::~ToUpperCommand() {
 void ToUpperCommand::execute() {
 
     if(!activeDocument->getActiveDocument()) {
-        cli->error("Please set an active document before converting to uppercase.");
+        cli->error("No active document. Cannot convert to uppercase.");
         return;
     }
 
+    if(previousDocument) {
+        delete previousDocument;
+        previousDocument = nullptr;
+    }
+    
     previousDocument = new Document(*activeDocument->getActiveDocument());
 
     if(activeBlock->getActiveBlock()) {

@@ -43,8 +43,13 @@ void ChangeLineCommand::execute() {
     }
     string newContent = cli->getNewLineContent();
 
+    if(previousDocument) {
+        delete previousDocument;
+        previousDocument = nullptr;
+    }
+    previousDocument = new Document(*activeDocument->getActiveDocument());
+
     try {
-        previousDocument = new Document(*activeDocument->getActiveDocument());
         activeDocument->getActiveDocument()->changeLine(lineNumber - 1, newContent);
     } catch (const runtime_error& e) {
         cli->error(e.what());

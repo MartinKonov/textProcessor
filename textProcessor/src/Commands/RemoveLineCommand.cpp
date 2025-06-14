@@ -60,6 +60,10 @@ void RemoveLineCommand::execute() {
         return;
     }
 
+    if(previousDocument) {
+        delete previousDocument;
+        previousDocument = nullptr;
+    }
     previousDocument = new Document(*doc);
     doc->removeLine(lineNumber - 1);
     cli->success();

@@ -33,6 +33,10 @@ void AddLineCommand::execute() {
     string line = addLineCommandCLI->getLineInput();
     Document* currentActiveDocument = activeDocument->getActiveDocument();
     
+    if(docBeforeExecution) {
+        delete docBeforeExecution;
+        docBeforeExecution = nullptr;
+    }
     this->docBeforeExecution = new Document(*currentActiveDocument);
 
     currentActiveDocument->addLine(line);

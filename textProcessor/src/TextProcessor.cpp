@@ -55,6 +55,7 @@ TextProcessor::~TextProcessor() {
     delete insertLineCommandCLI;
     delete changeLineCommandCLI;
     delete toUpperCommandCLI;
+    delete toLowerCommandCLI;
 
     delete addLineCommand;
     delete saveCommand;
@@ -75,6 +76,7 @@ TextProcessor::~TextProcessor() {
     delete insertLineCommand;
     delete changeLineCommand;
     delete toUpperCommand;
+    delete toLowerCommand;
 
     delete commandRegister;
     delete documentRegister;
@@ -84,6 +86,7 @@ TextProcessor::~TextProcessor() {
 
     BlockRegister::destroyInstance();
     LineCreator::destroyInstance();
+    FileManager::destroyInstance();
 }
 
 /**
@@ -126,6 +129,7 @@ void TextProcessor::initializeCommandCLIs() {
     insertLineCommandCLI = new InsertLineCommandCLI();
     changeLineCommandCLI = new ChangeLineCommandCLI();
     toUpperCommandCLI = new ToUpperCommandCLI();
+    toLowerCommandCLI = new ToLowerCommandCLI();
 }
 
 /**
@@ -152,6 +156,7 @@ void TextProcessor::initializeCommands() {
     insertLineCommand = new InsertLineCommand(insertLineCommandCLI, activeDocument);
     changeLineCommand = new ChangeLineCommand(changeLineCommandCLI, activeDocument);
     toUpperCommand = new ToUpperCommand(toUpperCommandCLI, activeDocument, activeBlock);
+    toLowerCommand = new ToLowerCommand(toLowerCommandCLI, activeDocument, activeBlock);
 }
 
 /**
@@ -178,6 +183,7 @@ void TextProcessor::registerCommands() {
     commandRegister->registerCommand(insertLineCommand);
     commandRegister->registerCommand(changeLineCommand);
     commandRegister->registerCommand(toUpperCommand);
+    commandRegister->registerCommand(toLowerCommand);
 }
 
 /**

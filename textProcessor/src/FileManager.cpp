@@ -24,6 +24,24 @@ FileManager* FileManager::getInstance() {
 }
 
 /**
+ * @brief Destroys the singleton instance of FileManager.
+ */
+void FileManager::destroyInstance() {
+    delete instance;
+    instance = nullptr;
+}
+
+/**
+ * @brief Destructor for the FileManager class.
+ * Cleans up the instance and its resources.
+ */
+FileManager::~FileManager() {
+    filenames.clear();
+    contents.clear();
+    instance = nullptr;
+}
+
+/**
  * @brief Finds the index of a file in the filenames vector.
  */
 int FileManager::findIndex(const string& filename) {
