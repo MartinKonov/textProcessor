@@ -62,6 +62,8 @@ file(GLOB_RECURSE SOURCES
     "src/CommandCLI/ViewDocumentCommandCLI.cpp"
     "src/Commands/RemoveLineCommand.cpp"
     "src/CommandsCLI/RemoveLineCommandCLI.cpp"
+    "src/Commands/InsertLineCommand.cpp"
+    "src/CommandsCLI/InsertLineCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})

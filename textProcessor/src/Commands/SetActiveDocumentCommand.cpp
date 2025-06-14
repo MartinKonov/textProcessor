@@ -51,6 +51,7 @@ void SetActiveDocumentCommand::undo() {
     if(previousActiveDocumentName.empty())
     {
         setActiveDocumentCLI->errorUndoPrevDocName();
+        return;
     }
 
     try {

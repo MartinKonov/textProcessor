@@ -15,7 +15,8 @@ using std::cin;
 using std::endl;
 using std::cerr;
 using std::exception;
-
+using std::runtime_error;
+using std::invalid_argument;
 
 /**
  * @brief An abstract base class for commands in the text processor application that interact with the command line interface.

@@ -50,6 +50,9 @@ TextProcessor::~TextProcessor() {
     delete removeActiveBlockCommandCLI;
     delete setFormatCommandCLI;
     delete viewDocumentCommandCLI;
+    delete removeLineCommandCLI;
+    delete listLoadedDocumentsCommandCLI;
+    delete insertLineCommandCLI;
 
     delete addLineCommand;
     delete saveCommand;
@@ -65,6 +68,9 @@ TextProcessor::~TextProcessor() {
     delete removeActiveBlockCommand;
     delete setFormatCommand;
     delete viewDocumentCommand;
+    delete listLoadedDocumentsCommand;
+    delete removeLineCommand;
+    delete insertLineCommand;
 
     delete commandRegister;
     delete documentRegister;
@@ -113,6 +119,7 @@ void TextProcessor::initializeCommandCLIs() {
     setFormatCommandCLI = new SetFormatCommandCLI();
     viewDocumentCommandCLI = new ViewDocumentCommandCLI();
     removeLineCommandCLI = new RemoveLineCommandCLI();
+    insertLineCommandCLI = new InsertLineCommandCLI();
 }
 
 /**
@@ -136,6 +143,7 @@ void TextProcessor::initializeCommands() {
     setFormatCommand = new SetFormatCommand(setFormatCommandCLI, activeFormatter);
     viewDocumentCommand = new ViewDocumentCommand(viewDocumentCommandCLI, activeFormatter, activeDocument, documentRegister);
     removeLineCommand = new RemoveLineCommand(removeLineCommandCLI, activeDocument);
+    insertLineCommand = new InsertLineCommand(insertLineCommandCLI, activeDocument);
 }
 
 /**
@@ -159,6 +167,7 @@ void TextProcessor::registerCommands() {
     commandRegister->registerCommand(setFormatCommand);
     commandRegister->registerCommand(viewDocumentCommand);
     commandRegister->registerCommand(removeLineCommand);
+    commandRegister->registerCommand(insertLineCommand);
 }
 
 /**
