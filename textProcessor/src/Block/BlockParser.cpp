@@ -34,13 +34,13 @@ Block* BlockParser::parse(const std::string content)
 {
     vector<string> parts = split(content, '|');
     if (parts.size() != 4) {
-        throw std::runtime_error("Invalid block format");
+        throw runtime_error(ERROR_INVALID_BLOCK_FORMAT);
     }
 
     string blockName = parts[0];
     string docName = parts[1];
-    size_t startLineIndex = std::stoul(parts[2]);
-    size_t endLineIndex = std::stoul(parts[3]);
+    size_t startLineIndex = stoul(parts[2]);
+    size_t endLineIndex = stoul(parts[3]);
 
     return new Block(blockName, docName, startLineIndex, endLineIndex);
 }
