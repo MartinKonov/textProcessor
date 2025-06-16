@@ -84,6 +84,8 @@ file(GLOB_RECURSE SOURCES
     "src/CommandsCLI/ShowDocumentNunmLinesCommandCLI.cpp"
     "src/Commands/ShowDocumentNumSymbolsCommand.cpp"
     "src/CommandsCLI/ShowDocumentNumSymbolsCommandCLI.cpp"
+    "src/Commands/ShowDocumentHasChangedCommand.cpp"
+    "src/CommandsCLI/ShowDocumentHasChangedCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})

@@ -59,6 +59,9 @@
 #include "CommandsCLI/ShowDocumentNumLinesCommandCLI.hpp"
 #include "Commands/ShowDocumentNumSymbolsCommand.hpp"
 #include "CommandsCLI/ShowDocumentNumSymbolsCommandCLI.hpp"
+#include "Commands/ShowDocumentHasChangedCommand.hpp"
+#include "CommandsCLI/ShowDocumentHasChangedCommandCLI.hpp"
+
 
 /**
  * @brief The main class for the text processor application, responsible for managing commands, documents, and blocks.
@@ -124,6 +127,7 @@ class TextProcessor {
         ShowDocumentNameCommandCLI* showDocumentNameCommandCLI;
         ShowDocumentNumLinesCommandCLI* showDocumentNumLinesCommandCLI;
         ShowDocumentNumSymbolsCommandCLI* showDocumentNumSymbolsCommandCLI;
+        ShowDocumentHasChangedCommandCLI* showDocumentHasChangedCommandCLI;
 
         // Commands
         AddLineCommand* addLineCommand;
@@ -153,4 +157,5 @@ class TextProcessor {
         ShowDocumentNameCommand* showDocumentNameCommand;
         ShowDocumentNumLinesCommand* showDocumentNumLinesCommand;
         ShowDocumentNumSymbolsCommand* showDocumentNumSymbolsCommand;
+        ShowDocumentHasChangedCommand* showDocumentHasChangedCommand;
 };

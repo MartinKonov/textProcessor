@@ -63,6 +63,7 @@ TextProcessor::~TextProcessor() {
     delete showDocumentNameCommandCLI;
     delete showDocumentNumLinesCommandCLI;
     delete showDocumentNumSymbolsCommandCLI;
+    delete showDocumentHasChangedCommandCLI;
 
     delete addLineCommand;
     delete saveCommand;
@@ -91,6 +92,7 @@ TextProcessor::~TextProcessor() {
     delete showDocumentNameCommand;
     delete showDocumentNumLinesCommand;
     delete showDocumentNumSymbolsCommand;
+    delete showDocumentHasChangedCommand;
 
     delete commandRegister;
     delete documentRegister;
@@ -151,6 +153,7 @@ void TextProcessor::initializeCommandCLIs() {
     showDocumentNameCommandCLI = new ShowDocumentNameCommandCLI();
     showDocumentNumLinesCommandCLI = new ShowDocumentNumLinesCommandCLI();
     showDocumentNumSymbolsCommandCLI = new ShowDocumentNumSymbolsCommandCLI();
+    showDocumentHasChangedCommandCLI = new ShowDocumentHasChangedCommandCLI();
 }
 
 /**
@@ -185,6 +188,7 @@ void TextProcessor::initializeCommands() {
     showDocumentNameCommand = new ShowDocumentNameCommand(showDocumentNameCommandCLI, activeDocument);
     showDocumentNumLinesCommand = new ShowDocumentNumLinesCommand(showDocumentNumLinesCommandCLI, activeDocument);
     showDocumentNumSymbolsCommand = new ShowDocumentNumSymbolsCommand(showDocumentNumSymbolsCommandCLI, activeDocument);
+    showDocumentHasChangedCommand = new ShowDocumentHasChangedCommand(showDocumentHasChangedCommandCLI, activeDocument);
 }
 
 /**
@@ -219,6 +223,7 @@ void TextProcessor::registerCommands() {
     commandRegister->registerCommand(showDocumentNameCommand);
     commandRegister->registerCommand(showDocumentNumLinesCommand);
     commandRegister->registerCommand(showDocumentNumSymbolsCommand);
+    commandRegister->registerCommand(showDocumentHasChangedCommand);
 }
 
 /**
