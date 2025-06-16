@@ -214,37 +214,37 @@ void TextProcessor::initializeCommands() {
  * This method adds all the created command instances to the command register for execution.
  */
 void TextProcessor::registerCommands() {
-    commandRegister->registerCommand(addLineCommand);
-    commandRegister->registerCommand(saveAsCommand);
-    commandRegister->registerCommand(saveCommand);
     commandRegister->registerCommand(loadDocumentCommand);
     commandRegister->registerCommand(unloadDocumentCommand);
-    commandRegister->registerCommand(setActiveDocumentCommand);
-    commandRegister->registerCommand(createBlockCommand);
-    commandRegister->registerCommand(removeBlockCommand);
-    commandRegister->registerCommand(setActiveBlockCommand);
-    commandRegister->registerCommand(sortCommand);
-    commandRegister->registerCommand(viewAllBlocksCommand);
-    commandRegister->registerCommand(removeActiveBlockCommand);
     commandRegister->registerCommand(listLoadedDocumentsCommand); 
-    commandRegister->registerCommand(setFormatCommand);
+    commandRegister->registerCommand(setActiveDocumentCommand);
     commandRegister->registerCommand(viewDocumentCommand);
-    commandRegister->registerCommand(removeLineCommand);
-    commandRegister->registerCommand(insertLineCommand);
-    commandRegister->registerCommand(changeLineCommand);
-    commandRegister->registerCommand(toUpperCommand);
-    commandRegister->registerCommand(toLowerCommand);
-    commandRegister->registerCommand(trimTrailingCommand);
-    commandRegister->registerCommand(trimLeadingCommand);
-    commandRegister->registerCommand(scrambleCommand);
-    commandRegister->registerCommand(removeRepeatsCommand);
     commandRegister->registerCommand(showDocumentNameCommand);
     commandRegister->registerCommand(showDocumentNumLinesCommand);
     commandRegister->registerCommand(showDocumentNumSymbolsCommand);
     commandRegister->registerCommand(showDocumentHasChangedCommand);
+    commandRegister->registerCommand(saveCommand);
+    commandRegister->registerCommand(saveAsCommand);
+    commandRegister->registerCommand(addLineCommand);
+    commandRegister->registerCommand(insertLineCommand);
+    commandRegister->registerCommand(removeLineCommand);
+    commandRegister->registerCommand(changeLineCommand);
+    commandRegister->registerCommand(toUpperCommand);
+    commandRegister->registerCommand(toLowerCommand);
+    commandRegister->registerCommand(trimLeadingCommand);
+    commandRegister->registerCommand(trimTrailingCommand);
+    commandRegister->registerCommand(sortCommand);
+    commandRegister->registerCommand(scrambleCommand);
+    commandRegister->registerCommand(removeRepeatsCommand);
+    commandRegister->registerCommand(createBlockCommand);
+    commandRegister->registerCommand(removeBlockCommand);
+    commandRegister->registerCommand(viewAllBlocksCommand);
+    commandRegister->registerCommand(setActiveBlockCommand);
+    commandRegister->registerCommand(removeActiveBlockCommand);
     commandRegister->registerCommand(addMacroCommand);
     commandRegister->registerCommand(removeMacroCommand);
     commandRegister->registerCommand(viewAllMacrosCommand);
+    commandRegister->registerCommand(setFormatCommand);
     commandRegister->registerExitCommand(exitCommand);
 }
 
