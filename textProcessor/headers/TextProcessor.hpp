@@ -65,6 +65,8 @@
 #include "CommandsCLI/AddMacroCommandCLI.hpp"
 #include "Commands/RemoveMacroCommand.hpp"
 #include "CommandsCLI/RemoveMacroCommandCLI.hpp"
+#include "Commands/ViewAllMacrosCommand.hpp"
+#include "CommandsCLI/ViewAllMacrosCommandCLI.hpp"
 
 
 /**
@@ -135,6 +137,7 @@ class TextProcessor {
         ShowDocumentHasChangedCommandCLI* showDocumentHasChangedCommandCLI;
         AddMacroCommandCLI* addMacroCommandCLI;
         RemoveMacroCommandCLI* removeMacroCommandCLI;
+        ViewAllMacrosCommandCLI* viewAllMacrosCommandCLI;
 
         // Commands
         AddLineCommand* addLineCommand;
@@ -167,4 +170,5 @@ class TextProcessor {
         ShowDocumentHasChangedCommand* showDocumentHasChangedCommand;
         AddMacroCommand* addMacroCommand;
         RemoveMacroCommand* removeMacroCommand;
+        ViewAllMacrosCommand* viewAllMacrosCommand;
 };
