@@ -5,8 +5,8 @@
  * @author MK
  * @brief A command to set the active document in the text processor application.
  */
-SetActiveDocumentCommand::SetActiveDocumentCommand(SetActiveDocumentCommandCLI* setActiveDocumentCLI, ActiveDocument* activeDocument) {
-    this->setActiveDocumentCLI = setActiveDocumentCLI;
+SetActiveDocumentCommand::SetActiveDocumentCommand(SetActiveDocumentCommandCLI* cli, ActiveDocument* activeDocument) {
+    this->cli = cli;
     this->activeDocument = activeDocument;
 }
 
@@ -25,7 +25,7 @@ string SetActiveDocumentCommand::getName() const {
  * If an error occurs during setting, it catches the exception and displays an error message.
  */
 void SetActiveDocumentCommand::execute() {
-    string docName = setActiveDocumentCLI->getDocPath();
+    string docName = cli->getDocPath();
 
     try {
         if(activeDocument->getActiveDocument()) {
@@ -33,12 +33,12 @@ void SetActiveDocumentCommand::execute() {
         }
         activeDocument->setActiveDocument(docName);
     } catch (runtime_error& e) {
-        setActiveDocumentCLI->error(e.what());
+        cli->error(e.what());
         previousActiveDocumentName.clear();
         return;
     }
     
-    setActiveDocumentCLI->success();
+    cli->success();
 }
 
 /**
@@ -50,7 +50,7 @@ void SetActiveDocumentCommand::execute() {
 void SetActiveDocumentCommand::undo() {
     if(previousActiveDocumentName.empty())
     {
-        setActiveDocumentCLI->errorUndoPrevDocName();
+        cli->errorUndoPrevDocName();
         return;
     }
 
@@ -58,7 +58,7 @@ void SetActiveDocumentCommand::undo() {
         activeDocument->setActiveDocument(previousActiveDocumentName);
     } catch(runtime_error& e)
     {
-        setActiveDocumentCLI->errorUndo(e.what());
+        cli->errorUndo(e.what());
     }
 
 }

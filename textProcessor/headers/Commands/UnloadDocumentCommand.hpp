@@ -17,7 +17,7 @@ class UnloadDocumentCommand : public Command {
 
 public:
     UnloadDocumentCommand() = delete;
-    UnloadDocumentCommand(UnloadDocumentCommandCLI* unloadDocumentCommandCLI, DocumentRegister* documentRegister, ActiveDocument* activeDocument);
+    UnloadDocumentCommand(UnloadDocumentCommandCLI* cli, DocumentRegister* documentRegister, ActiveDocument* activeDocument);
     UnloadDocumentCommand(UnloadDocumentCommand& other) = delete;
     UnloadDocumentCommand& operator=(UnloadDocumentCommand& other) = delete;
     ~UnloadDocumentCommand() override = default;
@@ -30,7 +30,7 @@ public:
 private:
     void handleDocHasChanged(Document* document);
 
-    UnloadDocumentCommandCLI* unloadDocumentCommandCLI;
+    UnloadDocumentCommandCLI* cli;
     DocumentRegister* documentRegister;
     ActiveDocument* activeDocument;
 };

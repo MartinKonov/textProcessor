@@ -6,8 +6,8 @@
  * @author MK
  * @brief A command to remove a block in the text processor application.
  */
-RemoveBlockCommand::RemoveBlockCommand(RemoveBlockCommandCLI* removeBlockCommandCLI, BlockRegister* blockRegister, DocumentRegister* documentRegister) {
-    this->removeBlockCommandCLI = removeBlockCommandCLI;
+RemoveBlockCommand::RemoveBlockCommand(RemoveBlockCommandCLI* cli, BlockRegister* blockRegister, DocumentRegister* documentRegister) {
+    this->cli = cli;
     this->blockRegister = blockRegister;
     this->documentRegister = documentRegister;
     this->removedBlock = nullptr;
@@ -39,10 +39,10 @@ string RemoveBlockCommand::getName() const {
  */
 void RemoveBlockCommand::execute() {
 
-    string blockName = removeBlockCommandCLI->getBlockName();
+    string blockName = cli->getBlockName();
 
     if(!blockRegister->itemExists(blockName)) {
-        removeBlockCommandCLI->blockDoesntExist();
+        cli->blockDoesntExist();
         return;
     }
 
@@ -50,11 +50,11 @@ void RemoveBlockCommand::execute() {
     try {
         blockRegister->removeItem(blockName);
     } catch (runtime_error& e) {
-        removeBlockCommandCLI->error(e.what());
+        cli->error(e.what());
     }
 
 
-    removeBlockCommandCLI->success();
+    cli->success();
 }
 
 /**
@@ -65,7 +65,7 @@ void RemoveBlockCommand::execute() {
  */
 void RemoveBlockCommand::undo() {
     if(!removedBlock) {
-        removeBlockCommandCLI->removedBlockError();
+        cli->removedBlockError();
         return;
     }
 
@@ -75,7 +75,7 @@ void RemoveBlockCommand::undo() {
 
     } catch (runtime_error& e)
     {
-        removeBlockCommandCLI->errorUndo(e.what());
+        cli->errorUndo(e.what());
     }
     delete removedBlock;
     removedBlock = nullptr;

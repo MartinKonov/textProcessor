@@ -17,7 +17,7 @@ class CreateBlockCommand : public Command {
 
  public:
     CreateBlockCommand() = delete;
-    CreateBlockCommand(CreateBlockCommandCLI* createBlockCommandCLI, BlockRegister* blockRegister, ActiveDocument* activeDocument);
+    CreateBlockCommand(CreateBlockCommandCLI* cli, BlockRegister* blockRegister, ActiveDocument* activeDocument);
     CreateBlockCommand(CreateBlockCommand& other) = delete;
     CreateBlockCommand& operator=(CreateBlockCommand& other) = delete;
     ~CreateBlockCommand() override = default;
@@ -29,6 +29,6 @@ class CreateBlockCommand : public Command {
  private:
     string nameOfLastBlockCreated;
     BlockRegister* blockRegister;
-    CreateBlockCommandCLI* createBlockCommandCLI;
+    CreateBlockCommandCLI* cli;
     ActiveDocument* activeDocument;
 };

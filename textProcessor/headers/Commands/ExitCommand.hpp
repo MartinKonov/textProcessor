@@ -16,7 +16,7 @@
 class ExitCommand : public Command {
 public:
     ExitCommand() = delete;
-    ExitCommand(ExitCommandCLI* exitCommandCLI, DocumentRegister* documentRegister);
+    ExitCommand(ExitCommandCLI* cli, DocumentRegister* documentRegister);
     ~ExitCommand() override = default;
 
     ExitCommand(const ExitCommand& other) = delete;
@@ -27,6 +27,6 @@ public:
     void undo() override {};
     bool isUndoable() const override;
 private:
-    ExitCommandCLI* exitCommandCLI;
+    ExitCommandCLI* cli;
     DocumentRegister* documentRegister;
 };

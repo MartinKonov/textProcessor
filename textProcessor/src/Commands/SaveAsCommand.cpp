@@ -6,6 +6,15 @@
  * @brief A command to save the active document under a new name in the text processor application.
  */
 
+/**
+ * @brief Constructor for the SaveAsCommand class.
+ */
+SaveAsCommand::SaveAsCommand(ActiveDocument* activeDocument, SaveAsCommandCLI* cli, DocumentRegister* documentRegister) {
+    this->activeDocument = activeDocument;
+    this->cli = cli;
+    this->documentRegister = documentRegister;
+}
+
  /**
   * @brief Returns the name of the command.
   */
@@ -23,17 +32,17 @@ void SaveAsCommand::execute() {
     Document* docToSave = activeDocument->getActiveDocument();
 
     if(!docToSave) {
-        saveAsCommandCLI->noActiveDocumentSet();
+        cli->noActiveDocumentSet();
         return;
     }
 
-    string newDocName = saveAsCommandCLI->getNewDocName();
+    string newDocName = cli->getNewDocName();
 
     try{
         documentRegister->saveAsDocument(docToSave, newDocName);
     }
     catch(const runtime_error& e) {
-        saveAsCommandCLI->error(string(e.what()));
+        cli->error(string(e.what()));
     }
 }
 

@@ -6,7 +6,7 @@
  * @brief A command to unload a document from the text processor application.
  */
 UnloadDocumentCommand::UnloadDocumentCommand(UnloadDocumentCommandCLI* unloadDocumentCommandCLI, DocumentRegister* documentRegister, ActiveDocument* activeDocument) {
-    this->unloadDocumentCommandCLI = unloadDocumentCommandCLI;
+    this->cli = unloadDocumentCommandCLI;
     this->documentRegister = documentRegister;
     this->activeDocument = activeDocument;
 }
@@ -29,14 +29,14 @@ string UnloadDocumentCommand::getName() const {
  */
 void UnloadDocumentCommand::execute() {
 
-    string docPathToUnload = unloadDocumentCommandCLI->getDocPathToUnload();
+    string docPathToUnload = cli->getDocPathToUnload();
 
     Document* docToUnload;
 
     try {
         docToUnload = documentRegister->getDocument(docPathToUnload);
     } catch(runtime_error& e) {
-        unloadDocumentCommandCLI->error(e.what());
+        cli->error(e.what());
         return;
     }
 
@@ -46,13 +46,13 @@ void UnloadDocumentCommand::execute() {
         documentRegister->removeDocument(docPathToUnload);
     }
     catch(runtime_error& e){
-        unloadDocumentCommandCLI->error(e.what());
+        cli->error(e.what());
         return;
     }
 
     activeDocument->removeActiveDocument();
 
-    unloadDocumentCommandCLI->success();
+    cli->success();
 }
 
 /**
@@ -69,15 +69,15 @@ void UnloadDocumentCommand::handleDocHasChanged(Document* document) {
         return;
     }
 
-    unloadDocumentCommandCLI->docHasChanged();
-    if(!unloadDocumentCommandCLI->saveQuery()) {
+    cli->docHasChanged();
+    if(!cli->saveQuery()) {
         return;
     }
 
     try {
         documentRegister->saveDocument(document);
     } catch (runtime_error& e) {
-        unloadDocumentCommandCLI->error(e.what());
+        cli->error(e.what());
     }
 }
 

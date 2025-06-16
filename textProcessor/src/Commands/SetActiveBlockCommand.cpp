@@ -5,8 +5,8 @@
  * @author MK
  * @brief A command to set the active block in the text processor application.
  */
-SetActiveBlockCommand::SetActiveBlockCommand(SetActiveBlockCommandCLI* setActiveBlockCommandCLI,ActiveBlock* activeBlock, ActiveDocument* activeDocument, BlockRegister* blockRegister) {
-    this->setActiveBlockCommandCLI = setActiveBlockCommandCLI;
+SetActiveBlockCommand::SetActiveBlockCommand(SetActiveBlockCommandCLI* cli,ActiveBlock* activeBlock, ActiveDocument* activeDocument, BlockRegister* blockRegister) {
+    this->cli = cli;
     this->activeBlock = activeBlock;
     this->activeDocument = activeDocument;
     this->blockRegister = blockRegister;
@@ -39,14 +39,14 @@ string SetActiveBlockCommand::getName() const {
 void SetActiveBlockCommand::execute() {
     
     if(!activeDocument->getActiveDocument()) {
-        setActiveBlockCommandCLI->errorActiveDocument();
+        cli->errorActiveDocument();
         return;
     }
 
     string blocksForDocSerialized = blockRegister->showAllForDocument(activeDocument->getActiveDocument()->getDocName());
-    setActiveBlockCommandCLI->showBlocksForActiveDoc(blocksForDocSerialized);
+    cli->showBlocksForActiveDoc(blocksForDocSerialized);
 
-    string newActiveBlockName = setActiveBlockCommandCLI->getNewActiveBlockName();
+    string newActiveBlockName = cli->getNewActiveBlockName();
 
     if(activeBlock->getActiveBlock()){
         previousActiveBlock = new Block(*activeBlock->getActiveBlock());
@@ -55,11 +55,11 @@ void SetActiveBlockCommand::execute() {
     try{
         activeBlock->setActiveBlock(newActiveBlockName, activeDocument->getActiveDocument());
     } catch (runtime_error& e) {
-        setActiveBlockCommandCLI->error(e.what());
+        cli->error(e.what());
         return;
     }
 
-    setActiveBlockCommandCLI->success();
+    cli->success();
 }
 
 /**
@@ -71,12 +71,12 @@ void SetActiveBlockCommand::execute() {
 void SetActiveBlockCommand::undo() {
 
     if(!previousActiveBlock){
-        setActiveBlockCommandCLI->nothingToUndo();
+        cli->nothingToUndo();
         return;
     }
 
     if(activeDocument->getActiveDocument()->getDocName() != previousActiveBlock->getDocumentName()) {
-        setActiveBlockCommandCLI->documentHasChanged();
+        cli->documentHasChanged();
         delete previousActiveBlock;
         previousActiveBlock = nullptr;
         return;
@@ -85,7 +85,7 @@ void SetActiveBlockCommand::undo() {
     try {
         activeBlock->setActiveBlock(previousActiveBlock->getName(), activeDocument->getActiveDocument());
     } catch(runtime_error& e) {
-        setActiveBlockCommandCLI->errorUndo(e.what());
+        cli->errorUndo(e.what());
     }
 
     delete previousActiveBlock;

@@ -18,7 +18,7 @@ class SetActiveBlockCommand : public Command {
 
  public:
     SetActiveBlockCommand() = delete;
-    SetActiveBlockCommand(SetActiveBlockCommandCLI* setActiveBlockCommandCLI, ActiveBlock* activeBlock, ActiveDocument* activeDocument, BlockRegister* blockRegister);
+    SetActiveBlockCommand(SetActiveBlockCommandCLI* cli, ActiveBlock* activeBlock, ActiveDocument* activeDocument, BlockRegister* blockRegister);
     SetActiveBlockCommand(SetActiveBlockCommand& other) = delete;
     SetActiveBlockCommand& operator=(SetActiveBlockCommand& other) = delete;
     ~SetActiveBlockCommand() override;
@@ -32,6 +32,6 @@ class SetActiveBlockCommand : public Command {
     Block* previousActiveBlock;
     ActiveBlock* activeBlock;
     ActiveDocument* activeDocument;
-    SetActiveBlockCommandCLI* setActiveBlockCommandCLI;
+    SetActiveBlockCommandCLI* cli;
     BlockRegister* blockRegister;
 };

@@ -5,10 +5,10 @@
  * @author MK
  * @brief A command to save the active document in the text processor application.
  */
-SaveCommand::SaveCommand(ActiveDocument* activeDocument, SaveCommandCLI* saveCommandCLI,DocumentRegister* documentRegister)
+SaveCommand::SaveCommand(ActiveDocument* activeDocument, SaveCommandCLI* cli,DocumentRegister* documentRegister)
 {
     this->activeDocument = activeDocument;
-    this->saveCommandCLI = saveCommandCLI;
+    this->cli = cli;
     this->documentRegister = documentRegister;
 }
 
@@ -33,13 +33,13 @@ void SaveCommand::execute()
 {
     Document* docToSave = activeDocument->getActiveDocument();
     if(!docToSave) {
-        saveCommandCLI->noActiveDocumentSet();
+        cli->noActiveDocumentSet();
         return;
     }
 
     if(!docToSave->getHasChanged())
     {
-        saveCommandCLI->documentHasntChanged();
+        cli->documentHasntChanged();
         return;
     }
 
@@ -47,10 +47,10 @@ void SaveCommand::execute()
         documentRegister->saveDocument(docToSave);
     }
     catch(const runtime_error& e) {
-        saveCommandCLI->error(string(e.what()));
+        cli->error(string(e.what()));
     }
 
-    saveCommandCLI->success();
+    cli->success();
 }
 
 bool SaveCommand::isUndoable() const {

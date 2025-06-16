@@ -15,7 +15,7 @@ class SetActiveDocumentCommand : public Command {
 
 public: 
     SetActiveDocumentCommand() = delete;
-    SetActiveDocumentCommand(SetActiveDocumentCommandCLI* setActiveDocumentCLI, ActiveDocument* activeDocument);
+    SetActiveDocumentCommand(SetActiveDocumentCommandCLI* cli, ActiveDocument* activeDocument);
     SetActiveDocumentCommand(SetActiveDocumentCommand& other) = delete;
     SetActiveDocumentCommand& operator=(SetActiveDocumentCommand& other) = delete;
     ~SetActiveDocumentCommand() override = default;
@@ -26,6 +26,6 @@ public:
 
 private:
     ActiveDocument* activeDocument;
-    SetActiveDocumentCommandCLI* setActiveDocumentCLI;
+    SetActiveDocumentCommandCLI* cli;
     string previousActiveDocumentName;
 };

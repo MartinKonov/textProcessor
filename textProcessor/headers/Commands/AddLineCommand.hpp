@@ -17,7 +17,7 @@ class AddLineCommand : public Command {
 
  public:
     AddLineCommand() = delete;
-    AddLineCommand(AddLineCommandCLI* addLineCommandCLI, ActiveDocument* activeDocument);
+    AddLineCommand(AddLineCommandCLI* cli, ActiveDocument* activeDocument);
     ~AddLineCommand() override;
     AddLineCommand(const AddLineCommand& other) = delete;
     AddLineCommand& operator=(const AddLineCommand& other) = delete;
@@ -29,7 +29,7 @@ class AddLineCommand : public Command {
  private:
    void setDocBeforeExecution(Document* currentActiveDocument);
 
-    AddLineCommandCLI* addLineCommandCLI;
+    AddLineCommandCLI* cli;
     ActiveDocument* activeDocument;
     Document* docBeforeExecution;
 };

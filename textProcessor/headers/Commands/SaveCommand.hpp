@@ -17,7 +17,7 @@ class SaveCommand : public Command {
 
     public:
         SaveCommand() = delete;
-        SaveCommand(ActiveDocument* activeDocument, SaveCommandCLI* saveCommandCLI,DocumentRegister* documentRegister);
+        SaveCommand(ActiveDocument* activeDocument, SaveCommandCLI* cli,DocumentRegister* documentRegister);
         SaveCommand(const SaveCommand& other) = delete;
         SaveCommand& operator=(const SaveCommand &other) = delete;
         ~SaveCommand() override = default;
@@ -29,6 +29,6 @@ class SaveCommand : public Command {
     private:
         ActiveDocument* activeDocument;
         DocumentRegister* documentRegister;
-        SaveCommandCLI* saveCommandCLI;
+        SaveCommandCLI* cli;
 
 };

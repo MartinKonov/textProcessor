@@ -5,8 +5,8 @@
  * @author MK
  * @brief A command to exit the text processor application, handling document saving and cleanup.
  */
-ExitCommand::ExitCommand(ExitCommandCLI* exitCommandCLI, DocumentRegister* documentRegister) {
-    this->exitCommandCLI = exitCommandCLI;
+ExitCommand::ExitCommand(ExitCommandCLI* cli, DocumentRegister* documentRegister) {
+    this->cli = cli;
     this->documentRegister = documentRegister;
 }
 
@@ -30,8 +30,8 @@ void ExitCommand::execute() {
 
     for (Document* document : documents) {
         if (document->getHasChanged()) {
-            exitCommandCLI->showDocumentHasChangedMessage(document->getDocName());
-            if (!exitCommandCLI->getDocumentSaveConfirmation()) {
+            cli->showDocumentHasChangedMessage(document->getDocName());
+            if (!cli->getDocumentSaveConfirmation()) {
                 continue;
             }
             documentRegister->saveDocument(document);

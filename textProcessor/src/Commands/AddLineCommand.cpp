@@ -5,8 +5,8 @@
  * @author MK
  * @brief A command to add a line to the end of the active document in the text processor application.
  */
-AddLineCommand::AddLineCommand(AddLineCommandCLI* addLineCommandCLI, ActiveDocument* activeDocument) {
-    this->addLineCommandCLI = addLineCommandCLI;
+AddLineCommand::AddLineCommand(AddLineCommandCLI* cli, ActiveDocument* activeDocument) {
+    this->cli = cli;
     this->activeDocument = activeDocument;
     this->docBeforeExecution = nullptr;
 }
@@ -27,11 +27,11 @@ AddLineCommand::~AddLineCommand() {
  */
 void AddLineCommand::execute() {
     if (!activeDocument->getActiveDocument()) {
-        addLineCommandCLI->activeDocumentError();
+        cli->activeDocumentError();
         return;
     }
-    
-    string line = addLineCommandCLI->getLineInput();
+
+    string line = cli->getLineInput();
     Document* currentActiveDocument = activeDocument->getActiveDocument();
     
     if(docBeforeExecution) {
@@ -42,7 +42,7 @@ void AddLineCommand::execute() {
 
     currentActiveDocument->addLine(line);
 
-    addLineCommandCLI->success();
+    cli->success();
 }
 
 /**
@@ -69,7 +69,7 @@ void AddLineCommand::undo()
 
     if(*activeDocument->getActiveDocument() == *docBeforeExecution)
     {
-        addLineCommandCLI->nothingChanged();
+        cli->nothingChanged();
         delete docBeforeExecution;
         docBeforeExecution = nullptr;
         return;
@@ -77,7 +77,7 @@ void AddLineCommand::undo()
 
     if(activeDocName != docBeforeExecution->getDocName())
     {
-        addLineCommandCLI->error();
+        cli->error();
         delete docBeforeExecution;
         docBeforeExecution = nullptr;
         return;
@@ -85,7 +85,7 @@ void AddLineCommand::undo()
 
     if(*activeDocument->getActiveDocument() == *docBeforeExecution)
     {
-        addLineCommandCLI->nothingChanged();
+        cli->nothingChanged();
     }
 
     *activeDocument->getActiveDocument() = *docBeforeExecution;

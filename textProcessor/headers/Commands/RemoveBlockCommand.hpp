@@ -16,7 +16,7 @@ class RemoveBlockCommand : public Command {
 
  public:
     RemoveBlockCommand() = delete;
-    RemoveBlockCommand(RemoveBlockCommandCLI* removeBlockCommandCLI,BlockRegister* blockRegister, DocumentRegister* documentRegister);
+    RemoveBlockCommand(RemoveBlockCommandCLI* cli,BlockRegister* blockRegister, DocumentRegister* documentRegister);
     RemoveBlockCommand(RemoveBlockCommand& other) = delete;
     RemoveBlockCommand& operator=(RemoveBlockCommand& other) = delete;
     ~RemoveBlockCommand() override;
@@ -28,6 +28,6 @@ class RemoveBlockCommand : public Command {
  private:
     Block* removedBlock;
     BlockRegister* blockRegister;
-    RemoveBlockCommandCLI* removeBlockCommandCLI;
+    RemoveBlockCommandCLI* cli;
     DocumentRegister* documentRegister;
 };

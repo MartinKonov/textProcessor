@@ -5,8 +5,8 @@
  * @author MK
  * @brief A command to load a document in the text processor application.
  */
-LoadDocumentCommand::LoadDocumentCommand(LoadDocumentCommandCLI* loadDocumentCommandCLI, DocumentRegister* documentRegister) {
-    this->loadDocumentCommandCLI = loadDocumentCommandCLI;
+LoadDocumentCommand::LoadDocumentCommand(LoadDocumentCommandCLI* cli, DocumentRegister* documentRegister) {
+    this->cli = cli;
     this->documentRegister = documentRegister;
 }
 
@@ -28,15 +28,15 @@ string LoadDocumentCommand::getName() const {
  */
 void LoadDocumentCommand::execute() {
 
-    string docFilePath = loadDocumentCommandCLI->getDocFilePath();
+    string docFilePath = cli->getDocFilePath();
 
     try {
         documentRegister->addDocument(docFilePath);
     } catch(runtime_error& e) {
-        loadDocumentCommandCLI->error(e.what());
+        cli->error(e.what());
         return;
     }
-    loadDocumentCommandCLI->success();
+    cli->success();
 }
 
 /**

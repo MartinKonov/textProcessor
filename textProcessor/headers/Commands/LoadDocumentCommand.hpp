@@ -17,7 +17,7 @@ class LoadDocumentCommand : public Command {
 
 public:
     LoadDocumentCommand() = delete;
-    LoadDocumentCommand(LoadDocumentCommandCLI* loadDocumentCommandCLI, DocumentRegister* documentParser);
+    LoadDocumentCommand(LoadDocumentCommandCLI* cli, DocumentRegister* documentParser);
     LoadDocumentCommand(LoadDocumentCommand& other) = delete;
     LoadDocumentCommand& operator=(LoadDocumentCommand& other) = delete;
     ~LoadDocumentCommand() override = default;
@@ -29,6 +29,6 @@ public:
 
 private:
     DocumentRegister* documentRegister;
-    LoadDocumentCommandCLI* loadDocumentCommandCLI;
+    LoadDocumentCommandCLI* cli;
 
 };

@@ -6,9 +6,9 @@
  * @author MK
  * @brief A command to create a block in the text processor application.
  */
-CreateBlockCommand::CreateBlockCommand(CreateBlockCommandCLI* createBlockCommandCLI, BlockRegister* blockRegister, ActiveDocument* activeDocument) {
+CreateBlockCommand::CreateBlockCommand(CreateBlockCommandCLI* cli, BlockRegister* blockRegister, ActiveDocument* activeDocument) {
     this->activeDocument = activeDocument;
-    this->createBlockCommandCLI = createBlockCommandCLI;
+    this->cli = cli;
     this->blockRegister = blockRegister;
 }
 
@@ -31,29 +31,29 @@ string CreateBlockCommand::getName() const {
 void CreateBlockCommand::execute() {
 
     if(!activeDocument->getActiveDocument()) {
-        createBlockCommandCLI->errorNoActiveDocument();
+        cli->errorNoActiveDocument();
         return;
     }
 
-    string blockName = createBlockCommandCLI->getBlockName();
+    string blockName = cli->getBlockName();
 
     if(blockRegister->itemExists(blockName)){
-        createBlockCommandCLI->blockExists();
+        cli->blockExists();
         return;
     }
 
-    size_t startLineIndex = createBlockCommandCLI->getStartLineIndex();
-    size_t endLineIndex = createBlockCommandCLI->getEndLineIndex();
+    size_t startLineIndex = cli->getStartLineIndex();
+    size_t endLineIndex = cli->getEndLineIndex();
 
     try{
         blockRegister->addBlock(blockName, activeDocument->getActiveDocument(), startLineIndex-1, endLineIndex-1);
     } catch(runtime_error& e) {
-        createBlockCommandCLI->error(e.what());
+        cli->error(e.what());
         return;
     }
     nameOfLastBlockCreated = blockName;
 
-    createBlockCommandCLI->success();
+    cli->success();
 }
 
 /**
@@ -66,7 +66,7 @@ void CreateBlockCommand::undo() {
     try{
         blockRegister->removeItem(nameOfLastBlockCreated);
     } catch(runtime_error& e) {
-        createBlockCommandCLI->error(e.what());
+        cli->error(e.what());
     }
-    createBlockCommandCLI->successUndo();
+    cli->successUndo();
 }
