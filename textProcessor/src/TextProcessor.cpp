@@ -62,6 +62,7 @@ TextProcessor::~TextProcessor() {
     delete removeRepeatsCommandCLI;
     delete showDocumentNameCommandCLI;
     delete showDocumentNumLinesCommandCLI;
+    delete showDocumentNumSymbolsCommandCLI;
 
     delete addLineCommand;
     delete saveCommand;
@@ -89,6 +90,7 @@ TextProcessor::~TextProcessor() {
     delete removeRepeatsCommand;
     delete showDocumentNameCommand;
     delete showDocumentNumLinesCommand;
+    delete showDocumentNumSymbolsCommand;
 
     delete commandRegister;
     delete documentRegister;
@@ -148,6 +150,7 @@ void TextProcessor::initializeCommandCLIs() {
     removeRepeatsCommandCLI = new RemoveRepeatsCommandCLI();
     showDocumentNameCommandCLI = new ShowDocumentNameCommandCLI();
     showDocumentNumLinesCommandCLI = new ShowDocumentNumLinesCommandCLI();
+    showDocumentNumSymbolsCommandCLI = new ShowDocumentNumSymbolsCommandCLI();
 }
 
 /**
@@ -181,6 +184,7 @@ void TextProcessor::initializeCommands() {
     removeRepeatsCommand = new RemoveRepeatsCommand(removeRepeatsCommandCLI, activeDocument, activeBlock);
     showDocumentNameCommand = new ShowDocumentNameCommand(showDocumentNameCommandCLI, activeDocument);
     showDocumentNumLinesCommand = new ShowDocumentNumLinesCommand(showDocumentNumLinesCommandCLI, activeDocument);
+    showDocumentNumSymbolsCommand = new ShowDocumentNumSymbolsCommand(showDocumentNumSymbolsCommandCLI, activeDocument);
 }
 
 /**
@@ -214,6 +218,7 @@ void TextProcessor::registerCommands() {
     commandRegister->registerCommand(removeRepeatsCommand);
     commandRegister->registerCommand(showDocumentNameCommand);
     commandRegister->registerCommand(showDocumentNumLinesCommand);
+    commandRegister->registerCommand(showDocumentNumSymbolsCommand);
 }
 
 /**
