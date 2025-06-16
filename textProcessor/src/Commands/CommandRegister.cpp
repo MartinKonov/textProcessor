@@ -23,6 +23,15 @@ void CommandRegister::registerCommand (Command* command) {
 }
 
 /**
+ * @brief Registers an exit command.
+ * This command is used to handle the exit operation of the application.
+ * @param exitCommand Pointer to the exit command to be registered.
+ */
+void CommandRegister::registerExitCommand(ExitCommand* exitCommand) {
+    this->exitCommand = exitCommand;
+}
+
+/**
  * @brief Finds the index of a command by its name.
  * If the command is not found, it returns -1.
  * @param commandName The name of the command to find.
@@ -73,6 +82,20 @@ void CommandRegister::executeCommand(int index) {
         executedCommandNames.push(command->getName());
     }
 }
+
+/**
+ * @brief Executes the exit command.
+ * If the exit command is not registered, it throws an exception.
+ * This command is used to handle the exit operation of the application.
+ * @throws std::runtime_error if the exit command is not registered.
+ */
+void CommandRegister::executeExitCommand() {
+    if (exitCommand == nullptr) {
+        throw std::runtime_error("CommandRegister::executeExitCommand: Exit command not registered");
+    }
+    exitCommand->execute();
+}
+
 
 /**
  * @brief Executes a macro by its index.

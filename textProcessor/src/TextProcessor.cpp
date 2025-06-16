@@ -67,6 +67,7 @@ TextProcessor::~TextProcessor() {
     delete addMacroCommandCLI;
     delete removeMacroCommandCLI;
     delete viewAllMacrosCommandCLI;
+    delete exitCommandCLI;
 
     delete addLineCommand;
     delete saveCommand;
@@ -99,6 +100,7 @@ TextProcessor::~TextProcessor() {
     delete addMacroCommand;
     delete removeMacroCommand;
     delete viewAllMacrosCommand;
+    delete exitCommand;
 
     delete commandRegister;
     delete documentRegister;
@@ -165,6 +167,7 @@ void TextProcessor::initializeCommandCLIs() {
     addMacroCommandCLI = new AddMacroCommandCLI();
     removeMacroCommandCLI = new RemoveMacroCommandCLI();
     viewAllMacrosCommandCLI = new ViewAllMacrosCommandCLI();
+    exitCommandCLI = new ExitCommandCLI();
 }
 
 /**
@@ -203,6 +206,7 @@ void TextProcessor::initializeCommands() {
     addMacroCommand = new AddMacroCommand(addMacroCommandCLI, macroRegister);
     removeMacroCommand = new RemoveMacroCommand(removeMacroCommandCLI, macroRegister);
     viewAllMacrosCommand = new ViewAllMacrosCommand(viewAllMacrosCommandCLI, macroRegister);
+    exitCommand = new ExitCommand(exitCommandCLI, documentRegister);
 }
 
 /**
@@ -241,6 +245,7 @@ void TextProcessor::registerCommands() {
     commandRegister->registerCommand(addMacroCommand);
     commandRegister->registerCommand(removeMacroCommand);
     commandRegister->registerCommand(viewAllMacrosCommand);
+    commandRegister->registerExitCommand(exitCommand);
 }
 
 /**
@@ -259,6 +264,7 @@ void TextProcessor::run() {
         getline(cin, commandInput);
 
         if (commandInput == "exit") {
+            commandRegister->executeExitCommand();
             break;
         } else if (commandInput == "help") {
             cout << "Enter the name or the number of the command to be executed." << endl;

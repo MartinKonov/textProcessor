@@ -10,6 +10,7 @@
 #include "Command.hpp"
 #include "../Utils/Stack.hpp"
 #include "../Macro/MacroRegister.hpp"
+#include "ExitCommand.hpp"
 
 /**
  * @brief A class to register and manage commands in the text processor application.
@@ -23,8 +24,10 @@ class CommandRegister {
 
 
     void registerCommand(Command* newCommand);
+    void registerExitCommand(ExitCommand* exitCommand);
     void executeMacro(string macroName);
     void executeCommand(int index);
+    void executeExitCommand();
     string showAllCommands();
     string showAllMacros();
     void undo();
@@ -35,6 +38,7 @@ class CommandRegister {
     vector<Command*> allCommands;
     Stack<string> executedCommandNames;
     MacroRegister* macroRegister;
+    ExitCommand* exitCommand;
 
     int findIndex(Command* command);
 };

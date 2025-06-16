@@ -1,2 +1,2 @@
-
 novomakro|Load Document|Set Active Document|Add Line|Sort|Save
+exitTest|Load Document|Load Document|Load Document|Load Document|Set Active Document|Add Line|Set Active Document|Sort|Set Active Document|Scramble
