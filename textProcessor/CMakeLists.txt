@@ -80,12 +80,14 @@ file(GLOB_RECURSE SOURCES
     "src/CommandsCLI/RemoveRepeatsCommandCLI.cpp"
     "src/Commands/ShowDocumentNameCommand.cpp"
     "src/CommandsCLI/ShowDocumentNameCommandCLI.cpp"
-    "src/Commands/ShowDocumentNunmLinesCommand.cpp"
-    "src/CommandsCLI/ShowDocumentNunmLinesCommandCLI.cpp"
+    "src/Commands/ShowDocumentNumLinesCommand.cpp"
+    "src/CommandsCLI/ShowDocumentNumLinesCommandCLI.cpp"
     "src/Commands/ShowDocumentNumSymbolsCommand.cpp"
     "src/CommandsCLI/ShowDocumentNumSymbolsCommandCLI.cpp"
     "src/Commands/ShowDocumentHasChangedCommand.cpp"
     "src/CommandsCLI/ShowDocumentHasChangedCommandCLI.cpp"
+    "src/Commands/AddMacroCommand.cpp"
+    "src/CommandsCLI/AddMacroCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})

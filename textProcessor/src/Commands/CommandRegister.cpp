@@ -1,17 +1,13 @@
 #include "../../headers/Commands/CommandRegister.hpp"
 #include <iostream>
 
-CommandRegister::CommandRegister() {
-
-}
-
 CommandRegister::~CommandRegister()
 {
-    // for(Command* command: allCommands)
-    // {
-    //     delete command;
-    // }
     allCommands.clear();
+}
+
+CommandRegister::CommandRegister(MacroRegister* macroRegister) {
+    this->macroRegister = macroRegister;
 }
 
 /**

@@ -9,6 +9,7 @@
 #pragma once
 #include "Command.hpp"
 #include "../Utils/Stack.hpp"
+#include "../Macro/MacroRegister.hpp"
 
 /**
  * @brief A class to register and manage commands in the text processor application.
@@ -16,11 +17,13 @@
 class CommandRegister {
 
  public:
-   CommandRegister();
+   CommandRegister() = delete;
+   CommandRegister(MacroRegister* macroRegister);
    ~CommandRegister();
 
 
     void registerCommand(Command* newCommand);
+    void executeMacro();
     void executeCommand(int index);
     string showAllCommands();
     void undo();
@@ -30,6 +33,7 @@ class CommandRegister {
 
     vector<Command*> allCommands;
     Stack<string> executedCommandNames;
+    MacroRegister* macroRegister;
 
     int findIndex(Command* command);
 };

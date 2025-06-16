@@ -61,6 +61,8 @@
 #include "CommandsCLI/ShowDocumentNumSymbolsCommandCLI.hpp"
 #include "Commands/ShowDocumentHasChangedCommand.hpp"
 #include "CommandsCLI/ShowDocumentHasChangedCommandCLI.hpp"
+#include "Commands/AddMacroCommand.hpp"
+#include "CommandsCLI/AddMacroCommandCLI.hpp"
 
 
 /**
@@ -89,6 +91,7 @@ class TextProcessor {
         bool isUnsignedInt(const string& str);
 
         // Data classes
+        MacroRegister* macroRegister;
         CommandRegister* commandRegister;
         FileManager* fileManager;
         LineCreator* lineCreator;
@@ -128,6 +131,7 @@ class TextProcessor {
         ShowDocumentNumLinesCommandCLI* showDocumentNumLinesCommandCLI;
         ShowDocumentNumSymbolsCommandCLI* showDocumentNumSymbolsCommandCLI;
         ShowDocumentHasChangedCommandCLI* showDocumentHasChangedCommandCLI;
+        AddMacroCommandCLI* addMacroCommandCLI;
 
         // Commands
         AddLineCommand* addLineCommand;
@@ -158,4 +162,5 @@ class TextProcessor {
         ShowDocumentNumLinesCommand* showDocumentNumLinesCommand;
         ShowDocumentNumSymbolsCommand* showDocumentNumSymbolsCommand;
         ShowDocumentHasChangedCommand* showDocumentHasChangedCommand;
+        AddMacroCommand* addMacroCommand;
 };

@@ -64,6 +64,7 @@ TextProcessor::~TextProcessor() {
     delete showDocumentNumLinesCommandCLI;
     delete showDocumentNumSymbolsCommandCLI;
     delete showDocumentHasChangedCommandCLI;
+    delete addMacroCommandCLI;
 
     delete addLineCommand;
     delete saveCommand;
@@ -93,6 +94,7 @@ TextProcessor::~TextProcessor() {
     delete showDocumentNumLinesCommand;
     delete showDocumentNumSymbolsCommand;
     delete showDocumentHasChangedCommand;
+    delete addMacroCommand;
 
     delete commandRegister;
     delete documentRegister;
@@ -100,6 +102,7 @@ TextProcessor::~TextProcessor() {
     delete activeDocument;
     delete activeBlock;
 
+    MacroRegister::destroyInstance();
     BlockRegister::destroyInstance();
     LineCreator::destroyInstance();
     FileManager::destroyInstance();
@@ -110,7 +113,8 @@ TextProcessor::~TextProcessor() {
  * Creates instances of CommandRegister, FileManager, LineCreator, DocumentParser, DocumentRegister, ActiveDocument, and ActiveBlock.
  */
 void TextProcessor::initializeDataClasses() {
-    commandRegister = new CommandRegister();
+    macroRegister = MacroRegister::getInstance();
+    commandRegister = new CommandRegister(macroRegister);
     fileManager = FileManager::getInstance();
     lineCreator = LineCreator::getInstance();
     blockRegister = BlockRegister::getInstance();
@@ -154,6 +158,7 @@ void TextProcessor::initializeCommandCLIs() {
     showDocumentNumLinesCommandCLI = new ShowDocumentNumLinesCommandCLI();
     showDocumentNumSymbolsCommandCLI = new ShowDocumentNumSymbolsCommandCLI();
     showDocumentHasChangedCommandCLI = new ShowDocumentHasChangedCommandCLI();
+    addMacroCommandCLI = new AddMacroCommandCLI();
 }
 
 /**
@@ -189,6 +194,7 @@ void TextProcessor::initializeCommands() {
     showDocumentNumLinesCommand = new ShowDocumentNumLinesCommand(showDocumentNumLinesCommandCLI, activeDocument);
     showDocumentNumSymbolsCommand = new ShowDocumentNumSymbolsCommand(showDocumentNumSymbolsCommandCLI, activeDocument);
     showDocumentHasChangedCommand = new ShowDocumentHasChangedCommand(showDocumentHasChangedCommandCLI, activeDocument);
+    addMacroCommand = new AddMacroCommand(addMacroCommandCLI, macroRegister);
 }
 
 /**
@@ -224,6 +230,7 @@ void TextProcessor::registerCommands() {
     commandRegister->registerCommand(showDocumentNumLinesCommand);
     commandRegister->registerCommand(showDocumentNumSymbolsCommand);
     commandRegister->registerCommand(showDocumentHasChangedCommand);
+    commandRegister->registerCommand(addMacroCommand);
 }
 
 /**
