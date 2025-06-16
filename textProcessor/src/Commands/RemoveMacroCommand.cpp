@@ -37,6 +37,7 @@ string RemoveMacroCommand::getName() const {
  * and if it does, it removes the macro and stores it for potential undo functionality.
  */
 void RemoveMacroCommand::execute() {
+    cli->showCurrentMacros(macroRegister->toString());
     string macroName = cli->getMacroName();
 
     if (!macroRegister->itemExists(macroName)) {

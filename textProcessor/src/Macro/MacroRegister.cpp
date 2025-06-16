@@ -83,3 +83,12 @@ string MacroRegister::getItemName(Macro* macro)
     }
     return macro->getName();
 }
+
+
+string MacroRegister::toString() const {
+    string out;
+    for (Macro* macro : items) {
+        out += MacroParser::getInstance()->serialize(macro);
+    }
+    return out;
+}

@@ -49,3 +49,12 @@ string RemoveMacroCommandCLI::getMacroName() {
     getline(cin, macroName);
     return macroName;
 }
+
+void RemoveMacroCommandCLI::showCurrentMacros(string serializedMacros) {
+    if (serializedMacros.empty()) {
+        cout << "No macros available." << endl;
+        return;
+    }
+    cout << "Current Macros:" << endl;
+    cout << serializedMacros << endl;
+}

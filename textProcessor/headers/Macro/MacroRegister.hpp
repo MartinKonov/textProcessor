@@ -25,6 +25,8 @@ class MacroRegister : public DataRegister<MacroRegister, Macro, MacroParser> {
    static string getType();
 
    static string getItemName(Macro* macro);
+
+   string toString() const;
  private:
     MacroRegister();
     ~MacroRegister();
