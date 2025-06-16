@@ -1,3 +1,1 @@
-macro1|cmd1|cmd2|cmd3
-macro2|cmdX|cmdY
 novomakro|Add Line|Load Document|Sort

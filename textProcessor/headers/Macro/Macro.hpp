@@ -22,6 +22,11 @@ class Macro {
     Macro() = delete;
     Macro(string macroName, vector<string> commandNames) 
         : macroName(macroName), commandNames(commandNames) {}
+    ~Macro();
+    Macro(const Macro& other);
+    Macro& operator=(const Macro& other);
+    Macro(Macro&& other) noexcept;
+    Macro& operator=(Macro&& other) noexcept;
 
     vector<string> getCommandNames();
     string getName();

@@ -65,6 +65,7 @@ TextProcessor::~TextProcessor() {
     delete showDocumentNumSymbolsCommandCLI;
     delete showDocumentHasChangedCommandCLI;
     delete addMacroCommandCLI;
+    delete removeMacroCommandCLI;
 
     delete addLineCommand;
     delete saveCommand;
@@ -95,6 +96,7 @@ TextProcessor::~TextProcessor() {
     delete showDocumentNumSymbolsCommand;
     delete showDocumentHasChangedCommand;
     delete addMacroCommand;
+    delete removeMacroCommand;
 
     delete commandRegister;
     delete documentRegister;
@@ -159,6 +161,7 @@ void TextProcessor::initializeCommandCLIs() {
     showDocumentNumSymbolsCommandCLI = new ShowDocumentNumSymbolsCommandCLI();
     showDocumentHasChangedCommandCLI = new ShowDocumentHasChangedCommandCLI();
     addMacroCommandCLI = new AddMacroCommandCLI();
+    removeMacroCommandCLI = new RemoveMacroCommandCLI();
 }
 
 /**
@@ -195,6 +198,7 @@ void TextProcessor::initializeCommands() {
     showDocumentNumSymbolsCommand = new ShowDocumentNumSymbolsCommand(showDocumentNumSymbolsCommandCLI, activeDocument);
     showDocumentHasChangedCommand = new ShowDocumentHasChangedCommand(showDocumentHasChangedCommandCLI, activeDocument);
     addMacroCommand = new AddMacroCommand(addMacroCommandCLI, macroRegister);
+    removeMacroCommand = new RemoveMacroCommand(removeMacroCommandCLI, macroRegister);
 }
 
 /**
@@ -231,6 +235,7 @@ void TextProcessor::registerCommands() {
     commandRegister->registerCommand(showDocumentNumSymbolsCommand);
     commandRegister->registerCommand(showDocumentHasChangedCommand);
     commandRegister->registerCommand(addMacroCommand);
+    commandRegister->registerCommand(removeMacroCommand);
 }
 
 /**

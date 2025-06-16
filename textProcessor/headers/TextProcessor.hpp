@@ -63,6 +63,8 @@
 #include "CommandsCLI/ShowDocumentHasChangedCommandCLI.hpp"
 #include "Commands/AddMacroCommand.hpp"
 #include "CommandsCLI/AddMacroCommandCLI.hpp"
+#include "Commands/RemoveMacroCommand.hpp"
+#include "CommandsCLI/RemoveMacroCommandCLI.hpp"
 
 
 /**
@@ -132,6 +134,7 @@ class TextProcessor {
         ShowDocumentNumSymbolsCommandCLI* showDocumentNumSymbolsCommandCLI;
         ShowDocumentHasChangedCommandCLI* showDocumentHasChangedCommandCLI;
         AddMacroCommandCLI* addMacroCommandCLI;
+        RemoveMacroCommandCLI* removeMacroCommandCLI;
 
         // Commands
         AddLineCommand* addLineCommand;
@@ -163,4 +166,5 @@ class TextProcessor {
         ShowDocumentNumSymbolsCommand* showDocumentNumSymbolsCommand;
         ShowDocumentHasChangedCommand* showDocumentHasChangedCommand;
         AddMacroCommand* addMacroCommand;
+        RemoveMacroCommand* removeMacroCommand;
 };

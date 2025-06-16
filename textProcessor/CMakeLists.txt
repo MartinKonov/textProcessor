@@ -88,6 +88,8 @@ file(GLOB_RECURSE SOURCES
     "src/CommandsCLI/ShowDocumentHasChangedCommandCLI.cpp"
     "src/Commands/AddMacroCommand.cpp"
     "src/CommandsCLI/AddMacroCommandCLI.cpp"
+    "src/Commands/RemoveMacroCommand.cpp"
+    "src/CommandsCLI/RemoveMacroCommandCLI.cpp"
 )
 
 add_executable(textProcessor ${SOURCES})
