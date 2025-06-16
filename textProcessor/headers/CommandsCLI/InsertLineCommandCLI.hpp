@@ -18,10 +18,8 @@ public:
     ~InsertLineCommandCLI() override = default;
 
     void success() override;
-    void error(string message = "") override;
     void showDocumentWithIndices(string document);
     void successUndo();
-    void noActiveDocumentSet();
     string getLineToInsert();
     int getLineNumberToInsert();
 };

@@ -29,7 +29,9 @@ bool NumericLine::operator< (const Line& other) const
 string NumericLine::trimmedContent() const 
 {
     size_t start = content.find_first_not_of(" \t\r\n");
-    if (start == std::string::npos) return "";
+    if (start == string::npos) {
+        return "";
+    }
     size_t end = content.find_last_not_of(" \t\r\n");
     return content.substr(start, end - start + 1);
 }

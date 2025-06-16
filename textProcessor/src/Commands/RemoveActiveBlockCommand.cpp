@@ -38,7 +38,7 @@ string RemoveActiveBlockCommand::getName() const {
  */
 void RemoveActiveBlockCommand::execute() {
     if(!activeBlock->getActiveBlock()) {
-        cli->error("There is no active block to remove.");
+        cli->error(ERROR_NO_ACTIVE_BLOCK);
         return;
     }
 
@@ -59,19 +59,19 @@ void RemoveActiveBlockCommand::execute() {
  */
 void RemoveActiveBlockCommand::undo() {
     if(!previousActiveBlock) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         return;
     }
 
     if(*activeBlock->getActiveBlock() == *previousActiveBlock) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         delete previousActiveBlock;
         previousActiveBlock = nullptr;
         return;
     }
 
     if(activeDocument->getActiveDocument()->getDocName() != previousActiveBlock->getDocumentName()) {
-        cli->documentHasChanged();
+        cli->error(ERROR_ACTIVE_DOCUMENT_CHANGED);
         delete previousActiveBlock;
         previousActiveBlock = nullptr;
         return;
@@ -80,7 +80,7 @@ void RemoveActiveBlockCommand::undo() {
     try {
         activeBlock->setActiveBlock(previousActiveBlock->getName(), activeDocument->getActiveDocument());
     } catch(runtime_error& e) {
-        cli->errorUndo(e.what());
+        cli->error(e.what());
     }
 
     delete previousActiveBlock;

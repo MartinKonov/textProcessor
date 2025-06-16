@@ -16,15 +16,6 @@ void SetActiveDocumentCommandCLI::success() {
 }
 
 /**
- * @brief Displays an error message if the active document could not be set.
- * 
- * @param message The error message to display (optional).
- */
-void SetActiveDocumentCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}
-
-/**
  * @brief Prompts the user to enter the document path and returns it.
  * 
  * This method asks the user to input the path of the document to be set as active.
@@ -38,22 +29,4 @@ string SetActiveDocumentCommandCLI::getDocPath() {
     getline(cin, docPath);
 
     return docPath;
-}
-
-/**
- * @brief Displays an error message if there is no previous active document to undo.
- * 
- * This method informs the user that there is nothing to undo because no previous active document was found.
- */
-void SetActiveDocumentCommandCLI::errorUndoPrevDocName() {
-    cerr << "Nothing to undo. No previous active document found" << endl;
-}
-
-/**
- * @brief Displays an error message if there was an error while undoing the last operation.
- * 
- * @param message The error message to display.
- */
-void SetActiveDocumentCommandCLI::errorUndo(string message) {
-    cerr << "Error: " << message << endl;
 }

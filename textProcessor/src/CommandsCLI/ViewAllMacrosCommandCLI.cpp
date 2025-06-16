@@ -6,14 +6,6 @@
  * @brief A class to handle input and output operations for the ViewAllMacrosCommand.
 */
 
-
-/**
- * @brief error method to display an error message.
- */
-void ViewAllMacrosCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}
-
 /**
  * @brief Displays the current macros in a formatted way.
  * 

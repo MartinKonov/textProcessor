@@ -7,6 +7,8 @@
 #include <string>
 #include <stdexcept>
 #include <vector>
+#include "../../dataFiles/CommonErrors.hpp"
+#include "../../dataFiles/FormatterTypes.hpp"
 
 using std::string;
 using std::vector;

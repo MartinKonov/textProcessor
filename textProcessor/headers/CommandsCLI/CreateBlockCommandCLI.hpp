@@ -19,12 +19,8 @@ class CreateBlockCommandCLI : public CommandsCLI {
     ~CreateBlockCommandCLI() override = default;
 
     void success() override;
-    void error(string message = "") override;
-    void errorNoActiveDocument();
     string getBlockName();
-    void blockExists();
     size_t getStartLineIndex();
     size_t getEndLineIndex();
-    void errorUndo(string message);
     void successUndo();
 };

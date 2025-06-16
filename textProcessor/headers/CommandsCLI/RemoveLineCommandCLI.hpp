@@ -18,7 +18,6 @@ public:
     void success() override;
     void successUndo();
 
-    void error(string message = "") override;
     void showDocumentWithIndices(string documentContents);
     string getLineNumberToRemove();
 };

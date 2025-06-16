@@ -10,7 +10,6 @@ public:
     ShowDocumentNameCommandCLI() = default;
     ~ShowDocumentNameCommandCLI() override = default;
 
-    void success() override;
-    void error(string message = "") override;
+    void success() override {};
     void showDocumentName(string documentName);
 };

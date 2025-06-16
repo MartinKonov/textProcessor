@@ -17,20 +17,3 @@
 void ShowDocumentNameCommandCLI::showDocumentName(string documentName) {
     cout << "Active Document Name: " << documentName << endl;
 }
-
-/**
- * @brief Doesn't do anything in this case.
- */
-void ShowDocumentNameCommandCLI::success() {
-}
-
-/**
- * @brief Displays an error message.
- * 
- * This method prints an error message to the console.
- * 
- * @param message The error message to display.
- */
-void ShowDocumentNameCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}

@@ -13,15 +13,6 @@ void RemoveBlockCommandCLI::success() {
 }
 
 /**
- * @brief Displays an error message if the block could not be removed.
- * 
- * @param message The error message to display (optional).
- */
-void RemoveBlockCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}
-
-/**
  * @brief Prompts the user to enter the name of the block to be removed and returns it.
  * 
  * @return string The name of the block to be removed.
@@ -31,27 +22,4 @@ string RemoveBlockCommandCLI::getBlockName() {
     cout << "Enter the name of the block to be removed:" << endl;
     getline(cin, blockName);
     return blockName;
-}
-
-/**
- * @brief Displays an error message if the block with the specified name does not exist.
- */
-void RemoveBlockCommandCLI::blockDoesntExist() {
-    cerr << "A block with this name doesn't exist." << endl;
-}
-
-/**
- * @brief Displays an error message if the block could not be removed because no previous state was found.
- */
-void RemoveBlockCommandCLI::removedBlockError() {
-    cerr << "Can't undo, no previous state of block found" << endl;
-}
-
-/**
- * @brief Displays an error message if there was an error while undoing the remove block operation.
- * 
- * @param message The error message to display.
- */
-void RemoveBlockCommandCLI::errorUndo(string message) {
-    cerr << "Error undo: " << message << endl;
 }

@@ -8,6 +8,10 @@
 #include "CenterFormatter.hpp"
 #include "DirectFormatter.hpp"
 #include "WrapFormatter.hpp"
+#include <exception>
+#include "../../dataFiles/CommonErrors.hpp"
+
+using std::runtime_error;
 
 /**
  * @class ActiveFormatter

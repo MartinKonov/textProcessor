@@ -8,6 +8,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "../../dataFiles/CommonErrors.hpp"
 
 using std::string;
 using std::cout;
@@ -25,5 +26,7 @@ class CommandsCLI {
     public:
     virtual ~CommandsCLI() = default;
     virtual void success() = 0;
-    virtual void error(string message = "") = 0;
+    virtual void error(string message) {
+        cerr << "Error: " << message << endl;
+    };
 };

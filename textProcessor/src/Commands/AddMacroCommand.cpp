@@ -28,15 +28,15 @@ void AddMacroCommand::execute() {
     vector<string> commandNames = cli->getCommandNames();
 
     if (macroRegister->itemExists(macroName)) {
-        cli->error("Macro with this name already exists.");
+        cli->error(ERROR_MACRO_ALREADY_EXISTS);
         return;
     }
 
     previousMacroName = macroName;
     try{
         macroRegister->addMacro(macroName, commandNames);
-    } catch (const std::runtime_error& e) {
-        cli->error("Error while adding macro: " + string(e.what()));
+    } catch (const runtime_error& e) {
+        cli->error(ERROR_ADDING_MACRO + string(e.what()));
         return;
     }
     cli->success();
@@ -50,19 +50,19 @@ void AddMacroCommand::execute() {
  */
 void AddMacroCommand::undo() {
     if (previousMacroName.empty()) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         return;
     }
 
     if (!macroRegister->itemExists(previousMacroName)) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         return;
     }
 
     try{
         macroRegister->removeItem(previousMacroName);
     } catch (const std::runtime_error& e) {
-        cli->error("Error while removing macro: " + string(e.what()));
+        cli->error(ERROR_REMOVING_MACRO + string(e.what()));
         return;
     }
     cli->successUndo();

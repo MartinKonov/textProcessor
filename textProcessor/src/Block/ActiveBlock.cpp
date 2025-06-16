@@ -25,7 +25,7 @@ void ActiveBlock::setActiveBlock(string blockName, Document* activeDocument) {
         }
     }
 
-    throw runtime_error("ActiveBlock:: setActiveBlock: A block with that name doesn't exist for current active document");
+    throw runtime_error("A block with that name doesn't exist for current active document");
 }
 
 /**

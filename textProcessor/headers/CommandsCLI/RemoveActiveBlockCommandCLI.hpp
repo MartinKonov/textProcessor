@@ -16,8 +16,4 @@ class RemoveActiveBlockCommandCLI : public CommandsCLI {
     ~RemoveActiveBlockCommandCLI() override = default;
 
     void success() override;
-    void error(string message = "") override;
-    void nothingToUndo();
-    void documentHasChanged();
-    void errorUndo(string message);
 };

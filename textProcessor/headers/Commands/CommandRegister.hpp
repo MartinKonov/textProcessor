@@ -12,6 +12,8 @@
 #include "../Macro/MacroRegister.hpp"
 #include "ExitCommand.hpp"
 
+using std::to_string;
+
 /**
  * @brief A class to register and manage commands in the text processor application.
  */

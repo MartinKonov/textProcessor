@@ -1,5 +1,4 @@
 #include "../../headers/Commands/CommandRegister.hpp"
-#include <iostream>
 
 CommandRegister::~CommandRegister()
 {
@@ -68,14 +67,14 @@ int CommandRegister::findIndex(Command* command) {
  */
 void CommandRegister::executeCommand(int index) {
     if (index < 0 || index >= allCommands.size()) {
-        throw std::out_of_range("CommandRegister::executeCommand: Index out of range");
+        throw out_of_range("Invalid index for command");
     }
     Command* command = allCommands[index];
 
     try{
         command->execute();
-    } catch (const std::exception& e) {
-        throw std::runtime_error("CommandRegister::executeCommand: " + string(e.what()));
+    } catch (const exception& e) {
+        throw runtime_error(string(e.what()));
     }
 
     if(command->isUndoable()){
@@ -90,9 +89,6 @@ void CommandRegister::executeCommand(int index) {
  * @throws std::runtime_error if the exit command is not registered.
  */
 void CommandRegister::executeExitCommand() {
-    if (exitCommand == nullptr) {
-        throw std::runtime_error("CommandRegister::executeExitCommand: Exit command not registered");
-    }
     exitCommand->execute();
 }
 
@@ -107,7 +103,7 @@ void CommandRegister::executeExitCommand() {
  */
 void CommandRegister::executeMacro(string macroName) {
     if (!macroRegister->itemExists(macroName)) {
-        throw std::runtime_error("CommandRegister::executeMacro: Macro not found: " + macroName);
+        throw runtime_error("Macro not found: " + macroName);
     }
 
     vector<Macro*> macros = macroRegister->getAll();
@@ -119,7 +115,7 @@ void CommandRegister::executeMacro(string macroName) {
     for (const string& commandName : commandNames) {
         int commandIndex = findIndex(commandName);
         if (commandIndex == -1) {
-            throw std::runtime_error("CommandRegister::executeMacro: Command not found: " + commandName);
+            throw runtime_error("Command not found: " + commandName);
         }
         executeCommand(commandIndex);
     }
@@ -140,7 +136,7 @@ string CommandRegister::showAllMacros() {
 string CommandRegister::showAllCommands() {
     string result;
     for(int i = 0; i < allCommands.size(); ++i) {
-        result += std::to_string(i+1) + ". " + allCommands[i]->getName() + "\n";
+        result += to_string(i+1) + ". " + allCommands[i]->getName() + "\n";
     }
     return result;
 }
@@ -152,14 +148,11 @@ string CommandRegister::showAllCommands() {
  */
 void CommandRegister::undo() {
     if (executedCommandNames.empty()) {
-        throw std::runtime_error("CommandRegister::undo: No commands to undo");
+        throw runtime_error(ERROR_UNDO);
     }
     string commandName = executedCommandNames.top();
     executedCommandNames.pop();
     int index = findIndex(commandName);
-    if (index == -1) {
-        throw std::runtime_error("CommandRegister::undo: Command not found");
-    }
     allCommands[index]->undo();
 }
 

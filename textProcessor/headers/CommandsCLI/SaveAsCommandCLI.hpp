@@ -17,8 +17,5 @@ class SaveAsCommandCLI : public CommandsCLI {
         ~SaveAsCommandCLI() override = default;
 
         void success() override;
-        void documentHasntChanged();
-        void noActiveDocumentSet();
-        void error(string message = "") override;
         string getNewDocName();
 };

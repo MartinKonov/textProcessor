@@ -33,7 +33,7 @@ void LoadDocumentCommand::execute() {
     try {
         documentRegister->addDocument(docFilePath);
     } catch(runtime_error& e) {
-        cli->error(e.what());
+        cli->error(string(e.what()));
         return;
     }
     cli->success();

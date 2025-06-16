@@ -29,8 +29,8 @@ ActiveFormatter::~ActiveFormatter() {
  * @throws runtime_error if the formatter type is unknown.
  */
 void ActiveFormatter::setFormatter(string formatterType, int formatPoint) {
-    if (formatterType != "CenterFormatter" && formatterType != "WrapFormatter" && formatterType != "DirectFormatter") {
-        throw std::runtime_error("ActiveFormatter::setFormatter: Unknown formatter type");
+    if (formatterType != FORMATTER_TYPE_CENTER && formatterType != FORMATTER_TYPE_WRAP && formatterType != FORMATTER_TYPE_DIRECT) {
+        throw runtime_error(ERROR_INVALID_FORMATTER_TYPE);
     }
 
     if (formatter && formatter->getType() == formatterType) {
@@ -39,13 +39,13 @@ void ActiveFormatter::setFormatter(string formatterType, int formatPoint) {
 
     delete formatter;
 
-    if (formatterType == "CenterFormatter") {
+    if (formatterType == FORMATTER_TYPE_CENTER) {
         formatter = new CenterFormatter(formatPoint);
         this->formatPoint = formatPoint;
-    } else if (formatterType == "WrapFormatter") {
+    } else if (formatterType == FORMATTER_TYPE_WRAP) {
         formatter = new WrapFormatter(formatPoint);
         this->formatPoint = formatPoint;
-    } else if (formatterType == "DirectFormatter") {
+    } else if (formatterType == FORMATTER_TYPE_DIRECT) {
         formatter = new DirectFormatter(formatPoint);
         this->formatPoint = 0;
     }

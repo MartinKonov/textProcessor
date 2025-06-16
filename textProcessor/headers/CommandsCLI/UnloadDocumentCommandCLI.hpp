@@ -17,7 +17,6 @@ public:
     ~UnloadDocumentCommandCLI() override = default;
 
     void success() override;
-    void error(string message = "") override;
     string getDocPathToUnload();
     void docHasChanged();
     bool saveQuery();

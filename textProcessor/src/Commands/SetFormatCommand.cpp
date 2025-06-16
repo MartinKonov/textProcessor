@@ -47,7 +47,7 @@
     try {
         activeFormatter->setFormatter(formatterType, formatPoint);
     } catch (const runtime_error& e) {
-        cli->error("Failed to set formatter: " + string(e.what()));
+        cli->error(e.what());
         return;
     }
     cli->success();
@@ -60,15 +60,10 @@
   */
  void SetFormatCommand::undo() {
     if (previousFormatterType.empty()) {
+        cli->error(ERROR_UNDO);
         return;
     }
 
-    try {
-        activeFormatter->setFormatter(previousFormatterType, previousFormatPoint);
-    } catch (const runtime_error& e){
-        cli->error("Failed to undo formatter change: " + string(e.what()));
-        return;
-    }
-
+    activeFormatter->setFormatter(previousFormatterType, previousFormatPoint); // impossible to throw an error here, as the previous formatter type is guaranteed to be valid
     cli->successUndo();
  }

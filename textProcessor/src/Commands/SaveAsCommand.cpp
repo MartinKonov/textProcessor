@@ -32,7 +32,7 @@ void SaveAsCommand::execute() {
     Document* docToSave = activeDocument->getActiveDocument();
 
     if(!docToSave) {
-        cli->noActiveDocumentSet();
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
 

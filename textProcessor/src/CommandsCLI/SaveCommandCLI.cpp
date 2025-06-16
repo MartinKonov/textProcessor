@@ -13,25 +13,3 @@ void SaveCommandCLI::success(){
     cout << "Document saved successfully" << endl;
 }
 
-void SaveCommandCLI::noActiveDocumentSet() {
-    cout << "Set an active document before trying to save." << endl;
-}
-
-/**
- * @brief Displays a message indicating that there is nothing to save.
- * 
- * This method is called when the document has not changed since the last save operation.
- */
-void SaveCommandCLI::documentHasntChanged(){
-    cout << "Nothing to save." << endl;
-}
-
-/**
- * @brief Displays an error message if there was an error while saving the document.
- * 
- * @param message The error message to display (optional).
- */
-void SaveCommandCLI::error(string message) {
-    cerr << "Error: " + message << endl;
-}
-

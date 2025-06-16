@@ -16,15 +16,6 @@ void RemoveLineCommandCLI::success() {
 }
 
 /**
- * @brief Displays an error message.
- * 
- * @param message The error message to display (optional).
- */
-void RemoveLineCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}
-
-/**
  * @brief Displays the document contents with line indices.
  * 
  * @param documentContents The contents of the document to display.

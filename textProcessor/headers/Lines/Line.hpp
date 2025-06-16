@@ -48,12 +48,9 @@ class Line {
     virtual long long getNumericValue() const;
     virtual bool operator< (const Line& other) const;
 
-
- private:
+ protected:
    char lower(int c);
    char upper(int c);
- 
- protected:
     string content;
 
 };

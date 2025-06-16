@@ -15,7 +15,6 @@ class SetFormatCommandCLI : public CommandsCLI {
         ~SetFormatCommandCLI() override = default;
 
         void success() override;
-        void error(string message = "") override;
         
         string getFormatterType(string currentFormatterType);
         int getFormatPoint();

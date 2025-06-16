@@ -22,7 +22,7 @@ DocumentParser::DocumentParser(FileManager* filemanager, LineCreator* lineCreato
 void DocumentParser::save(Document *document)
 {
     if(!document) {
-        throw runtime_error("DocumentParser::save: Invalid document passed");
+        throw runtime_error(ERROR_INVALID_DOCUMENT);
     }
     if (!document->getHasChanged()) {
         return;
@@ -32,7 +32,7 @@ void DocumentParser::save(Document *document)
     try {
         fileManager->save(document->getDocName());
     } catch (const runtime_error& e) {
-        throw runtime_error("DocumentParser::save: " + string(e.what()));
+        throw runtime_error(string(e.what()));
     }
 }
 
@@ -50,7 +50,7 @@ Document* DocumentParser::load(const string filename)
         fileManager->loadFile(filename);
         content = fileManager->getContents(filename);
     } catch (const runtime_error& e) {
-        throw runtime_error("DocumentParser::load: " + string(e.what()));
+        throw runtime_error(string(e.what()));
     }
     Document* document = parseDocument(content, filename);
     return document;
@@ -66,7 +66,7 @@ Document* DocumentParser::load(const string filename)
 void DocumentParser::saveAsDocument(Document* document, const string newFilename)
 {
     if(!document) {
-        throw runtime_error("DocumentParser::saveAsDocument: Invalid document passed");
+        throw runtime_error(ERROR_INVALID_DOCUMENT);
     }
     try{
         if(document->getHasChanged())
@@ -77,7 +77,7 @@ void DocumentParser::saveAsDocument(Document* document, const string newFilename
             fileManager->saveAs(document->getDocName(), newFilename);
         }
     } catch (const runtime_error& e) {
-        throw runtime_error("DocumentParser::saveAsDocument: " + string(e.what()));
+        throw runtime_error(string(e.what()));
     }
 }
 
@@ -89,7 +89,7 @@ void DocumentParser::saveAsDocument(Document* document, const string newFilename
 void DocumentParser::unloadDocument(Document* document)
 {
     if(!document) {
-        throw runtime_error("DocumentParser::unloadDocument: Invalid document passed");
+        throw runtime_error(ERROR_INVALID_DOCUMENT);
     }
     string filename = document->getDocName();
     fileManager->close(filename);

@@ -27,7 +27,7 @@ void ActiveDocument::setActiveDocument(string documentName) {
     try{
         doc = documentRegister->getDocument(documentName);
     } catch (const runtime_error& e) {
-        throw runtime_error("ActiveDocument::setActiveDocument: " + string(e.what()));
+        throw runtime_error(e.what());
     }
     activeDocument = doc;
 }

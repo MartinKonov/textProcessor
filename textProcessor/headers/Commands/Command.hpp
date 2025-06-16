@@ -7,6 +7,7 @@
  */
 #pragma once
 #include "../../dataFiles/CommandNames.hpp"
+#include "../../dataFiles/CommonErrors.hpp"
 #include <string>
 #include <vector>
 #include <stdexcept> 

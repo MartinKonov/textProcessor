@@ -33,18 +33,6 @@ void ChangeLineCommandCLI::showDocumentWithIndices(string document) {
     cout << document << endl;
 }
 
-
-/**
- * @brief Displays an error message.
- * 
- * This method is called when an error occurs during the line change operation.
- * 
- * @param message The error message to display (optional).
- */
-void ChangeLineCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}
-
 /**
  * @brief Prompts the user for the new content of the line to change.
  * 

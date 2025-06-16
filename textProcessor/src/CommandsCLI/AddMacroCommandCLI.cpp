@@ -15,15 +15,6 @@ void AddMacroCommandCLI::success() {
 }
 
 /**
- * @brief Displays an error message when there is an issue with adding a macro.
- * 
- * @param message The error message to display.
- */
-void AddMacroCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}
-
-/**
  * @brief Prompts the user to enter the name of the macro.
  * 
  * @return string The name of the macro entered by the user.
@@ -55,13 +46,6 @@ vector<string> AddMacroCommandCLI::getCommandNames() {
     }
     
     return commandNames;
-}
-
-/**
- * @brief Displays a message indicating that there is nothing to undo.
- */
-void AddMacroCommandCLI::nothingToUndo() {
-    cout << "Nothing to undo for add macro command." << endl;
 }
 
 /**

@@ -32,8 +32,8 @@ public:
 
         try {
             fileManager->loadFile(Derived::DATA_FILE);
-        } catch (const std::runtime_error& e) {
-            throw std::runtime_error("DataParser::save: " + string(e.what()));
+        } catch (const runtime_error& e) {
+            throw runtime_error(string(e.what()));
         }
 
         string existingContent = fileManager->getContents(Derived::DATA_FILE);
@@ -43,8 +43,8 @@ public:
 
         try {
             fileManager->save(Derived::DATA_FILE);
-        } catch (const std::runtime_error& e) {
-            throw std::runtime_error("DataParser::save: " + string(e.what()));
+        } catch (const runtime_error& e) {
+            throw runtime_error(string(e.what()));
         }
     }
 
@@ -64,8 +64,8 @@ public:
             fileManager->loadFile(Derived::DATA_FILE);
             fileManager->setContent(Derived::DATA_FILE, content);
             fileManager->save(Derived::DATA_FILE);
-        } catch (const std::runtime_error& e) {
-            throw std::runtime_error("DataParser::save (batch): " + string(e.what()));
+        } catch (const runtime_error& e) {
+            throw runtime_error(string(e.what()));
         }
     }
 
@@ -79,8 +79,8 @@ public:
         vector<T*> items;
         try {
             fileManager->loadFile(Derived::DATA_FILE);
-        } catch (const std::runtime_error& e) {
-            throw std::runtime_error("DataParser::load: " + string(e.what()));
+        } catch (const runtime_error& e) {
+            throw runtime_error(string(e.what()));
         }
 
         string content = fileManager->getContents(Derived::DATA_FILE);
@@ -91,8 +91,8 @@ public:
             try {
                 T* item = ((Derived*)this)->parse(line);
                 items.push_back(item);
-            } catch (const std::runtime_error& e) {
-                throw std::runtime_error("DataParser::load: " + string(e.what()));
+            } catch (const runtime_error& e) {
+                throw runtime_error(string(e.what()));
             }
         }
 

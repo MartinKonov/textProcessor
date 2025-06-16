@@ -16,27 +16,6 @@ void ToLowerCommandCLI::success() {
 }
 
 /**
- * @brief Displays an error message.
- * 
- * This method is called when there is an error during the execution of the ToLower command.
- * 
- * @param message The error message to display (optional).
- */
-void ToLowerCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}
-
-
-/**
- * @brief Displays a message indicating that there is nothing to undo for the ToLower command.
- * 
- * This method is called when the user attempts to undo the ToLower command but there is no previous state to revert to.
- */
-void ToLowerCommandCLI::nothingToUndo() {
-    cout << "Nothing to undo for toLower command." << endl;
-}
-
-/**
  * @brief Displays a message indicating that the undo operation was successful.
  * 
  * This method is called when the ToLower command is successfully undone.

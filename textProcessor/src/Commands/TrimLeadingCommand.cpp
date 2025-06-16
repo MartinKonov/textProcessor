@@ -40,14 +40,15 @@ string TrimLeadingCommand::getName() const {
  * If no active block is set, it trims leading whitespace from the entire active document.
  */
 void TrimLeadingCommand::execute() {
-    if (!activeDocument->getActiveDocument()) {
-        cli->noActiveDocumentSet();
-        return;
-    }
-
+    
     if(previousDocument) {
         delete previousDocument;
         previousDocument = nullptr;
+    }
+    
+    if (!activeDocument->getActiveDocument()) {
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
+        return;
     }
 
     previousDocument = new Document(*activeDocument->getActiveDocument());
@@ -69,27 +70,27 @@ void TrimLeadingCommand::execute() {
  */
 void TrimLeadingCommand::undo() {
     if (!previousDocument) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         return;
     }
 
     Document* currentDocument = activeDocument->getActiveDocument();
     if (!currentDocument) {
-        cli->noActiveDocumentSet();
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
 
     if(*currentDocument == *previousDocument) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
 
     if(currentDocument->getDocName() != previousDocument->getDocName()) {
-        cli->error("Cannot undo: active document has changed.");
+        cli->error(ERROR_ACTIVE_DOCUMENT_CHANGED);
         delete previousDocument;
         previousDocument = nullptr;
         return;

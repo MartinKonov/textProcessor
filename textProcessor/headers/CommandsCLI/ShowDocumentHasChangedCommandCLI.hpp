@@ -19,6 +19,5 @@ public:
 
     void success() override {};
     void showDocumentHasChanged(bool hasChanged);
-    void error(string message = "") override;
     
 };

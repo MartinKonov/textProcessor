@@ -7,6 +7,9 @@
 #include "../FileManager.hpp"
 #include <stdexcept>
 
+using std::logic_error;
+using std::runtime_error;
+
 /**
  * @class DataRegister
  * @brief A template class for managing a collection of items with a specific data type.
@@ -31,11 +34,11 @@ class DataRegister {
      */
     T* getItem(const string& name) const {
         if (name.empty()) {
-            throw std::runtime_error(Derived::getType() + "::getItem: name is empty");
+            throw runtime_error("Get Item: name is empty");
         }
         int index = findIndex(name);
         if (index == -1) {
-            throw std::runtime_error(Derived::getType() + "::getItem: \"" + name + "\" not found");
+            throw runtime_error("Get Item: \"" + name + "\" not found");
         }
         return items[index];
     }
@@ -51,7 +54,7 @@ class DataRegister {
      */
     void removeItem(const string& name) {
         if (name.empty()) {
-            throw std::runtime_error(Derived::getType() + "::removeItem: name is empty");
+            throw runtime_error(ERROR_INVALID_ITEM_NAME);
         }
         int index = findIndex(name);
         if (index == -1) {
@@ -64,8 +67,8 @@ class DataRegister {
 
         try {
             parser->save(items);
-        } catch (const std::runtime_error& e) {
-            throw std::runtime_error(Derived::getType() + "::removeItem: " + e.what());
+        } catch (const runtime_error& e) {
+            throw runtime_error(string(e.what()));
         }
     }
 
@@ -110,8 +113,8 @@ class DataRegister {
         parser = ParserType::getInstance();
         try {
             items = parser->load();
-        } catch (const std::runtime_error& e) {
-            throw std::runtime_error(Derived::getType() + "::ctor: " + e.what());
+        } catch (const runtime_error& e) {
+            throw runtime_error(e.what());
         }
     }
 
@@ -135,17 +138,17 @@ class DataRegister {
     void addItem(T* newItem) {
         const string name = Derived::getItemName(newItem);
         if (name.empty()) {;
-            throw std::runtime_error(Derived::getType() + "::addItem: name is empty");
+            throw runtime_error(ERROR_INVALID_ITEM_NAME);
         }
         if (findIndex(name) != -1) {
-            throw std::logic_error(Derived::getType() + "::addItem: item with name \"" + name + "\" already exists");
+            throw logic_error("Item with name \"" + name + "\" already exists");
         }
 
         items.push_back(newItem);
         try {
             parser->save(newItem);
         } catch (const std::runtime_error& e) {
-            throw std::runtime_error(Derived::getType() + "::addItem: " + e.what());
+            throw runtime_error(e.what());
         }
     }
 };

@@ -39,7 +39,7 @@ string ToLowerCommand::getName() const {
 void ToLowerCommand::execute() {
     Document* activeDoc = activeDocument->getActiveDocument();
     if (!activeDoc) {
-        cli->error("No active document set.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
 
@@ -68,20 +68,20 @@ void ToLowerCommand::execute() {
  */
 void ToLowerCommand::undo() {
     if (!previousDocumentState) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         return;
     }
 
     Document* activeDoc = activeDocument->getActiveDocument();
     if (!activeDoc) {
-        cli->error("No active document set");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         delete previousDocumentState;
         previousDocumentState = nullptr;
         return;
     }
 
     if(*activeDoc == *previousDocumentState) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         delete previousDocumentState;
         previousDocumentState = nullptr;
         return;
@@ -90,7 +90,7 @@ void ToLowerCommand::undo() {
     if (activeDoc->getDocName() != previousDocumentState->getDocName()) {
         delete previousDocumentState;
         previousDocumentState = nullptr;
-        cli->error("Cannot undo to lower, active document has changed");
+        cli->error(ERROR_ACTIVE_DOCUMENT_CHANGED);
         return;
     }
 

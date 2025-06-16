@@ -28,7 +28,7 @@ string ListLoadedDocumentsCommand::getName() const {
  */
 void ListLoadedDocumentsCommand::execute() {
     if (documentRegister->getDocumentCount() == 0) {
-        cli->error("No documents loaded.");
+        cli->error(ERROR_NO_DOCUMENTS_LOADED);
         return;
     }
 

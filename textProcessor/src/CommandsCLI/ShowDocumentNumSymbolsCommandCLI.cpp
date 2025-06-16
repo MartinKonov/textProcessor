@@ -16,14 +16,3 @@
 void ShowDocumentNumSymbolsCommandCLI::showNumSymbols(int numSymbols) {
     cout << "Number of symbols in the active document: " << numSymbols << endl;
 }
-
-/**
- * @brief Displays an error message.
- * 
- * This method prints an error message to the console.
- * 
- * @param message The error message to display.
- */
-void ShowDocumentNumSymbolsCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}

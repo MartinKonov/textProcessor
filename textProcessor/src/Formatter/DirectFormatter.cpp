@@ -26,5 +26,5 @@ int DirectFormatter::getFormatPoint() {
  * @return A string indicating the type of formatter.
  */
 string DirectFormatter::getType() {
-    return "DirectFormatter";
+    return FORMATTER_TYPE_DIRECT;
 }

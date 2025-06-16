@@ -17,7 +17,6 @@ class ListLoadedDocumentsCommandCLI : public CommandsCLI {
         ~ListLoadedDocumentsCommandCLI() override = default;
 
         void success() override;
-        void error(string message = "") override;
         void listDocuments(string documentList);
 
 };

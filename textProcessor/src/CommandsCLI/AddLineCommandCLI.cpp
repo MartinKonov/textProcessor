@@ -15,28 +15,6 @@ string AddLineCommandCLI::getLineInput() {
 }
 
 /**
- * @brief Displays an error message if the active document has changed.
- * 
- * This method prints an error message to the console indicating that the active document has changed
- * since the last call of this command, making undo impossible.
- * 
- * @param message The error message to display (optional).
- */
-void AddLineCommandCLI::error(string message) {
-    cerr << "Error: The active document has changed since last call of this command. Undo is impossible" << endl;
-}
-
-/**
- * @brief Displays an error message if there is no active document set.
- * 
- * This method prints an error message to the console indicating that there is no active document set,
- * which is required for the command to execute successfully.
- */
-void AddLineCommandCLI::activeDocumentError(){
-    cout << "Error: No active document set" << endl;
-}
-
-/**
  * @brief Displays a message when nothing has changed to undo.
  * 
  * This method prints a message to the console indicating that there is nothing to undo,

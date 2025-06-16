@@ -42,7 +42,7 @@ string TrimTrailingCommand::getName() const {
  */
 void TrimTrailingCommand::execute() {
     if (!activeDocument->getActiveDocument()) {
-        cli->noActiveDocumentSet();
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
 
@@ -70,27 +70,27 @@ void TrimTrailingCommand::execute() {
  */
 void TrimTrailingCommand::undo() {
     if (!previousDocument) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         return;
     }
 
     Document* currentDocument = activeDocument->getActiveDocument();
     if (!currentDocument) {
-        cli->error("No active document to undo the trim operation.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
 
     if(*currentDocument == *previousDocument) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
 
     if(currentDocument->getDocName() != previousDocument->getDocName()) {
-        cli->error("Cannot undo: active document has changed.");
+        cli->error(ERROR_ACTIVE_DOCUMENT_CHANGED);
         delete previousDocument;
         previousDocument = nullptr;
         return;

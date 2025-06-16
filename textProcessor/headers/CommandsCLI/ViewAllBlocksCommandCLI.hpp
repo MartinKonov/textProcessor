@@ -16,8 +16,7 @@ class ViewAllBlocksCommandCLI : public CommandsCLI {
     ViewAllBlocksCommandCLI() = default;
     ~ViewAllBlocksCommandCLI() override = default;
 
-    void success() override;
-    void error(string message = "") override;
+    void success() override {};
 
     void showBlocksForActiveDoc(string blocksForDocSerialized);
 };

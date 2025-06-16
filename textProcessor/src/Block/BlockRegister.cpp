@@ -36,20 +36,23 @@ void BlockRegister::destroyInstance() {
  * @param endLineIndex The ending line index of the block.
  */
 void BlockRegister::addBlock(string blockName, Document* document, size_t startLineIndex, size_t endLineIndex) {
-    if (blockName.empty() || document == nullptr) {
-        throw runtime_error("BlockRegister::addBlock: invalid blockName or document");
+    if (blockName.empty()) {
+        throw runtime_error(ERROR_INVALID_BLOCK_NAME);
+    }
+    if(!document) {
+        throw runtime_error(ERROR_DOCUMENT_NOT_FOUND);
     }
     if (startLineIndex > endLineIndex || endLineIndex > document->getNumLines()) {
-        throw runtime_error("BlockRegister::addBlock: invalid indices");
+        throw runtime_error(ERROR_INDEX_OUT_OF_RANGE);
     }
 
     Block* newBlock = new Block(blockName, document->getDocName(), startLineIndex, endLineIndex);
 
     try{
         addItem(newBlock);
-    } catch (const std::runtime_error& e) {
+    } catch (const runtime_error& e) {
         delete newBlock;
-        throw std::runtime_error("BlockRegister::addBlock: " + string(e.what()));
+        throw runtime_error(string(e.what()));
     } catch (const std::logic_error& e) {
         delete newBlock;
     }
@@ -73,7 +76,7 @@ string BlockRegister::getType() {
  */
 string BlockRegister::getItemName(Block* block) {
     if (block == nullptr) {
-        throw std::runtime_error("BlockRegister::getItemName: Block is null");
+        throw runtime_error(ERROR_BLOCK_NOT_FOUND);
     }
     return block->getName();
 }

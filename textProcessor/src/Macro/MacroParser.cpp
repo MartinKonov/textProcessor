@@ -56,7 +56,7 @@ string MacroParser::serialize(Macro* macro) {
 Macro* MacroParser::parse(const string& content) {
     vector<string> parts = split(content, '|');
     if (parts.size() < 2) {
-        throw std::runtime_error("MacroParser::parseMacro: Invalid macro content");
+        throw std::runtime_error(ERROR_INVALID_MACRO_CONTENT);
     }
 
     string macroName = parts[0];

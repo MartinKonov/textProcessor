@@ -16,10 +16,3 @@
 void ShowDocumentNumLinesCommandCLI::showNumLines(int numLines) {
     cout << "Number of lines in the active document: " << numLines << endl;
 }
-
-/**
- * @brief Displays an error message.
- */
-void ShowDocumentNumLinesCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}

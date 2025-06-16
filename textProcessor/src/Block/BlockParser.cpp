@@ -34,7 +34,7 @@ Block* BlockParser::parse(const std::string content)
 {
     vector<string> parts = split(content, '|');
     if (parts.size() != 4) {
-        throw std::runtime_error("BlockParser::parseBlock: Invalid block format");
+        throw std::runtime_error("Invalid block format");
     }
 
     string blockName = parts[0];

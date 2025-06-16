@@ -30,13 +30,13 @@ string ViewAllBlocksCommand::getName() const {
  */
 void ViewAllBlocksCommand::execute() {
     if (!activeDocument->getActiveDocument()) {
-        cli->error("Please set an active document before viewing blocks.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
 
     string blocksForDocSerialized = blockRegister->showAllForDocument(activeDocument->getActiveDocument()->getDocName());
     if (blocksForDocSerialized.empty()) {
-        cli->error("No blocks found for the active document.");
+        cli->error(ERROR_NO_BLOCKS_FOUND);
         return;
     }
 

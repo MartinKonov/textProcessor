@@ -18,7 +18,6 @@ public:
     void success() override;
     void successUndo();
     void showDocumentWithIndices(string document);
-    void error(string message = "") override;
     string getNewLineContent();
     int getLineNumberToChange();
 };

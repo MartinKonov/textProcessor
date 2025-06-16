@@ -13,26 +13,6 @@ void SaveAsCommandCLI::success(){
 }
 
 /**
- * @brief Displays a message indicating that there is nothing to save.
- */
-void SaveAsCommandCLI::documentHasntChanged(){
-    cout << "Nothing to save." << endl;
-}
-
-void SaveAsCommandCLI::noActiveDocumentSet() {
-    cout << "Set an active document before trying to save." << endl;
-}
-
-/**
- * @brief Displays an error message if there was an error while saving the document.
- * 
- * @param message The error message to display (optional).
- */
-void SaveAsCommandCLI::error(string message) {
-    cerr << "Error: " + message << endl;
-}
-
-/**
  * @brief Prompts the user to enter a new document name and returns it.
  * 
  * @return string The new document name entered by the user.

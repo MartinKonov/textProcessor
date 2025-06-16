@@ -7,6 +7,7 @@
  */
 
 #pragma once
+#include "../dataFiles/CommonErrors.hpp"
 #include <fstream>
 #include <string>
 #include <vector>

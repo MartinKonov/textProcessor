@@ -27,7 +27,7 @@ void QuotedLine::trim()
             Line::trim();
             return;
         }
-        std::string inner = content.substr(firstNonWS, closingQuote - firstNonWS + 1);
+        string inner = content.substr(firstNonWS, closingQuote - firstNonWS + 1);
         content = inner; 
         return;
     }  
@@ -41,7 +41,7 @@ void QuotedLine::trim()
 void QuotedLine::trimLeading()
 {
     size_t firstNonWS = content.find_first_not_of(" \t\r\n");
-    if (firstNonWS == std::string::npos) {
+    if (firstNonWS == string::npos) {
         content.clear();
         return;
     }
@@ -66,7 +66,7 @@ void QuotedLine::trimLeading()
 void QuotedLine::trimTrailing()
 {
     size_t firstNonWS = content.find_first_not_of(" \t\r\n");
-    if (firstNonWS == std::string::npos) 
+    if (firstNonWS == string::npos) 
     {
         content.clear();
         return;
@@ -95,16 +95,16 @@ void QuotedLine::toUpper()
     size_t firstQuote = findFirstQuote();
     size_t lastQuote = findLastQuote(firstQuote);
 
-    if (firstQuote == std::string::npos || lastQuote == firstQuote) {
+    if (firstQuote == string::npos || lastQuote == firstQuote) {
         for (size_t i = 0; i < content.size(); ++i) {
-            content[i] = std::toupper((unsigned char)content[i]);
+            content[i] = Line::upper((unsigned char)content[i]);
         }
         return;
     }
 
     for (size_t i = 0; i < content.size(); ++i) {
         if (i < firstQuote || i > lastQuote) {
-            content[i] = std::toupper((unsigned char)content[i]); 
+            content[i] = Line::upper((unsigned char)content[i]);
         }
     }
 }
@@ -120,14 +120,14 @@ void QuotedLine::toLower()
 
     if (firstQuote == std::string::npos || lastQuote == firstQuote) {
         for (size_t i = 0; i < content.size(); ++i) {
-            content[i] = std::tolower((unsigned char)content[i]);
+            content[i] = Line::lower((unsigned char)content[i]);
         }
         return;
     }
 
     for (size_t i = 0; i < content.size(); ++i) {
         if (i < firstQuote || i > lastQuote) {
-            content[i] = std::tolower((unsigned char)content[i]); 
+            content[i] = Line::lower((unsigned char)content[i]);
         }
     }
 }

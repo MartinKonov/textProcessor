@@ -16,7 +16,5 @@ public:
     ~ToLowerCommandCLI() override = default;
 
     void success() override;
-    void error(string message = "") override;
-    void nothingToUndo();
     void successUndo();
 };

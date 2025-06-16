@@ -42,7 +42,7 @@ void RemoveBlockCommand::execute() {
     string blockName = cli->getBlockName();
 
     if(!blockRegister->itemExists(blockName)) {
-        cli->blockDoesntExist();
+        cli->error(ERROR_BLOCK_NOT_FOUND);
         return;
     }
 
@@ -65,7 +65,7 @@ void RemoveBlockCommand::execute() {
  */
 void RemoveBlockCommand::undo() {
     if(!removedBlock) {
-        cli->removedBlockError();
+        cli->error(ERROR_UNDO);
         return;
     }
 
@@ -75,7 +75,7 @@ void RemoveBlockCommand::undo() {
 
     } catch (runtime_error& e)
     {
-        cli->errorUndo(e.what());
+        cli->error(e.what());
     }
     delete removedBlock;
     removedBlock = nullptr;

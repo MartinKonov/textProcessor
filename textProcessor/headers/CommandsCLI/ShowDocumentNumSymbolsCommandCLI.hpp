@@ -20,5 +20,4 @@ class ShowDocumentNumSymbolsCommandCLI : public CommandsCLI {
 
         void showNumSymbols(int numSymbols);
         void success() override {};
-        void error(string message = "" ) override;
 };

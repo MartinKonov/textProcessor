@@ -4,4 +4,3 @@ blockA|myDoc|0|2
 blockB|myDoc|1|2
 opa|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt|6|17
 qwer|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt|0|9
-testBlock4|1|4

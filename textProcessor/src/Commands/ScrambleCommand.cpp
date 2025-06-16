@@ -37,7 +37,7 @@ string ScrambleCommand::getName() const {
  */
 void ScrambleCommand::execute() {
     if (!activeDocument->getActiveDocument()) {
-        cli->errorActiveDocument();
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         delete previousDocument;
         previousDocument = nullptr;
         return;
@@ -66,32 +66,31 @@ void ScrambleCommand::execute() {
  */
 void ScrambleCommand::undo() {
     if (!previousDocument) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         return;
     }
 
     Document* currentDocument = activeDocument->getActiveDocument();
     if (!currentDocument) {
-        cli->error("No active document to undo the scramble operation.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
 
     if (*currentDocument == *previousDocument) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
 
     if (currentDocument->getDocName() != previousDocument->getDocName()) {
-        cli->error("Cannot undo: active document has changed.");
+        cli->error(ERROR_ACTIVE_DOCUMENT_CHANGED);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
-
 
     *currentDocument = *previousDocument;
     delete previousDocument;

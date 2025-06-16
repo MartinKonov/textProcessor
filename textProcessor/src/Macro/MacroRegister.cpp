@@ -44,7 +44,7 @@ void MacroRegister::destroyInstance() {
  */
 void MacroRegister::addMacro(string macroName, const vector<string> commandNames) {
     if (macroName.empty()) {
-        throw std::runtime_error("MacroRegister::addMacro: Invalid macro name");
+        throw std::runtime_error(ERROR_INVALID_ITEM_NAME);
     }
 
     Macro* newMacro = new Macro(macroName, commandNames);
@@ -53,7 +53,7 @@ void MacroRegister::addMacro(string macroName, const vector<string> commandNames
         addItem(newMacro);
     } catch (const std::runtime_error& e) {
         delete newMacro;
-        throw std::runtime_error("MacroRegister::addMacro: " + string(e.what()));
+        throw std::runtime_error(string(e.what()));
     } catch (const std::logic_error& e) {
         delete newMacro;
     }
@@ -79,7 +79,7 @@ string MacroRegister::getType()
 string MacroRegister::getItemName(Macro* macro)
 {
     if (macro == nullptr) {
-        throw std::runtime_error("MacroRegister::getItemName: macro is null");
+        throw runtime_error(ERROR_MACRO_NOT_FOUND);
     }
     return macro->getName();
 }

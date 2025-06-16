@@ -10,15 +10,6 @@ void CreateBlockCommandCLI::success(){
 }
 
 /**
- * @brief Displays an error message.
- * 
- * @param message The error message to display (optional).
- */
-void CreateBlockCommandCLI::errorNoActiveDocument() {
-    cerr << "Error: No active document set, cannot create block with no active document" << endl;
-}
-
-/**
  * @brief Prompts the user to enter a block name and returns it.
  */
 string CreateBlockCommandCLI::getBlockName() {
@@ -26,13 +17,6 @@ string CreateBlockCommandCLI::getBlockName() {
     cout << "Enter block name:" << endl;
     getline(cin, blockName);
     return blockName;
-}
-
-/**
- * @brief Displays an error message if a block with the same name already exists.
- */
-void CreateBlockCommandCLI::blockExists() {
-    cout << "A block with this name already exists. Try again" << endl;
 }
 
 /**
@@ -75,15 +59,6 @@ size_t CreateBlockCommandCLI::getEndLineIndex() {
     }
 
     return endLineIndex;
-}
-
-/**
- * @brief Displays an error message when an undo operation fails.
- * 
- * @param message The error message to display.
- */
-void CreateBlockCommandCLI::error(string message) {
-    cerr << "Error undo: " << message << endl;
 }
 
 /**

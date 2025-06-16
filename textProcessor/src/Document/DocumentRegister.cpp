@@ -39,8 +39,8 @@ void DocumentRegister::addDocument(string name) {
     Document* newDocument;
     try {
         newDocument = documentParser->load(name);
-    } catch (const std::runtime_error& e) {
-        throw std::runtime_error("DocumentRegister::addDocument: " + string(e.what())); 
+    } catch (const runtime_error& e) {
+        throw runtime_error(string(e.what())); 
     }
     documents.push_back(newDocument);
 }
@@ -62,7 +62,7 @@ void DocumentRegister::removeDocument(string name)
             try{
                 documentParser->unloadDocument(documents[i]);
             } catch (runtime_error& e) {
-                throw runtime_error("DocumentRegister:: removeDocument: " + string(e.what()));
+                throw runtime_error(string(e.what()));
             }
             delete documents[i];
             documents.erase(documents.begin() + i);
@@ -99,7 +99,7 @@ Document *DocumentRegister::getDocument(string name)
             return document;
         }
     }
-    throw std::runtime_error("DocumentRegister::getDocument: Document not found");
+    throw std::runtime_error(ERROR_DOCUMENT_NOT_FOUND);
 }
 
 /**
@@ -115,7 +115,7 @@ void DocumentRegister::saveDocument(Document *document)
     try {
         documentParser->save(document);
     } catch (const std::runtime_error& e) {
-        throw std::runtime_error("DocumentRegister::saveDocument: " + string(e.what()));
+        throw std::runtime_error(string(e.what()));
     }
 }
 
@@ -130,7 +130,7 @@ void DocumentRegister::saveAsDocument(Document* document, const string newFilena
     try {
         documentParser->saveAsDocument(document, newFilename);
     } catch (const std::runtime_error& e) {
-        throw std::runtime_error("DocumentRegister::saveAsDocument: " + string(e.what()));
+        throw std::runtime_error(string(e.what()));
     }
 }
 

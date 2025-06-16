@@ -39,7 +39,7 @@ string SetActiveBlockCommand::getName() const {
 void SetActiveBlockCommand::execute() {
     
     if(!activeDocument->getActiveDocument()) {
-        cli->errorActiveDocument();
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
 
@@ -71,12 +71,12 @@ void SetActiveBlockCommand::execute() {
 void SetActiveBlockCommand::undo() {
 
     if(!previousActiveBlock){
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         return;
     }
 
     if(activeDocument->getActiveDocument()->getDocName() != previousActiveBlock->getDocumentName()) {
-        cli->documentHasChanged();
+        cli->error(ERROR_ACTIVE_DOCUMENT_CHANGED);
         delete previousActiveBlock;
         previousActiveBlock = nullptr;
         return;
@@ -85,7 +85,7 @@ void SetActiveBlockCommand::undo() {
     try {
         activeBlock->setActiveBlock(previousActiveBlock->getName(), activeDocument->getActiveDocument());
     } catch(runtime_error& e) {
-        cli->errorUndo(e.what());
+        cli->error(e.what());
     }
 
     delete previousActiveBlock;

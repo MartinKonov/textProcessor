@@ -18,7 +18,4 @@ public:
 
     void success() override;
     void successUndo();
-    void noActiveDocumentSet();
-    void error(string message = "") override;
-    void nothingToUndo();
 };

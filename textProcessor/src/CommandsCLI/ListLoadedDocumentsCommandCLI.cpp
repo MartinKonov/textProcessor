@@ -11,15 +11,6 @@ void ListLoadedDocumentsCommandCLI::success() {
 }
 
 /**
- * @brief Displays an error message.
- * 
- * @param message The error message to display (optional).
- */
-void ListLoadedDocumentsCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}
-
-/**
  * @brief Lists the loaded documents.
  * 
  * @param documentList A string containing the list of loaded documents.

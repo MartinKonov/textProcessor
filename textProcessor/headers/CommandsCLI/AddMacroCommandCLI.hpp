@@ -20,10 +20,8 @@ public:
     ~AddMacroCommandCLI() override = default;
 
     void success() override;
-    void error(string message = "") override;
     
     string getMacroName();
     vector<string> getCommandNames();
-    void nothingToUndo();
     void successUndo();
 };

@@ -23,11 +23,3 @@ string LoadDocumentCommandCLI::getDocFilePath() {
     return docFilePath;
 }
 
-/**
- * @brief Displays an error message if the document could not be loaded.
- * 
- * @param message The error message to display (optional).
- */
-void LoadDocumentCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}

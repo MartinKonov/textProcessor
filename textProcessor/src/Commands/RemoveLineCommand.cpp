@@ -41,7 +41,7 @@ string RemoveLineCommand::getName() const {
 void RemoveLineCommand::execute() {
     Document* doc = activeDocument->getActiveDocument();
     if (!doc) {
-        cli->error("No active document set.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
 
@@ -51,12 +51,12 @@ void RemoveLineCommand::execute() {
     try {
         lineNumber = stoi(lineNumberStr);
     } catch (const invalid_argument&) {
-        cli->error("Invalid line number format.");
+        cli->error(ERROR_INVALID_LINE_NUMBER);
         return;
     }
 
     if (lineNumber < 1 || lineNumber > doc->getNumLines()) {
-        cli->error("Line number out of range.");
+        cli->error(ERROR_INDEX_OUT_OF_RANGE);
         return;
     }
 
@@ -74,27 +74,27 @@ void RemoveLineCommand::execute() {
  */
 void RemoveLineCommand::undo() {
     if (!previousDocument) {
-        cli->error("No previous document state to restore.");
+        cli->error(ERROR_UNDO);
         return;
     }
 
     Document* doc = activeDocument->getActiveDocument();
     if (!doc) {
-        cli->error("No active document set.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
 
     if(*doc == *previousDocument) {
-        cli->error("Nothing to undo: the current document is the same as the previous state.");
+        cli->error(ERROR_UNDO);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
 
     if( doc->getDocName() != previousDocument->getDocName()) {
-        cli->error("Cannot undo: active document has changed.");
+        cli->error(ERROR_ACTIVE_DOCUMENT_CHANGED);
         delete previousDocument;
         previousDocument = nullptr;
         return;

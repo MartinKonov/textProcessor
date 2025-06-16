@@ -31,14 +31,14 @@ string CreateBlockCommand::getName() const {
 void CreateBlockCommand::execute() {
 
     if(!activeDocument->getActiveDocument()) {
-        cli->errorNoActiveDocument();
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
 
     string blockName = cli->getBlockName();
 
     if(blockRegister->itemExists(blockName)){
-        cli->blockExists();
+        cli->error(ERROR_BLOCK_ALREADY_EXISTS);
         return;
     }
 

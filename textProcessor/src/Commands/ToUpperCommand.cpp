@@ -40,7 +40,7 @@ ToUpperCommand::~ToUpperCommand() {
 void ToUpperCommand::execute() {
 
     if(!activeDocument->getActiveDocument()) {
-        cli->error("No active document. Cannot convert to uppercase.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
 
@@ -68,27 +68,27 @@ void ToUpperCommand::execute() {
  */
 void ToUpperCommand::undo() {
     if(!previousDocument) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         return;
     }
 
     Document* currentDocument = activeDocument->getActiveDocument();
     if(!currentDocument) {
-        cli->error("No active document set.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
 
     if(*currentDocument == *previousDocument) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
 
     if(currentDocument->getDocName() != previousDocument->getDocName()) {
-        cli->error("Cannot undo: active document has changed.");
+        cli->error(ERROR_ACTIVE_DOCUMENT_CHANGED);
         delete previousDocument;
         previousDocument = nullptr;
         return;

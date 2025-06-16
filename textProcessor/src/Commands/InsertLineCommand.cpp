@@ -34,7 +34,7 @@ string InsertLineCommand::getName() const {
 void InsertLineCommand::execute() {
     Document* doc = activeDocument->getActiveDocument();
     if (!doc) {
-        cli->noActiveDocumentSet();
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
 
@@ -59,7 +59,7 @@ void InsertLineCommand::execute() {
         doc->insertLine(lineNumber - 1, lineToInsert);
         cli->success();
     } catch (const out_of_range& e) {
-        cli->error("Index out of range: " + string(e.what()));
+        cli->error(string(e.what()));
     }
 }
 
@@ -70,25 +70,25 @@ void InsertLineCommand::execute() {
  */
 void InsertLineCommand::undo() {
     if (!previousDocument) {
-        cli->error("No previous document state to restore.");
+        cli->error(ERROR_UNDO);
         return;
     }
     
     Document* doc = activeDocument->getActiveDocument();
     if (!doc) {
-        cli->error("No active document set.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
 
     if(*doc == *previousDocument) {
-        cli->error("No changes to undo.");
+        cli->error(ERROR_UNDO);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
 
     if(doc->getDocName() != previousDocument->getDocName()) {
-        cli->error("Active document has changed since the last command was executed.");
+        cli->error(ERROR_ACTIVE_DOCUMENT_CHANGED);
         return;
     }
 

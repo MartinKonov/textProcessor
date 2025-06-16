@@ -16,7 +16,6 @@ public:
     ~ViewAllMacrosCommandCLI() override = default;
 
     void success() override {};
-    void error(string message = "") override;
     
     void showCurrentMacros(string serializedMacros);
 };

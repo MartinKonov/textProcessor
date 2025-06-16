@@ -7,8 +7,7 @@ class ViewDocumentCommandCLI : public CommandsCLI {
     public:
         ~ViewDocumentCommandCLI() override = default;
         
-        void success() override;
-        void error(string message = "") override;
+        void success() override {};
         int getChoiceActiveDocOrOtherDoc();
         string getDocumentToPrint();
         void printContents(string contentsToPrint);

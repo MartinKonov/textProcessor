@@ -17,10 +17,5 @@ class RemoveBlockCommandCLI : public CommandsCLI {
     ~RemoveBlockCommandCLI() override = default;
 
     void success() override;
-    void error(string message = "") override;
-
     string getBlockName();
-    void blockDoesntExist();
-    void removedBlockError();
-    void errorUndo(string message);
 };

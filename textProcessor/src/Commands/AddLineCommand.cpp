@@ -27,7 +27,7 @@ AddLineCommand::~AddLineCommand() {
  */
 void AddLineCommand::execute() {
     if (!activeDocument->getActiveDocument()) {
-        cli->activeDocumentError();
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
 
@@ -69,7 +69,7 @@ void AddLineCommand::undo()
 
     if(*activeDocument->getActiveDocument() == *docBeforeExecution)
     {
-        cli->nothingChanged();
+        cli->error(ERROR_UNDO);
         delete docBeforeExecution;
         docBeforeExecution = nullptr;
         return;
@@ -77,7 +77,7 @@ void AddLineCommand::undo()
 
     if(activeDocName != docBeforeExecution->getDocName())
     {
-        cli->error();
+        cli->error(ERROR_ACTIVE_DOCUMENT_CHANGED);
         delete docBeforeExecution;
         docBeforeExecution = nullptr;
         return;
@@ -85,7 +85,7 @@ void AddLineCommand::undo()
 
     if(*activeDocument->getActiveDocument() == *docBeforeExecution)
     {
-        cli->nothingChanged();
+        cli->error(ERROR_UNDO);
     }
 
     *activeDocument->getActiveDocument() = *docBeforeExecution;

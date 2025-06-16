@@ -26,7 +26,7 @@ string ShowDocumentHasChangedCommand::getName() const {
 void ShowDocumentHasChangedCommand::execute() {
     Document* activeDoc = activeDocument->getActiveDocument();
     if (!activeDoc) {
-        cli->error("No active document set.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
     

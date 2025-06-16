@@ -31,7 +31,7 @@ void ShowDocumentNumLinesCommand::execute() {
         int numLines = activeDoc->getNumLines();
         cli->showNumLines(numLines);
     } else {
-        cli->error("No active document set.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
     }
 }
 

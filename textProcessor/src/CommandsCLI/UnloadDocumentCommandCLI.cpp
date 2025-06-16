@@ -14,15 +14,6 @@ void UnloadDocumentCommandCLI::success() {
 }
 
 /**
- * @brief Displays an error message if the document could not be unloaded.
- * 
- * @param message The error message to display (optional).
- */
-void UnloadDocumentCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}
-
-/**
  * @brief Prompts the user to enter the path of the document to unload and returns it.
  * 
  * @return string The path of the document to unload.
@@ -39,7 +30,7 @@ string UnloadDocumentCommandCLI::getDocPathToUnload() {
  * @brief Displays a message indicating that the document has changed since the last save.
  */
 void UnloadDocumentCommandCLI::docHasChanged() {
-    cout << "Error: The document has changed since last save." << endl;
+    cout << "The document has changed since last save." << endl;
 }
 
 /**

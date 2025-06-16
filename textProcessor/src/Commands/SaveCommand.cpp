@@ -33,13 +33,12 @@ void SaveCommand::execute()
 {
     Document* docToSave = activeDocument->getActiveDocument();
     if(!docToSave) {
-        cli->noActiveDocumentSet();
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
 
     if(!docToSave->getHasChanged())
     {
-        cli->documentHasntChanged();
         return;
     }
 
@@ -47,7 +46,7 @@ void SaveCommand::execute()
         documentRegister->saveDocument(docToSave);
     }
     catch(const runtime_error& e) {
-        cli->error(string(e.what()));
+        cli->error(e.what());
     }
 
     cli->success();

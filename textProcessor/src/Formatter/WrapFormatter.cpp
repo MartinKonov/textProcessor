@@ -12,7 +12,7 @@ WrapFormatter::WrapFormatter(int formatPoint) : Formatter(formatPoint) {}
  * @return A string indicating the type of formatter.
  */
 string WrapFormatter::getType() {
-    return "WrapFormatter";
+    return FORMATTER_TYPE_WRAP;
 }
 
 int WrapFormatter::getFormatPoint() {

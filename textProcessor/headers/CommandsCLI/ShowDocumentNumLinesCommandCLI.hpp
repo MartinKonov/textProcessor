@@ -17,6 +17,5 @@ public:
     ~ShowDocumentNumLinesCommandCLI() override = default;
 
     void success() override {};
-    void error(string message = "") override;
     void showNumLines(int numLines);
 };

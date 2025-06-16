@@ -275,7 +275,7 @@ void TextProcessor::run() {
         } else if (commandInput == "undo") {
             try {
                 commandRegister->undo();
-            } catch (const std::exception& e) {
+            } catch (const exception& e) {
                 cerr << "Error: " << e.what() << endl;
             }
         } else if (commandInput == "macro") {

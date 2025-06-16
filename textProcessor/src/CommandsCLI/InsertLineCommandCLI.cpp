@@ -14,13 +14,6 @@ void InsertLineCommandCLI::success() {
 }
 
 /**
- * @brief Displays an error message when no active document is set.
- */
-void InsertLineCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}
-
-/**
  * @brief Displays the document contents with line indices.
  * 
  * @param document The contents of the document to display.
@@ -35,15 +28,6 @@ void InsertLineCommandCLI::showDocumentWithIndices(string document) {
  */
 void InsertLineCommandCLI::successUndo() {
     cout << "Insert Line undo successful." << endl;
-}
-
-/**
- * @brief Displays an error message when no active document is set.
- * 
- * This method informs the user that they need to set an active document before inserting a line.
- */
-void InsertLineCommandCLI::noActiveDocumentSet() {
-    cerr << "Please set an active document before inserting a line." << endl;
 }
 
 /**
@@ -69,6 +53,6 @@ int InsertLineCommandCLI::getLineNumberToInsert() {
     try {
         return stoi(lineNumberStr);
     } catch (const invalid_argument&) {
-        throw runtime_error("Invalid line number format.");
+        throw runtime_error(ERROR_INVALID_LINE_NUMBER);
     }
 }

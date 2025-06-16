@@ -8,6 +8,7 @@
 #pragma once
 #include "../Lines/Line.hpp"
 #include "../Lines/LineCreator.hpp"
+#include "../../dataFiles/CommonErrors.hpp"
 #include <vector>
 #include <random>
 #include <algorithm>

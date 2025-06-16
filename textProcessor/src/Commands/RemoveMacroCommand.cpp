@@ -41,7 +41,7 @@ void RemoveMacroCommand::execute() {
     string macroName = cli->getMacroName();
 
     if (!macroRegister->itemExists(macroName)) {
-        cli->error("Macro does not exist.");
+        cli->error(ERROR_MACRO_NOT_FOUND);
         return;
     }
 
@@ -69,7 +69,7 @@ void RemoveMacroCommand::execute() {
  */
 void RemoveMacroCommand::undo() {
     if (!previousMacro) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         return;
     }
 

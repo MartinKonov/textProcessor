@@ -18,10 +18,5 @@ class SetActiveDocumentCommandCLI : public CommandsCLI {
         ~SetActiveDocumentCommandCLI() override = default;
 
         void success() override;
-        void error(string message= "") override;
-        
         string getDocPath();
-        void errorUndoPrevDocName();
-        void errorUndo(string message);
-
 };

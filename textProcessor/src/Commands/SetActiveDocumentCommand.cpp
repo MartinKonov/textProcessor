@@ -50,7 +50,7 @@ void SetActiveDocumentCommand::execute() {
 void SetActiveDocumentCommand::undo() {
     if(previousActiveDocumentName.empty())
     {
-        cli->errorUndoPrevDocName();
+        cli->error(ERROR_UNDO);
         return;
     }
 
@@ -58,7 +58,7 @@ void SetActiveDocumentCommand::undo() {
         activeDocument->setActiveDocument(previousActiveDocumentName);
     } catch(runtime_error& e)
     {
-        cli->errorUndo(e.what());
+        cli->error(e.what());
     }
 
 }

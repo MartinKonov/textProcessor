@@ -37,7 +37,7 @@ RemoveRepeatsCommand::~RemoveRepeatsCommand() {
 void RemoveRepeatsCommand::execute() {
 
     if(!activeDocument->getActiveDocument()) {
-        cli->errorActiveDocument();
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         delete previousDocument;
         previousDocument = nullptr;
         return;
@@ -66,27 +66,27 @@ void RemoveRepeatsCommand::execute() {
  */
 void RemoveRepeatsCommand::undo() {
     if(!previousDocument) {
-        cli->error("No previous document state to restore.");
+        cli->error(ERROR_UNDO);
         return;
     }
 
     Document* doc = activeDocument->getActiveDocument();
     if(!doc) {
-        cli->error("No active document to undo the remove repeats operation.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
 
     if(*doc == *previousDocument) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
 
     if(doc->getDocName() != previousDocument->getDocName()) {
-        cli->error("Cannot undo: active document has changed.");
+        cli->error(ERROR_ACTIVE_DOCUMENT_CHANGED);
         delete previousDocument;
         previousDocument = nullptr;
         return;

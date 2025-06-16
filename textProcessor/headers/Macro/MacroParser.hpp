@@ -7,6 +7,7 @@
 
 #include "Macro.hpp"
 #include "../../dataFiles/DataFiles.hpp"
+#include "../../dataFiles/CommonErrors.hpp"
 #include "../GenericDataClasses/DataParser.hpp"
 
 /**

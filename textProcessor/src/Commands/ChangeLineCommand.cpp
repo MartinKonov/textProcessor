@@ -39,7 +39,7 @@ string ChangeLineCommand::getName() const {
  */
 void ChangeLineCommand::execute() {
     if (!activeDocument->getActiveDocument()) {
-        cli->error("No active document set.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
     cli->showDocumentWithIndices(activeDocument->getActiveDocument()->toString());
@@ -75,19 +75,19 @@ void ChangeLineCommand::execute() {
  */
 void ChangeLineCommand::undo() {
     if (!previousDocument) {
-        cli->error("No previous document to restore.");
+        cli->error(ERROR_UNDO);
         return;
     }
 
     if (!activeDocument->getActiveDocument()) {
-        cli->error("No active document set.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         delete previousDocument;
         previousDocument = nullptr;
         return;
     }
 
     if(activeDocument->getActiveDocument()->getDocName() != previousDocument->getDocName()) {
-        cli->error("The active document has changed since the last command.");
+        cli->error(ERROR_ACTIVE_DOCUMENT_CHANGED);
         delete previousDocument;
         previousDocument = nullptr;
         return;

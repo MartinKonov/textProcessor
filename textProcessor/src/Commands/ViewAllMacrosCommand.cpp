@@ -32,7 +32,7 @@ void ViewAllMacrosCommand::execute() {
     string serializedMacros = macroRegister->toString();
 
     if (serializedMacros.empty()) {
-        cli->error("No macros available.");
+        cli->error(ERROR_NO_MACROS_FOUND);
         return;
     }
 

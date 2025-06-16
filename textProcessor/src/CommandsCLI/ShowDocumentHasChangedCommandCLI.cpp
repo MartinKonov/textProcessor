@@ -17,12 +17,3 @@ void ShowDocumentHasChangedCommandCLI::showDocumentHasChanged(bool hasChanged) {
         cout << "The active document has not changed." << endl;
     }
 }
-
-/**
- * @brief Displays an error message.
- * 
- * @param message The error message to display.
- */
-void ShowDocumentHasChangedCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}

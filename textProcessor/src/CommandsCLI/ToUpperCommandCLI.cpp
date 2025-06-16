@@ -17,22 +17,6 @@ void ToUpperCommandCLI::success() {
 }
 
 /**
- * @brief Displays an error message.
- * 
- * @param message The error message to display (optional).
- */
-void ToUpperCommandCLI::error(string message) {
-    cerr << "Error: " << message << endl;
-}
-
-/**
- * @brief Displays a message indicating that there is nothing to undo for the ToUpper command.
- */
-void ToUpperCommandCLI::nothingToUndo() {
-    cout << "Nothing to undo for ToUpper command." << endl;
-}
-
-/**
  * @brief Displays a message indicating that the undo operation was successful.
  */
 void ToUpperCommandCLI::successUndo() {

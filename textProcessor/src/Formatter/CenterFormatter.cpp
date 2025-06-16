@@ -13,7 +13,7 @@ CenterFormatter::CenterFormatter(int formatPoint) : Formatter(formatPoint) {}
  * @return A string indicating the type of formatter.
  */
 string CenterFormatter::getType() {
-    return "CenterFormatter";
+    return FORMATTER_TYPE_CENTER;
 }
 
 int CenterFormatter::getFormatPoint() {

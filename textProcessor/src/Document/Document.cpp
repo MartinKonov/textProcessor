@@ -139,7 +139,6 @@ void Document::copyFrom(const Document& other)
 
 }
 
-
 /**
  * @brief Deletes the allocated memory in Document class
  */
@@ -187,7 +186,7 @@ void Document::removeLine(size_t index)
 {
     if (index >= lines.size())
     {
-        throw out_of_range("Document::removeLine: index out of range");
+        throw out_of_range(ERROR_INDEX_OUT_OF_RANGE);
     }
     delete lines[index];
     lines.erase(lines.begin() + index);
@@ -217,7 +216,7 @@ void Document::insertLine(size_t index, string line)
 {
     if (index > lines.size())
     {
-        throw out_of_range("Document::insertLine: index out of range");
+        throw out_of_range(ERROR_INDEX_OUT_OF_RANGE);
     }
     Line* newLine = LineCreator::getInstance()->createLine(line);
     lines.insert(lines.begin() + index, newLine);
@@ -235,7 +234,7 @@ void Document::changeLine(size_t index, string newContent)
 {
     if (index >= lines.size())
     {
-        throw out_of_range("Document::changeLine: index out of range");
+        throw out_of_range(ERROR_INDEX_OUT_OF_RANGE);
     }
     Line* newLine = LineCreator::getInstance()->createLine(newContent);
     delete lines[index];
@@ -342,8 +341,8 @@ ostream& operator<<(ostream& os, Document& document)
 }
 
 void Document::sort() {
-    std::vector<size_t> movableIndices;
-    std::vector<Line*> movableLines;
+    vector<size_t> movableIndices;
+    vector<Line*> movableLines;
 
     collectMovableLines(movableLines, movableIndices, 0, lines.size());
     bool lineHasMoved = sortMovableLines(movableLines, movableIndices);
@@ -378,8 +377,8 @@ void Document::collectMovableLines(vector<Line*>& movableLines, vector<size_t>& 
  * @param endIndex The ending index for sorting (exclusive).
  */
 void Document::sort(size_t startIndex, size_t endIndex) {
-    std::vector<size_t> movableIndices;
-    std::vector<Line*> movableLines;
+    vector<size_t> movableIndices;
+    vector<Line*> movableLines;
 
     collectMovableLines(movableLines, movableIndices, startIndex, endIndex);
     bool lineHasMoved = sortMovableLines(movableLines, movableIndices);
@@ -436,7 +435,7 @@ void Document::toUpper() {
  */
 void Document::toUpper(size_t startIndex, size_t endIndex) {
     if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
-        throw out_of_range("Document::toUpper: index out of range");
+        throw out_of_range(ERROR_INDEX_OUT_OF_RANGE);
     }
     for (size_t i = startIndex; i < endIndex; ++i) {
         lines[i]->toUpper();
@@ -464,7 +463,7 @@ void Document::toLower() {
  */
 void Document::toLower(size_t startIndex, size_t endIndex) {
     if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
-        throw out_of_range("Document::toLower: index out of range");
+        throw out_of_range(ERROR_INDEX_OUT_OF_RANGE);
     }
     for (size_t i = startIndex; i < endIndex; ++i) {
         lines[i]->toLower();
@@ -491,7 +490,7 @@ void Document::trimTrailing() {
  */
 void Document::trimTrailing(size_t startIndex, size_t endIndex) {
     if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
-        throw out_of_range("Document::trimTrailing: index out of range");
+        throw out_of_range(ERROR_INDEX_OUT_OF_RANGE);
     }
     for (size_t i = startIndex; i < endIndex; ++i) {
         lines[i]->trimTrailing();
@@ -518,7 +517,7 @@ void Document::trimLeading() {
  */
 void Document::trimLeading(size_t startIndex, size_t endIndex) {
     if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
-        throw out_of_range("Document::trimLeading: index out of range");
+        throw out_of_range(ERROR_INDEX_OUT_OF_RANGE);
     }
     for (size_t i = startIndex; i < endIndex; ++i) {
         lines[i]->trimLeading();
@@ -546,7 +545,7 @@ void Document::scramble() {
  */
 void Document::scramble(size_t startIndex, size_t endIndex) {
     if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
-        throw out_of_range("Document::scramble: index out of range");
+        throw out_of_range(ERROR_INDEX_OUT_OF_RANGE);
     }
 
     random_device rd;
@@ -582,7 +581,7 @@ void Document::removeRepeats() {
  */
 void Document::removeRepeats(size_t startIndex, size_t endIndex) {
     if (startIndex >= lines.size() || endIndex > lines.size() || startIndex >= endIndex) {
-        throw out_of_range("Document::removeRepeats: index out of range");
+        throw out_of_range(ERROR_INDEX_OUT_OF_RANGE);
     }
 
     for (size_t i = startIndex; i < endIndex; ++i) {

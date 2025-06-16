@@ -39,7 +39,7 @@ SortCommand::~SortCommand() {
 void SortCommand::execute() {
 
     if(!activeDocument->getActiveDocument()) {
-        cli->error("Please set an active document before sorting.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
         return;
     }
 
@@ -48,20 +48,6 @@ void SortCommand::execute() {
         previousDocument = nullptr;
     }
     previousDocument = new Document(*activeDocument->getActiveDocument());
-
-    if(*activeDocument->getActiveDocument() == *previousDocument) {
-        cli->nothingToUndo();
-        delete previousDocument;
-        previousDocument = nullptr;
-        return;
-    }
-
-    if(previousDocument->getDocName() != activeDocument->getActiveDocument()->getDocName()) {
-        cli->error("The active document has changed since the last sort command. Cannot proceed with sorting.");
-        delete previousDocument;
-        previousDocument = nullptr;
-        return;
-    }
 
     if(activeBlock->getActiveBlock()) {
         activeDocument->getActiveDocument()->sort(activeBlock->getActiveBlock()->getStartLineIndex(), 
@@ -79,22 +65,22 @@ void SortCommand::execute() {
 void SortCommand::undo() {
 
     if(!previousDocument) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         return;
     }
 
     if(!activeDocument->getActiveDocument()) {
-        cli->error("Please set an active document before trying to undo sorting.");
+        cli->error(ERROR_ACTIVE_DOCUMENT_CHANGED);
         return;
     }
 
     if(*activeDocument->getActiveDocument() == *previousDocument) {
-        cli->nothingToUndo();
+        cli->error(ERROR_UNDO);
         return;
     }
 
     if(activeDocument->getActiveDocument()->getDocName() != previousDocument->getDocName()) {
-        cli->error("Cannot undo: active document has changed.");
+        cli->error(ERROR_ACTIVE_DOCUMENT_CHANGED);
         delete previousDocument;
         previousDocument = nullptr;
         return;

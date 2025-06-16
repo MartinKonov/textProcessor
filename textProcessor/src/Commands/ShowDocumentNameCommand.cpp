@@ -30,7 +30,7 @@ void ShowDocumentNameCommand::execute() {
     if (activeDoc) {
         cli->showDocumentName(activeDoc->getDocName());
     } else {
-        cli->error("No active document set.");
+        cli->error(ERROR_NO_ACTIVE_DOCUMENT);
     }
 }
 

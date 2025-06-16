@@ -18,5 +18,4 @@ class LoadDocumentCommandCLI : public CommandsCLI {
         
         void success() override;
         string getDocFilePath();
-        void error(string message = "") override;
 };

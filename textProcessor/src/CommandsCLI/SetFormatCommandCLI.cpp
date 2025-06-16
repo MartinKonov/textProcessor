@@ -14,12 +14,13 @@
  }
 
  /**
-  * @brief Displays an error message if the formatter could not be set.
+  * @brief Gets the format point from the user.
+  * 
+  * This method prompts the user to enter a positive integer for the format point.
+  * If the input is invalid, it throws an exception.
+  * 
+  * @return int The format point entered by the user.
   */
- void SetFormatCommandCLI::error(string message) {
-        cerr << "Error: " << message << endl;
- }
-
 int SetFormatCommandCLI::getFormatPoint() {
     cout << "Enter format point (positive integer): ";
     string input;
