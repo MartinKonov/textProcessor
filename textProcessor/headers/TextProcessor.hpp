@@ -22,7 +22,6 @@
 #include "CommandsCLI/RemoveBlockCommandCLI.hpp"
 #include "Commands/SetActiveBlockCommand.hpp"
 #include "CommandsCLI/SetActiveBlockCommandCLI.hpp"
-#include "Block/ActiveBlock.hpp"
 #include "Commands/SortCommand.hpp"
 #include "CommandsCLI/SortCommandCLI.hpp"
 #include "Commands/ViewAllBlocksCommand.hpp"
@@ -95,6 +94,11 @@ class TextProcessor {
         void initializeDataClasses();
         void registerCommands();
         bool isUnsignedInt(const string& str);
+        void handleExitCommand();
+        void handleHelpCommand();
+        void handleUndoCommand();
+        void handleMacroCommand();
+        void handleCommandInput(const string& commandInput);
 
         // Data classes
         MacroRegister* macroRegister;
