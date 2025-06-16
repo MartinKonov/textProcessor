@@ -81,6 +81,21 @@ class DataRegister {
         return out;
     }
 
+    /**
+     * @brief Finds the index of an item by its name.
+     * @param name The name of the item to find.
+     * @return The index of the item if found, otherwise -1.
+     */
+    int findIndex(const string& name) const {
+        for (size_t i = 0; i < items.size(); ++i) {
+            if (items[i]->getName() == name) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
  protected:
 
     ParserType* parser;
@@ -109,20 +124,6 @@ class DataRegister {
             delete item;
         }
         items.clear();
-    }
-
-    /**
-     * @brief Finds the index of an item by its name.
-     * @param name The name of the item to find.
-     * @return The index of the item if found, otherwise -1.
-     */
-    int findIndex(const string& name) const {
-        for (size_t i = 0; i < items.size(); ++i) {
-            if (items[i]->getName() == name) {
-                return i;
-            }
-        }
-        return -1;
     }
 
     /**

@@ -264,6 +264,7 @@ void TextProcessor::run() {
             cout << "Enter the name or the number of the command to be executed." << endl;
             cout << "exit - Exit the application" << endl;
             cout << "undo - Undo the last command" << endl;
+            cout << "macro - Execute a macro" << endl;
             cout << commandRegister->showAllCommands() << endl;
         } else if (commandInput == "undo") {
             try {
@@ -271,6 +272,19 @@ void TextProcessor::run() {
             } catch (const std::exception& e) {
                 cerr << "Error: " << e.what() << endl;
             }
+        } else if (commandInput == "macro") {
+            cout << "Available macros:" << endl;
+            int index = commandRegister->findIndex("View All Macros");
+            commandRegister->executeCommand(index);
+            cout << "Enter the name of the macro to execute: ";
+            getline(cin, commandInput);
+
+            try {
+                commandRegister->executeMacro(commandInput);
+            } catch (const std::exception& e) {
+                cerr << "Error: the Macro is invalid." << endl;
+            }
+
         } else {
             int index;
             if(isUnsignedInt(commandInput)) {

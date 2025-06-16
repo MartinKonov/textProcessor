@@ -23,9 +23,10 @@ class CommandRegister {
 
 
     void registerCommand(Command* newCommand);
-    void executeMacro();
+    void executeMacro(string macroName);
     void executeCommand(int index);
     string showAllCommands();
+    string showAllMacros();
     void undo();
 
     int findIndex(string commandName);

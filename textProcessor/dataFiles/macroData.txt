@@ -1,1 +1,2 @@
-novomakro|Add Line|Load Document|Sort
+
+novomakro|Load Document|Set Active Document|Add Line|Sort|Save

@@ -75,6 +75,42 @@ void CommandRegister::executeCommand(int index) {
 }
 
 /**
+ * @brief Executes a macro by its index.
+ * If the index is out of range, it throws an exception.
+ * It executes each command in the macro sequentially.
+ * @param index The index of the macro to execute.
+ * @throws std::out_of_range if the index is invalid.
+ * @throws std::runtime_error if a command in the macro is not found or fails to execute.
+ */
+void CommandRegister::executeMacro(string macroName) {
+    if (!macroRegister->itemExists(macroName)) {
+        throw std::runtime_error("CommandRegister::executeMacro: Macro not found: " + macroName);
+    }
+
+    vector<Macro*> macros = macroRegister->getAll();
+    int index = macroRegister->findIndex(macroName);
+
+    Macro* macro = macros[index];
+    vector<string> commandNames = macro->getCommandNames();
+    
+    for (const string& commandName : commandNames) {
+        int commandIndex = findIndex(commandName);
+        if (commandIndex == -1) {
+            throw std::runtime_error("CommandRegister::executeMacro: Command not found: " + commandName);
+        }
+        executeCommand(commandIndex);
+    }
+}
+
+/**
+ * @brief Shows all registered macros.
+ * @return A string containing the serialized representation of all macros.
+ */
+string CommandRegister::showAllMacros() {
+    return macroRegister->showAll();
+}
+
+/**
  * @brief Shows all registered commands.
  * @return A string containing the names of all registered commands.
  */
