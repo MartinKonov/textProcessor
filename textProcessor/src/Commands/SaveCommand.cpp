@@ -19,7 +19,7 @@ SaveCommand::SaveCommand(ActiveDocument* activeDocument, SaveCommandCLI* cli,Doc
  */
 string SaveCommand::getName() const 
 {
-    return "Save";
+    return SAVE_COMMAND_NAME;
 }
 
 /**

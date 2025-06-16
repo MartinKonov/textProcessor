@@ -27,7 +27,7 @@ RemoveMacroCommand::~RemoveMacroCommand() {
  * @return string The name of the command.
  */
 string RemoveMacroCommand::getName() const {
-    return "Remove Macro";
+    return REMOVE_MACRO_COMMAND_NAME;
 }
 
 /**

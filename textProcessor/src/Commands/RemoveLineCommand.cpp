@@ -28,7 +28,7 @@ RemoveLineCommand::~RemoveLineCommand() {
  * @return string The name of the command.
  */
 string RemoveLineCommand::getName() const {
-    return "Remove Line";
+    return REMOVE_LINE_COMMAND_NAME;
 }
 
 /**

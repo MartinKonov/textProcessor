@@ -29,7 +29,7 @@ TrimLeadingCommand::~TrimLeadingCommand() {
  * @return string The name of the command.
  */
 string TrimLeadingCommand::getName() const {
-    return "Trim Leading";
+    return TRIM_LEADING_COMMAND_NAME;
 }
 
 /**

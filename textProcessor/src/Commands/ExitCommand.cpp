@@ -14,7 +14,7 @@ ExitCommand::ExitCommand(ExitCommandCLI* cli, DocumentRegister* documentRegister
  * @brief gets the name of the command.
  */
 string ExitCommand::getName() const {
-    return "Exit";
+    return EXIT_COMMAND_NAME;
 }
 
 /**

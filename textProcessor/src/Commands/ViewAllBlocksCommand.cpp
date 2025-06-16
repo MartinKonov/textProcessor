@@ -19,7 +19,7 @@ ViewAllBlocksCommand::ViewAllBlocksCommand(ViewAllBlocksCommandCLI* cli, ActiveD
  * @return string The name of the command.
  */
 string ViewAllBlocksCommand::getName() const {
-    return "View All Blocks for Active Document";
+    return VIEW_ALL_BLOCKS_COMMAND_NAME;
 }
 
 /**

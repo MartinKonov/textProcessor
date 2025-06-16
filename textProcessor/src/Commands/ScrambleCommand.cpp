@@ -26,7 +26,7 @@ ScrambleCommand::~ScrambleCommand() {
  * @return string The name of the command.
  */
 string ScrambleCommand::getName() const {
-    return "Scramble";
+    return SCRAMBLE_COMMAND_NAME;
 }
 
 /**

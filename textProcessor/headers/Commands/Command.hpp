@@ -6,6 +6,7 @@
  * @date 2025-05-26
  */
 #pragma once
+#include "../../dataFiles/CommandNames.hpp"
 #include <string>
 #include <vector>
 #include <stdexcept> 

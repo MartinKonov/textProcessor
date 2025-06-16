@@ -31,7 +31,7 @@ TrimTrailingCommand::~TrimTrailingCommand() {
  * @return string The name of the command.
  */
 string TrimTrailingCommand::getName() const {
-    return "Trim Trailing";
+    return TRIM_TRAILING_COMMAND_NAME;
 }
 /**
  * @brief Executes the command to trim trailing whitespace.

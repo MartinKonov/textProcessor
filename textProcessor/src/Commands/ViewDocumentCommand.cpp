@@ -20,7 +20,7 @@ ViewDocumentCommand::ViewDocumentCommand(ViewDocumentCommandCLI* cli, ActiveForm
  * @return string The name of the command.
  */
 string ViewDocumentCommand::getName() const {
-    return "View Document";
+    return VIEW_DOCUMENT_COMMAND_NAME;
 }
 
 /**

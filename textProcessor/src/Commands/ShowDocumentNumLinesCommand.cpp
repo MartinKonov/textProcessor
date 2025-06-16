@@ -16,7 +16,7 @@ ShowDocumentNumLinesCommand::ShowDocumentNumLinesCommand(ShowDocumentNumLinesCom
  * @return string The name of the command.
  */
 string ShowDocumentNumLinesCommand::getName() const {
-    return "Show Active Document Number of Lines";
+    return SHOW_DOCUMENT_NUM_LINES_COMMAND_NAME;
 }
 
 

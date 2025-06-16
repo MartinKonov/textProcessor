@@ -26,7 +26,7 @@ ToLowerCommand::~ToLowerCommand() {
  * @return string The name of the command.
  */
 string ToLowerCommand::getName() const {
-    return "To Lower";
+    return TO_LOWER_COMMAND_NAME;
 }
 
 

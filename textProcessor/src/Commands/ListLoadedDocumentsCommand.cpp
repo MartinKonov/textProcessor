@@ -17,7 +17,7 @@ ListLoadedDocumentsCommand::ListLoadedDocumentsCommand(ListLoadedDocumentsComman
  * @return string The name of the command.
  */
 string ListLoadedDocumentsCommand::getName() const {
-    return "List Loaded Documents";
+    return LIST_LOADED_DOCUMENTS_COMMAND_NAME;
 }
 
 /**

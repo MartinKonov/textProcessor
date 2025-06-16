@@ -19,7 +19,7 @@ ShowDocumentNumSymbolsCommand::ShowDocumentNumSymbolsCommand(ShowDocumentNumSymb
  * @return string The name of the command.
  */
 string ShowDocumentNumSymbolsCommand::getName() const {
-    return "Show Number of Symbols for Active Document";
+    return SHOW_DOCUMENT_NUM_SYMBOLS_COMMAND_NAME;
 }
 
 /**

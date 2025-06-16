@@ -27,7 +27,7 @@ SetActiveBlockCommand::~SetActiveBlockCommand() {
  * @return string The name of the command.
  */
 string SetActiveBlockCommand::getName() const {
-    return "Set Active Block";
+    return SET_ACTIVE_BLOCK_COMMAND_NAME;
 }
 
 /**

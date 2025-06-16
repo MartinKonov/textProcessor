@@ -51,7 +51,7 @@ void AddLineCommand::execute() {
  * @return string The name of the command.
  */
 string AddLineCommand::getName() const {
-    return "Add Line";
+    return ADD_LINE_COMMAND_NAME;
 }
 
 /**

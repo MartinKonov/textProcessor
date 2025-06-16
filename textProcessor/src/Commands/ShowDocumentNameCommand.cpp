@@ -17,7 +17,7 @@ ShowDocumentNameCommand::ShowDocumentNameCommand(ShowDocumentNameCommandCLI* cli
  * @return string The name of the command.
  */
 string ShowDocumentNameCommand::getName() const {
-    return "Show Active Document Name";
+    return SHOW_DOCUMENT_NAME_COMMAND_NAME;
 }
 
 /**

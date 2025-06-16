@@ -15,7 +15,7 @@ ShowDocumentHasChangedCommand::ShowDocumentHasChangedCommand(ShowDocumentHasChan
  * @return string The name of the command.
  */
 string ShowDocumentHasChangedCommand::getName() const {
-    return "Show ActiveDocument Has Changed";
+    return SHOW_DOCUMENT_HAS_CHANGED_COMMAND_NAME;
 }
 /**
  * @brief Executes the command to show whether the active document has changed.

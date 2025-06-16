@@ -15,7 +15,7 @@ SetActiveDocumentCommand::SetActiveDocumentCommand(SetActiveDocumentCommandCLI* 
  * @return string The name of the command.
  */
 string SetActiveDocumentCommand::getName() const {
-    return "Set Active Document";
+    return SET_ACTIVE_DOCUMENT_COMMAND_NAME;
 }
 
 /**

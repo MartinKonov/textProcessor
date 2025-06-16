@@ -16,7 +16,7 @@ LoadDocumentCommand::LoadDocumentCommand(LoadDocumentCommandCLI* cli, DocumentRe
  * @return string The name of the command.
  */
 string LoadDocumentCommand::getName() const {
-    return "Load Document";
+    return LOAD_DOCUMENT_COMMAND_NAME;
 }
 
 /**

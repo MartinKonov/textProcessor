@@ -19,7 +19,7 @@ SaveAsCommand::SaveAsCommand(ActiveDocument* activeDocument, SaveAsCommandCLI* c
   * @brief Returns the name of the command.
   */
 string SaveAsCommand::getName() const {
-    return "Save as";
+    return SAVE_AS_COMMAND_NAME;
 }
 
 /**

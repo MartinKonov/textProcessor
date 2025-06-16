@@ -19,7 +19,7 @@ ToUpperCommand::ToUpperCommand(ToUpperCommandCLI* cli, ActiveDocument* activeDoc
  * @return string The name of the command.
  */
 string ToUpperCommand::getName() const {
-    return "To Upper";
+    return TO_UPPER_COMMAND_NAME;
 }
 
 /**

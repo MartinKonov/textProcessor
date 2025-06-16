@@ -27,7 +27,7 @@ RemoveActiveBlockCommand::~RemoveActiveBlockCommand() {
  * @return string The name of the command.
  */
 string RemoveActiveBlockCommand::getName() const {
-    return "Remove Active Block";
+    return REMOVE_ACTIVE_BLOCK_COMMAND_NAME;
 }
 
 /**

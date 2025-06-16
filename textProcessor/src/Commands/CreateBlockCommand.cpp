@@ -18,7 +18,7 @@ CreateBlockCommand::CreateBlockCommand(CreateBlockCommandCLI* cli, BlockRegister
  * @return string The name of the command.
  */
 string CreateBlockCommand::getName() const {
-    return "Create Block";
+    return CREATE_BLOCK_COMMAND_NAME;
 }
 
 /**

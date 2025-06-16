@@ -17,7 +17,7 @@ ViewAllMacrosCommand::ViewAllMacrosCommand(ViewAllMacrosCommandCLI* cli, MacroRe
  * @return string The name of the command.
  */
 string ViewAllMacrosCommand::getName() const {
-    return "View All Macros";
+    return VIEW_ALL_MACROS_COMMAND_NAME;
 }
 
 

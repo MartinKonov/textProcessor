@@ -18,7 +18,7 @@ SortCommand::SortCommand(SortCommandCLI* cli, ActiveDocument* activeDocument, Ac
  * @return string The name of the command.
  */
 string SortCommand::getName() const {
-    return "Sort";
+    return SORT_COMMAND_NAME;
 }
 
 /**

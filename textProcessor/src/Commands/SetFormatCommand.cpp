@@ -21,7 +21,7 @@
   * @brief gets the name of the command.
   */
  string SetFormatCommand::getName() const {
-    return "Set Format";
+    return SET_FORMAT_COMMAND_NAME;
  }
 
  /**

@@ -28,7 +28,7 @@ InsertLineCommand::~InsertLineCommand() {
  * @return string The name of the command.
  */
 string InsertLineCommand::getName() const {
-    return "Insert Line";
+    return INSERT_LINE_COMMAND_NAME;
 }
 
 void InsertLineCommand::execute() {

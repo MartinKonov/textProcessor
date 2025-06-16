@@ -29,7 +29,7 @@ ChangeLineCommand::~ChangeLineCommand() {
  * @return string The name of the command.
  */
 string ChangeLineCommand::getName() const {
-    return "Change Line";
+    return CHANGE_LINE_COMMAND_NAME;
 }
 /**
  * @brief Executes the command to change a specific line in the active document.

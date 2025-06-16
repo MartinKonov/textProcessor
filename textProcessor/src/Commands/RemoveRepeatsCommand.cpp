@@ -17,7 +17,7 @@ RemoveRepeatsCommand::RemoveRepeatsCommand(RemoveRepeatsCommandCLI* cli, ActiveD
  * @return string The name of the command.
  */
 string RemoveRepeatsCommand::getName() const {
-    return "Remove Repeats";
+    return REMOVE_REPEATS_COMMAND_NAME;
 }
 /**
  * @brief Destructor for RemoveRepeatsCommand.

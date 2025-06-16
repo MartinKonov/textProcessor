@@ -17,7 +17,7 @@ UnloadDocumentCommand::UnloadDocumentCommand(UnloadDocumentCommandCLI* unloadDoc
  * @return string The name of the command.
  */
 string UnloadDocumentCommand::getName() const {
-    return "Unload document";
+    return UNLOAD_DOCUMENT_COMMAND_NAME;
 }
 
 /**

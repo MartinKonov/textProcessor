@@ -14,7 +14,7 @@ AddMacroCommand::AddMacroCommand(AddMacroCommandCLI* cli, MacroRegister* macroRe
  * @brief gets the name of the command.
  */
 string AddMacroCommand::getName() const {
-    return "Add Macro";
+    return ADD_MACRO_COMMAND_NAME;
 }
 
 /**
