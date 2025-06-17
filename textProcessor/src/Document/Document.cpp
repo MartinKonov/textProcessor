@@ -200,7 +200,7 @@ void Document::removeLine(size_t index)
  */
 void Document::addLine(string line)
 {
-    Line* newLine = LineCreator::getInstance()->createLine(line);
+    Line* newLine = lineCreator->createLine(line);
     lines.push_back(newLine);
     hasChanged = true;
 }
@@ -218,7 +218,7 @@ void Document::insertLine(size_t index, string line)
     {
         throw out_of_range(ERROR_INDEX_OUT_OF_RANGE);
     }
-    Line* newLine = LineCreator::getInstance()->createLine(line);
+    Line* newLine = lineCreator->createLine(line);
     lines.insert(lines.begin() + index, newLine);
     hasChanged = true;
 }
@@ -236,7 +236,7 @@ void Document::changeLine(size_t index, string newContent)
     {
         throw out_of_range(ERROR_INDEX_OUT_OF_RANGE);
     }
-    Line* newLine = LineCreator::getInstance()->createLine(newContent);
+    Line* newLine = lineCreator->createLine(newContent);
     delete lines[index];
     lines[index] = newLine;
     hasChanged = true;
