@@ -1,11 +1,5 @@
 #include "../../headers/Document/Document.hpp"
 
-
-Document::Document()
-{
-    this->hasChanged = false;
-}
-
 /**
  * @brief Constructs a Document with a name and a vector of lines.
  * 
@@ -25,6 +19,7 @@ Document::Document(string name, vector<Line *> lines)
  */
 Document::~Document()
 {
+    lineCreator->destroyInstance();
     freeDocument();
 }
 

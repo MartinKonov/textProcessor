@@ -3,6 +3,6 @@
 int main() {
     TextProcessor* textProcessor = TextProcessor::getInstance();
     textProcessor->run();
-    TextProcessor::destroyInstance();
+    textProcessor->destroyInstance();
     return 0;
 }

@@ -107,6 +107,7 @@ TextProcessor::~TextProcessor() {
     delete documentParser;
     delete activeDocument;
     delete activeBlock;
+    delete activeFormatter;
 
     MacroRegister::destroyInstance();
     BlockRegister::destroyInstance();

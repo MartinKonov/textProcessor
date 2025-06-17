@@ -127,6 +127,7 @@ class DataRegister {
             delete item;
         }
         items.clear();
+        parser->destroyInstance();
     }
 
     /**

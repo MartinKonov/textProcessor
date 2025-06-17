@@ -31,7 +31,7 @@ using std::shuffle;
  */
 class Document {
  public:
-    Document();
+    Document() = delete;
     Document(string name, vector<Line*> lines);
     ~Document();
     Document(const Document& other);

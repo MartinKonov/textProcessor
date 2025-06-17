@@ -42,7 +42,7 @@ void BlockRegister::addBlock(string blockName, Document* document, size_t startL
     if(!document) {
         throw runtime_error(ERROR_DOCUMENT_NOT_FOUND);
     }
-    if (startLineIndex > endLineIndex || endLineIndex > document->getNumLines()) {
+    if (startLineIndex > endLineIndex || endLineIndex > document->getNumLines() || startLineIndex >= document->getNumLines()) {
         throw runtime_error(ERROR_INDEX_OUT_OF_RANGE);
     }
 
