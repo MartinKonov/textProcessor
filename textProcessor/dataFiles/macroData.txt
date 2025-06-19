@@ -1,2 +1,18 @@
-novomakro|Load Document|Set Active Document|Add Line|Sort|Save
 exitTest|Load Document|Load Document|Load Document|Load Document|Set Active Document|Add Line|Set Active Document|Sort|Set Active Document|Scramble
+
+viewDocumentTest|Load Document|Set Active Document|View Document
+
+formatterTest|Load Document|Set Active Document|Set Format|View Document
+
+createBlockTest|Load Document|Set Active Document|Create Block|View All Blocks
+
+saveAndSortInBlockTest|Load Document|Set Active Document|Set Active Block|Sort|Save Document
+
+removeLineExample|Load Document|Set Active Document|Remove Line|View Document
+
+addLineTest|Load Document|Set Active Document|Insert Line|View Document
+toUpperInBlockTest|Load Document|Set Active Document|View Document|Set Active Block|To Upper Case|View Document
+
+scrambleTest|Load Document|Set Active Document|View Document|Scramble Document|View Document
+
+unloadDocumentQueryTest|Load Document|Set Active Document|Sort|Unload Document

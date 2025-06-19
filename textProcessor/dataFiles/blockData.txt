@@ -5,3 +5,4 @@ blockB|myDoc|1|2
 opa|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt|6|17
 qwer|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt|0|9
 mmleaktest|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt|0|19
+createdBlock|/home/mkonov/cProjects/UNI/projectOOP/textProcessor/textProcessor/testFiles/example.txt|2|11

@@ -1,12 +1,47 @@
 # Text Processor
 ## By Martin Konov Inf, 45804
 
+> **IMPORTANT: BEFORE RUNNING THE PROJECT FOR THE FIRST TIME, OPEN `textprocessor/dataFiles/dataFiles.hpp` AND CHANGE `#DEFINE BASE_PATH "/home/mkonov/cprojects/uni/projectOOP/textProcessor/"` TO THE ACTUAL PATH OF THE PROJECT ON YOUR LOCAL MACHINE. RELATIVE PATHS DO NOT WORK.**
+
+
+## Testing the project
+**On Windows:**
+
+To run the program, navigate to `textProcessor/build-windows/`
+
+There you will find **textProcessor.exe** executable. 
+
+
+**On Linux:**
+
+To run the program, navigate to `textProcessor/build`
+There you will find the textProcessor executable.
+
+
+## 🔍 How to Run Predefined Test Sequences
+
+1. **Start the Program**  
+   Launch the executable. You’ll see a main menu with available commands.
+
+2. **Use Macros for Testing**  
+   A feature called a **macro** allows you to execute a predefined sequence of commands that showcase specific functionalities of the project.
+
+3. **View Available Macros**  
+   At the menu, type `macro` to see a list of all predefined test macros.
+
+4. **Run a Macro**  
+   Enter the name of any macro from the list. The program will then automatically execute its sequence, demonstrating the core features step-by-step.
+
+
+
+---
 This project is divided into two main parts:
 
 1. **Logic**
 2. **Commands** (together with the Commands CLI)
 
 ---
+
 
 ## Project Structure
 
